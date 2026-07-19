@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * GOCHUJANG — "Fermented Editorial" design tokens.
+ * Semantic colors are space-separated RGB channels so Tailwind opacity
+ * modifiers keep working (bg-primary/40) and the light/dark swap is one class.
+ */
+:root {
+  color-scheme: light;
+
+  --bg: 245 239 230;
+  --surface: 251 247 240;
+  --surface-alt: 239 230 216;
+  --elevated: 255 255 255;
+
+  --text: 26 19 16;
+  --text-muted: 92 81 72;
+  --text-subtle: 138 125 112;
+  --border: 224 213 196;
+
+  --primary: 198 58 32;
+  --primary-fg: 255 247 241;
+  --secondary: 44 35 32;
+  --secondary-fg: 245 239 230;
+  --accent: 217 98 44;
+  --accent-fg: 26 19 16;
+
+  --ember: 232 84 46;
+  --persimmon: 240 135 63;
+  --plum: 138 58 44;
+  --celadon: 62 124 99;
+  --success: 62 124 99;
+  --warning: 201 138 30;
+  --danger: 178 43 28;
+
+  --font-display: 'Fraunces Variable', 'Georgia', serif;
+  --font-body: 'Geist Variable', system-ui, sans-serif;
+  --font-accent: 'Geist Mono Variable', ui-monospace, monospace;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+  --radius-2xl: 36px;
+  --radius-card: 20px;
+  --radius-modal: 28px;
+  --radius-glyph: 14px;
+
+  --shadow-xs: 0 1px 2px rgba(26, 19, 16, 0.06), 0 1px 1px rgba(26, 19, 16, 0.04);
+  --shadow-sm: 0 2px 4px rgba(26, 19, 16, 0.05), 0 6px 14px -6px rgba(26, 19, 16, 0.12);
+  --shadow-md: 0 10px 24px -8px rgba(26, 19, 16, 0.18), 0 3px 8px -4px rgba(26, 19, 16, 0.1);
+  --shadow-lg: 0 28px 60px -18px rgba(26, 19, 16, 0.28), 0 10px 24px -12px rgba(26, 19, 16, 0.16);
+  --shadow-ember: 0 8px 24px -6px rgba(198, 58, 32, 0.42), 0 2px 6px rgba(217, 98, 44, 0.3);
+  --shadow-ember-lg: 0 0 0 1px rgba(240, 135, 63, 0.3), 0 14px 40px -8px rgba(232, 84, 46, 0.5);
+  --shadow-inset-dark: inset 0 0 60px -20px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(244, 235, 223, 0.04);
+
+  --grain-opacity: 0.045;
+}
+
+.dark {
+  color-scheme: dark;
+
+  --bg: 22 18 16;
+  --surface: 31 24 21;
+  --surface-alt: 41 32 25;
+  --elevated: 49 38 32;
+
+  --text: 244 235 223;
+  --text-muted: 185 170 153;
+  --text-subtle: 135 120 105;
+  --border: 58 46 38;
+
+  --primary: 232 84 46;
+  --primary-fg: 26 15 10;
+  --secondary: 237 227 213;
+  --secondary-fg: 31 24 21;
+  --accent: 240 135 63;
+  --accent-fg: 26 15 10;
+
+  --ember: 240 135 63;
+  --persimmon: 245 166 97;
+  --plum: 158 74 60;
+  --celadon: 95 176 140;
+  --success: 95 176 140;
+  --warning: 229 177 74;
+  --danger: 229 83 59;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4), 0 6px 16px -6px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 10px 26px -8px rgba(0, 0, 0, 0.6), 0 3px 8px -4px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 30px 64px -18px rgba(0, 0, 0, 0.75), 0 12px 26px -12px rgba(0, 0, 0, 0.6);
+  --shadow-ember: 0 8px 24px -6px rgba(232, 84, 46, 0.5), 0 2px 6px rgba(240, 135, 63, 0.36);
+  --shadow-ember-lg: 0 0 0 1px rgba(240, 135, 63, 0.4), 0 16px 44px -8px rgba(232, 84, 46, 0.6);
+  --shadow-inset-dark: inset 0 0 70px -20px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(244, 235, 223, 0.05);
+
+  --grain-opacity: 0.06;
+}
+
+@layer base {
+  * {
+    border-color: rgb(var(--border));
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: rgb(var(--bg));
+    color: rgb(var(--text));
+    font-family: var(--font-body);
+    font-feature-settings: 'ss01', 'cv01';
+    line-height: 1.65;
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    color: rgb(var(--text));
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Numeric/data readouts use the mono voice with tabular figures. */
+  .tnum {
+    font-family: var(--font-accent);
+    font-variant-numeric: tabular-nums;
+  }
+
+  ::selection {
+    background-color: rgb(var(--primary) / 0.26);
+    color: rgb(var(--text));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--primary));
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--surface-alt));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--text-subtle) / 0.45);
+    border-radius: 999px;
+    border: 3px solid rgb(var(--surface-alt));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--primary) / 0.6);
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-content px-5 sm:px-8 lg:px-12;
+  }
+
+  /* text-primary (crimson) clears AA on the light bone paper where accent orange would not. */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-accent text-eyebrow font-medium uppercase tracking-[0.2em] text-primary;
+  }
+
+  .rule {
+    @apply h-px w-10 bg-gradient-to-r from-accent to-transparent;
+  }
+
+  .text-gradient {
+    background: var(--grad-ember, linear-gradient(135deg, rgb(var(--primary)), rgb(var(--accent)) 45%, rgb(var(--persimmon))));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .btn {
+    @apply relative inline-flex select-none items-center justify-center gap-2 rounded-pill px-6 py-3 text-sm font-semibold transition-all duration-300 ease-edible focus-visible:outline-2;
+  }
+  .btn-primary {
+    @apply btn text-primary-fg shadow-ember hover:-translate-y-0.5 hover:shadow-ember-lg hover:brightness-[1.05] active:scale-[0.97];
+    background-image: linear-gradient(135deg, #c63a20 0%, #e8542e 55%, #df6a2c 100%);
+    text-shadow: 0 1px 1px rgba(74, 18, 8, 0.35);
+  }
+  .btn-ghost {
+    @apply btn border border-accent/45 bg-transparent text-ink hover:border-accent hover:bg-accent/10;
+  }
+
+  .card {
+    @apply rounded-card border border-line bg-surface shadow-sm;
+  }
+
+  /* Bottom-anchored legibility scrim for text over full-bleed imagery. */
+  .scrim-ink {
+    background: linear-gradient(180deg, rgba(22, 18, 16, 0.05) 0%, rgba(22, 18, 16, 0.45) 55%, rgba(22, 18, 16, 0.82) 100%);
+  }
+}
+
+@layer utilities {
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: var(--grain-opacity);
+    mix-blend-mode: overlay;
+  }
+
+  .glass {
+    background: rgb(var(--surface) / 0.82);
+    backdrop-filter: blur(12px) saturate(1.4);
+    -webkit-backdrop-filter: blur(12px) saturate(1.4);
+  }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
+    mask-image: linear-gradient(to bottom, black 60%, transparent);
+  }
+
+  /* Knife-stroke underline that wipes in on hover. */
+  .link-wipe {
+    background-image: linear-gradient(rgb(var(--accent)), rgb(var(--accent)));
+    background-size: 0% 1.5px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-wipe:hover {
+    background-size: 100% 1.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

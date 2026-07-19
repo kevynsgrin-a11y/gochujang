@@ -1,0 +1,353 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "name": "Home",
+      "purpose": "Win the 5-second first-impression test and establish Gochujang as a premium, flavor-forward culinary destination. A cinematic front door that instantly signals 'award-winning restaurant site meets food magazine,' then funnels new visitors into Explore (discovery) and returning cooks into Kitchen (their dashboard).",
+      "keySections": [
+        "Sticky translucent GlobalNav with animated brand mark and a single high-contrast 'Start cooking' CTA",
+        "Full-bleed cinematic hero: generative SVG gradient art layer + duotone food image (Unsplash URL with palette gradient fallback) + grain overlay, kinetic staggered headline, one primary + one ghost CTA, subtle scroll cue",
+        "Live 'Flavor Pulse' marquee/ticker — trending dishes, cuisines and techniques scrolling as a horizontal band",
+        "Featured Dish spotlight — oversized editorial split-panel card linking to a Dish detail",
+        "Category glyph grid — cuisines & techniques rendered as committed local SVG glyphs (guaranteed render) with hover motion",
+        "Explore-by-flavor interactive band — flavor-wheel / mood chips that deep-link into pre-filtered /explore",
+        "Kitchen teaser — animated preview of the reinvented tracker (streak flame, live batch progress ring, stat tiles) to make tracking feel desirable",
+        "Editorial story rail — horizontally-scrolling magazine features / collections carousel",
+        "Social-proof band — pull-quotes from home cooks + press logos on a grain-textured surface",
+        "Newsletter / join CTA with generative gradient background",
+        "Footer — sitemap, brand statement, category links, credits, theme toggle"
+      ]
+    },
+    {
+      "route": "/explore",
+      "name": "Explore",
+      "purpose": "The high-graphic discovery engine — let design-conscious food lovers browse the full dish catalog and drill into any flavor, cuisine, technique, spice level or mood through a beautiful, fast, filterable mosaic. This is the primary catalog surface and the top of the cook funnel.",
+      "keySections": [
+        "Compact page header — eyebrow + title + live result count + view toggle (mosaic / list)",
+        "Sticky FilterBar — cuisine, flavor profile, spice/heat, technique, time, difficulty, dietary; collapses into a floating filter FAB on mobile",
+        "Active-filter chip row with one-tap clear-all",
+        "Editorial mosaic grid — masonry DishCards with duotone overlay, gradient fallback, hover parallax and quick-look affordance",
+        "Interspersed featured collection bands (e.g. 'Fermented & Funky', 'Weeknight Fire') breaking the grid rhythm",
+        "QuickLook modal — peek at a dish without leaving the grid (image, spice meter, key stats, open/save/wishlist)",
+        "Infinite scroll / load-more with skeleton-shimmer placeholders",
+        "Illustrated empty state for zero-result filter combos with a 'reset' nudge",
+        "Back-to-top control + persistent mobile filter FAB"
+      ]
+    },
+    {
+      "route": "/dish/:id",
+      "name": "Dish Detail",
+      "purpose": "An immersive, magazine-grade single-dish page that both tells the dish's story beautifully and acts as the conversion point into the Kitchen — the place a visitor decides to cook it, log it, wishlist it, or start a fermentation/marinade batch.",
+      "keySections": [
+        "Immersive hero — large duotone image (Unsplash + gradient fallback), dish title, cuisine tag, live SpiceMeter, aggregate rating",
+        "Sticky action bar — Cook it / Log this cook / Add to wishlist / Save / Share (persists on scroll)",
+        "At-a-glance stat strip — total time, difficulty, servings, heat band, primary flavor tags",
+        "FlavorRadar visualization — heat, umami, acidity, sweetness, funk, texture",
+        "Editorial intro — the story and POV behind the dish",
+        "Ingredients — scalable by servings, with pantry/substitution hints",
+        "Method — numbered steps with inline technique glyphs and timing chips",
+        "Fermentation/marinade callout (when applicable) — timing detail + 'Start a batch' CTA that seeds a Kitchen Batch",
+        "Pairings rail — drink/wine/side PairingCards",
+        "Tasting notes — community notes plus an inline entry point to add your own",
+        "Related dishes carousel",
+        "Log-this-dish CTA footer reinforcing the track action"
+      ]
+    },
+    {
+      "route": "/kitchen",
+      "name": "Kitchen (Mise)",
+      "purpose": "The reinvented tracker — 'Mise,' a personal culinary dashboard and living journal. Turns the old 'static, boring tracker' into a desirable, gamified command center where a food lover sees their streak, running fermentation/marinade batches, cook log, spice-tolerance progression, wishlist and cuisine passport at a glance.",
+      "keySections": [
+        "Personalized hero header — greeting, avatar, kitchen title/level and an animated streak flame",
+        "Stat tiles row — dishes cooked, cuisines explored, active batches, current spice tolerance",
+        "Streak & activity heatmap — contribution-style calendar of cooking days with weekly goal",
+        "Active Batches board — fermentation/marinade/pickle timers as ProgressRings with ready-alerts",
+        "Recently Cooked feed — reverse-chron cook log with inline quick tasting-note entry",
+        "Spice Tolerance tracker — animated Scoville gauge with trend sparkline and next-tier badge",
+        "Wishlist / Want-to-Cook board — droppable cards you can plan onto dates",
+        "Flavor Passport — map/wheel of cuisines & techniques conquered with collected stamp glyphs",
+        "Achievements shelf — unlocked and in-progress badges",
+        "Insights panel — personal analytics: most-cooked cuisine, average rating, heat trend",
+        "Quick-add FAB — log a cook, start a batch, or drop a tasting note from anywhere on the page"
+      ]
+    },
+    {
+      "route": "/about",
+      "name": "About",
+      "purpose": "Establish brand credibility and the bold, global, flavor-forward point of view behind the 'Gochujang' codename — the manifesto, the story, the curation standards and the invitation to join. Converts trust into newsletter signups and account creation.",
+      "keySections": [
+        "Manifesto hero — a bold, opinionated statement of the Gochujang POV over generative brand art",
+        "Origin story — why 'Gochujang': fermentation, boldness, global-and-Korean-forward taste",
+        "Editorial values trio — the principles behind what gets featured",
+        "The Palette — brand philosophy on color, flavor and design as one language",
+        "Contributors / team grid with duotone portraits",
+        "Curation standards — how dishes are tested, rated and selected",
+        "Press & recognition band",
+        "Join CTA — newsletter + create-your-Kitchen invitation",
+        "Contact & footer"
+      ]
+    }
+  ],
+  "nav": [
+    {
+      "label": "Home",
+      "route": "/"
+    },
+    {
+      "label": "Explore",
+      "route": "/explore"
+    },
+    {
+      "label": "Kitchen",
+      "route": "/kitchen"
+    },
+    {
+      "label": "About",
+      "route": "/about"
+    }
+  ],
+  "trackerConcept": {
+    "name": "Mise",
+    "description": "Mise (from mise en place) is the reinvented tracker living at /kitchen — a living culinary journal and personal dashboard, not a spreadsheet. Instead of a static list, it turns a food lover's real kitchen life into something graphic and desirable: an animated streak flame, fermentation and marinade batches ticking down on progress rings, a cook log you fill with one tap, a Scoville gauge that levels up as your palate gets braver, and a Flavor Passport that stamps every cuisine you conquer. Every dish page feeds into it, and every visit rewards you with visible progress — the anti-boring tracker that makes tracking feel like collecting.",
+    "features": [
+      "One-tap Cook Log — 'I made this' straight from any Dish detail, with rating, photo and difficulty-felt",
+      "Fermentation & marinade Batch timers — progress rings, vessel/ingredient notes and ready-alerts for kimchi, hot sauce, brines and cures",
+      "Structured Tasting Notes journal — aroma, texture, heat, acidity, umami, balance and a verdict, not just a text blob",
+      "Spice Tolerance tracker — a personal Scoville gauge with trend sparkline that levels up as you log hotter dishes",
+      "Streaks & activity heatmap — contribution-style calendar with a weekly cooking goal and streak flame",
+      "Flavor Passport — a stamp-collecting map of every cuisine and technique you've cooked, with mastery levels",
+      "Wishlist / Want-to-Cook board — heart dishes anywhere, then drag them onto a plan-for date",
+      "Achievement badges & kitchen levels — tiered unlocks (First Ferment, Chili Head, Ten Cuisines) that gamify progress",
+      "Personal insights — most-cooked cuisine, average rating, heat-trend and cook-frequency analytics",
+      "Shareable cook cards — export a beautifully-designed card of a logged cook or batch result"
+    ],
+    "dataModel": [
+      {
+        "entity": "UserProfile",
+        "fields": [
+          "id",
+          "displayName",
+          "avatarUrl",
+          "kitchenTitle",
+          "level",
+          "joinedAt",
+          "spicePreference",
+          "dietary[]",
+          "palettePrefs",
+          "weeklyGoal"
+        ]
+      },
+      {
+        "entity": "CookLog",
+        "fields": [
+          "id",
+          "userId",
+          "dishId",
+          "dishName",
+          "cookedAt",
+          "servings",
+          "rating(1-5)",
+          "difficultyFelt",
+          "timeSpentMin",
+          "spiceLevelUsed(0-10)",
+          "photoUrl",
+          "wouldCookAgain(bool)",
+          "tastingNoteId",
+          "tags[]"
+        ]
+      },
+      {
+        "entity": "Batch",
+        "fields": [
+          "id",
+          "userId",
+          "name",
+          "type(ferment|marinade|pickle|cure|brine)",
+          "linkedDishId",
+          "startedAt",
+          "readyAt",
+          "durationHours",
+          "vessel",
+          "ingredients[]",
+          "targetNotes",
+          "status(active|ready|consumed|discarded)",
+          "progressPct",
+          "reminderAt",
+          "resultRating"
+        ]
+      },
+      {
+        "entity": "TastingNote",
+        "fields": [
+          "id",
+          "userId",
+          "cookLogId",
+          "dishId",
+          "date",
+          "aroma",
+          "texture",
+          "heat(0-10)",
+          "acidity(0-10)",
+          "umami(0-10)",
+          "sweetness(0-10)",
+          "balance(0-10)",
+          "verdict",
+          "drinkPairing",
+          "photoUrl",
+          "wordTags[]"
+        ]
+      },
+      {
+        "entity": "SpiceTolerance",
+        "fields": [
+          "id",
+          "userId",
+          "currentLevel(0-10)",
+          "scovilleBand",
+          "heatDishesLogged",
+          "trend[]",
+          "currentBadge",
+          "nextTierAt",
+          "updatedAt"
+        ]
+      },
+      {
+        "entity": "WishlistItem",
+        "fields": [
+          "id",
+          "userId",
+          "dishId",
+          "dishName",
+          "addedAt",
+          "priority",
+          "reason",
+          "plannedFor(date)",
+          "status(want|planned|cooked)"
+        ]
+      },
+      {
+        "entity": "Streak",
+        "fields": [
+          "id",
+          "userId",
+          "currentStreak",
+          "longestStreak",
+          "lastCookDate",
+          "activity[](date,count)",
+          "weeklyGoal",
+          "weeklyProgress"
+        ]
+      },
+      {
+        "entity": "Achievement",
+        "fields": [
+          "id",
+          "userId",
+          "key",
+          "title",
+          "description",
+          "iconGlyph",
+          "tier",
+          "progress",
+          "target",
+          "unlockedAt"
+        ]
+      },
+      {
+        "entity": "PassportStamp",
+        "fields": [
+          "id",
+          "userId",
+          "cuisine",
+          "region",
+          "dishesCooked",
+          "firstCookedAt",
+          "masteryLevel",
+          "stampGlyph"
+        ]
+      }
+    ]
+  },
+  "componentInventory": [
+    "GlobalNav (sticky, translucent, scroll-aware)",
+    "BrandMark (animated local SVG logo)",
+    "Footer",
+    "SmartImage (Unsplash URL + palette GradientFallback + lazy load)",
+    "GradientFallback",
+    "GrainOverlay",
+    "DuotoneOverlay",
+    "GenerativeHeroArt (seeded local SVG)",
+    "KineticHeadline (Framer Motion staggered text)",
+    "CategoryGlyph (local SVG cuisine/technique marks)",
+    "DishCard",
+    "QuickLookModal",
+    "MosaicGrid (masonry)",
+    "EditorialRail / Carousel",
+    "FilterBar",
+    "FilterChip",
+    "SortDropdown",
+    "Chip / Tag",
+    "SpiceMeter",
+    "FlavorRadar",
+    "FlavorWheel",
+    "ProgressRing (batch timers)",
+    "Gauge (spice tolerance / Scoville)",
+    "StatTile",
+    "StreakHeatmap",
+    "BatchCard",
+    "TastingNoteForm",
+    "RatingStars",
+    "AchievementBadge",
+    "PassportMap (stamp collection)",
+    "Marquee / Ticker (Flavor Pulse)",
+    "SectionHeader (eyebrow + title)",
+    "ButtonPrimary / ButtonGhost / CTAButton",
+    "FAB (quick-add)",
+    "PairingCard",
+    "Avatar",
+    "NewsletterForm",
+    "SkeletonShimmer",
+    "EmptyState (illustrated)",
+    "Toast / AlertBanner",
+    "Breadcrumb",
+    "ScrollProgress",
+    "ThemeToggle",
+    "ShareCard (exportable cook card)"
+  ],
+  "userFlows": [
+    {
+      "name": "Discover to first logged cook (new-visitor funnel)",
+      "steps": [
+        "Land on Home; cinematic hero and Flavor Pulse marquee win the 5-second test",
+        "Tap 'Explore' (or a flavor chip that deep-links a pre-filtered /explore)",
+        "Filter the mosaic by spice + 'fermented' and open a DishCard QuickLook",
+        "Open the full /dish/:id, read the story, FlavorRadar and method",
+        "Tap 'Cook it', then 'Log this cook' — set rating, servings and a quick tasting note",
+        "Prompted to 'Start a fermentation batch' from the dish's timing callout",
+        "Streak increments and a first-cook achievement unlocks, nudging the user to /kitchen (Mise)"
+      ]
+    },
+    {
+      "name": "Start and track a fermentation batch",
+      "steps": [
+        "On a /dish/:id with a fermentation callout, tap 'Start a batch'",
+        "Choose type (ferment/marinade/pickle), start date, duration, vessel and ingredient notes",
+        "Batch appears on the Kitchen Active Batches board as a live ProgressRing with a reminder set",
+        "Receive a ready-alert (Toast) when readyAt is reached",
+        "Mark the batch 'consumed', log a TastingNote with heat/balance/verdict and a result rating",
+        "Batch result feeds Insights and may unlock a 'First Ferment' badge"
+      ]
+    },
+    {
+      "name": "Build a wishlist and plan a cooking week",
+      "steps": [
+        "While browsing /explore or a /dish/:id, heart dishes to add WishlistItems",
+        "Open /kitchen and go to the Want-to-Cook board",
+        "Drag wishlist cards onto plan-for dates (status want -> planned)",
+        "Cook a planned dish and log it from the card or the dish page",
+        "Item moves planned -> cooked, the Streak heatmap fills, and the Flavor Passport gains a new cuisine stamp",
+        "Insights panel updates most-cooked cuisine and average rating"
+      ]
+    }
+  ]
+}

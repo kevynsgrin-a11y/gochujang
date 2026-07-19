@@ -1,0 +1,566 @@
+{
+  "artDirection": "GOCHUJANG — \"Fermented Editorial.\" One unbroken visual grade across every surface: warm-charcoal ground (#161210 / clay #1A1310), bone paper (#F5EFE6), and a single gochujang crimson→persimmon ember (#C63A20→#E8542E→#F0873F) that carries 100% of the color heat. The photographic language is CLOSE, CHARRED, and GLOSSY — macro crops that read texture first (char, steam, sheen, ferment funk, crumb), never wide styled tablescapes with props and negative-space plates. Every food image is warm-graded (push warmth, deepen shadows to charcoal, protect the crimson channel so red food glows) and grain-dusted so heterogeneous Unsplash stock fuses into one branded, print-magazine system. Two tiers of treatment: TIER 1 (hero + primary dish shots + featured spotlight) stays FULL COLOR under the warm grade so the food is mouth-watering; TIER 2 (category tiles, thumbnails, portraits, story cards, backgrounds) gets the charcoal+ember DUOTONE so it recedes into brand and never competes with a Tier-1 focal image on the same screen. Nothing is ever a raw <img>: every slot sits on a palette-derived fallbackGradient + seeded local SVG so a CDN miss reveals intentional brand art, not a broken box. The imagery is the luxury; the SVG graphic layer (grain, gradient-mesh, ember drop, category glyphs, chili SpiceMeter, passport seals) is the guaranteed-render \"highly graphic\" spine that renders in KB with zero network dependency and looks deliberate offline. Cohesion is enforced by four constants applied identically everywhere: (1) the same warm grade, (2) the same ~5-6% film grain, (3) the same bottom-anchored charcoal legibility scrim under any text, (4) the same 20px card radius and 4:3 / 3:2 focal crops. The result reads premium in 50ms, stays effortless to read for hours, and never once resembles the old static tracker.",
+  "images": [
+    {
+      "slot": "home-hero",
+      "section": "Home / Hero (100vw x 100vh, content bottom-left)",
+      "subject": "Extreme close-up of gochujang-lacquered short ribs on charcoal grill — visible char, glossy fermented-chili glaze, curl of steam, embers glowing beneath. Positioned right-of-center so the left third stays clean for the Fraunces headline.",
+      "unsplashQuery": "grilled korean short ribs char glaze closeup",
+      "treatment": "TIER 1 full-color warm-grade + charcoal-crimson duotone bleed at the frame edges + bottom-anchored grad-duotone-ink scrim (rgba(18,12,9,0) → rgba(18,12,9,0.92) over lower 45%) + 6% film grain overlay. Ken-Burns scale 1.0→1.06 over 8s.",
+      "aspectRatio": "16:9 desktop cover / 9:16 mobile cover (object-fit:cover, focal point right-center)",
+      "fallbackGradient": "radial-gradient(120% 120% at 78% 88%, #F0873F 0%, #C63A20 42%, #7A1E12 72%, #161210 100%)",
+      "priority": true
+    },
+    {
+      "slot": "home-featured-spotlight",
+      "section": "Home / Featured Dish Spotlight (7/5 editorial split, image left)",
+      "subject": "Baechu kimchi mid-ferment in a glass vessel or hero galbi platter — scarlet paste clinging to napa leaves, bubbles of active ferment, backlit so the crimson reads translucent. The 'I want to make THAT' shot.",
+      "unsplashQuery": "napa cabbage kimchi jar macro crimson",
+      "treatment": "TIER 1 full-color warm-grade + subtle inner vignette (shadow-inset-dark) to seat it on charcoal + 5% grain. Title overlaps the image right edge on a narrow scrim wedge.",
+      "aspectRatio": "4:5 portrait crop on desktop split, 3:2 on mobile stack",
+      "fallbackGradient": "linear-gradient(160deg, #7A1E12 0%, #C63A20 55%, #D9622C 82%, #292019 100%)",
+      "priority": true
+    },
+    {
+      "slot": "home-flavorpulse-band",
+      "section": "Home / Flavor Pulse ticker strip (thin band under hero)",
+      "subject": "No photography — surfaceAlt charcoal band carrying mono-caps trend terms and ember-dot separators over the committed grain texture.",
+      "unsplashQuery": "none — local grain texture band only",
+      "treatment": "grain overlay on surfaceAlt (#292019 dark / #EFE6D8 light), no image; ember-dot glyph separators from the local SVG set.",
+      "aspectRatio": "full-width x 52px band",
+      "fallbackGradient": "linear-gradient(90deg, #292019 0%, #1F1815 50%, #292019 100%)",
+      "priority": true
+    },
+    {
+      "slot": "home-category-tile-fermented-funky",
+      "section": "Home / Category Glyph Grid + Explore collection bands (photo sits BEHIND the local SVG category glyph)",
+      "subject": "Bubbling fermented paste / kimchi crock surface texture — deep funk, glossy sheen.",
+      "unsplashQuery": "fermented chili paste kimchi crock texture",
+      "treatment": "TIER 2 charcoal + plum-funk duotone (grad-plum-funk map) + 6% grain; category glyph and label sit on top in bone/ember.",
+      "aspectRatio": "3:2",
+      "fallbackGradient": "linear-gradient(150deg, #3A1C2E 0%, #5E2A3E 50%, #8A3A2C 88%, #161210 100%)",
+      "priority": false
+    },
+    {
+      "slot": "home-category-tile-charred-smoky",
+      "section": "Home / Category Glyph Grid",
+      "subject": "Blistered, blackened grill edges — flesh going char-sweet over open flame.",
+      "unsplashQuery": "charred grilled meat blistered flame closeup",
+      "treatment": "TIER 2 charcoal + ember duotone + 6% grain.",
+      "aspectRatio": "3:2",
+      "fallbackGradient": "linear-gradient(150deg, #E86A2C 0%, #C63A20 48%, #7A1E12 80%, #161210 100%)",
+      "priority": false
+    },
+    {
+      "slot": "home-category-tile-noodles-broths",
+      "section": "Home / Category Glyph Grid",
+      "subject": "Chopstick-lifted chewy noodles with sauce clinging / steam off a deep bowl.",
+      "unsplashQuery": "chewy noodles chopstick lift steam bowl",
+      "treatment": "TIER 2 charcoal + amber duotone + 6% grain.",
+      "aspectRatio": "3:2",
+      "fallbackGradient": "linear-gradient(150deg, #C9A227 0%, #9A7A1E 46%, #4A3A16 80%, #161210 100%)",
+      "priority": false
+    },
+    {
+      "slot": "home-category-tile-rice-bowls",
+      "section": "Home / Category Glyph Grid",
+      "subject": "Crisp-bottomed stone-bowl rice with bright seasoned vegetable wedges and a gochujang crown.",
+      "unsplashQuery": "bibimbap stone bowl vegetables egg",
+      "treatment": "TIER 2 charcoal + celadon-into-ember duotone + 6% grain.",
+      "aspectRatio": "3:2",
+      "fallbackGradient": "linear-gradient(150deg, #7A9E4B 0%, #4A6B32 46%, #2A3A20 78%, #161210 100%)",
+      "priority": false
+    },
+    {
+      "slot": "home-category-tile-small-plates",
+      "section": "Home / Category Glyph Grid",
+      "subject": "Sticky glazed fried chicken / street-food small plates with swagger, macro on the lacquer.",
+      "unsplashQuery": "korean fried chicken glazed macro",
+      "treatment": "TIER 2 charcoal + brick-red duotone + 6% grain.",
+      "aspectRatio": "3:2",
+      "fallbackGradient": "linear-gradient(150deg, #B5493B 0%, #7E3227 48%, #3A1E18 80%, #161210 100%)",
+      "priority": false
+    },
+    {
+      "slot": "home-category-tile-braises-stews",
+      "section": "Home / Category Glyph Grid",
+      "subject": "Bubbling brick-red stew in an earthenware pot — tofu, surface simmer, rising steam.",
+      "unsplashQuery": "kimchi stew earthenware bubbling pot",
+      "treatment": "TIER 2 charcoal + deep-rust duotone + 6% grain.",
+      "aspectRatio": "3:2",
+      "fallbackGradient": "linear-gradient(150deg, #8C3B24 0%, #5E2818 48%, #33180F 80%, #161210 100%)",
+      "priority": false
+    },
+    {
+      "slot": "home-category-tile-sweet-heat",
+      "section": "Home / Category Glyph Grid",
+      "subject": "Glossy dark-chocolate ganache tart slice with flaky salt — restraint with a slow ember finish.",
+      "unsplashQuery": "dark chocolate tart slice flaky salt",
+      "treatment": "TIER 2 charcoal + rose-ember duotone + 6% grain.",
+      "aspectRatio": "3:2",
+      "fallbackGradient": "linear-gradient(150deg, #E0607A 0%, #9E3E52 46%, #3A1E28 80%, #161210 100%)",
+      "priority": false
+    },
+    {
+      "slot": "home-kitchen-teaser",
+      "section": "Home / Kitchen (Mise) Teaser (animated tracker preview)",
+      "subject": "Optional atmospheric backdrop only — a hand pressing a lid onto a ferment jar / marinade in progress, heavily backgrounded behind the streak-flame + ProgressRing + StatTiles UI mock.",
+      "unsplashQuery": "hands sealing fermentation jar kitchen process",
+      "treatment": "TIER 2 charcoal duotone at 30% opacity behind live UI graphics + grain; UI (ProgressRing, gauge, flame) is local SVG, not photo.",
+      "aspectRatio": "3:2 (background), UI overlaid",
+      "fallbackGradient": "linear-gradient(165deg, #292019 0%, #1F1815 55%, #161210 100%)",
+      "priority": false
+    },
+    {
+      "slot": "home-story-card-slow-fire",
+      "section": "Home / Editorial Story Rail (horizontal carousel)",
+      "subject": "Rooftop clay jars (onggi) of gochujang catching a year of sun in Sunchang — the slow ferment.",
+      "unsplashQuery": "korean onggi fermentation jars rooftop sun",
+      "treatment": "TIER 2 charcoal + ember duotone + 6% grain + bottom scrim for the mono category label and Fraunces title.",
+      "aspectRatio": "3:2",
+      "fallbackGradient": "linear-gradient(160deg, #C63A20 0%, #7A1E12 55%, #292019 100%)",
+      "priority": false
+    },
+    {
+      "slot": "home-story-card-seoul-midnight",
+      "section": "Home / Editorial Story Rail",
+      "subject": "Neon-lit Seoul street-food alley after midnight — steam, plastic stools, charcoal grill glow.",
+      "unsplashQuery": "seoul street food night neon alley steam",
+      "treatment": "TIER 2 charcoal + ember duotone (neon reads as crimson/persimmon) + 6% grain + scrim.",
+      "aspectRatio": "3:2",
+      "fallbackGradient": "linear-gradient(160deg, #E8542E 0%, #8A3A2C 50%, #1F1815 100%)",
+      "priority": false
+    },
+    {
+      "slot": "home-story-card-doenjang-funk",
+      "section": "Home / Editorial Story Rail",
+      "subject": "Doenjang (fermented soybean paste) close-up — earthy, dark, savory funk, a spoon dragging through.",
+      "unsplashQuery": "doenjang fermented soybean paste macro spoon",
+      "treatment": "TIER 2 charcoal + plum-funk duotone + 6% grain + scrim.",
+      "aspectRatio": "3:2",
+      "fallbackGradient": "linear-gradient(160deg, #5E2A3E 0%, #3A1C2E 55%, #161210 100%)",
+      "priority": false
+    },
+    {
+      "slot": "home-testimonial-portrait-priya",
+      "section": "Home / Social Proof Band (pull-quote portraits, small)",
+      "subject": "Warm candid portrait of a home cook in a kitchen — Priya Menon, London.",
+      "unsplashQuery": "home cook portrait kitchen warm candid",
+      "treatment": "TIER 2 charcoal + ember duotone, thin 1px celadon ring, 6% grain — unifies mismatched portrait stock into one system.",
+      "aspectRatio": "1:1",
+      "fallbackGradient": "linear-gradient(150deg, #8A3A2C 0%, #5E2A3E 55%, #1F1815 100%)",
+      "priority": false
+    },
+    {
+      "slot": "home-testimonial-portrait-daniel",
+      "section": "Home / Social Proof Band",
+      "subject": "Line cook portrait, apron, focused — Daniel Okafor, Brooklyn.",
+      "unsplashQuery": "line cook portrait apron professional kitchen",
+      "treatment": "TIER 2 charcoal + ember duotone, thin ember ring, 6% grain.",
+      "aspectRatio": "1:1",
+      "fallbackGradient": "linear-gradient(150deg, #C63A20 0%, #7A1E12 55%, #1F1815 100%)",
+      "priority": false
+    },
+    {
+      "slot": "home-testimonial-portrait-sofia",
+      "section": "Home / Social Proof Band",
+      "subject": "Food writer at a desk / with a dish — Sofia Duarte.",
+      "unsplashQuery": "food writer portrait natural light",
+      "treatment": "TIER 2 charcoal + ember duotone, thin ember ring, 6% grain.",
+      "aspectRatio": "1:1",
+      "fallbackGradient": "linear-gradient(150deg, #D9622C 0%, #8C3B24 55%, #1F1815 100%)",
+      "priority": false
+    },
+    {
+      "slot": "explore-dishcard-gochujang-galbi",
+      "section": "Explore / Mosaic DishCard (4:3 masked, duotone-at-rest → full-color+scale on hover)",
+      "subject": "Gochujang-glazed galbi short ribs, lacquered black-crimson, charred edges.",
+      "unsplashQuery": "grilled korean short ribs glaze",
+      "treatment": "TIER 2 duotone at rest → TIER 1 full-color warm-grade on hover (1.06 scale under mask) + 5% grain; SpiceMeter chip top-left, heart top-right.",
+      "aspectRatio": "4:3",
+      "fallbackGradient": "linear-gradient(150deg, #E86A2C 0%, #C63A20 50%, #33180F 100%)",
+      "priority": false
+    },
+    {
+      "slot": "explore-dishcard-baechu-kimchi",
+      "section": "Explore / Mosaic DishCard",
+      "subject": "Baechu kimchi — scarlet-pasted napa leaves packed in a jar.",
+      "unsplashQuery": "napa cabbage kimchi jar",
+      "treatment": "TIER 2 plum-funk duotone at rest → full-color hover + 5% grain.",
+      "aspectRatio": "4:3",
+      "fallbackGradient": "linear-gradient(150deg, #C63A20 0%, #7A1E12 50%, #3A1C2E 100%)",
+      "priority": false
+    },
+    {
+      "slot": "explore-dishcard-rose-tteokbokki",
+      "section": "Explore / Mosaic DishCard",
+      "subject": "Rosé tteokbokki — glossy blush-pink cream sauce coating chewy rice cakes.",
+      "unsplashQuery": "tteokbokki rice cakes creamy",
+      "treatment": "TIER 2 duotone at rest → full-color hover + 5% grain.",
+      "aspectRatio": "4:3",
+      "fallbackGradient": "linear-gradient(150deg, #E0607A 0%, #B5493B 50%, #33180F 100%)",
+      "priority": false
+    },
+    {
+      "slot": "explore-dishcard-dolsot-bibimbap",
+      "section": "Explore / Mosaic DishCard",
+      "subject": "Dolsot bibimbap — sizzling stone bowl, bright vegetable wedges, molten egg, gochujang crown.",
+      "unsplashQuery": "bibimbap stone bowl",
+      "treatment": "TIER 2 duotone at rest → full-color hover + 5% grain.",
+      "aspectRatio": "4:3",
+      "fallbackGradient": "linear-gradient(150deg, #7A9E4B 0%, #8C3B24 50%, #161210 100%)",
+      "priority": false
+    },
+    {
+      "slot": "explore-dishcard-doenjang-jjigae",
+      "section": "Explore / Mosaic DishCard",
+      "subject": "Doenjang jjigae — rustic soybean stew with tofu, bubbling.",
+      "unsplashQuery": "doenjang stew tofu",
+      "treatment": "TIER 2 plum-funk duotone at rest → full-color hover + 5% grain.",
+      "aspectRatio": "4:3",
+      "fallbackGradient": "linear-gradient(150deg, #8C3B24 0%, #5E2818 50%, #161210 100%)",
+      "priority": false
+    },
+    {
+      "slot": "explore-dishcard-yangnyeom-chicken",
+      "section": "Explore / Mosaic DishCard",
+      "subject": "Yangnyeom fried chicken — sticky gochujang glaze, sesame, glass-crisp crust.",
+      "unsplashQuery": "korean fried chicken glazed",
+      "treatment": "TIER 2 duotone at rest → full-color hover + 5% grain.",
+      "aspectRatio": "4:3",
+      "fallbackGradient": "linear-gradient(150deg, #E86A2C 0%, #B5493B 50%, #33180F 100%)",
+      "priority": false
+    },
+    {
+      "slot": "explore-dishcard-buldak-fire-noodles",
+      "section": "Explore / Mosaic DishCard",
+      "subject": "Buldak fire noodles — searing crimson lacquer, optional melted mozzarella, sesame + seaweed.",
+      "unsplashQuery": "spicy korean fire noodles",
+      "treatment": "TIER 2 ember duotone at rest → full-color hover + 5% grain; 5/5 SpiceMeter glows hottest here.",
+      "aspectRatio": "4:3",
+      "fallbackGradient": "linear-gradient(150deg, #E8542E 0%, #C63A20 45%, #7A1E12 100%)",
+      "priority": false
+    },
+    {
+      "slot": "explore-dishcard-gochujang-bolognese",
+      "section": "Explore / Mosaic DishCard",
+      "subject": "Gochujang bolognese — silky meat ragù clinging to tagliatelle ribbons.",
+      "unsplashQuery": "bolognese tagliatelle bowl",
+      "treatment": "TIER 2 duotone at rest → full-color hover + 5% grain.",
+      "aspectRatio": "4:3",
+      "fallbackGradient": "linear-gradient(150deg, #C9A227 0%, #8C3B24 50%, #161210 100%)",
+      "priority": false
+    },
+    {
+      "slot": "explore-dishcard-kimchi-jjigae",
+      "section": "Explore / Mosaic DishCard",
+      "subject": "Kimchi jjigae — brick-red stew with pork belly and tofu, volcanic simmer.",
+      "unsplashQuery": "kimchi stew pork",
+      "treatment": "TIER 2 duotone at rest → full-color hover + 5% grain.",
+      "aspectRatio": "4:3",
+      "fallbackGradient": "linear-gradient(150deg, #B5493B 0%, #7A1E12 50%, #161210 100%)",
+      "priority": false
+    },
+    {
+      "slot": "explore-dishcard-gochujang-birria-tacos",
+      "section": "Explore / Mosaic DishCard",
+      "subject": "Gochujang birria tacos — crimson-fat-crisped tortillas, molten cheese pull, consommé.",
+      "unsplashQuery": "birria tacos consomme cheese pull",
+      "treatment": "TIER 2 ember duotone at rest → full-color hover + 5% grain.",
+      "aspectRatio": "4:3",
+      "fallbackGradient": "linear-gradient(150deg, #C63A20 0%, #8C3B24 50%, #161210 100%)",
+      "priority": false
+    },
+    {
+      "slot": "explore-dishcard-gochujang-miso-black-cod",
+      "section": "Explore / Mosaic DishCard",
+      "subject": "Gochujang-miso black cod — caramel-blistered glaze, custard-soft flesh, microgreens.",
+      "unsplashQuery": "miso black cod fillet broiled",
+      "treatment": "TIER 2 duotone at rest → full-color hover + 5% grain.",
+      "aspectRatio": "4:3",
+      "fallbackGradient": "linear-gradient(150deg, #D9622C 0%, #8C3B24 50%, #1F1815 100%)",
+      "priority": false
+    },
+    {
+      "slot": "explore-dishcard-gochujang-shakshuka",
+      "section": "Explore / Mosaic DishCard",
+      "subject": "Gochujang shakshuka — jammy eggs in a smoky brick-red tomato bath, feta, cilantro.",
+      "unsplashQuery": "shakshuka eggs skillet",
+      "treatment": "TIER 2 duotone at rest → full-color hover + 5% grain.",
+      "aspectRatio": "4:3",
+      "fallbackGradient": "linear-gradient(150deg, #C63A20 0%, #8C3B24 50%, #161210 100%)",
+      "priority": false
+    },
+    {
+      "slot": "explore-dishcard-ssamjang-pork-ssam",
+      "section": "Explore / Mosaic DishCard",
+      "subject": "Ssam — grilled pork belly in a lettuce leaf with rice and a dab of ssamjang.",
+      "unsplashQuery": "korean pork belly lettuce ssam",
+      "treatment": "TIER 2 plum-funk duotone at rest → full-color hover + 5% grain.",
+      "aspectRatio": "4:3",
+      "fallbackGradient": "linear-gradient(150deg, #7A9E4B 0%, #5E2A3E 50%, #161210 100%)",
+      "priority": false
+    },
+    {
+      "slot": "explore-dishcard-gochujang-chocolate-tart",
+      "section": "Explore / Mosaic DishCard",
+      "subject": "Gochujang dark chocolate tart — glossy bittersweet ganache slice, flaky salt.",
+      "unsplashQuery": "dark chocolate ganache tart slice",
+      "treatment": "TIER 2 rose-ember duotone at rest → full-color hover + 5% grain.",
+      "aspectRatio": "4:3",
+      "fallbackGradient": "linear-gradient(150deg, #E0607A 0%, #7A1E12 50%, #161210 100%)",
+      "priority": false
+    },
+    {
+      "slot": "explore-collection-band-fermented-funky",
+      "section": "Explore / Interspersed collection band ('Fermented & Funky', every ~8 cards)",
+      "subject": "Full-bleed macro of active ferment surface — bubbles, scarlet paste, funk texture.",
+      "unsplashQuery": "fermenting kimchi bubbles macro texture",
+      "treatment": "TIER 2 grad-plum-funk duotone full-bleed band + 6% grain + Fraunces band title on scrim.",
+      "aspectRatio": "21:9 band",
+      "fallbackGradient": "linear-gradient(150deg, #3A1C2E 0%, #5E2A3E 50%, #8A3A2C 100%)",
+      "priority": false
+    },
+    {
+      "slot": "explore-collection-band-weeknight-fire",
+      "section": "Explore / Interspersed collection band ('Weeknight Fire')",
+      "subject": "Full-bleed flame-blistered char / searing wok fire — molten heat.",
+      "unsplashQuery": "wok fire flame char cooking",
+      "treatment": "TIER 2 grad-ember-radial duotone full-bleed band + 6% grain + Fraunces band title on scrim.",
+      "aspectRatio": "21:9 band",
+      "fallbackGradient": "radial-gradient(120% 120% at 20% 0%, #F0873F 0%, #C63A20 55%, #7A1E12 100%)",
+      "priority": false
+    },
+    {
+      "slot": "dish-detail-hero",
+      "section": "Dish Detail / Immersive hero (per-dish, large duotone-to-color image)",
+      "subject": "The dish itself at maximum appetite — macro, char/steam/gloss visible; uses each dish's own unsplashQuery from the catalog (galbi shown as pattern exemplar).",
+      "unsplashQuery": "grilled korean short ribs char glaze closeup",
+      "treatment": "TIER 1 full-color warm-grade + inner vignette (shadow-inset-dark) + bottom grad-duotone-ink scrim carrying title/cuisine/SpiceMeter/rating + 6% grain. This is the LCP image: eager, fetchpriority high, preloaded.",
+      "aspectRatio": "3:2 desktop / 4:5 mobile (object-fit:cover)",
+      "fallbackGradient": "linear-gradient(160deg, #7A1E12 0%, #C63A20 55%, #D9622C 82%, #292019 100%)",
+      "priority": true
+    },
+    {
+      "slot": "dish-detail-pairing-card",
+      "section": "Dish Detail / Pairings rail (drink/wine/side PairingCards)",
+      "subject": "Small duotone crops — a pour of natural wine, cold beer with condensation, or a banchan side; three per dish.",
+      "unsplashQuery": "natural wine pour glass moody",
+      "treatment": "TIER 2 charcoal + ember duotone + 6% grain, 20px radius, mono meta label.",
+      "aspectRatio": "1:1",
+      "fallbackGradient": "linear-gradient(150deg, #8C3B24 0%, #5E2A3E 55%, #1F1815 100%)",
+      "priority": false
+    },
+    {
+      "slot": "dish-detail-related-carousel",
+      "section": "Dish Detail / Related dishes carousel",
+      "subject": "Same-category sibling dishes reusing their own catalog unsplashQuery.",
+      "unsplashQuery": "korean food dish closeup (per related dish)",
+      "treatment": "TIER 2 duotone at rest → full-color hover, matching DishCard spec + 5% grain.",
+      "aspectRatio": "4:3",
+      "fallbackGradient": "linear-gradient(150deg, #C63A20 0%, #7A1E12 50%, #161210 100%)",
+      "priority": false
+    },
+    {
+      "slot": "about-manifesto-hero",
+      "section": "About / Manifesto hero (bold POV statement over brand art)",
+      "subject": "Primarily the GenerativeHeroArt gradient-mesh with an optional atmospheric single onggi jar / lone chili macro backgrounded behind the Fraunces manifesto lines.",
+      "unsplashQuery": "single red chili pepper macro dark background",
+      "treatment": "Generative gradient-mesh SVG base (grad-ember-radial) + optional TIER 2 duotone photo at 25% + 6% grain; type is the hero, image is atmosphere.",
+      "aspectRatio": "16:9 / full-bleed",
+      "fallbackGradient": "radial-gradient(120% 120% at 30% 20%, #F0873F 0%, #C63A20 50%, #7A1E12 78%, #161210 100%)",
+      "priority": true
+    },
+    {
+      "slot": "about-origin-story",
+      "section": "About / Origin story ('Why Gochujang')",
+      "subject": "A jar of gochujang paste being spooned / rooftop onggi fermentation — patience, heat, point of view.",
+      "unsplashQuery": "gochujang paste jar spoon onggi fermentation",
+      "treatment": "TIER 1 full-color warm-grade + 5% grain, contained editorial column beside 68ch prose.",
+      "aspectRatio": "3:2",
+      "fallbackGradient": "linear-gradient(160deg, #C63A20 0%, #8A3A2C 50%, #292019 100%)",
+      "priority": false
+    },
+    {
+      "slot": "about-contributor-portrait",
+      "section": "About / Contributors team grid (duotone portraits, one per chef/contributor)",
+      "subject": "Chef/contributor portraits (Ha-eun Sohn, Soo-a Lim, June Cho, etc.) — candid, warm, in-kitchen.",
+      "unsplashQuery": "chef portrait kitchen candid warm light",
+      "treatment": "TIER 2 charcoal + ember duotone, thin ember ring, 6% grain — one unified portrait system across all contributors.",
+      "aspectRatio": "4:5 portrait",
+      "fallbackGradient": "linear-gradient(150deg, #8C3B24 0%, #5E2A3E 55%, #1F1815 100%)",
+      "priority": false
+    },
+    {
+      "slot": "about-press-band",
+      "section": "About / Press & recognition band",
+      "subject": "No photography — grain-textured grad-paper-sheen (light) / grad-ember-radial (dark) strip carrying mono-treated press wordmarks.",
+      "unsplashQuery": "none — local grain texture strip only",
+      "treatment": "grain overlay on paper-sheen/ember-radial, restrained mono wordmarks, no loud logos.",
+      "aspectRatio": "full-width x 96px band",
+      "fallbackGradient": "radial-gradient(140% 100% at 50% -20%, #FBF7F0 0%, #F5EFE6 55%, #EFE6D8 100%)",
+      "priority": false
+    },
+    {
+      "slot": "kitchen-hero-header",
+      "section": "Kitchen (Mise) / Personalized hero header background",
+      "subject": "No photography — generative gradient-mesh brand art behind the greeting, avatar, kitchen level and animated streak flame.",
+      "unsplashQuery": "none — local GenerativeHeroArt gradient-mesh only",
+      "treatment": "grad-ember-radial mesh + 6% grain; all foreground (flame, avatar ring, stat tiles) is local SVG/UI.",
+      "aspectRatio": "full-width x ~280px header",
+      "fallbackGradient": "radial-gradient(120% 120% at 15% 0%, #F0873F 0%, #C63A20 50%, #7A1E12 80%, #161210 100%)",
+      "priority": true
+    },
+    {
+      "slot": "kitchen-cooklog-thumb",
+      "section": "Kitchen (Mise) / Recently Cooked feed + Wishlist cards",
+      "subject": "Small crops of the user's logged/wishlisted dishes reusing each dish's catalog unsplashQuery, or user-uploaded cook photos.",
+      "unsplashQuery": "korean home cooking dish small (per logged dish)",
+      "treatment": "TIER 2 charcoal + ember duotone + 5% grain, 20px radius, mono meta.",
+      "aspectRatio": "1:1",
+      "fallbackGradient": "linear-gradient(150deg, #C63A20 0%, #7A1E12 55%, #161210 100%)",
+      "priority": false
+    },
+    {
+      "slot": "kitchen-empty-state",
+      "section": "Kitchen (Mise) / Empty states (no cooks yet, no batches, empty wishlist, empty passport)",
+      "subject": "No photography — illustrated local SVG (empty vessel + ember-drop, faded passport seal, dormant ProgressRing) with a reset/'log your first cook' nudge.",
+      "unsplashQuery": "none — local illustrated EmptyState SVG only",
+      "treatment": "Committed SVG illustration on surfaceAlt + faint grain; ember or celadon accent line; never a broken photo box.",
+      "aspectRatio": "square illustration ~320px",
+      "fallbackGradient": "linear-gradient(165deg, #292019 0%, #1F1815 55%, #161210 100%)",
+      "priority": false
+    },
+    {
+      "slot": "home-newsletter-band",
+      "section": "Home + About / Join / Newsletter CTA band",
+      "subject": "No photography — generative gradient band ('Bring your appetite. We'll bring the heat.') behind the input + crimson submit.",
+      "unsplashQuery": "none — local generative gradient band only",
+      "treatment": "grad-paper-sheen (light) / grad-ember-radial (dark) + 6% grain; ember-drop mark accent.",
+      "aspectRatio": "full-width x ~360px band",
+      "fallbackGradient": "radial-gradient(120% 140% at 80% 100%, #F0873F 0%, #C63A20 48%, #7A1E12 76%, #161210 100%)",
+      "priority": false
+    }
+  ],
+  "graphicAssets": [
+    {
+      "name": "film-grain-texture",
+      "type": "Tiled SVG noise overlay (feTurbulence)",
+      "description": "256x256 tileable SVG using feTurbulence baseFrequency 0.9, numOctaves 2, feColorMatrix to monochrome, output as a repeating fixed overlay. mix-blend-mode: overlay. The single most important cohesion asset — sits over every dark surface and every full-bleed/duotone image.",
+      "palette": "Neutral monochrome noise; opacity 0.04 on bone light surfaces (#F5EFE6), 0.06 on charcoal dark (#161210)",
+      "usage": "Global fixed overlay on hero, all cards, category tiles, story cards, portraits, marquee band, newsletter/press bands. Frozen (static) under prefers-reduced-motion. Kills flat digital emptiness, adds print-magazine tactility, guarantees render offline."
+    },
+    {
+      "name": "generative-hero-mesh",
+      "type": "Seeded generative gradient-mesh SVG (GenerativeHeroArt)",
+      "description": "Warm-charcoal field with an off-center molten ember bloom (large soft radial) anchored bottom-right, plus 2-3 seeded low-opacity blobs for organic depth. Deterministic from a seed so each route/dish gets a stable but distinct composition. Renders BEHIND every SmartImage so the crimson accent lands in-viewport even if the CDN fails.",
+      "palette": "Charcoal #161210 / clay #1A1310 field; ember bloom radial #F0873F → #C63A20 → #7A1E12 at ~40% opacity",
+      "usage": "Base layer of Home hero, About manifesto hero, Kitchen header, newsletter band, and the guaranteed-render backdrop under all SmartImages. One signature Ken-Burns-adjacent slow drift only on hero; static elsewhere and under reduced-motion."
+    },
+    {
+      "name": "brandmark-ember-drop",
+      "type": "Brand wordmark + standalone app-icon glyph SVG",
+      "description": "'Gochujang' wordmark in a bold high-contrast grotesque with tight tracking; the dot of the 'j' is a single glowing ember teardrop with a faint 4px bloom. Standalone mark is a rounded-square 'G' with the ember drop in its counter — doubles as favicon/app icon. Flat, no gloss, weight and one spot color do the shouting.",
+      "palette": "Near-black ink #1A1310 (light) / bone #F4EBDF (dark) wordmark; ember drop grad-ember #C63A20 → #E8542E → #F0873F — the only element permitted to glow",
+      "usage": "GlobalNav (ember-drop pulses once on scroll-past-fold), footer oversized lockup, favicon, ShareCard, achievement-unlock stamp. aria-hidden decorative flourish; wordmark text has an accessible name."
+    },
+    {
+      "name": "category-glyph-set",
+      "type": "Set of 7 hand-built single-weight SVG category marks (CategoryGlyph)",
+      "description": "One flat rounded-geometry glyph per content category on a 32px art grid, 14px-radius forms echoing the wordmark: Fermented & Funky (ferment jar/bubbles), Charred & Smoky (flame/char stroke), Noodles & Broth (steaming bowl + strands), Rice & Bowls (stone bowl + grain), Small Plates & Banchan (stacked plates), Braises & Stews (bubbling pot), Sweet Heat (chili + sugar-crystal). Can fill with grad-ember or duotone.",
+      "palette": "Bone #F5EFE6 / ink #1A1310 at rest; fills grad-ember or the per-category accent (#D6482B, #E86A2C, #C9A227, #7A9E4B, #B5493B, #8C3B24, #E0607A) on hover/duotone",
+      "usage": "Home Category Glyph Grid (draw-in / rotate + bone→crimson shift on hover), Explore filter chips, category headers, sit ON TOP of the category-tile photos so the grid renders richly even if photos fail."
+    },
+    {
+      "name": "chili-spice-glyph",
+      "type": "Single chili-pepper SVG unit (SpiceMeter / Scoville gauge)",
+      "description": "One flat rounded chili-pepper mark repeated 1–10 for the heat ramp; empty = border-token outline, filled = grad-ember, active tip carries a soft ember bloom. The same geometry becomes the 270° Scoville gauge arc in Mise.",
+      "palette": "Filled grad-ember #C63A20 → #F0873F with ember-bloom tip; empty outline border token (#E0D5C4 light / #3A2E26 dark)",
+      "usage": "DishCard heat chip, Dish Detail SpiceMeter, Kitchen Scoville gauge (arc animates 0→value 800ms). Always paired with a numeric mono label + word band ('Mild'…'Scorching') so heat is never color-only."
+    },
+    {
+      "name": "passport-stamp-seals",
+      "type": "Set of circular cuisine/technique seal SVGs (PassportStamp)",
+      "description": "Faux rubber-stamp circular seals, one per cuisine/region conquered (Seoul, Jeonju, Busan, Jalisco×Seoul, Bologna×Seoul, Kyoto×Seoul, Tel Aviv×Seoul, Paris×Seoul…), single-weight with a slightly distressed edge for authenticity; celadon ring appears at mastery.",
+      "palette": "Ink/bone seal with ember ring (unlocked) or textSubtle desaturated 60% (locked); celadon #3E7C63/#5FB08C mastery ring",
+      "usage": "Kitchen Flavor Passport map — stamps land with a scale-spring on unlock. role=img with descriptive aria-label per seal."
+    },
+    {
+      "name": "ember-motif-set",
+      "type": "Decorative ember/spark SVG accents",
+      "description": "A small family of ember shapes: the teardrop drop, a rising-spark cluster, a soft glow bloom, and a flame flicker for the streak counter. Single-weight, fill grad-ember, used sparingly as the 'heat' punctuation of the system.",
+      "palette": "grad-ember #C63A20 → #E8542E → #F0873F; glow bloom uses shadow-ember-lg",
+      "usage": "Flavor Pulse dot separators, streak flame (gentle 3s flicker), achievement-unlock burst (grad-ember-radial flash), newsletter submit checkmark burst, section eyebrow lead accents. Ambient only, disabled under reduced-motion."
+    },
+    {
+      "name": "section-divider-hairline",
+      "type": "SVG/CSS hairline + ember-underline reveal",
+      "description": "A 1px border-token hairline lead-rule for SectionHeaders, plus the signature 1px ember underline that wipes left→right on link/nav hover (200ms, a knife-stroke micro-interaction). The only 'line' in the system — everything else is space, shadow or color.",
+      "palette": "Hairline border token (#E0D5C4 light / #3A2E26 dark); underline wipe accent #D9622C / #F0873F",
+      "usage": "SectionHeader lead rule, GlobalNav + link hover underline-wipe, active nav item solid ember underline, footer column dividers."
+    },
+    {
+      "name": "duotone-svg-filter",
+      "type": "Reusable inline SVG feColorMatrix / gradientMap duotone filter",
+      "description": "The charcoal+ember duotone engine (map shadows→#161210, highlights→#E8542E) plus plum-funk (#3A1C2E→#8A3A2C), amber, celadon and rose variants selectable per category. Applied to all TIER 2 imagery to fuse mismatched Unsplash stock into one branded system; removed on DishCard hover to reveal full color.",
+      "palette": "Shadow #161210 → highlight per-treatment (#E8542E ember default; plum #8A3A2C; celadon #5FB08C; amber #C9A227; rose #E0607A)",
+      "usage": "Category tiles, thumbnails, portraits, story cards, pairing cards, collection bands, kitchen thumbs. The unifying grade that makes the whole site feel like one shoot."
+    },
+    {
+      "name": "achievement-medallion-frames",
+      "type": "Filled glyph medallion SVG frames (AchievementBadge)",
+      "description": "Circular filled-glyph medallions with a thin ember (unlocked) or textSubtle (locked, desaturated) ring; unlock plays a grad-ember-radial burst + scale spring. Tiered badges: First Ferment, Chili Head, Ten Cuisines, etc.",
+      "palette": "Ember ring #D9622C / celadon ring #3E7C63 for fresh-track badges; locked textSubtle desaturated 60%",
+      "usage": "Kitchen Achievements shelf, unlock toasts, ShareCard. role=img with title + progress text so state is not color-only."
+    },
+    {
+      "name": "skeleton-shimmer",
+      "type": "SVG/CSS loading placeholder",
+      "description": "SurfaceAlt → elevated sweep placeholder matching each slot's aspect-ratio box (reserved via CSS aspect-ratio so CLS stays <0.1). Freezes to a static neutral block under prefers-reduced-motion.",
+      "palette": "surfaceAlt #EFE6D8/#292019 base, elevated #FFFFFF/#312620 sweep highlight",
+      "usage": "MosaicGrid + Explore infinite scroll, Kitchen boards, QuickLook image load. Always present so the layout never jumps between fallback and photo."
+    },
+    {
+      "name": "scroll-cue-and-progress",
+      "type": "Thin SVG scroll cue + 2px scroll-progress bar",
+      "description": "A minimal animated down-cue in the hero and a 2px crimson ScrollProgress bar at the top edge giving depth/pace on long pages.",
+      "palette": "Crimson #C63A20 / #E8542E on transparent",
+      "usage": "Hero bottom scroll cue, top-of-viewport progress bar (aria-hidden decorative). Freezes under reduced-motion."
+    },
+    {
+      "name": "flavor-radar-hexagon",
+      "type": "6-axis SVG radar chart frame (FlavorRadar)",
+      "description": "Hexagonal 6-axis (heat, umami, acidity, sweetness, funk, texture) plot on a charcoal card; hairline grid in border token, plotted area grad-ember 25% fill + 1.5px accent stroke, vertex dots on accent. Path draws on whileInView.",
+      "palette": "Grid border token; fill grad-ember at 25%; stroke accent #D9622C; charcoal card ground",
+      "usage": "Dish Detail flavor visualization + Home Featured Dish teaser. role=img with full aria-label of every axis value (never color-only), grid vs fill differ >3:1."
+    }
+  ],
+  "cohesionRules": [
+    "ONE WARM GRADE EVERYWHERE: every food photo is pushed warm, shadows deepened toward charcoal (#161210), and the red/crimson channel protected so gochujang food glows. No cool-blue, no flat-neutral, no high-key bright-white shots survive the grade — this single rule makes 15+ mismatched Unsplash sources read as one commissioned shoot.",
+    "TWO TIERS, NEVER MORE THAN ONE TIER-1 PER SCREEN: Tier 1 (full-color warm-grade) is reserved for the hero, the dish-detail hero, the Home featured spotlight, and the DishCard hover state — the mouth-watering focal image. Everything else (category tiles, thumbnails, portraits, story cards, pairings, backgrounds) is Tier 2 charcoal+ember duotone so it recedes into brand. Only one full-color focal image competes for the eye on any given screen.",
+    "GRAIN IS UNIVERSAL AND CONSTANT: the same feTurbulence film grain (0.04 light / 0.06 dark, mix-blend overlay) sits over every surface and every image at the same opacity. It is the tactile print-magazine glue and the offline-render guarantee. Freeze it, never remove it, under reduced-motion.",
+    "NEVER A RAW IMG — THE FALLBACK IS THE DESIGN: every SmartImage renders its palette-derived fallbackGradient + the seeded generative-hero-mesh + grain BEHIND the <img>; onError hides the photo and keeps the gradient. A CDN miss must reveal intentional brand art, never a broken box. Aspect-ratio boxes reserve every slot so CLS stays <0.1 whether the photo loads or fails.",
+    "ONE FOCAL DISCIPLINE: every food crop is CLOSE and TEXTURAL — char, steam, gloss, ferment funk, crumb — focal point placed off-center (rule-of-thirds) so a bottom-anchored scrim and overlaid type always have a clean landing zone. No wide styled tablescapes, no prop clutter, no empty-plate minimalism.",
+    "CRIMSON BY SCARCITY: the gochujang crimson→persimmon ember (#C63A20→#E8542E→#F0873F) appears as a spot accent only — CTAs, the wordmark ember drop, active states, SpiceMeter, key labels, and the fallback gradients. It is never a background wash on content surfaces and never used as small colored text on light paper (fails contrast). Its rarity is what keeps it loud.",
+    "ONE SCRIM RECIPE FOR ALL TEXT-ON-IMAGE: any text over photography sits on the same bottom-anchored grad-duotone-ink scrim (rgba(18,12,9,0) → rgba(18,12,9,0.92) over the lower ~45%), plus a 0 1px 3px rgba(0,0,0,0.6) text-shadow as belt-and-suspenders. Measured composited luminance under text stays ≤0.18 for white — a flat 55% veil is never enough over bright dishes.",
+    "ONE CORNER LANGUAGE: 20px radius on all cards (radius-card), 14px on glyphs/medallions, pill on chips/CTAs, 28px on modals — applied identically to photos, SVG assets, and UI so the whole system shares a silhouette.",
+    "DUOTONE MAP IS SHARED, HUE IS PER-CATEGORY: all Tier 2 imagery runs through the one reusable duotone-svg-filter; only the highlight hue swaps by category (ember default, plum for fermented/funk, amber for noodles, celadon for fresh/rice, rose for sweet-heat). Same engine, coordinated accents — variety without fragmentation.",
+    "SVG GRAPHIC LAYER CARRIES THE 'HIGHLY GRAPHIC' PUNCH, NOT PNGs: grain, mesh, brand mark, category glyphs, chili units, passport seals, radar, dividers all ship as local inline SVG (KB not MB, zero network dependency). Photography supplies appetite; the SVG spine supplies the guaranteed graphic identity that renders even with images.unsplash.com fully blocked.",
+    "FONT + NUMBER COHESION: Fraunces (display serif) on every headline, pull-quote and oversized numeral; Geist (sans) on all UI/body/metadata; Geist Mono tabular-nums on every stat, timer, Scoville, servings and streak count — the instrument-panel voice that contrasts the warm serif and reads consistently across all five routes.",
+    "STATE IS NEVER COLOR-ALONE: spice level, active filter, wouldCookAgain, batch status, and ratings each carry a second cue (icon/weight/underline/fill/label). Meters and gauges keep filled vs empty ≥3:1 apart, and all data-viz graphics (radar strokes, ring tracks, gauge arcs) clear 3:1 against their ground in BOTH themes.",
+    "COHESION VALIDATED IN BOTH THEMES: every treatment, scrim, and fallback is checked in light (bone) and dark (charcoal) — the warm grade, grain opacity, duotone map and accent scarcity hold identically so the site feels like one product whether viewed in light or dark mode."
+  ],
+  "overlayTreatments": [
+    "Bottom-anchored legibility scrim (grad-duotone-ink): linear-gradient(180deg, rgba(18,12,9,0) 0%, rgba(18,12,9,0.72) 70%, rgba(18,12,9,0.92) 100%) over the lower ~45% of every text-bearing image; the mandatory belt for hero, DishCard foot, story cards and dish-detail hero.",
+    "Charcoal+ember duotone (Tier 2 default): feColorMatrix/gradientMap shadows→#161210, highlights→#E8542E — the unifying grade for all secondary imagery; full color reserved for Tier 1 focal shots and DishCard hover.",
+    "Plum-funk duotone variant: shadows→#3A1C2E, mids→#5E2A3E, highlights→#8A3A2C — for all Fermented & Funky imagery and umami/ferment editorial bands (grad-plum-funk).",
+    "Celadon fresh duotone/wash variant: #1F3A30 → #3E7C63 → #7FBF9E — for Rice & Bowls, herbaceous collections, Flavor Passport and 'batch ready' success states; its coolness makes adjacent crimson read hotter.",
+    "Warm-grade color-correct (Tier 1): push warmth, deepen shadows toward charcoal, protect/boost the red channel so gochujang food glows; the single grade applied to every full-color food shot for shoot-level consistency.",
+    "Film-grain overlay: tiled feTurbulence noise, mix-blend-mode overlay, opacity 0.04 light / 0.06 dark — over every surface and every image, frozen under reduced-motion.",
+    "Inner vignette (shadow-inset-dark): inset 0 0 60px -20px rgba(0,0,0,0.55) on hero and duotone image frames to focus the eye and seat the image into the charcoal ground.",
+    "Text-shadow belt-and-suspenders: 0 1px 3px rgba(0,0,0,0.6) on any text over imagery — a secondary legibility guarantee, never the primary mechanism.",
+    "Palette fallback gradient + generative-mesh under-layer: every SmartImage carries its slot's fallbackGradient plus the seeded SVG mesh + grain behind the photo so a CDN miss renders intentional brand art.",
+    "Edge duotone bleed on hero: crimson→charcoal duotone feathered into the frame edges of the full-color hero so the accent color reaches the viewport corners and the image seats seamlessly into the charcoal page ground.",
+    "Grad-paper-sheen (light) / grad-ember-radial (dark) band wash: for newsletter, press and social-proof strips — warm paper depth or molten glow behind mono type, always dusted with the same grain."
+  ]
+}
