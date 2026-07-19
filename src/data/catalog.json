@@ -1,0 +1,677 @@
+{
+  "categories": [
+    {
+      "id": "fermented-funky",
+      "name": "Fermented & Funky",
+      "accent": "#D6482B",
+      "blurb": "Time is the secret ingredient. Kimchi, doenjang, and the slow-built funk that starts it all."
+    },
+    {
+      "id": "charred-smoky",
+      "name": "Charred & Smoky",
+      "accent": "#E86A2C",
+      "blurb": "Fire meets flesh. Grilled, broiled, and blistered until the edges go black and sweet."
+    },
+    {
+      "id": "noodles-broths",
+      "name": "Noodles & Broth",
+      "accent": "#C9A227",
+      "blurb": "Slurp-worthy strands and deep, layered bowls. Chewy, saucy, or swimming in broth."
+    },
+    {
+      "id": "rice-bowls",
+      "name": "Rice & Bowls",
+      "accent": "#7A9E4B",
+      "blurb": "One bowl, everything in it. Crisp-bottomed rice built for mixing hard at the table."
+    },
+    {
+      "id": "small-plates",
+      "name": "Small Plates & Banchan",
+      "accent": "#B5493B",
+      "blurb": "Snacks with swagger. Street food, banchan, and the plates you fight over."
+    },
+    {
+      "id": "braises-stews",
+      "name": "Braises & Stews",
+      "accent": "#8C3B24",
+      "blurb": "Low and slow, bubbling and bold. The comfort corner, turned all the way up."
+    },
+    {
+      "id": "sweet-heat",
+      "name": "Sweet Heat",
+      "accent": "#E0607A",
+      "blurb": "Sugar with a sting. Desserts and treats that finish on a slow ember."
+    }
+  ],
+  "dishes": [
+    {
+      "id": "gochujang-galbi",
+      "name": "Gochujang-Glazed Galbi Short Ribs",
+      "koreanName": "고추장 갈비",
+      "category": "charred-smoky",
+      "shortDesc": "Fire-kissed short ribs lacquered in fermented chili and grated pear.",
+      "longDesc": "Flanken-cut ribs bathe in gochujang, grated Korean pear, and toasted sesame until the sugars are ready to burn. A screaming-hot sear turns the marinade into glossy black lacquer with charred, caramel edges. Wrap each piece in lettuce and let the fermented heat do the talking.",
+      "spiceLevel": 3,
+      "fermentDays": 0,
+      "difficulty": "Medium",
+      "timeMinutes": 45,
+      "servings": 4,
+      "featured": true,
+      "region": "Seoul, South Korea",
+      "chef": "Ha-eun Sohn",
+      "tags": [
+        "beef",
+        "grill",
+        "gochujang",
+        "BBQ",
+        "weekend"
+      ],
+      "unsplashQuery": "grilled korean short ribs",
+      "ingredients": [
+        "2 lb flanken-cut beef short ribs",
+        "3 tbsp gochujang",
+        "1 Korean pear, grated",
+        "4 cloves garlic, minced",
+        "2 tbsp toasted sesame oil",
+        "2 tbsp soy sauce",
+        "1 tbsp honey",
+        "2 scallions, sliced"
+      ],
+      "method": [
+        "Whisk gochujang, grated pear, garlic, soy, sesame oil, and honey into a loose glaze.",
+        "Coat the short ribs and marinate at least 4 hours, ideally overnight.",
+        "Heat a grill or cast-iron pan until it smokes.",
+        "Sear the ribs 2-3 minutes per side, basting with reserved glaze until lacquered and charred at the edges.",
+        "Rest 5 minutes, shower with scallions and toasted sesame, and serve with lettuce for wrapping."
+      ]
+    },
+    {
+      "id": "baechu-kimchi",
+      "name": "Baechu Kimchi",
+      "koreanName": "배추김치",
+      "category": "fermented-funky",
+      "shortDesc": "The mother ferment—napa cabbage, gochugaru, and patient time.",
+      "longDesc": "This is where Gochujang begins: napa cabbage salted, massaged with a scarlet paste of gochugaru, garlic, and fish sauce, then left to bubble. Over five days it turns sour, funky, and alive—the backbone of a dozen other dishes on this site. Make one batch and you'll never reach for the jarred stuff again.",
+      "spiceLevel": 3,
+      "fermentDays": 5,
+      "difficulty": "Medium",
+      "timeMinutes": 90,
+      "servings": 8,
+      "featured": true,
+      "region": "Jeollanam-do, South Korea",
+      "chef": "Soo-a Lim",
+      "tags": [
+        "kimchi",
+        "ferment",
+        "banchan",
+        "staple",
+        "vegan-option"
+      ],
+      "unsplashQuery": "napa cabbage kimchi jar",
+      "ingredients": [
+        "1 large napa cabbage",
+        "1/2 cup coarse sea salt",
+        "5 tbsp gochugaru (Korean chili flakes)",
+        "4 cloves garlic",
+        "1 thumb ginger",
+        "3 tbsp fish sauce",
+        "1 tbsp glutinous rice flour",
+        "1 Korean radish, julienned",
+        "4 scallions"
+      ],
+      "method": [
+        "Quarter the cabbage and salt between every leaf; rest 2 hours until pliable, then rinse and drain.",
+        "Cook rice flour with water into a loose porridge and cool—this feeds the ferment.",
+        "Blend gochugaru, garlic, ginger, fish sauce, and the porridge into a scarlet paste.",
+        "Fold in julienned radish and scallions, then massage the paste deep into every leaf (gloves on).",
+        "Pack tightly into a jar, press out the air, and leave at room temp 1-2 days until it bubbles.",
+        "Move to the fridge and let it deepen 3-5 days before the first sour, funky bite."
+      ]
+    },
+    {
+      "id": "rose-tteokbokki",
+      "name": "Rosé Tteokbokki",
+      "koreanName": "로제 떡볶이",
+      "category": "small-plates",
+      "shortDesc": "Chewy rice cakes in a blushing gochujang-cream sauce.",
+      "longDesc": "Seoul's chewiest street snack, updated with a blush-pink sauce where gochujang meets cream and a whisper of bacon. The rice cakes turn pillowy and glossy—spicy but soothed, comfort with a low ember. It's the gateway drug of Korean food, and we're not sorry.",
+      "spiceLevel": 2,
+      "fermentDays": 0,
+      "difficulty": "Easy",
+      "timeMinutes": 25,
+      "servings": 2,
+      "featured": false,
+      "region": "Seoul, South Korea",
+      "chef": "June Cho",
+      "tags": [
+        "rice cakes",
+        "street food",
+        "creamy",
+        "gochujang",
+        "comfort"
+      ],
+      "unsplashQuery": "tteokbokki rice cakes",
+      "ingredients": [
+        "1 lb cylinder rice cakes (tteok)",
+        "2 tbsp gochujang",
+        "1 tbsp gochugaru",
+        "1 cup heavy cream",
+        "1/2 cup milk",
+        "2 cloves garlic",
+        "3 slices bacon, chopped",
+        "2 tbsp grated Parmesan",
+        "2 scallions"
+      ],
+      "method": [
+        "Soak the rice cakes in warm water 10 minutes so they turn pillowy.",
+        "Crisp the bacon, then bloom garlic, gochujang, and gochugaru in the rendered fat.",
+        "Pour in cream and milk and simmer into a blushing pink sauce.",
+        "Add the drained rice cakes and stir until glossy and coated, 5-6 minutes.",
+        "Finish with Parmesan and scallions and eat while molten."
+      ]
+    },
+    {
+      "id": "dolsot-bibimbap",
+      "name": "Dolsot Bibimbap",
+      "koreanName": "돌솥 비빔밥",
+      "category": "rice-bowls",
+      "shortDesc": "Sizzling stone-bowl rice, seasoned vegetables, and a gochujang crown.",
+      "longDesc": "Jeonju's signature bowl, built in a stone dish so hot the bottom layer of rice crackles into crisp nurungji. Each vegetable is seasoned on its own, then arranged in bright wedges around a molten egg and a bold spoon of gochujang. You mix it hard at the table—the ritual is half the pleasure.",
+      "spiceLevel": 2,
+      "fermentDays": 0,
+      "difficulty": "Medium",
+      "timeMinutes": 50,
+      "servings": 2,
+      "featured": true,
+      "region": "Jeonju, South Korea",
+      "chef": "Min-jae Ro",
+      "tags": [
+        "rice bowl",
+        "vegetables",
+        "egg",
+        "gochujang",
+        "classic"
+      ],
+      "unsplashQuery": "bibimbap stone bowl",
+      "ingredients": [
+        "2 cups short-grain rice, cooked",
+        "1 cup spinach, blanched",
+        "1 carrot, julienned",
+        "1 cup soybean sprouts",
+        "1 zucchini, sliced",
+        "4 shiitake, sliced",
+        "2 eggs",
+        "3 tbsp gochujang",
+        "2 tbsp sesame oil"
+      ],
+      "method": [
+        "Season each vegetable separately with sesame oil, salt, and garlic—this keeps the flavors distinct.",
+        "Rub a stone bowl with sesame oil and press in the warm rice.",
+        "Arrange the vegetables in bright wedges over the rice.",
+        "Heat the bowl until the bottom rice crackles into golden crust (nurungji).",
+        "Slide a fried egg on top, add a spoonful of gochujang, and mix hard at the table before every bite."
+      ]
+    },
+    {
+      "id": "doenjang-jjigae",
+      "name": "Doenjang Jjigae",
+      "koreanName": "된장찌개",
+      "category": "braises-stews",
+      "shortDesc": "Rustic fermented-soybean stew, deep, savory, endlessly comforting.",
+      "longDesc": "The everyday Korean stew, anchored by doenjang—soybeans fermented into deep, savory funk. Tofu, zucchini, and potato simmer in anchovy-kelp stock until the whole pot tastes like home. Humble, fast, and quietly addictive.",
+      "spiceLevel": 1,
+      "fermentDays": 0,
+      "difficulty": "Easy",
+      "timeMinutes": 30,
+      "servings": 3,
+      "featured": false,
+      "region": "Gyeonggi, South Korea",
+      "chef": "Tae-yang Oh",
+      "tags": [
+        "stew",
+        "soybean",
+        "doenjang",
+        "comfort",
+        "weeknight"
+      ],
+      "unsplashQuery": "doenjang stew tofu",
+      "ingredients": [
+        "3 tbsp doenjang (fermented soybean paste)",
+        "1 tsp gochujang",
+        "4 cups anchovy-kelp stock",
+        "1 block soft tofu",
+        "1 zucchini, diced",
+        "1 potato, cubed",
+        "1 green chili, sliced",
+        "2 scallions"
+      ],
+      "method": [
+        "Simmer anchovy-kelp stock and whisk in doenjang and a touch of gochujang until dissolved.",
+        "Add potato and cook until nearly tender.",
+        "Drop in zucchini, chili, and cubed tofu and simmer 8 minutes.",
+        "Scatter scallions and serve bubbling with a bowl of hot rice."
+      ]
+    },
+    {
+      "id": "yangnyeom-chicken",
+      "name": "Yangnyeom Fried Chicken",
+      "koreanName": "양념치킨",
+      "category": "small-plates",
+      "shortDesc": "Double-fried chicken shattering under a sticky gochujang glaze.",
+      "longDesc": "Double-fried until the crust shatters like glass, then tossed in a sticky gochujang glaze that's equal parts sweet, tangy, and hot. This is the chicken that made Korean fried chicken a global obsession. Serve with cold beer and pickled radish; regret nothing.",
+      "spiceLevel": 3,
+      "fermentDays": 0,
+      "difficulty": "Hard",
+      "timeMinutes": 60,
+      "servings": 4,
+      "featured": true,
+      "region": "Daegu, South Korea",
+      "chef": "Jae Park",
+      "tags": [
+        "fried chicken",
+        "crispy",
+        "gochujang",
+        "party",
+        "glazed"
+      ],
+      "unsplashQuery": "korean fried chicken glazed",
+      "ingredients": [
+        "2 lb chicken wings",
+        "1 cup potato starch",
+        "1 tbsp soy sauce",
+        "3 tbsp gochujang",
+        "3 tbsp ketchup",
+        "2 tbsp honey",
+        "3 cloves garlic",
+        "1 tbsp rice vinegar",
+        "frying oil"
+      ],
+      "method": [
+        "Pat the wings bone-dry, toss with soy and a little starch, then dredge fully in potato starch.",
+        "Fry at 325°F until pale and cooked, about 8 minutes; rest, then fry again at 375°F until glass-crisp.",
+        "Simmer gochujang, ketchup, honey, garlic, and vinegar into a glossy glaze.",
+        "Toss the hot wings in glaze until every crag is lacquered.",
+        "Finish with toasted sesame and crushed peanuts; serve with pickled radish."
+      ]
+    },
+    {
+      "id": "buldak-fire-noodles",
+      "name": "Buldak Fire Noodles",
+      "koreanName": "불닭볶음면",
+      "category": "noodles-broths",
+      "shortDesc": "Chewy noodles in a searing gochujang-chili sauce. Bring water.",
+      "longDesc": "The internet's favorite dare, made from scratch: thick noodles slicked in a gochujang-and-gochugaru lacquer stoked with cayenne. It's genuinely, gloriously punishing—a five-alarm rush chased with sweat and a grin. Melt mozzarella on top if you value your life.",
+      "spiceLevel": 5,
+      "fermentDays": 0,
+      "difficulty": "Easy",
+      "timeMinutes": 20,
+      "servings": 2,
+      "featured": false,
+      "region": "Seoul, South Korea",
+      "chef": "Nari Kwon",
+      "tags": [
+        "noodles",
+        "extra spicy",
+        "challenge",
+        "gochujang",
+        "fiery"
+      ],
+      "unsplashQuery": "spicy korean fire noodles",
+      "ingredients": [
+        "2 portions thick wheat noodles",
+        "3 tbsp gochujang",
+        "2 tbsp gochugaru",
+        "2 tsp cayenne",
+        "2 tbsp soy sauce",
+        "1 tbsp honey",
+        "4 cloves garlic",
+        "fresh mozzarella (optional)",
+        "toasted sesame and seaweed"
+      ],
+      "method": [
+        "Boil the noodles until just chewy and drain, saving a splash of the water.",
+        "Cook garlic in oil, then add gochujang, gochugaru, cayenne, soy, and honey into a fiery lacquer.",
+        "Toss the noodles in the sauce with a little pasta water until it clings.",
+        "Blanket with mozzarella if you need mercy, and finish with sesame and seaweed."
+      ]
+    },
+    {
+      "id": "gochujang-bolognese",
+      "name": "Gochujang Bolognese",
+      "category": "noodles-broths",
+      "shortDesc": "Slow-braised ragù with a fermented-chili backbone over tagliatelle.",
+      "longDesc": "Bologna's Sunday ragù with a Seoul accent: gochujang toasted into the soffritto for a fermented, umami-deep backbone. Two slow hours later the sauce is silky, meaty, and quietly complex, clinging to every ribbon of tagliatelle. Nobody will name the secret ingredient—they'll just ask for more.",
+      "spiceLevel": 2,
+      "fermentDays": 0,
+      "difficulty": "Medium",
+      "timeMinutes": 150,
+      "servings": 6,
+      "featured": false,
+      "region": "Bologna × Seoul",
+      "chef": "Marco Fenn",
+      "tags": [
+        "pasta",
+        "ragu",
+        "fusion",
+        "gochujang",
+        "slow-cooked"
+      ],
+      "unsplashQuery": "bolognese tagliatelle bowl",
+      "ingredients": [
+        "1 lb ground beef and pork",
+        "2 tbsp gochujang",
+        "1 onion, diced",
+        "2 carrots, diced",
+        "3 cloves garlic",
+        "1 can crushed tomatoes",
+        "1/2 cup red wine",
+        "1 cup whole milk",
+        "1 lb tagliatelle"
+      ],
+      "method": [
+        "Brown the meat hard in a heavy pot until deeply caramelized.",
+        "Add the soffritto—onion, carrot, garlic—and soften, then stir in gochujang to toast it.",
+        "Deglaze with red wine, add tomatoes and milk, and barely simmer 2 hours.",
+        "Cook the tagliatelle al dente and finish it in the ragù with a ladle of pasta water.",
+        "Shower with Parmesan; the ferment hums under the sweetness."
+      ]
+    },
+    {
+      "id": "kimchi-jjigae",
+      "name": "Kimchi Jjigae",
+      "koreanName": "김치찌개",
+      "category": "braises-stews",
+      "shortDesc": "Aged kimchi and pork belly simmered into sour, spicy comfort.",
+      "longDesc": "When your kimchi turns too sour to eat straight, this is its second act: simmered with pork belly and tofu into a bubbling, brick-red stew. The funk mellows into something rich and deep, sharpened by gochujang and a hit of gochugaru. Serve it volcanic-hot with a bowl of white rice.",
+      "spiceLevel": 3,
+      "fermentDays": 14,
+      "difficulty": "Easy",
+      "timeMinutes": 40,
+      "servings": 3,
+      "featured": false,
+      "region": "Busan, South Korea",
+      "chef": "Soo-a Lim",
+      "tags": [
+        "stew",
+        "kimchi",
+        "pork",
+        "sour",
+        "comfort"
+      ],
+      "unsplashQuery": "kimchi stew pork",
+      "ingredients": [
+        "2 cups aged kimchi, chopped",
+        "1/2 lb pork belly, sliced",
+        "1 tbsp gochujang",
+        "1 tbsp gochugaru",
+        "1 block firm tofu",
+        "1 onion, sliced",
+        "4 cups stock",
+        "2 scallions"
+      ],
+      "method": [
+        "Sear the pork belly until the fat renders and crisps.",
+        "Add the kimchi and stir-fry until it darkens and smells deeply sour.",
+        "Stir in gochujang and gochugaru, then pour in stock and simmer 20 minutes.",
+        "Add sliced tofu and onion and cook until everything melds.",
+        "Scatter scallions and serve bubbling straight from the pot."
+      ]
+    },
+    {
+      "id": "gochujang-birria-tacos",
+      "name": "Gochujang Birria Tacos",
+      "category": "small-plates",
+      "shortDesc": "Chili-braised beef tacos crisped in fat, dunked in gochujang consommé.",
+      "longDesc": "A love letter between Jalisco and Seoul—beef chuck braised in guajillo adobo spiked with gochujang until it shreds at a glance. The tortillas get dipped in crimson fat, griddled crisp, and packed with molten cheese. Dunk each taco in the consommé and taste two chili traditions become one.",
+      "spiceLevel": 3,
+      "fermentDays": 0,
+      "difficulty": "Hard",
+      "timeMinutes": 210,
+      "servings": 4,
+      "featured": false,
+      "region": "Jalisco × Seoul",
+      "chef": "Isabela Moreno",
+      "tags": [
+        "tacos",
+        "birria",
+        "fusion",
+        "gochujang",
+        "braised"
+      ],
+      "unsplashQuery": "birria tacos consomme",
+      "ingredients": [
+        "3 lb beef chuck",
+        "3 tbsp gochujang",
+        "4 dried guajillo chilies",
+        "1 onion",
+        "5 cloves garlic",
+        "2 tsp cumin",
+        "4 cups beef stock",
+        "corn tortillas",
+        "Oaxaca cheese"
+      ],
+      "method": [
+        "Toast the guajillos and blend with gochujang, garlic, onion, and cumin into a red adobo.",
+        "Coat the chuck and braise low with stock until fork-tender, about 3 hours.",
+        "Shred the beef and skim the crimson fat from the consommé.",
+        "Dip tortillas in the fat, fill with beef and cheese, and crisp on a hot griddle.",
+        "Serve golden and dripping with a bowl of consommé for dunking."
+      ]
+    },
+    {
+      "id": "gochujang-miso-black-cod",
+      "name": "Gochujang-Miso Black Cod",
+      "category": "charred-smoky",
+      "shortDesc": "Silky black cod glazed with gochujang and white miso, broiled to caramel.",
+      "longDesc": "The Nobu trick, rerouted through a jar of gochujang: buttery black cod cured for two days in miso and fermented chili. Under the broiler the glaze blisters to bittersweet caramel while the flesh stays custard-soft. It looks like restraint and tastes like a secret.",
+      "spiceLevel": 1,
+      "fermentDays": 2,
+      "difficulty": "Medium",
+      "timeMinutes": 40,
+      "servings": 2,
+      "featured": true,
+      "region": "Kyoto × Seoul",
+      "chef": "Ren Takeda",
+      "tags": [
+        "fish",
+        "miso",
+        "elegant",
+        "gochujang",
+        "broiled"
+      ],
+      "unsplashQuery": "miso black cod fillet",
+      "ingredients": [
+        "2 black cod fillets",
+        "2 tbsp white miso",
+        "1 tbsp gochujang",
+        "2 tbsp mirin",
+        "1 tbsp sake",
+        "1 tbsp sugar",
+        "microgreens"
+      ],
+      "method": [
+        "Whisk miso, gochujang, mirin, sake, and sugar into a smooth cure.",
+        "Coat the fillets and rest, covered, 2 days in the fridge to firm and flavor the flesh.",
+        "Wipe off the excess and broil close to the flame until the glaze blisters and blackens at the edges.",
+        "Rest briefly; the flesh should flake in glossy, custardy petals.",
+        "Plate with a swipe of glaze and a few microgreens—restraint is the point."
+      ]
+    },
+    {
+      "id": "gochujang-shakshuka",
+      "name": "Gochujang Shakshuka",
+      "category": "braises-stews",
+      "shortDesc": "Eggs poached in a smoky gochujang-tomato bath.",
+      "longDesc": "Tel Aviv brunch meets Korean heat—eggs poached in a thick tomato bath deepened with smoky gochujang and cumin. The yolks stay jammy, the sauce clings to charred bread, and the fermented chili gives it a low, humming warmth. One pan, zero ceremony, total joy.",
+      "spiceLevel": 2,
+      "fermentDays": 0,
+      "difficulty": "Easy",
+      "timeMinutes": 35,
+      "servings": 3,
+      "featured": false,
+      "region": "Tel Aviv × Seoul",
+      "chef": "Yael Adler",
+      "tags": [
+        "eggs",
+        "brunch",
+        "fusion",
+        "gochujang",
+        "one-pan"
+      ],
+      "unsplashQuery": "shakshuka eggs skillet",
+      "ingredients": [
+        "2 tbsp gochujang",
+        "1 can crushed tomatoes",
+        "1 onion, diced",
+        "1 red pepper, diced",
+        "3 cloves garlic",
+        "1 tsp cumin",
+        "4 eggs",
+        "feta",
+        "cilantro"
+      ],
+      "method": [
+        "Soften the onion, pepper, and garlic, then toast the cumin and gochujang until fragrant.",
+        "Add the tomatoes and simmer into a thick, brick-red sauce.",
+        "Make wells and crack in the eggs; cover and cook until the whites just set.",
+        "Crumble feta over the top and shower with cilantro.",
+        "Serve straight from the pan with charred bread for dragging."
+      ]
+    },
+    {
+      "id": "ssamjang-pork-ssam",
+      "name": "Ssam with Ssamjang",
+      "koreanName": "쌈장",
+      "category": "fermented-funky",
+      "shortDesc": "Grilled pork wrapped in lettuce with a funky fermented dipping paste.",
+      "longDesc": "The most communal way to eat in Korea: grilled pork belly, a lettuce leaf, a spoon of rice, and a dab of ssamjang—doenjang and gochujang blended into pungent, savory glue. You build each bite in your hand and eat it in one go. Loud, hands-on, and impossible to do politely.",
+      "spiceLevel": 2,
+      "fermentDays": 0,
+      "difficulty": "Easy",
+      "timeMinutes": 30,
+      "servings": 4,
+      "featured": false,
+      "region": "Korea, nationwide",
+      "chef": "Nari Kwon",
+      "tags": [
+        "pork",
+        "lettuce wraps",
+        "ssamjang",
+        "communal",
+        "grill"
+      ],
+      "unsplashQuery": "korean pork lettuce ssam",
+      "ingredients": [
+        "1 lb pork belly, sliced",
+        "3 tbsp doenjang",
+        "1 tbsp gochujang",
+        "2 cloves garlic, minced",
+        "1 tsp sesame oil",
+        "1 tsp honey",
+        "lettuce and perilla leaves",
+        "sliced raw garlic and chili"
+      ],
+      "method": [
+        "Stir doenjang, gochujang, garlic, sesame oil, and honey into a thick ssamjang.",
+        "Grill the pork belly until the edges char and crisp.",
+        "Lay a leaf on your palm and add rice, a slice of pork, and a dab of ssamjang.",
+        "Top with raw garlic and chili, wrap into a bundle, and eat in one bold bite."
+      ]
+    },
+    {
+      "id": "gochujang-chocolate-tart",
+      "name": "Gochujang Dark Chocolate Tart",
+      "category": "sweet-heat",
+      "shortDesc": "Bittersweet ganache tart with a slow gochujang ember on the finish.",
+      "longDesc": "A Parisian ganache tart with a Korean twist you feel before you can name it: gochujang steeped into the cream for a slow, smoldering finish. The chocolate is dark and bittersweet, the heat arrives a beat late, and flaky salt ties it together. Dessert for people who like a little danger.",
+      "spiceLevel": 1,
+      "fermentDays": 0,
+      "difficulty": "Medium",
+      "timeMinutes": 75,
+      "servings": 8,
+      "featured": false,
+      "region": "Paris × Seoul",
+      "chef": "Camille Roux",
+      "tags": [
+        "dessert",
+        "chocolate",
+        "sweet-heat",
+        "gochujang",
+        "tart"
+      ],
+      "unsplashQuery": "dark chocolate tart slice",
+      "ingredients": [
+        "1 chocolate tart shell, baked",
+        "8 oz dark chocolate (70%)",
+        "1 cup heavy cream",
+        "1 tbsp gochujang",
+        "1 tbsp honey",
+        "1 tbsp butter",
+        "flaky salt"
+      ],
+      "method": [
+        "Warm the cream with gochujang and honey until it just steams, then steep 5 minutes.",
+        "Pour the strained cream over chopped chocolate and let it melt, then whisk to a glossy ganache.",
+        "Whisk in the butter for shine and pour into the baked shell.",
+        "Chill until set, at least 3 hours.",
+        "Finish with flaky salt; the heat arrives a beat after the sweetness."
+      ]
+    }
+  ],
+  "stats": [
+    {
+      "value": "240+",
+      "label": "Dishes curated",
+      "caption": "Hand-tested, never dumped"
+    },
+    {
+      "value": "18",
+      "label": "Global cuisines",
+      "caption": "Korean-forward, world-wide"
+    },
+    {
+      "value": "32",
+      "label": "Fermentation techniques",
+      "caption": "From kimchi to koji"
+    },
+    {
+      "value": "12.4k",
+      "label": "Batches tracked",
+      "caption": "Ferments ticking down in Mise"
+    }
+  ],
+  "stories": [
+    {
+      "title": "The Slow Fire: Why Gochujang Takes a Year",
+      "category": "Fermentation",
+      "excerpt": "Real gochujang isn't cooked—it's grown. We trace a single jar from steamed rice and chili powder through a full year of sun on a rooftop in Sunchang, and ask what patience actually tastes like."
+    },
+    {
+      "title": "Seoul After Midnight: A Street-Food Crawl",
+      "category": "Travel",
+      "excerpt": "From tteokbokki carts under neon to charcoal grills in a Gwangjang alley, we eat our way across the city between 11pm and dawn—and find the dishes worth flying for hiding in plastic-stool corners."
+    },
+    {
+      "title": "The Case for Funk: Learning to Love Doenjang",
+      "category": "Technique",
+      "excerpt": "It smells like a dare and tastes like the ocean floor in the best way. A field guide to fermented soybean paste—how it's made, why it reads as savory, and the three dishes that will convert you for good."
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Priya Menon",
+      "role": "Home cook, London",
+      "quote": "Gochujang turned my scattered kitchen notes into something I actually want to open. My first kimchi batch is on day four and I keep checking the timer like it's a group chat."
+    },
+    {
+      "name": "Daniel Okafor",
+      "role": "Line cook, Brooklyn",
+      "quote": "I've used every recipe app. This is the first that respects that I can taste. The flavor maps and the heat tracker are stupidly addictive."
+    },
+    {
+      "name": "Sofia Duarte",
+      "role": "Food writer",
+      "quote": "It reads like a magazine and works like a tool. The dish pages are gorgeous enough to screenshot and precise enough to actually cook from."
+    }
+  ]
+}

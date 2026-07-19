@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a1210" />
+    <title>Gochujang — Cook bold. Track what you love.</title>
+    <meta
+      name="description"
+      content="Gochujang is a premium culinary destination for bold, fire-forward cooking — discover standout dishes, master fermentation, and track every bite worth remembering."
+    />
+    <meta property="og:title" content="Gochujang — Cook bold. Track what you love." />
+    <meta
+      property="og:description"
+      content="A premium culinary destination for bold, fire-forward cooking. Discover, cook, and track."
+    />
+    <meta property="og:type" content="website" />
+    <script>
+      // Set theme before first paint to avoid a flash of the wrong palette.
+      (function () {
+        try {
+          var k = 'gochujang-theme'
+          var s = localStorage.getItem(k)
+          var dark = s ? s === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches
+          var root = document.documentElement
+          root.classList.toggle('dark', dark)
+          root.style.colorScheme = dark ? 'dark' : 'light'
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

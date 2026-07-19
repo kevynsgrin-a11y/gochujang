@@ -1,0 +1,104 @@
+{
+  "aboveFold": {
+    "headline": "Bold flavor, worth chasing.",
+    "subhead": "Gochujang is the culinary discovery platform for cooks who eat with intent — find the dishes that change you, track the ones that stick, and watch your palate get braver.",
+    "primaryCTA": "Start cooking",
+    "secondaryCTA": "Explore dishes",
+    "heroVisual": "Full-bleed (100vw x 100vh) cinematic composition, three stacked layers. BASE: seeded GenerativeHeroArt — a warm charcoal (#1A1310) field with an off-center molten ember bloom (radial chili-crimson #D6482B → ember-orange #E86A2C, ~40% opacity) anchored bottom-right, so the accent color lands in the first viewport no matter what. MIDGROUND: one duotone (charcoal + crimson) close-up of a charred, glossy dish — steam and char visible — as a SmartImage: Unsplash CDN URL with a palette-derived crimson-to-charcoal gradient + local SVG fallback beneath it, object-fit:cover, positioned right-of-center so the left third stays clean for type. TOP: a fine local SVG film-grain overlay (~6% opacity) for print-magazine tactility. Content anchored bottom-left in a contained column: oversized Fraunces serif headline, sans subhead, CTA pair, and a thin scroll cue. One signature motion: a slow 8s Ken-Burns scale (1.0→1.06) on the image plus a 90ms-staggered word reveal on the headline. Never a raw img, never autoplay video.",
+    "trustSignals": [
+      "Featured-this-week category strip peeking just below the fold (proves depth behind the hero within the second glance)",
+      "'Trusted by 40,000+ home cooks' set as a quiet all-caps line beneath the CTAs",
+      "Flavor Pulse live ticker of trending dishes/cuisines/techniques scrolling as a thin band under the hero",
+      "Press/recognition micro-row (small mono-treated wordmarks) on a grain-textured strip — no loud logos"
+    ]
+  },
+  "fiveSecondTest": [
+    "APPETITE HIT: within 50ms a full-bleed, high-quality duotone dish reads as 'award-winning restaurant, not a tracker' — the image carries the impression, chrome recedes.",
+    "POV IN ONE LINE: the serif headline 'Bold flavor, worth chasing.' tells a brand-new visitor exactly what this is and who it's for — comprehensible in under 5 seconds, no scroll required.",
+    "BRAND COLOR OWNED: the gochujang chili-crimson is unmistakably present in the first viewport (ember bloom + primary CTA + wordmark ember-dot) so the brand feels distinct before any interaction.",
+    "NEVER BROKEN: even if the Unsplash CDN fails, the palette gradient + generative SVG + grain guarantee a beautiful, intentional hero — the 5-second test never renders a broken box.",
+    "ONE OBVIOUS NEXT STEP: a single high-contrast crimson primary CTA ('Start cooking') with a ghost secondary — the next action is unmistakable, no decision paralysis.",
+    "NAV STAYS OUT OF THE WAY: <5 nav items on a translucent bar so the image dominates and the page reads confident, not cluttered.",
+    "LEGIBLE WHILE LOUD: type sits on a bottom-left scrim with AA-contrast; eye-popping and effortless to read simultaneously, satisfying the dual mandate.",
+    "ALIVE, NOT GIMMICKY: exactly one load motion (Ken-Burns + staggered headline) signals 'crafted' without gating comprehension or delaying the headline.",
+    "DEPTH CONFIRMED ON SECOND GLANCE: the Flavor Pulse ticker + featured category strip prove there's a real, curated catalog behind the beauty."
+  ],
+  "ctaHierarchy": [
+    "PRIMARY (1 per viewport): 'Start cooking' — solid chili-crimson (#D6482B→#E86A2C) button, ink-on-warm high contrast, magnetic hover. The single dominant action, routing new visitors toward account/Kitchen and returning cooks to /kitchen. Repeated once in the closing newsletter/join band, nowhere in between.",
+    "SECONDARY: 'Explore dishes' — ghost/outline button (bone stroke on charcoal, crimson on hover) sitting beside the primary in the hero; the low-commitment browse path into /explore for people not ready to commit.",
+    "TERTIARY (contextual, deep-link): flavor/mood chips in the Explore-by-flavor band ('Fermented & Funky', 'Weeknight Fire', 'Chili Head') — text-chip weight, each deep-links a pre-filtered /explore. Discovery hooks, never competing visually with the primary.",
+    "QUATERNARY (utility): GlobalNav links + 'View the Kitchen' teaser link + newsletter field — plain/underline weight, always subordinate to the crimson primary so the hierarchy never flattens.",
+    "RULE: only one crimson filled button visible per screen at a time; everything else is ghost, chip, or text so the eye always knows the one true next step."
+  ],
+  "microInteractions": [
+    {
+      "trigger": "Page load",
+      "effect": "Headline reveals word-by-word (90ms stagger, 24px rise + opacity), hero image begins a slow 8s Ken-Burns scale 1.0→1.06. prefers-reduced-motion: full text and static image render instantly."
+    },
+    {
+      "trigger": "Cursor within ~80px of the primary CTA",
+      "effect": "Magnetic pull — button eases toward the cursor with spring damping, a faint ember glow blooms behind it; releases smoothly on exit."
+    },
+    {
+      "trigger": "Scroll past the hero",
+      "effect": "GlobalNav transitions from transparent to charcoal backdrop-blur + subtle shadow (Intersection Observer); the BrandMark ember-dot pulses once to confirm the shift."
+    },
+    {
+      "trigger": "Hover a DishCard",
+      "effect": "Image zooms 1.06 inside its frame, card lifts with a soft shadow, and metadata (cuisine, total time, SpiceMeter heat dots) slides up from the bottom edge into view."
+    },
+    {
+      "trigger": "Section enters viewport",
+      "effect": "whileInView fade + 32px slide-up with a light stagger across children; fires once, respects reduced-motion with an instant state."
+    },
+    {
+      "trigger": "Hover/tap a category glyph",
+      "effect": "The local SVG glyph draws-in or rotates slightly and shifts from bone to crimson duotone; label underlines with an ember sweep."
+    },
+    {
+      "trigger": "Click a flavor/mood chip",
+      "effect": "Chip fills crimson with a quick scale-pop; the target grid re-flows via Framer Motion layout animation as it deep-links the pre-filtered Explore."
+    },
+    {
+      "trigger": "Hover the Kitchen teaser",
+      "effect": "The streak flame flickers to life and the batch ProgressRing animates its fill 0→current %, making tracking look desirable, not administrative."
+    },
+    {
+      "trigger": "Flavor Pulse ticker hover",
+      "effect": "Marquee slows/pauses and the hovered item brightens, inviting a click into that trend."
+    },
+    {
+      "trigger": "Newsletter submit",
+      "effect": "Field collapses into a crimson checkmark with a brief ember burst and a warm confirmation toast — 'Welcome. Bring your appetite.'"
+    },
+    {
+      "trigger": "Scroll anywhere",
+      "effect": "A 2px crimson ScrollProgress bar advances at the top edge, giving a subtle sense of depth and pace."
+    }
+  ],
+  "scrollNarrative": [
+    "1 — HERO (the hook): full-bleed duotone dish + oversized serif POV headline + crimson CTA. Job: win the 5-second test and state the point of view. Emotion: appetite + 'this is premium.'",
+    "2 — FLAVOR PULSE (proof of life): thin horizontal ticker of trending dishes, cuisines and techniques scrolling by. Job: prove the catalog is living and current within the second glance. Emotion: 'there's a world in here.'",
+    "3 — FEATURED DISH SPOTLIGHT (desire, specified): oversized editorial split-panel — big duotone image against a story block with FlavorRadar teaser and 'Cook it' link. Job: turn abstract appetite into one concrete cravable dish. Emotion: 'I want to make THAT.'",
+    "4 — CATEGORY GLYPH GRID (breadth): committed local SVG cuisine/technique glyphs in an asymmetric grid with hover motion. Job: show global range without a wall of thumbnails, and guarantee render. Emotion: 'globally curious, endlessly browsable.'",
+    "5 — EXPLORE-BY-FLAVOR BAND (agency): interactive flavor-wheel / mood chips ('Fermented & Funky', 'Weeknight Fire', 'Molten') that deep-link pre-filtered Explore. Job: hand the visitor the steering wheel. Emotion: 'this understands how I actually pick food.'",
+    "6 — KITCHEN (Mise) TEASER (the differentiator): animated preview of the reinvented tracker — streak flame, live batch ProgressRing, Scoville gauge, stat tiles. Job: reframe tracking as collecting/identity, the anti-boring-tracker payoff. Emotion: 'I want to build my taste here.'",
+    "7 — EDITORIAL STORY RAIL (credibility): horizontally-scrolling magazine features/collections carousel. Job: prove editorial depth and point of view, magazine-grade. Emotion: 'these people have taste.'",
+    "8 — SOCIAL PROOF BAND (trust): home-cook pull-quotes + restrained press marks on a grain-textured surface. Job: de-risk the signup. Emotion: 'real people, real palates, trust it.'",
+    "9 — JOIN / NEWSLETTER CTA (conversion): generative gradient band, headline restating the POV ('Bring your appetite. We'll bring the heat.'), the primary crimson CTA returns. Job: convert the built desire. Emotion: commitment.",
+    "10 — FOOTER (orientation): sitemap, category links, brand statement, theme toggle. Job: catch anyone not yet converted and give confident wayfinding. Emotion: 'a real, considered product.'"
+  ],
+  "mobileConsiderations": [
+    "Hero stays full-bleed 100vh but headline drops to a tighter Fraunces size (clamp ~2.25→3rem) with content anchored bottom-left; CTAs stack full-width, crimson primary on top, ghost secondary beneath — both min 48px tall thumb targets.",
+    "Ken-Burns and staggered reveal are lightened on mobile (shorter, GPU-cheap transforms) and fully disabled under prefers-reduced-motion or Save-Data, so the hero paints fast on cellular.",
+    "GlobalNav collapses to a BrandMark + hamburger; the drawer is a full-height charcoal panel with the 4 nav items at large tap size and the crimson 'Start cooking' pinned at the bottom.",
+    "Flavor Pulse ticker remains a native horizontal scroll band (touch-draggable, momentum), auto-scroll slows on mobile to save battery.",
+    "Explore's sticky FilterBar collapses into a floating crimson filter FAB; tapping opens a bottom-sheet of chips with a sticky 'Apply / Clear all', keeping the mosaic full-width.",
+    "Editorial rails and story carousel become swipeable, snap-scrolling single-peek cards (~85vw) with a dot/edge-peek affordance so more content is discoverable.",
+    "DishCard hover choreography has no hover on touch, so metadata (cuisine, time, SpiceMeter) is shown persistently at the card foot; QuickLook opens as a bottom sheet instead of a centered modal.",
+    "SmartImage ships responsive srcset/sizes and lazy-loads below the fold; the gradient+SVG fallback is doubly important on flaky mobile networks so nothing ever renders as a broken box.",
+    "Kitchen teaser's animated ring/flame render as a compact single-column vertical stack; quick-add FAB is thumb-reachable bottom-right.",
+    "Type scales via clamp() with body line-height held at 1.6–1.7 for effortless reading; tap targets and chip spacing sized so the eye-popping layout never becomes cramped on small screens.",
+    "A 2px crimson ScrollProgress bar doubles as a lightweight sense-of-place cue on long mobile pages; back-to-top control appears after the first viewport."
+  ]
+}

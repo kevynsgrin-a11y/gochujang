@@ -1,0 +1,703 @@
+{
+  "northStar": "Gochujang is \"Fermented Editorial\" — an award-winning-restaurant hero, a food-magazine grid, and one loud gochujang-crimson ember on warm charcoal that reads premium in 50ms, stays effortless to read for hours, and turns tracking into collecting — never a spreadsheet.",
+  "designPrinciples": [
+    "Chrome recedes, food shouts. UI is near-invisible warm-charcoal and bone; the ONE gochujang crimson (#C63A20 light / #E8542E dark) is spent only on CTAs, the wordmark ember, active states, SpiceMeter and key labels. Loud by scarcity — never a background wash, never small colored text on light paper.",
+    "Type IS the graphic. Fraunces (display serif) carries every headline, pull-quote and oversized numeral; Geist (sans) carries all UI/body/metadata; Geist Mono tabular-nums is the instrument-panel voice for every stat, timer, Scoville and count. Two families, never three.",
+    "The fallback IS the design. No raw <img> ships. Every SmartImage stacks palette fallbackGradient + seeded generative mesh + grain BEHIND the photo, reserves its box with aspect-ratio, and onError hides the photo keeping the art. A CDN miss reveals intentional brand art, never a broken box.",
+    "Two image tiers, one warm grade. Tier-1 full-color warm-grade for the ONE focal image per screen (hero, dish hero, featured spotlight, DishCard hover); everything else is Tier-2 charcoal+ember duotone that recedes into brand. One warm grade + one grain (0.04 light / 0.06 dark) fuse 15+ Unsplash sources into one shoot.",
+    "Whitespace is load-bearing structure and asymmetry is a rule. Generous section padding controls pace like silence controls music; featured cards break the 12-col grid (7/5 splits, text overlapping image edges) and bento blocks open Explore — the deliberate anti-tracker rhythm.",
+    "Motion enriches, never gates. The hero headline, primary CTA and nav are legible and tappable at t=0 with zero JS. One signature load moment (8s Ken-Burns + staggered headline); whileInView reveals are fade + 8–16px only; prefers-reduced-motion resolves every animation to its final state instantly.",
+    "Accessibility is non-negotiable infrastructure, not polish. AA contrast on every pairing in both themes, 44px hit targets, one h1 per route, focus-visible everywhere, state never signalled by color alone, data-viz has text equivalents. The 5-second test never depends on motion, JS, or the CDN."
+  ],
+  "heroCopy": {
+    "headline": "Bold flavor, worth chasing.",
+    "subhead": "The culinary discovery platform for cooks who eat with intent — find the dishes that change you, track the ones that stick, and watch your palate get braver.",
+    "primaryCTA": "Start cooking",
+    "secondaryCTA": "Explore dishes"
+  },
+  "pageBlueprints": [
+    {
+      "route": "/",
+      "name": "Home",
+      "sections": [
+        {
+          "name": "GlobalNav",
+          "layout": "Sticky top, 68px, translucent/transparent over hero; on scroll-past-fold → surface @82% + backdrop-blur(12px) + shadow-sm + 1px bottom border via IntersectionObserver. Left: BrandMark wordmark (ember-drop). Right: 4 nav items (Home/Explore/Kitchen/About) in Geist Mono uppercase eyebrow with ember underline-wipe on hover + solid ember underline on active, then ButtonPrimary 'Start cooking' (pill, grad-ember) + ThemeToggle. Mobile: BrandMark + hamburger → full-height charcoal drawer, staggered items, 'Start cooking' pinned bottom.",
+          "content": "Wordmark 'Gochujang' with the j-dot as glowing ember teardrop; nav: Home · Explore · Kitchen · About; primary CTA 'Start cooking'.",
+          "image": "brandmark-ember-drop (SVG, no photo)",
+          "motion": "Ember-drop pulses once on the transparent→solid transition; underline-wipe 200ms on hover; drawer items stagger 60ms.",
+          "notes": "<nav aria-label='Primary'>. Skip-to-content link is the first focusable element. scroll-margin-top = 68px on focus targets so the sticky bar never obscures focus (WCAG 2.4.11)."
+        },
+        {
+          "name": "Hero",
+          "layout": "Full-bleed 100vw × min(100svh,900px). 3 stacked layers: BASE generative-hero-mesh (charcoal field + bottom-right ember bloom, so crimson lands in-viewport); MIDGROUND SmartImage duotone-bleeding-to-color dish, object-fit:cover, focal right-of-center leaving the left third clean; TOP grad-duotone-ink bottom scrim (lower 45%) + 6% grain. Content bottom-left, contained max-w-[60ch].",
+          "content": "Eyebrow (mono): 'TASTE, TURNED UP.' · KineticHeadline H1 Fraunces display-hero 'Bold flavor, worth chasing.' with 'chasing' in ember. · body-lg subhead (the finalized subhead). · ButtonPrimary 'Start cooking' (magnetic) + ButtonGhost 'Explore dishes'. · quiet all-caps line 'TRUSTED BY 40,000+ HOME COOKS'. · thin animated scroll cue.",
+          "image": "home-hero (Tier-1, priority, LCP)",
+          "motion": "Ken-Burns 1.0→1.06 over 8s + word-by-word headline reveal (90ms stagger, 24px rise). Magnetic pull on primary CTA within ~90px. Reduced-motion → static image, full text at t=0.",
+          "notes": "This is the LCP element: loading=eager, fetchpriority=high, <link rel=preload as=image imagesrcset>. One <h1>. Text-shadow belt on hero copy. CTA label ≥14px semibold, never tinted."
+        },
+        {
+          "name": "Flavor Pulse ticker",
+          "layout": "Full-width 52px band, surfaceAlt + grain, infinite horizontal marquee (~40s linear), duplicated track for seamless loop.",
+          "content": "Mono-caps trending terms with ember-dot separators: 'GOCHUJANG GALBI · DAY-4 KIMCHI · BULDAK 5/5 · ROSÉ TTEOKBOKKI · DOENJANG FUNK · BIRRIA×SEOUL · KOJI · NURUNGJI'. Occasional item in accent.",
+          "image": "home-flavorpulse-band (grain only, no photo)",
+          "motion": "Marquee pauses on hover AND focus-within AND under reduced-motion (WCAG 2.2.2). Hovered item brightens.",
+          "notes": "Duplicate track aria-hidden. Real items exposed once as a genuinely tabbable link list — not scrolling-text-only. Trending info must also live elsewhere."
+        },
+        {
+          "name": "Featured Dish Spotlight",
+          "layout": "7/5 asymmetric editorial split, image left; on mobile stacks image-over-text. Title overlaps the image's right edge on a narrow scrim wedge.",
+          "content": "Eyebrow 'FEATURED THIS WEEK'. H2 Fraunces 'Gochujang-Glazed Galbi Short Ribs' (고추장 갈비). Dek: 'Fire-kissed short ribs lacquered in fermented chili and grated pear.' Mini FlavorRadar teaser, SpiceMeter 3/10, meta '45 min · Medium · Seoul', text link 'Cook it →' to /dish/gochujang-galbi.",
+          "image": "home-featured-spotlight (Tier-1, priority)",
+          "motion": "whileInView fade+rise 20px, radar path draws 0→1 on enter. Image inner-vignette static.",
+          "notes": "<section aria-labelledby>. FlavorRadar is role=img with full aria-label of axis values."
+        },
+        {
+          "name": "Category Glyph Grid",
+          "layout": "Asymmetric grid of 7 category tiles (photo BEHIND local SVG glyph). Bento sizing — 2 large + 5 standard — not a uniform table.",
+          "content": "7 categories with glyph + name + blurb: Fermented & Funky, Charred & Smoky, Noodles & Broth, Rice & Bowls, Small Plates & Banchan, Braises & Stews, Sweet Heat. Each deep-links /explore?category=<id>.",
+          "image": "home-category-tile-* (Tier-2 duotone, per-category hue)",
+          "motion": "On hover/tap glyph draws-in/rotates slightly + shifts bone→crimson duotone; label ember underline sweep.",
+          "notes": "Glyph sits on top so the grid renders richly even if photos fail. Each tile is one link with an accessible name; glyph aria-hidden."
+        },
+        {
+          "name": "Explore-by-flavor band",
+          "layout": "Contained band, centered flavor/mood chip cluster on grad-paper-sheen (light) / charcoal (dark).",
+          "content": "Section header 'Pick your heat.' Mood chips (tertiary CTAs): 'Fermented & Funky', 'Weeknight Fire', 'Molten', 'Chili Head', 'Low & Slow', 'Sweet Heat' — each deep-links a pre-filtered /explore.",
+          "image": "none (SVG chips only)",
+          "motion": "Chip fills crimson with scale-pop on click; target grid reflows via Framer Motion layout on the destination.",
+          "notes": "Chips are <button>/link with 44px hit area. Never compete visually with the hero primary."
+        },
+        {
+          "name": "Kitchen (Mise) Teaser",
+          "layout": "Split: left copy block, right animated tracker mock (streak flame + batch ProgressRing + Scoville gauge + 2 StatTiles) over a 30%-opacity duotone process photo.",
+          "content": "Eyebrow 'MEET MISE'. H2 'Tracking, but make it collecting.' Dek on reframing the tracker as identity. StatTiles '12-day streak', '3 active batches'. Text link 'View the Kitchen →' to /kitchen.",
+          "image": "home-kitchen-teaser (Tier-2 @30% behind SVG UI)",
+          "motion": "On hover: streak flame flickers to life, ProgressRing animates 0→current%, gauge arc 0→value 800ms with count-up.",
+          "notes": "All UI (ring/gauge/flame) is local SVG. ProgressRing role=progressbar w/ aria-valuetext; gauge role=img."
+        },
+        {
+          "name": "Editorial Story Rail",
+          "layout": "Horizontal snap-scroll carousel, single-peek ~85vw cards on mobile, 3-up desktop with edge peek.",
+          "content": "3 stories: 'The Slow Fire: Why Gochujang Takes a Year' (Fermentation); 'Seoul After Midnight: A Street-Food Crawl' (Travel); 'The Case for Funk: Learning to Love Doenjang' (Technique) — each with category eyebrow, Fraunces title, excerpt.",
+          "image": "home-story-card-slow-fire / -seoul-midnight / -doenjang-funk (Tier-2 duotone + scrim)",
+          "motion": "whileInView stagger; roving tabindex + arrow-key nav across cards.",
+          "notes": "Carousel is a single tab stop with arrow navigation; each card is an <article> with one titled link."
+        },
+        {
+          "name": "Social Proof Band",
+          "layout": "Grain-textured band, 3 pull-quotes with small duotone portraits + a restrained mono press micro-row.",
+          "content": "Testimonials from Priya Menon (London), Daniel Okafor (Brooklyn), Sofia Duarte (food writer) — quotes verbatim from content. Press row as quiet mono wordmarks, no loud logos.",
+          "image": "home-testimonial-portrait-priya / -daniel / -sofia (Tier-2 duotone, thin ring)",
+          "motion": "whileInView fade+rise, once:true.",
+          "notes": "Pull-quotes set in Fraunces italic optical. Portraits 1:1 with duotone ring for one unified portrait system."
+        },
+        {
+          "name": "Join / Newsletter CTA",
+          "layout": "Full-width ~360px band on grad-ember-radial (dark) / grad-paper-sheen (light) + grain.",
+          "content": "H2 Fraunces 'Bring your appetite. We'll bring the heat.' NewsletterForm single email input + ButtonPrimary 'Start cooking' (the crimson primary returns here — one per screen).",
+          "image": "home-newsletter-band (generative gradient, no photo)",
+          "motion": "Submit → field collapses to crimson checkmark + ember burst + toast 'Welcome. Bring your appetite.'",
+          "notes": "Input has real <label>, errors via aria-describedby+aria-invalid, success announced via aria-live polite."
+        },
+        {
+          "name": "Footer",
+          "layout": "Charcoal (dark ground even in light mode for anchor weight) + grain. Oversized Fraunces brand statement, category link columns (mono), sitemap, credits, ThemeToggle, ember-drop mark.",
+          "content": "Tagline 'Taste, turned up.' oversized. Columns: Explore categories, Site (Home/Explore/Kitchen/About), brand statement snippet, credits, theme toggle.",
+          "image": "brandmark-ember-drop",
+          "motion": "Link ember underline-wipe on hover.",
+          "notes": "<footer> landmark. ThemeToggle is <button aria-pressed> that syncs color-scheme + theme-color meta."
+        }
+      ]
+    },
+    {
+      "route": "/explore",
+      "name": "Explore",
+      "sections": [
+        {
+          "name": "Page header",
+          "layout": "Compact contained header below GlobalNav.",
+          "content": "Eyebrow 'DISCOVER'. H1 'Explore'. Live result count (mono, e.g. '15 dishes') + view toggle mosaic/list.",
+          "image": "none",
+          "motion": "whileInView fade.",
+          "notes": "One <h1>='Explore'. Count updates in an aria-live polite region."
+        },
+        {
+          "name": "Sticky FilterBar",
+          "layout": "Sticky below header, surface @90% + blur, 1px bottom border. Chip rows for cuisine, flavor profile, spice/heat, technique, time, difficulty, dietary. Mobile collapses to a floating crimson filter FAB → bottom-sheet with sticky Apply/Clear all.",
+          "content": "FilterChips per facet; SortDropdown (Featured / Newest / Heat / Time). Active-filter chip row below with per-chip x-dismiss + 'Clear all' ghost link.",
+          "image": "none",
+          "motion": "Toggling a chip reflows MosaicGrid via Framer Motion layout spring; chip fills crimson + scale-pop.",
+          "notes": "FilterChip = <button aria-pressed>, 44px hit area, active state carries icon+fill not color-alone. Filter FAB reachable, non-overlapping with back-to-top."
+        },
+        {
+          "name": "Editorial mosaic grid",
+          "layout": "CSS masonry, 12-col logic, gap 24px (16px mobile). Featured DishCards break to 7/5 spans. SkeletonShimmer placeholders during load; infinite scroll + load-more.",
+          "content": "All 15 dishes as DishCards: eyebrow cuisine, Fraunces title (2-line clamp), meta 'time · difficulty · heat', SpiceMeter chip, wishlist heart, QuickLook affordance.",
+          "image": "explore-dishcard-* (Tier-2 duotone at rest → Tier-1 full-color+scale 1.06 on hover)",
+          "motion": "Card hover: image scale 1.06 under mask, lift -4px shadow-sm→md, metadata slides up 12px. whileInView stagger capped ~8 children.",
+          "notes": "DishCard=<article>, ONE stretched-link title anchor for the accessible name; heart/quicklook are separate buttons outside the link (no nested interactives). content-visibility:auto on offscreen rows."
+        },
+        {
+          "name": "Interspersed collection bands",
+          "layout": "Full-bleed 21:9 duotone band every ~8 cards to break grid rhythm.",
+          "content": "'Fermented & Funky' (plum-funk) and 'Weeknight Fire' (ember-radial) band titles in Fraunces on scrim, deep-linking pre-filtered views.",
+          "image": "explore-collection-band-fermented-funky / -weeknight-fire (Tier-2)",
+          "motion": "whileInView fade.",
+          "notes": "Bands are decorative navigation, not the only home for that content."
+        },
+        {
+          "name": "QuickLook modal",
+          "layout": "Centered dialog max-w-720px, radius-modal 28px, elevated bg, shadow-lg, backdrop charcoal 60% + blur. Left duotone image, right title/SpiceMeter/stat strip/3 actions. Mobile → bottom sheet.",
+          "content": "Dish image, SpiceMeter, stat strip (mono), actions Open / Save / Wishlist.",
+          "image": "reuses the dish's slot image",
+          "motion": "Enter scale 0.96→1 + fade 220ms.",
+          "notes": "role=dialog aria-modal=true aria-labelledby; focus-trapped; Esc + backdrop close; restore focus to trigger; background inert."
+        },
+        {
+          "name": "Empty state + back-to-top",
+          "layout": "Illustrated SVG empty state centered when zero results; persistent back-to-top after first viewport.",
+          "content": "Generative glyph (empty vessel + ember drop) + 'No dishes match that combo yet.' + 'Clear all' reset nudge.",
+          "image": "local illustrated EmptyState SVG",
+          "motion": "Gentle fade.",
+          "notes": "Never a broken photo box; back-to-top ≥44px, non-overlapping FAB."
+        }
+      ]
+    },
+    {
+      "route": "/dish/:id",
+      "name": "Dish Detail",
+      "sections": [
+        {
+          "name": "Immersive hero",
+          "layout": "Large per-dish image, bottom scrim carrying title block. 3:2 desktop / 4:5 mobile cover.",
+          "content": "Dish title (H1 Fraunces), cuisine/region tag, koreanName, live SpiceMeter, aggregate rating, chef byline.",
+          "image": "dish-detail-hero (Tier-1, LCP: eager/fetchpriority high/preload)",
+          "motion": "Subtle scale on load; reduced-motion static.",
+          "notes": "One <h1>=dish title. LCP not deferred/animated beyond ≤1.06."
+        },
+        {
+          "name": "Sticky action bar",
+          "layout": "Sticky below hero (or bottom bar on mobile), shadow-lg, persists on scroll.",
+          "content": "Cook it · Log this cook · Add to wishlist · Save · Share. One crimson primary ('Log this cook'), rest ghost.",
+          "image": "none",
+          "motion": "Magnetic pull on primary.",
+          "notes": "All buttons 44px, aria-labels on icon-only; scroll-margin so sticky bar never obscures focus."
+        },
+        {
+          "name": "At-a-glance stat strip",
+          "layout": "Horizontal mono stat row.",
+          "content": "Total time, difficulty, servings, heat band, primary flavor tags — pulled per dish (e.g. galbi: 45 min · Medium · 4 · Heat 3 · beef/grill/gochujang).",
+          "image": "none",
+          "motion": "Count-up on mount.",
+          "notes": "Geist Mono tabular-nums; heat carries word label not color-only."
+        },
+        {
+          "name": "FlavorRadar",
+          "layout": "6-axis hexagon on charcoal card beside/above the intro.",
+          "content": "Heat, umami, acidity, sweetness, funk, texture plotted per dish.",
+          "image": "flavor-radar-hexagon SVG",
+          "motion": "Path draws on whileInView (700ms).",
+          "notes": "role=img with full aria-label of every axis value; grid vs fill ≥3:1."
+        },
+        {
+          "name": "Editorial intro",
+          "layout": "Contained 68ch prose column.",
+          "content": "The dish's longDesc — the story/POV. e.g. galbi longDesc verbatim.",
+          "image": "none",
+          "motion": "whileInView fade+rise.",
+          "notes": "Body ≥17px, line-height 1.65–1.75, Geist (never serif for body), text-wrap:pretty, ragged-right."
+        },
+        {
+          "name": "Ingredients",
+          "layout": "Scalable list, two-col on desktop.",
+          "content": "Per-dish ingredients array; servings stepper rescales quantities; pantry/substitution hints.",
+          "image": "none",
+          "motion": "Quantity numbers tick on servings change.",
+          "notes": "Servings control is a labelled stepper; quantities in mono tabular-nums."
+        },
+        {
+          "name": "Method",
+          "layout": "Numbered steps in the 68ch column with inline technique glyphs + timing chips.",
+          "content": "Per-dish method array as numbered steps.",
+          "image": "none",
+          "motion": "whileInView stagger per step.",
+          "notes": "Steps in Geist (sans), never serif."
+        },
+        {
+          "name": "Fermentation/marinade callout",
+          "layout": "Highlighted card, shown only when fermentDays>0 or a marinade step exists.",
+          "content": "Timing detail (e.g. kimchi 5 days, black cod 2 days) + 'Start a batch' CTA that seeds a Kitchen Batch.",
+          "image": "none",
+          "motion": "Ember accent pulse on the CTA.",
+          "notes": "CTA routes to /kitchen with prefilled Batch. Celadon 'ready' semantics referenced."
+        },
+        {
+          "name": "Pairings rail",
+          "layout": "Horizontal rail of 3 PairingCards.",
+          "content": "Drink/wine/side pairings per dish.",
+          "image": "dish-detail-pairing-card (Tier-2 duotone 1:1)",
+          "motion": "whileInView stagger.",
+          "notes": "Roving tabindex."
+        },
+        {
+          "name": "Tasting notes",
+          "layout": "Community notes list + inline TastingNoteForm entry point.",
+          "content": "Structured notes (aroma/texture/heat/acidity/umami/balance/verdict) + 'Add your own'.",
+          "image": "none",
+          "motion": "Form reveals inline.",
+          "notes": "Form fields labelled; RatingStars = labelled radiogroup (fieldset/legend), keyboard operable."
+        },
+        {
+          "name": "Related dishes + log footer",
+          "layout": "Same-category carousel, then a closing crimson 'Log this cook' CTA band.",
+          "content": "Sibling dishes as DishCards; footer reinforces the track action.",
+          "image": "dish-detail-related-carousel (Tier-2→color hover)",
+          "motion": "Card hover choreography; carousel roving tabindex.",
+          "notes": "Closes the discover→log funnel."
+        }
+      ]
+    },
+    {
+      "route": "/kitchen",
+      "name": "Kitchen (Mise)",
+      "sections": [
+        {
+          "name": "Personalized hero header",
+          "layout": "~280px header on generative gradient-mesh + grain; greeting, avatar, kitchen title/level, animated streak flame.",
+          "content": "'Welcome back' greeting, avatar, kitchenTitle/level, currentStreak in mono, animated streak flame.",
+          "image": "kitchen-hero-header (generative mesh, no photo)",
+          "motion": "Streak flame gentle 3s flicker (frozen under reduced-motion).",
+          "notes": "One <h1>='Mise' (or the greeting as h1). Foreground UI all local SVG."
+        },
+        {
+          "name": "Stat tiles row",
+          "layout": "Row of 4 StatTiles, responsive 2×2.",
+          "content": "Dishes cooked, cuisines explored, active batches, current spice tolerance — with trend chips.",
+          "image": "none",
+          "motion": "Count-up on mount.",
+          "notes": "Resist spreadsheet: ≥16px padding, label mono-uppercase ~12px in text-muted, value Fraunces/display ≥20px."
+        },
+        {
+          "name": "Streak & activity heatmap",
+          "layout": "Contribution-calendar grid + weekly-goal bar.",
+          "content": "Cooking-days calendar, 4-step ember ramp by intensity, today ringed; weekly goal progress.",
+          "image": "none",
+          "motion": "Cells fill on load.",
+          "notes": "Rendered as <table>/labelled list with text summary ('Cooked 4 of 7 days this week, 12-day streak'); never bare color squares; tooltip date+count."
+        },
+        {
+          "name": "Active Batches board",
+          "layout": "Grid of BatchCards, each a ProgressRing + details.",
+          "content": "Ferment/marinade/pickle/cure/brine batches with vessel, ingredients, ready-in countdown, 'Mark ready'/'Log note'. Celadon ring when ready.",
+          "image": "none",
+          "motion": "Ring animates to progressPct on mount; celadon pulse once on ready.",
+          "notes": "ProgressRing role=progressbar aria-valuenow/min/max + aria-valuetext ('Kimchi — 3 days left, 60% complete'). Status carries icon+label not color-only."
+        },
+        {
+          "name": "Recently Cooked feed",
+          "layout": "Reverse-chron list with inline quick tasting-note entry + duotone thumbs.",
+          "content": "Cook log rows: dish, date, rating, quick note affordance.",
+          "image": "kitchen-cooklog-thumb (Tier-2 duotone 1:1)",
+          "motion": "whileInView stagger.",
+          "notes": "content-visibility:auto on long boards; row hierarchy label/value clear."
+        },
+        {
+          "name": "Spice Tolerance tracker",
+          "layout": "Scoville gauge (270° arc) + trend sparkline + next-tier badge.",
+          "content": "currentLevel, scovilleBand word label, trend, next tier.",
+          "image": "chili-spice-glyph / gauge SVG",
+          "motion": "Arc animates 0→value 800ms, mono count-up in sync.",
+          "notes": "role=img aria-label; filled vs empty arc ≥3:1; heat never color-only (word band always shown)."
+        },
+        {
+          "name": "Wishlist / Want-to-Cook board",
+          "layout": "Droppable cards you can plan onto dates.",
+          "content": "Wishlist items with priority/reason, drag onto plan-for date (want→planned→cooked).",
+          "image": "kitchen-cooklog-thumb",
+          "motion": "Layout spring on drag/reflow.",
+          "notes": "Drag has keyboard-accessible alternative (move buttons)."
+        },
+        {
+          "name": "Flavor Passport",
+          "layout": "Map/wheel of cuisines with collected stamp glyphs.",
+          "content": "PassportStamp seals per cuisine/region conquered, celadon ring at mastery, mono cuisine label.",
+          "image": "passport-stamp-seals SVG",
+          "motion": "Stamp lands with scale-spring on unlock.",
+          "notes": "Each stamp role=img with descriptive aria-label."
+        },
+        {
+          "name": "Achievements shelf + Insights + FAB",
+          "layout": "AchievementBadge medallion shelf, Insights analytics panel, and a thumb-reachable quick-add FAB.",
+          "content": "Badges (First Ferment, Chili Head, Ten Cuisines) unlocked/in-progress; insights (most-cooked cuisine, avg rating, heat trend); FAB: log a cook / start a batch / drop a note.",
+          "image": "achievement-medallion-frames SVG",
+          "motion": "Unlock = grad-ember-radial burst + scale spring; toast announces.",
+          "notes": "Empty states use illustrated SVG (kitchen-empty-state), never broken photo. Badges role=img with title+progress (state not color-only). FAB aria-label, ≥44px, bottom-right."
+        }
+      ]
+    },
+    {
+      "route": "/about",
+      "name": "About",
+      "sections": [
+        {
+          "name": "Manifesto hero",
+          "layout": "Full-bleed generative gradient-mesh with optional 25% duotone chili macro behind Fraunces manifesto lines. Type is the hero.",
+          "content": "Bold POV manifesto lines from the brand story; H1 opener e.g. 'We built Gochujang for the cook who reads menus like novels.'",
+          "image": "about-manifesto-hero (mesh + optional Tier-2 @25%)",
+          "motion": "Slow drift on mesh; KineticHeadline reveal.",
+          "notes": "One <h1>. Type is hero, image is atmosphere; gradient text only on dark at display size."
+        },
+        {
+          "name": "Origin story",
+          "layout": "Contained editorial column beside a Tier-1 image.",
+          "content": "'Why Gochujang' — fermentation, boldness, global-and-Korean-forward taste; brandStory/namingRationale distilled to 68ch prose.",
+          "image": "about-origin-story (Tier-1 full-color)",
+          "motion": "whileInView fade+rise.",
+          "notes": "Prose ≤68ch, ≥17px, ragged-right."
+        },
+        {
+          "name": "Editorial values trio",
+          "layout": "3-col principle cards.",
+          "content": "The principles behind what gets featured (discovery-first, tested-not-dumped, magazine-grade art direction).",
+          "image": "none",
+          "motion": "Stagger.",
+          "notes": "Cards use one corner language (20px)."
+        },
+        {
+          "name": "The Palette",
+          "layout": "Editorial band on grad-paper-sheen explaining color/flavor/design as one language.",
+          "content": "Brand philosophy: warm charcoal + bone + one gochujang crimson; color and flavor as the same POV.",
+          "image": "none (brand swatches SVG)",
+          "motion": "Swatches fade in.",
+          "notes": "Decorative; keep accent scarcity even here."
+        },
+        {
+          "name": "Contributors grid",
+          "layout": "Grid of duotone portraits.",
+          "content": "Chefs/contributors (Ha-eun Sohn, Soo-a Lim, June Cho, etc.) with names/roles.",
+          "image": "about-contributor-portrait (Tier-2 duotone 4:5, ember ring)",
+          "motion": "whileInView stagger.",
+          "notes": "One unified portrait system; alt = name+role."
+        },
+        {
+          "name": "Curation standards",
+          "layout": "Contained explainer with numbered standards.",
+          "content": "How dishes are tested, rated, selected — the 'hand-tested, never dumped' standard.",
+          "image": "none",
+          "motion": "Stagger.",
+          "notes": "Reinforces trust before conversion."
+        },
+        {
+          "name": "Press & recognition band",
+          "layout": "Grain-textured strip, restrained mono wordmarks.",
+          "content": "Quiet press marks, no loud logos.",
+          "image": "about-press-band (grain strip)",
+          "motion": "Fade.",
+          "notes": "Mono treatment matches Flavor Pulse voice."
+        },
+        {
+          "name": "Join CTA + contact/footer",
+          "layout": "Newsletter band + create-Kitchen invite, then footer.",
+          "content": "H2 'Bring your appetite. We'll bring the heat.' + NewsletterForm + 'Start cooking' primary; contact; shared Footer.",
+          "image": "home-newsletter-band",
+          "motion": "Submit ember-burst + toast.",
+          "notes": "Same newsletter a11y contract as Home."
+        }
+      ]
+    }
+  ],
+  "componentList": [
+    {
+      "name": "GlobalNav",
+      "purpose": "Sticky scroll-aware primary navigation with brand mark + single crimson CTA + theme toggle.",
+      "variants": "transparent-over-hero, solid-scrolled, mobile-drawer"
+    },
+    {
+      "name": "BrandMark",
+      "purpose": "Animated 'Gochujang' wordmark whose j-dot is the glowing ember teardrop; standalone 'G' app-icon/favicon.",
+      "variants": "wordmark, icon-only, footer-oversized"
+    },
+    {
+      "name": "Footer",
+      "purpose": "Charcoal anchor footer: oversized tagline, category/sitemap columns, credits, theme toggle.",
+      "variants": "default"
+    },
+    {
+      "name": "SmartImage",
+      "purpose": "Mandatory image infra: renders fallbackGradient + generative mesh + grain behind the <img>, onError hides photo keeps art, reserves box via aspect-ratio, srcset/sizes, lazy vs priority.",
+      "variants": "tier1-color, tier2-duotone, priority-LCP, lazy"
+    },
+    {
+      "name": "GradientFallback",
+      "purpose": "Palette-derived gradient LQIP guaranteed to render offline beneath every SmartImage.",
+      "variants": "crimson, charcoal, plum-funk, celadon, per-category"
+    },
+    {
+      "name": "GrainOverlay",
+      "purpose": "Universal tiled feTurbulence film-grain overlay (0.04 light / 0.06 dark, mix-blend overlay), frozen under reduced-motion.",
+      "variants": "light, dark"
+    },
+    {
+      "name": "DuotoneOverlay",
+      "purpose": "Reusable feColorMatrix/gradientMap duotone engine mapping shadows→charcoal, highlights→per-category hue.",
+      "variants": "ember, plum-funk, amber, celadon, rose"
+    },
+    {
+      "name": "GenerativeHeroArt",
+      "purpose": "Seeded generative gradient-mesh (charcoal field + ember bloom) as base layer/backdrop.",
+      "variants": "hero-drift, static-backdrop, kitchen-header, newsletter-band"
+    },
+    {
+      "name": "KineticHeadline",
+      "purpose": "Framer Motion staggered word/line reveal for Fraunces display headlines.",
+      "variants": "word-stagger, line-stagger, reduced-motion-instant"
+    },
+    {
+      "name": "CategoryGlyph",
+      "purpose": "Set of 7 local SVG cuisine/technique marks that fill with grad-ember or duotone.",
+      "variants": "rest-bone, hover-crimson, per-category(7)"
+    },
+    {
+      "name": "DishCard",
+      "purpose": "Discovery card: duotone-at-rest→color-on-hover image, SpiceMeter chip, wishlist heart, title, meta, QuickLook.",
+      "variants": "standard, featured-7/5-overlap, list-row, skeleton"
+    },
+    {
+      "name": "QuickLookModal",
+      "purpose": "Peek a dish without leaving the grid; focus-trapped dialog / mobile bottom-sheet.",
+      "variants": "desktop-centered, mobile-sheet"
+    },
+    {
+      "name": "MosaicGrid",
+      "purpose": "Masonry discovery grid with interspersed collection bands, skeleton shimmer, infinite scroll.",
+      "variants": "mosaic, list"
+    },
+    {
+      "name": "EditorialRail",
+      "purpose": "Horizontal snap-scroll carousel for stories/related/pairings with roving tabindex.",
+      "variants": "story, related, pairing"
+    },
+    {
+      "name": "FilterBar",
+      "purpose": "Sticky faceted filter surface; mobile filter FAB → bottom-sheet.",
+      "variants": "sticky-desktop, fab-sheet-mobile"
+    },
+    {
+      "name": "FilterChip",
+      "purpose": "Toggleable facet chip; active state via fill+icon (not color-only).",
+      "variants": "rest, active, mood-deeplink"
+    },
+    {
+      "name": "SortDropdown",
+      "purpose": "Sort control for the mosaic (Featured/Newest/Heat/Time).",
+      "variants": "default"
+    },
+    {
+      "name": "Chip / Tag",
+      "purpose": "Metadata/category label pill.",
+      "variants": "category, dietary, active-filter-dismissible"
+    },
+    {
+      "name": "SpiceMeter",
+      "purpose": "1–10 chili-glyph heat ramp on grad-ember with word band; reused as Scoville gauge arc.",
+      "variants": "chip, inline, gauge-270"
+    },
+    {
+      "name": "FlavorRadar",
+      "purpose": "6-axis hexagon flavor viz with draw-on-view path; text equivalent.",
+      "variants": "full, teaser"
+    },
+    {
+      "name": "FlavorWheel",
+      "purpose": "Interactive flavor/mood selector deep-linking pre-filtered Explore.",
+      "variants": "home-band"
+    },
+    {
+      "name": "ProgressRing",
+      "purpose": "Batch timer ring animating to progressPct; role=progressbar.",
+      "variants": "active-ember, ready-celadon"
+    },
+    {
+      "name": "Gauge",
+      "purpose": "270° Scoville/spice-tolerance gauge with sparkline + count-up.",
+      "variants": "scoville"
+    },
+    {
+      "name": "StatTile",
+      "purpose": "Glyph + big mono numeral + label + trend chip; anti-spreadsheet padding.",
+      "variants": "count, trend-up, trend-down"
+    },
+    {
+      "name": "StreakHeatmap",
+      "purpose": "Contribution-calendar of cooking days + weekly goal + flame; table/list with text summary.",
+      "variants": "default"
+    },
+    {
+      "name": "BatchCard",
+      "purpose": "Fermentation/marinade batch with ProgressRing, meta, ready-alert action.",
+      "variants": "active, ready, consumed"
+    },
+    {
+      "name": "TastingNoteForm",
+      "purpose": "Structured note entry (aroma/texture/heat/acidity/umami/balance/verdict) with labelled fields.",
+      "variants": "inline, full"
+    },
+    {
+      "name": "RatingStars",
+      "purpose": "Keyboard-operable labelled radiogroup rating.",
+      "variants": "input, display"
+    },
+    {
+      "name": "AchievementBadge",
+      "purpose": "Filled glyph medallion with ember/celadon ring; unlock burst.",
+      "variants": "locked-desaturated, unlocked, in-progress"
+    },
+    {
+      "name": "PassportMap",
+      "purpose": "Cuisine stamp-collection map/wheel with mastery rings.",
+      "variants": "map, wheel"
+    },
+    {
+      "name": "PassportStamp",
+      "purpose": "Circular cuisine/region seal glyph; role=img.",
+      "variants": "locked, unlocked, mastery-celadon"
+    },
+    {
+      "name": "Marquee",
+      "purpose": "Flavor Pulse ticker: duplicated-track infinite scroll with pause on hover/focus/reduced-motion + tabbable link list.",
+      "variants": "trend"
+    },
+    {
+      "name": "SectionHeader",
+      "purpose": "Mono eyebrow + hairline rule + Fraunces H2 + optional dek.",
+      "variants": "left, asymmetric-offset"
+    },
+    {
+      "name": "ButtonPrimary",
+      "purpose": "The single crimson grad-ember pill CTA (one per screen), optional magnetic.",
+      "variants": "default, magnetic, disabled"
+    },
+    {
+      "name": "ButtonGhost",
+      "purpose": "Outline/secondary action; text carries contrast (ink label, never muted).",
+      "variants": "default, on-image"
+    },
+    {
+      "name": "CTAButton",
+      "purpose": "Contextual repeat of the primary in newsletter/log footers.",
+      "variants": "newsletter, log-cook"
+    },
+    {
+      "name": "FAB",
+      "purpose": "Quick-add (Kitchen) / filter (Explore) floating action button.",
+      "variants": "quick-add, filter"
+    },
+    {
+      "name": "PairingCard",
+      "purpose": "Drink/wine/side pairing crop with mono meta.",
+      "variants": "default"
+    },
+    {
+      "name": "Avatar",
+      "purpose": "User avatar with optional level ring.",
+      "variants": "default, level-ring"
+    },
+    {
+      "name": "NewsletterForm",
+      "purpose": "Labelled email capture with ember-burst success + announced toast.",
+      "variants": "band, footer-inline"
+    },
+    {
+      "name": "SkeletonShimmer",
+      "purpose": "Aspect-ratio-reserved loading placeholder; static block under reduced-motion.",
+      "variants": "card, image, row"
+    },
+    {
+      "name": "EmptyState",
+      "purpose": "Illustrated local SVG empty state with reset nudge (never a broken box).",
+      "variants": "no-results, no-cooks, no-batches, empty-passport"
+    },
+    {
+      "name": "Toast",
+      "purpose": "aria-live confirmation/alert with status bar + auto-dismiss ≥6s or close.",
+      "variants": "success-celadon, warning, danger, batch-ready-alert"
+    },
+    {
+      "name": "Breadcrumb",
+      "purpose": "Wayfinding on detail pages; aria-current on last crumb.",
+      "variants": "default"
+    },
+    {
+      "name": "ScrollProgress",
+      "purpose": "Decorative 2px crimson top progress bar (aria-hidden).",
+      "variants": "default"
+    },
+    {
+      "name": "ThemeToggle",
+      "purpose": "Light/dark toggle syncing color-scheme + theme-color meta; aria-pressed.",
+      "variants": "nav, footer"
+    },
+    {
+      "name": "ShareCard",
+      "purpose": "Exportable, beautifully-designed card of a logged cook/batch result.",
+      "variants": "cook, batch"
+    }
+  ],
+  "motionList": [
+    "Hero load (signature): Ken-Burns image scale 1.0→1.06 over 8s (transform/opacity, GPU) + KineticHeadline word reveal (90ms stagger, 24px rise + fade, ease [0.22,1,0.36,1]). Nothing else animates on first paint; content legible at t=0.",
+    "whileInView section reveals: fade + 8–16px translate, 300–500ms, stagger 40–80ms, viewport once:true, cap ~8 simultaneous children.",
+    "Magnetic primary CTA: cursor pull within ~90px (spring stiffness 150 / damping 15) + shadow-ember→shadow-ember-lg glow bloom; pointer-only, disabled under reduced-motion, never moves out from under pointer, focus ring stays put.",
+    "Card hover choreography: image scale 1.0→1.06 under fixed mask (220ms), lift translateY -4px + shadow-sm→md, metadata slides up 12px, QuickLook affordance fades in; duotone→full-color on the image.",
+    "Sticky-nav transition: transparent→surface@82% + backdrop-blur(12px) + shadow-sm via IntersectionObserver; BrandMark ember-drop pulses once.",
+    "Flavor Pulse marquee: ~40s linear infinite, duplicated track; pauses on hover, focus-within, and reduced-motion; hovered item brightens.",
+    "Filter reflow: FilterChip toggle reflows MosaicGrid via Framer Motion layout spring; chip crimson fill + scale-pop.",
+    "Choreographed data: ProgressRings and Scoville Gauge arc from 0→value on mount (800ms) with mono count-up in sync; radar path draws 0→1 (700ms) on view.",
+    "Streak flame flicker (gentle 3s) and achievement unlock burst (grad-ember-radial flash + scale spring) with announced toast.",
+    "Link/nav ember underline-wipe left→right on hover (200ms); active nav = solid ember underline.",
+    "Newsletter submit: field collapses to crimson checkmark + ember burst + aria-live toast.",
+    "ScrollProgress: 2px crimson top bar (aria-hidden), freezes under reduced-motion. Ambient float-slow(7s)/spin-slow(34s) reserved for decorative brand art only, stopped under reduced-motion.",
+    "prefers-reduced-motion (hard gate): useReducedMotion() branches every variant to final state instantly (opacity:1, no transform); Ken-Burns, marquee, shimmer, parallax, magnetic all quiet; the 5-second test never depends on motion."
+  ],
+  "buildNotes": [
+    "FONTS — RESOLVED CONFLICT: the design system is canonical over the a11y doc's 'Inter' placeholder. Install exactly two families: @fontsource-variable/fraunces (display serif) + @fontsource-variable/geist (all UI/body), and @fontsource-variable/geist-mono (data/eyebrow). --font-accent aliases Geist Mono — never introduce a third family. woff2 only, font-display:swap, preload Fraunces display + Geist regular, cap at ~3–4 weights. Verify they actually load (not Georgia/system-ui fallback).",
+    "COLOR — RESOLVED CONFLICT: use the DESIGN-SYSTEM tokens as canonical (primary #C63A20 light / #E8542E dark, accent #D9622C/#F0873F). The content file's category accents (#D6482B etc.) are used ONLY as per-category duotone highlight hues, never as the brand primary. Wire the full light+dark palette to CSS variables and Tailwind theme; re-run axe/WebAIM on the FINAL swapped values — any change re-opens every ratio.",
+    "HERO COPY — RESOLVED CONFLICT: H1 = 'Bold flavor, worth chasing.' (UX/first-impression authority for the 5-second test). 'Taste, turned up.' is the brand tagline living in the hero eyebrow and footer, NOT the H1. Hero is 100vw × min(100svh,900px), not 92vh.",
+    "Tailwind theme.extend keys to define: colors (bg, surface, surfaceAlt, elevated, text, textMuted, textSubtle, border, primary, primaryFg, secondary, secondaryFg, accent, accentFg, success, warning, danger — all as CSS-var references so theme swap is one place); fontFamily (display/sans/mono); fontSize via clamp tokens (display-hero, display-xl, h1–h3, body-lg, body, caption, eyebrow, data); borderRadius (xs 4, sm 8, md 12, lg 18, xl 26, 2xl 36, pill 999, card 20, chip 999, modal 28, glyph 14); boxShadow (xs, sm, md, lg, ember, ember-lg, inset-dark); backgroundImage (grad-ember, grad-ember-radial, grad-fallback-crimson, grad-fallback-charcoal, grad-plum-funk, grad-celadon-fresh, grad-duotone-ink, grad-paper-sheen); spacing scale (0,2,4,8,12,16,20,24,32,40,48,64,80,96,128,160,200); transitionTimingFunction (edible: cubic-bezier(0.22,1,0.36,1)); keyframes (ken-burns, marquee, shimmer, flame-flicker, float-slow, spin-slow, ember-pulse).",
+    "Theme system: html gets a data-theme class + color-scheme; keep the pre-paint script in index.html so first paint honors prefers-color-scheme with no flash; ThemeToggle persists to localStorage and syncs <meta name=theme-color>. Style BOTH light and dark fully — validate every pairing in both.",
+    "SmartImage is non-negotiable infra to build FIRST: renders GradientFallback + GenerativeHeroArt mesh + GrainOverlay behind an <img> with aspect-ratio box (zero CLS), onError hides the photo and keeps the art. Unsplash params on every URL: ?auto=format&fit=crop&w=<slot>&q=72-78&dpr=<≤2>; responsive srcset widths [400,640,800,1200,1600] + matching sizes; exactly one eager/fetchpriority=high/preloaded LCP image per route, everything else loading=lazy decoding=async.",
+    "Committed local SVG graphic layer (KB not MB, zero network dep): film-grain, generative mesh, ember-drop BrandMark, 7 CategoryGlyphs, chili SpiceMeter unit, PassportStamp seals, FlavorRadar hexagon, achievement medallions, dividers, skeleton, scroll-cue. All inline SVG so the 'highly graphic' identity renders even with images.unsplash.com fully blocked.",
+    "Semantics: one <main> per route, single <header>/<footer>, <nav aria-label='Primary'>, exactly one <h1> per page, no skipped heading levels, each major section <section aria-labelledby>. Skip-to-content link is the first focusable element (tall hero makes this essential). DishCard=<article> with one stretched-link title anchor; heart/quicklook are sibling buttons (no nested interactives).",
+    "Data-viz text equivalents: SpiceMeter/FlavorRadar/Gauge/PassportStamp are role=img with descriptive aria-label; ProgressRing role=progressbar with aria-valuenow/min/max + aria-valuetext; StreakHeatmap is a labelled table/list with a text summary, never bare color squares. State never by color alone — add icon/weight/underline/label to active chips, spice, batch status, ratings, errors. Meter filled-vs-empty ≥3:1.",
+    "Motion in JS: use Framer Motion useReducedMotion() and branch EVERY variant to the final state instantly (not a 1ms-collapsed jank). Keep animations to transform/opacity only so INP<200ms. Marquee/hero rotation need visible pause + ≥5s/slide and must not be the only home for their info (WCAG 2.2.2).",
+    "Perf budgets: LCP<2.5s (don't animate/defer the LCP image beyond ≤1.06 scale), CLS<0.1 (aspect-ratio boxes everywhere), INP<200ms. Hero ≤200KB AVIF, grid thumb ≤60KB, above-fold image payload ≤600KB. content-visibility:auto on offscreen mosaic rows and long Kitchen boards. Test on throttled Fast-3G / 4x-CPU AND with images.unsplash.com blocked.",
+    "Focus: keep the index.css :focus-visible (2px --primary, 3px offset); dual-tone ring (primary outline + bone box-shadow halo) over photography/duotone cards so it never washes out; scroll-margin-top=nav height on focus targets; roving tabindex for chip group, carousels, RatingStars, FlavorWheel; modals trap + restore focus + background inert.",
+    "Readability: prose ≤68ch (hard 75), body ≥16px (17–18px long-form editorial), line-height 1.6 (1.65–1.75 dense), never justify, all-caps labels ≥11px with ≥0.12em tracking, Fraunces is DISPLAY-ONLY (never body/method/steps), tabular-nums on all data.",
+    "Routing: React Router with routes /, /explore, /dish/:id, /kitchen, /about; Explore reads filter query params (category, heat, mood) so mood chips and category tiles deep-link pre-filtered; Dish 'Start a batch' routes to /kitchen with a prefilled Batch."
+  ],
+  "firstImpressionChecklist": [
+    "APPETITE HIT ≤50ms: a full-bleed Tier-1 warm-graded charred dish reads 'award-winning restaurant, not a tracker' before any text is parsed.",
+    "POV IN ONE LINE: H1 'Bold flavor, worth chasing.' tells a brand-new visitor what this is and who it's for in under 5 seconds, no scroll.",
+    "BRAND COLOR OWNED IN VIEWPORT 1: gochujang crimson is unmistakable via the ember bloom + 'Start cooking' CTA + wordmark ember-dot before any interaction.",
+    "NEVER BROKEN: with images.unsplash.com blocked, the fallbackGradient + generative mesh + grain render a beautiful intentional hero — no broken box, CLS<0.1.",
+    "ONE OBVIOUS NEXT STEP: exactly one crimson primary ('Start cooking') + one ghost ('Explore dishes') — no decision paralysis, one crimson button per screen.",
+    "NAV OUT OF THE WAY: ≤4 items on a translucent bar; the image dominates and the page reads confident, not cluttered.",
+    "LEGIBLE WHILE LOUD: hero copy on the bottom grad-duotone-ink scrim + text-shadow clears AA; eye-popping and effortless simultaneously.",
+    "ALIVE, NOT GIMMICKY: exactly one load motion (Ken-Burns + staggered headline); comprehension never gated, headline never delayed.",
+    "DEPTH ON SECOND GLANCE: Flavor Pulse ticker + category glyph grid + 'Trusted by 40,000+ home cooks' confirm a real curated catalog behind the beauty.",
+    "WORKS WITH NO JS / REDUCED MOTION: hero headline, CTA, nav and core copy render and read statically; the 5-second test never depends on motion, JS, or the CDN.",
+    "BOTH THEMES: the first impression lands identically in warm light (bone) and charcoal dark, accent scarcity and grain held constant."
+  ],
+  "risks": [
+    "Fraunces + Geist not yet installed — tokens reference them by name and silently fall back to Georgia/system-ui, wrecking brand fidelity and causing FOUT/CLS. Install @fontsource-variable packages and preload BEFORE anything else, or the whole 'editorial' impression collapses.",
+    "Contrast landmines on the final palette: --text-subtle fails AA for light-mode body (3.12:1) and --accent (orange) is only 2.44:1 as text on light paper. If engineers reach for them as metadata/link text the a11y audit fails. Enforce: text-muted for readable metadata, accent only as fills or dark-surface text, .text-gradient only on dark at display size.",
+    "Text-on-image legibility over unpredictable Unsplash crops: a flat 55% veil is NOT enough over bright/blown-out dishes. Must use the bottom-anchored grad-duotone-ink scrim to ≤0.18 composited luminance + text-shadow belt, measured at actual text pixels — otherwise hero/card copy fails AA in the wild.",
+    "Motion-heavy scope (Ken-Burns, marquee, magnetic CTA, layout reflow, ring/gauge/radar draws, hover choreography) risks INP>200ms and jank if anything animates layout/paint. Keep strictly to transform/opacity and fully branch useReducedMotion(), or performance and the 5-second test degrade.",
+    "LCP risk: the hero is the LCP element but sits under mesh+grain+scrim layers and a Ken-Burns transform. If the image isn't eager/fetchpriority-high/preloaded and capped ≤200KB AVIF, LCP blows past 2.5s on mobile.",
+    "SmartImage/fallback is load-bearing but easy to under-build: any raw <img> shipped without the gradient+SVG+aspect-ratio box reintroduces broken-box risk and CLS the moment the CDN is unreachable. Treat SmartImage as blocking infra, code-review every image usage against it.",
+    "Kitchen (Mise) is the differentiator but also the biggest spreadsheet-relapse risk: without ≥16px padding, Fraunces value / mono-label hierarchy, and the graphic ring/gauge/flame/stamp layer, it reverts to the exact 'boring tracker' the rebuild exists to kill.",
+    "Scope/time: 5 routes × dozens of components × two fully-styled themes × strict a11y is large. Sequence: tokens+fonts → SmartImage+graphic layer → GlobalNav/Hero/DishCard → Home → Explore → Dish → Kitchen → About, shipping the 5-second-test-critical Home hero first.",
+    "Accent-scarcity discipline can erode as more components are added; if crimson leaks into backgrounds/secondary text it stops being loud and the brand flattens. Encode the rule in review: one crimson filled button per screen, accent only on CTAs/wordmark/active/SpiceMeter/labels.",
+    "Data-viz a11y (radar/gauge/heatmap/progress rings) is frequently shipped as color-only pretty graphics; without role/aria-valuetext text equivalents and ≥3:1 filled-vs-empty they fail WCAG and are unreadable to AT and color-blind users."
+  ]
+}

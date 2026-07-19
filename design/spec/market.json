@@ -1,0 +1,171 @@
+{
+  "exemplarSites": [
+    {
+      "name": "Noma (noma.dk)",
+      "category": "Fine-dining / editorial minimalism",
+      "whatWorks": "Near-invisible chrome: thin all-lowercase serif wordmark, utilitarian sans body, and an auto-cross-fading slideshow of Ditte Isager photography (foraged ingredients, hands, plated dishes) with NO parallax, NO video, NO gradient CTAs. A mossy-green/bone-white seasonal palette lets the food carry 100% of the expressive weight. Lesson for Gochujang: restraint in the UI is what makes the imagery read as luxury."
+    },
+    {
+      "name": "Atelier Crenn (ateliercrenn.com)",
+      "category": "Michelin 3-star / immersive gallery",
+      "whatWorks": "Full-screen imagery + minimal nav makes the site feel like an art gallery rather than a restaurant page. The poetic identity is expressed through pacing and full-bleed photography, not decoration. Lesson: a discovery platform can borrow the gallery-walk feeling for its hero and dish detail pages."
+    },
+    {
+      "name": "Atomix (atomixnyc.com)",
+      "category": "Michelin 2-star Korean fine dining",
+      "whatWorks": "Single-page, muted tones, generous whitespace, every element intentional. Directly on-brand for a Korean-flavor-forward codename — proves an intimate, restrained Korean fine-dining aesthetic scales to the web. Lesson: whitespace + one restrained accent reads as premium and confident."
+    },
+    {
+      "name": "Eleven Madison Park (elevenmadisonpark.com)",
+      "category": "Fine dining / photography-led",
+      "whatWorks": "A disciplined build whose hero is a ~19-slide auto-advancing gallery of Maciek Kobielski photography — kitchen moments, single ingredients, plated dishes — no video, no parallax. Proves that a slow, high-quality photographic rotation beats gimmick motion for prestige. Lesson: let a curated image rotation BE the hero."
+    },
+    {
+      "name": "SŌM (Awwwards Site of the Day)",
+      "category": "Premium beverage / high-motion brand",
+      "whatWorks": "Food & Drink SOTD using infinite scroll, scroll-linked transitions, 3D/WebGL, and GSAP-orchestrated reveals to make a single product feel like an experience. Lesson: this is the high-motion end of the spectrum — cherry-pick ONE or two signature scroll moments rather than motion everywhere."
+    },
+    {
+      "name": "Oatly (Infinite Canvas — Awwwards Honorable Mention)",
+      "category": "Food brand / voice-driven",
+      "whatWorks": "Turns brand voice and irreverent copy into the interface itself; personality is the product. Lesson: Gochujang's 'bold, modern, Korean-and-global POV' should show up in microcopy and section headers, not just visuals."
+    },
+    {
+      "name": "NYT Cooking",
+      "category": "Recipe platform / editorial benchmark",
+      "whatWorks": "Serif headline + clean sans body has become THE editorial-food benchmark; paneled, news-like formatting establishes integrity while a colorful hero image and category labels add a social, communal feel. Lesson: this exact serif/sans split is the safest premium-editorial system for Gochujang, and category labeling is a proven discovery hook."
+    },
+    {
+      "name": "Bon Appétit / Epicurious",
+      "category": "Food magazine / recipe archive",
+      "whatWorks": "Industry-standard photography and video with a clean, low-friction interface; recipes feel modern and bold-flavored. Consistent complaint across ALL recipe sites is ad density and clutter — their cleanest views win. Lesson: Gochujang's competitive edge is being clutter-free where incumbents are ad-choked."
+    },
+    {
+      "name": "Omsom / Fly By Jing",
+      "category": "Modern Asian-flavor CPG brands",
+      "whatWorks": "Loud, saturated, unapologetic color and story-forward founder narratives celebrating Asian flavors and community. Directly analogous to Gochujang's positioning. Lesson: a bold saturated accent + explicit point-of-view storytelling differentiates from muted, generic 'gourmet' sites."
+    }
+  ],
+  "commonPatterns": [
+    {
+      "pattern": "Full-bleed, photography-first hero where the image IS the design and UI chrome recedes",
+      "whyItWorks": "Every prestige exemplar (Noma, Crenn, EMP) hands expressive weight to food photography and keeps navigation near-invisible. Visitors judge quality in 50ms; a single stunning full-bleed dish communicates 'premium' faster than any headline."
+    },
+    {
+      "pattern": "Serif display headline paired with a clean neutral sans-serif body",
+      "whyItWorks": "NYT Cooking made this the editorial-food benchmark; the serif signals craft/heritage while the sans keeps recipes and metadata highly legible — satisfying the 'eye-popping AND easy to read' dual mandate."
+    },
+    {
+      "pattern": "Restrained palette — deep neutral base + bone/cream + ONE saturated brand accent",
+      "whyItWorks": "Fine-dining sites use black/white/one-accent so imagery pops; 2025 trends favor warm earthy neutrals (mocha, caramel, charcoal) with a single saturated hero color. For Gochujang the accent writes itself: a gochujang chili-red/vermilion against charcoal and cream."
+    },
+    {
+      "pattern": "Whitespace treated as load-bearing structure, not leftover space",
+      "whyItWorks": "Premium magazine layouts use margins and empty columns to control reading pace 'the way silence controls music.' Generous negative space is the single cheapest signal of luxury and the fastest fix for a 'boring, static tracker' feel."
+    },
+    {
+      "pattern": "Editorial grid (12-col / 3-col base) with intentional asymmetry and overlapping text-on-image",
+      "whyItWorks": "Magazine-derived grids give structure while asymmetric weight and image/type overlap create modern editorial tension that keeps a browsing surface from feeling like a spreadsheet."
+    },
+    {
+      "pattern": "Scroll-triggered reveals and 'scrollytelling' — fades, slides, scale-ins as sections enter viewport",
+      "whyItWorks": "Awwwards food winners (SŌM) use ScrollTrigger-style reveals to add rhythm and narrative; progressive disclosure makes a content-dense site feel choreographed and alive rather than dumped."
+    },
+    {
+      "pattern": "Category-labeled, chip-filterable card grid for discovery",
+      "whyItWorks": "NYT Cooking's colorful category labels and Spotify-style filter chips are proven discovery hooks; for a tracking/discovery platform this turns a database into a browsable, tappable magazine."
+    },
+    {
+      "pattern": "Slow auto-advancing photographic rotation instead of gimmick video",
+      "whyItWorks": "Noma and EMP both prove a curated, calm image rotation reads as more prestigious than autoplay video or heavy parallax, and it performs better and degrades gracefully."
+    },
+    {
+      "pattern": "Card hover choreography — image zoom/reveal, metadata slide-in, magnetic CTAs",
+      "whyItWorks": "Micro-interactions (60–100px magnetic pull on buttons, poster-slide-away to reveal metadata) reward exploration and make the product feel crafted, differentiating from static competitors."
+    },
+    {
+      "pattern": "Grain / duotone / generative graphic layer over or beside photography",
+      "whyItWorks": "Duotone is back in 2025 and a committed local SVG grain/graphic layer gives the 'highly graphic' punch that guarantees rendering even when external food photos fail to load — solving Gochujang's imagery constraint directly."
+    }
+  ],
+  "firstImpressionTactics": [
+    "Lead with ONE hero food image at maximum quality and scale (full-bleed) — visitors form a first impression in ~50ms and 100% of prestige sites bet the hero on photography, not UI.",
+    "State the point of view in the first headline: a serif oversized statement ('Bold flavor, worth chasing' energy) that a brand-new visitor understands in under 5 seconds — a single headline change can swing conversion 30%+.",
+    "Show the accent color instantly — the gochujang chili-red should hit within the first viewport (CTA, wordmark, or overlay) so the brand feels distinct before any scroll.",
+    "Guarantee the wow even if the Unsplash CDN fails: every hero/card image sits on a palette-derived gradient + local SVG graphic so the 5-second impression never renders as a broken box.",
+    "Keep the above-the-fold nav to <5 items so the immersive image dominates — Crenn/Noma prove minimal chrome reads as more confident and premium.",
+    "Use ONE signature motion moment on load (a slow image scale or a staggered headline reveal) to signal 'crafted and alive' — but never a wall of motion that delays comprehension.",
+    "Add a single, obvious primary CTA ('Explore dishes' / 'Start tracking') with a magnetic or clearly-hovered state so the next action is unmistakable within the 5-second window.",
+    "Include a thin trust/quality cue — a curated category row or 'featured this week' strip just below the fold — so the second glance confirms depth behind the beautiful hero."
+  ],
+  "layoutConventions": [
+    "12-column editorial grid with a 3-column default; break to asymmetric spans for featured dishes to avoid a uniform 'tracker table' rhythm.",
+    "Full-bleed hero section (100vw, ~90-100vh) with content anchored bottom-left or centered, chrome minimal and overlaid.",
+    "Generous, deliberate whitespace and large section padding — treat empty space as structural, not filler.",
+    "Sticky top nav that gains backdrop-blur + subtle shadow on scroll (Intersection Observer), staying out of the way until needed.",
+    "Alternating full-bleed image bands and contained editorial text blocks to create magazine-spread pacing down the page.",
+    "Overlap text on imagery for featured/hero cards to create editorial depth; keep body content in clean contained columns for readability.",
+    "Card grids for discovery (dishes/recipes) with a filter-chip row pinned above, and a 'jump-to' affordance on any long detail page (recipe-site UX best practice).",
+    "Bento/mixed-size feature blocks near the top of Explore to spotlight editorial picks before the uniform grid begins."
+  ],
+  "typographyTrends": [
+    "Serif display + clean sans body pairing (the NYT Cooking benchmark) — e.g. an editorial serif like Fraunces / Playfair Display / Newsreader for headlines against Inter / Geist / General Sans for UI and body.",
+    "Oversized, storytelling headlines — type as the graphic element, not just a label; hero headers can run huge and confident.",
+    "Tight, intentional headline leading with generous body line-height (1.6–1.8) so dense recipe/metadata content stays effortless to read.",
+    "Kinetic/animated headline reveals (staggered word or line reveals on scroll/load) for the 'alive' feel without harming legibility.",
+    "Asymmetric typographic weight — heavy display type on one side of a spread, body negotiating around it, for editorial tension.",
+    "All-lowercase or refined small-caps treatments for wordmark/labels to echo the understated fine-dining voice (Noma-style).",
+    "Self-hosted via @fontsource for performance and the no-external-fonts constraint; limit to 2 families, 3-4 weights max."
+  ],
+  "colorTrends": [
+    "Deep charcoal base (#1A1A1A–#2D2D2D) rather than pure black — pure black reads flat/harsh on modern displays; charcoal is the 2025 dark-mode standard.",
+    "Warm earthy neutrals as the supporting palette — mocha/caramel/clay/bone-cream (Pantone Mocha Mousse era) signal warmth and quality and flatter food.",
+    "ONE saturated brand accent used sparingly for maximum impact — for Gochujang, a chili-red/vermilion/gochujang-crimson is the obvious, ownable choice.",
+    "Two-color gradients ONLY (multi-stop Instagram-era gradients read dated) — use subtle chili-to-ember or charcoal-to-plum gradients as image fallbacks.",
+    "Duotone photography treatment (charcoal + accent) for graphic sections and hover states — a returning 2025 trend that unifies mismatched stock imagery.",
+    "Bone/cream light mode and charcoal dark mode both fully styled, since upscale/gourmet brands lean dark but editorial reading benefits from a warm light surface.",
+    "High-contrast accent-on-neutral for CTAs and category labels to grab attention without introducing palette clutter."
+  ],
+  "imageryStyle": [
+    "Full-bleed, high-quality food photography as the primary visual currency — texture, steam, char, freshness captured close-up; consistency of treatment across all images matters more than any single shot.",
+    "Every CDN image ALWAYS paired with a palette-derived gradient + local SVG fallback so nothing renders broken when Unsplash is unreachable.",
+    "Committed local graphic layer: film grain overlay, duotone filters, generative hero art, brand marks, and per-category glyphs — this delivers the 'highly graphic' punch with guaranteed rendering.",
+    "Duotone / charcoal-and-accent treatments on secondary imagery to unify a heterogeneous stock-photo set into one branded system.",
+    "A subtle grain/noise texture over dark surfaces to add tactile, print-magazine richness and kill flat digital emptiness.",
+    "Hands, process, and single-ingredient shots (not just plated hero dishes) — EMP/Noma use these to add narrative warmth and authenticity.",
+    "Consistent aspect ratios and object-fit:cover across cards so the grid stays magazine-clean regardless of source image dimensions."
+  ],
+  "interactionPatterns": [
+    "Scroll-triggered reveals (fade/slide/scale-in) on section entry via Framer Motion whileInView — the core 'alive' mechanic, used with restraint.",
+    "Slow image scale/parallax on the hero (Ken Burns-style) for prestige motion without autoplay video.",
+    "Card hover choreography: image zoom-in, subtle lift/shadow, and metadata (cuisine, time, heat level) sliding up into view.",
+    "Magnetic primary CTAs — button attracts cursor within ~60–100px with smooth easing for a crafted, tactile feel.",
+    "Sticky nav transition: transparent over hero, then backdrop-blur + shadow after scrolling past it.",
+    "Staggered/kinetic headline reveals on load and on section entry (word- or line-level stagger).",
+    "Filter-chip interactions with animated layout shifts (Framer Motion layout) as the card grid re-flows.",
+    "Respect prefers-reduced-motion — provide instant, non-animated states so accessibility and the 5-second test never depend on motion completing."
+  ],
+  "antipatterns": [
+    "Do NOT recreate a dense, static, spreadsheet-like tracker — that is the exact failure of the old site; every list must feel like a curated magazine grid.",
+    "Avoid multi-stop rainbow gradients and Instagram-era gradient overlays — they instantly read as dated; cap at two-color.",
+    "No autoplay video heroes or heavy parallax gimmicks — the prestige exemplars deliberately avoid them; they hurt perceived quality and performance.",
+    "Never let motion gate comprehension — a wall of animations or slow reveals that delay the headline fails the 5-second test.",
+    "Avoid ad-clutter and cramped density — the #1 complaint about incumbent recipe sites; Gochujang's edge is breathing room.",
+    "Don't use more than 2 font families or a scattered accent palette — clutter reads as amateur, not premium.",
+    "Never ship a raw <img> without a gradient/SVG fallback — a broken image box destroys the first impression given the CDN constraint.",
+    "Avoid pure black (#000) backgrounds — use warm charcoal; pure black feels flat and harsh.",
+    "Don't center everything symmetrically — uniform symmetry reads generic; use editorial asymmetry for personality."
+  ],
+  "recommendations": [
+    "Bet the homepage hero on ONE full-bleed dish image with a huge serif POV headline and the chili-red accent visible immediately — the single highest-leverage move for the 5-second test.",
+    "Adopt the NYT-benchmark type system now: an editorial serif for display (Fraunces/Newsreader) + a clean sans (Inter/General Sans) for UI/body, self-hosted via @fontsource, max 2 families.",
+    "Lock a disciplined palette: warm charcoal base, bone/cream, warm-neutral supports, and a single gochujang chili-red accent used only for CTAs, labels, and key highlights.",
+    "Build the mandatory image-fallback primitive FIRST — a component that renders palette gradient + local SVG under every Unsplash URL — so nothing ever renders broken; treat this as non-negotiable infrastructure.",
+    "Invest the committed graphic budget in a local SVG/graphic layer: grain overlay, duotone filter, generative hero art, brand mark, and per-category glyphs — this is what delivers 'highly graphic' with guaranteed rendering.",
+    "Design the Explore/discovery surface as a magazine: bento feature blocks up top, then a chip-filterable card grid with hover choreography and category labels — the antithesis of the old static tracker.",
+    "Choreograph motion with restraint via Framer Motion: whileInView reveals, one hero Ken-Burns scale, magnetic CTAs, sticky-nav blur — and always honor prefers-reduced-motion.",
+    "Make whitespace and pacing a first-class rule in the design tokens (large section padding, alternating full-bleed/contained bands) so density never returns.",
+    "Weave an explicit point of view into microcopy and section headers (Omsom/Oatly lesson) so the bold Korean-and-global identity comes through in words, not just visuals.",
+    "Fully style both a warm light mode and a charcoal dark mode, defaulting to whichever best showcases the hero imagery, and validate contrast for accessibility on the accent-on-neutral CTAs."
+  ]
+}

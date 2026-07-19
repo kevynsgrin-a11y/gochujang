@@ -1,0 +1,327 @@
+{
+  "concept": "GOCHUJANG — \"Fermented Editorial.\" A warm-charcoal, ink-and-ember design system that behaves like an award-winning restaurant site wearing the tailoring of a premium food magazine. The organizing metaphor is the jar of gochujang itself: a deep, slow-built fermented crimson glowing against near-black clay and bone-white paper. UI chrome recedes to near-invisibility so food photography and one saturated accent — a gochujang chili-red that ramps into persimmon-ember — carry 100% of the expressive weight. Type is the graphic element: an oversized high-contrast display serif (Fraunces) delivering loud, declarative POV headlines, set against a clean neutral grotesque (Geist) for effortless UI and metadata. Every surface is layered with a committed local graphic system (fine film grain, charcoal+ember duotone, seeded generative hero art, category glyphs) so the \"highly graphic\" punch renders even when the Unsplash CDN fails. Negative space is load-bearing — silence controlling music. The result reads premium in 50ms, stays effortless to read for hours, and never once feels like the old static tracker. Two unexpected accents keep it from generic-gourmet: a fermented-plum (funk/umami cue) and a cool celadon (fresh/herbaceous cue, and the Passport/success voice) that make the crimson feel even hotter by contrast.",
+  "palette": {
+    "light": {
+      "bg": "#F5EFE6",
+      "surface": "#FBF7F0",
+      "surfaceAlt": "#EFE6D8",
+      "elevated": "#FFFFFF",
+      "text": "#1A1310",
+      "textMuted": "#5C5148",
+      "textSubtle": "#8A7D70",
+      "border": "#E0D5C4",
+      "primary": "#C63A20",
+      "primaryFg": "#FFF7F1",
+      "secondary": "#2C2320",
+      "secondaryFg": "#F5EFE6",
+      "accent": "#D9622C",
+      "accentFg": "#1A1310",
+      "success": "#3E7C63",
+      "warning": "#C98A1E",
+      "danger": "#B22B1C"
+    },
+    "dark": {
+      "bg": "#161210",
+      "surface": "#1F1815",
+      "surfaceAlt": "#292019",
+      "elevated": "#312620",
+      "text": "#F4EBDF",
+      "textMuted": "#B9AA99",
+      "textSubtle": "#877869",
+      "border": "#3A2E26",
+      "primary": "#E8542E",
+      "primaryFg": "#1A0F0A",
+      "secondary": "#EDE3D5",
+      "secondaryFg": "#1F1815",
+      "accent": "#F0873F",
+      "accentFg": "#1A0F0A",
+      "success": "#5FB08C",
+      "warning": "#E5B14A",
+      "danger": "#E5533B"
+    }
+  },
+  "paletteRationale": "The base is deliberately never pure black or pure white: warm charcoal (#161210) and bone paper (#F5EFE6) flatter food and signal 2025 premium rather than harsh flat digital. The signature color is the gochujang crimson (#C63A20 light / #E8542E dark) — the single ownable brand asset, used ONLY for CTAs, the wordmark ember, active states, spice/heat, and key labels so it stays loud by scarcity. Accent persimmon-ember (#D9622C→#F0873F) is the crimson's warmer sibling for gradients, hovers and glow, evoking char and molten heat. Two restrained \"unexpected\" supporting hues keep the system from reading as generic-gourmet beige: a fermented-plum (used via gradients/duotone for funk/umami editorial bands) and a cool celadon-green success (#3E7C63/#5FB08C) that voices the Flavor Passport, \"ready\" batches and fresh/herbaceous cues — its coolness makes the reds read hotter. Neutrals (mocha/clay/bone) form a five-step warm ink ramp for text hierarchy. All pairings are tuned for WCAG-AA: light text #1A1310 on #F5EFE6 = ~13.5:1; primaryFg #FFF7F1 on primary #C63A20 = ~4.9:1 (AA for large + normal UI); dark text #F4EBDF on #161210 = ~14:1; dark primary #E8542E carries dark ink #1A0F0A for AA. textMuted/textSubtle both clear 4.5:1 on their intended surfaces for body and metadata respectively.",
+  "fonts": {
+    "displayFamily": "Fraunces",
+    "displayFontsourcePkg": "@fontsource-variable/fraunces",
+    "bodyFamily": "Geist",
+    "bodyFontsourcePkg": "@fontsource-variable/geist",
+    "accentFamily": "Geist Mono",
+    "accentFontsourcePkg": "@fontsource-variable/geist-mono"
+  },
+  "typeScale": [
+    {
+      "token": "display-hero",
+      "usage": "Full-bleed hero POV headline ('Taste, turned up.') — Fraunces optical size high, soft weight, tight leading 0.95, -0.02em tracking",
+      "sizeClamp": "clamp(2.75rem, 7vw + 1rem, 7rem)",
+      "weight": "600"
+    },
+    {
+      "token": "display-xl",
+      "usage": "Page manifesto titles, About hero, section-opening statements",
+      "sizeClamp": "clamp(2.25rem, 4.5vw + 0.5rem, 4.5rem)",
+      "weight": "600"
+    },
+    {
+      "token": "h1",
+      "usage": "Dish detail title, primary page titles",
+      "sizeClamp": "clamp(1.9rem, 2.6vw + 0.5rem, 3.25rem)",
+      "weight": "550"
+    },
+    {
+      "token": "h2",
+      "usage": "Section headers (Fraunces), editorial band titles",
+      "sizeClamp": "clamp(1.5rem, 1.6vw + 0.6rem, 2.25rem)",
+      "weight": "550"
+    },
+    {
+      "token": "h3",
+      "usage": "Card titles, sub-section heads — can be Fraunces or Geist SemiBold",
+      "sizeClamp": "clamp(1.15rem, 0.6vw + 0.9rem, 1.5rem)",
+      "weight": "600"
+    },
+    {
+      "token": "body-lg",
+      "usage": "Editorial intro / lead paragraph, Geist, line-height 1.7",
+      "sizeClamp": "clamp(1.075rem, 0.4vw + 0.95rem, 1.3rem)",
+      "weight": "400"
+    },
+    {
+      "token": "body",
+      "usage": "Default body, ingredient/method text, Geist, line-height 1.65",
+      "sizeClamp": "clamp(0.95rem, 0.2vw + 0.9rem, 1.05rem)",
+      "weight": "400"
+    },
+    {
+      "token": "caption",
+      "usage": "Metadata, card meta (cuisine • time • heat), Geist, line-height 1.4",
+      "sizeClamp": "clamp(0.8rem, 0.1vw + 0.78rem, 0.875rem)",
+      "weight": "450"
+    },
+    {
+      "token": "eyebrow",
+      "usage": "Section eyebrows, category labels, nav — Geist Mono, uppercase, 0.18em tracking",
+      "sizeClamp": "clamp(0.68rem, 0.05vw + 0.66rem, 0.78rem)",
+      "weight": "500"
+    },
+    {
+      "token": "data",
+      "usage": "Numeric/stat readouts (Scoville, timers, streak counts, servings) — Geist Mono tabular-nums",
+      "sizeClamp": "clamp(0.9rem, 0.3vw + 0.85rem, 1.15rem)",
+      "weight": "500"
+    }
+  ],
+  "radii": {
+    "none": "0px",
+    "xs": "4px",
+    "sm": "8px",
+    "md": "12px",
+    "lg": "18px",
+    "xl": "26px",
+    "2xl": "36px",
+    "pill": "999px",
+    "card": "20px",
+    "chip": "999px",
+    "modal": "28px",
+    "glyph": "14px"
+  },
+  "shadows": [
+    {
+      "token": "shadow-xs",
+      "usage": "Chips, filter pills, subtle raised metadata",
+      "value": "0 1px 2px rgba(26,19,16,0.06), 0 1px 1px rgba(26,19,16,0.04)"
+    },
+    {
+      "token": "shadow-sm",
+      "usage": "Resting DishCards, stat tiles",
+      "value": "0 2px 4px rgba(26,19,16,0.05), 0 6px 14px -6px rgba(26,19,16,0.12)"
+    },
+    {
+      "token": "shadow-md",
+      "usage": "Hovered cards, dropdowns, popovers",
+      "value": "0 10px 24px -8px rgba(26,19,16,0.18), 0 3px 8px -4px rgba(26,19,16,0.10)"
+    },
+    {
+      "token": "shadow-lg",
+      "usage": "QuickLook modal, elevated batch panel, sticky action bar",
+      "value": "0 28px 60px -18px rgba(26,19,16,0.28), 0 10px 24px -12px rgba(26,19,16,0.16)"
+    },
+    {
+      "token": "shadow-ember",
+      "usage": "Primary/magnetic CTA glow, active spice pills — accent-tinted",
+      "value": "0 8px 24px -6px rgba(198,58,32,0.42), 0 2px 6px rgba(217,98,44,0.30)"
+    },
+    {
+      "token": "shadow-ember-lg",
+      "usage": "Hero CTA hover, streak-flame focus, achievement unlock burst",
+      "value": "0 0 0 1px rgba(240,135,63,0.30), 0 14px 40px -8px rgba(232,84,46,0.50)"
+    },
+    {
+      "token": "shadow-inset-dark",
+      "usage": "Duotone image inner vignette + progress-ring track, dark surfaces",
+      "value": "inset 0 0 60px -20px rgba(0,0,0,0.55), inset 0 1px 0 rgba(244,235,223,0.04)"
+    }
+  ],
+  "gradients": [
+    {
+      "token": "grad-ember",
+      "css": "linear-gradient(135deg, #C63A20 0%, #E8542E 45%, #F0873F 100%)",
+      "usage": "Primary CTA fills, wordmark ember drop, active spice meter, hero accent washes — the signature two-into-three warm ramp"
+    },
+    {
+      "token": "grad-ember-radial",
+      "css": "radial-gradient(120% 120% at 20% 0%, #F0873F 0%, #C63A20 55%, #7A1E12 100%)",
+      "usage": "Generative hero art glow core, achievement-unlock burst, batch 'ready' state"
+    },
+    {
+      "token": "grad-fallback-crimson",
+      "css": "linear-gradient(160deg, #7A1E12 0%, #C63A20 60%, #D9622C 100%)",
+      "usage": "SmartImage palette fallback under red/spicy dish photos so nothing renders broken"
+    },
+    {
+      "token": "grad-fallback-charcoal",
+      "css": "linear-gradient(165deg, #292019 0%, #1F1815 55%, #161210 100%)",
+      "usage": "Default SmartImage fallback for dark surfaces / neutral dish photos"
+    },
+    {
+      "token": "grad-plum-funk",
+      "css": "linear-gradient(150deg, #3A1C2E 0%, #5E2A3E 50%, #8A3A2C 100%)",
+      "usage": "'Fermented & Funky' editorial band, umami/funk duotone tint — the unexpected fermented-plum accent"
+    },
+    {
+      "token": "grad-celadon-fresh",
+      "css": "linear-gradient(150deg, #1F3A30 0%, #3E7C63 60%, #7FBF9E 100%)",
+      "usage": "Flavor Passport, herbaceous collections, 'batch ready' success wash — the cool counterpoint"
+    },
+    {
+      "token": "grad-duotone-ink",
+      "css": "linear-gradient(180deg, rgba(22,18,16,0.10) 0%, rgba(22,18,16,0.72) 100%)",
+      "usage": "Text-legibility scrim over all full-bleed imagery (bottom-anchored), plus charcoal duotone base for secondary photos"
+    },
+    {
+      "token": "grad-paper-sheen",
+      "css": "radial-gradient(140% 100% at 50% -20%, #FBF7F0 0%, #F5EFE6 55%, #EFE6D8 100%)",
+      "usage": "Light-mode section backgrounds, newsletter band, About manifesto surface — subtle warm paper depth"
+    }
+  ],
+  "motionPrinciples": [
+    "Restraint over spectacle: motion adds rhythm, never gates comprehension — the hero headline and primary CTA are readable/tappable at frame zero; reveals only enrich what is already legible.",
+    "One signature load moment: a slow 6–8s Ken-Burns scale (1.0→1.08) on the hero image plus a staggered line-by-line KineticHeadline reveal (Fraunces lines rising 24px + fade, 70ms stagger, ease [0.22,1,0.36,1]). Nothing else animates on first paint.",
+    "whileInView reveals as the core alive-mechanic: sections fade+rise 20px with 90ms child stagger, triggered once at 15% viewport — used with discipline, never on every element.",
+    "Magnetic primary CTAs: cursor attracts the button within ~90px with spring easing (stiffness 150, damping 15), paired with the shadow-ember → shadow-ember-lg glow bloom on hover.",
+    "Card hover choreography: 220ms image scale 1.0→1.06 under a fixed mask, subtle lift (translateY -4px + shadow-sm→shadow-md), and metadata (cuisine • time • heat) sliding up 12px into view — reward exploration.",
+    "Physical, edible easing: default ease [0.22,1,0.36,1] (confident settle); spring only for magnetic pulls, progress-ring fills and the streak-flame flicker. Durations 180–320ms for UI, 6000–8000ms for ambient hero.",
+    "Choreographed data: ProgressRings and the Scoville Gauge animate their arc from 0 to value on mount (800ms), tabular numerals count up in sync — tracking feels earned, not printed.",
+    "Layout motion for discovery: FilterChip toggles reflow the mosaic via Framer Motion layout with spring, so the grid feels alive as it re-composes rather than snapping.",
+    "Sticky-nav transition: transparent over hero, then backdrop-blur(12px) + surface tint + shadow-sm after scrolling past the fold, driven by Intersection Observer — chrome stays out of the way until needed.",
+    "prefers-reduced-motion is a hard gate: all reveals resolve to instant final state, Ken-Burns and marquee freeze, magnetic pull disables — the 5-second test and accessibility never depend on motion completing."
+  ],
+  "signatureDetails": [
+    "The ember drop: the dot of the 'j' in the Gochujang wordmark is a single glowing grad-ember teardrop with a faint 4px ember bloom — animates a slow 3s pulse on load, doubles as the standalone favicon/app-icon 'G' mark. The only spot color permitted to glow.",
+    "Committed film-grain + duotone layer: a tiled local SVG feTurbulence grain (opacity ~0.04 light / ~0.06 dark) sits over every dark surface and full-bleed image, plus a charcoal+ember duotone filter unifies heterogeneous Unsplash stock into one branded system — tactile print-magazine richness that guarantees rendering.",
+    "Never-broken imagery: every SmartImage renders a palette-derived gradient (grad-fallback-crimson or -charcoal, seeded by dish hue) + a seeded generative SVG glyph BEHIND the Unsplash URL, so a CDN miss reveals intentional brand art, never a broken box — the 5-second impression is bulletproof.",
+    "Editorial asymmetry as a rule: featured DishCards break the 12-col grid with a 7/5 split and text overlapping the image edge; bento feature blocks open Explore before the uniform grid — the deliberate anti-spreadsheet rhythm.",
+    "The SpiceMeter as a chili-glyph ramp: heat shown as 1–10 filled local chili-pepper glyphs on a grad-ember fill with a soft ember glow on the active tip, not a generic bar — reused as the Scoville Gauge arc in Mise.",
+    "Hairline ember underline reveal on links/nav: a 1px accent underline wipes left→right on hover (200ms) — a quiet, expensive micro-interaction echoing a knife stroke.",
+    "Mono metadata voice: all numbers, timers, Scoville bands, servings and streak counts render in Geist Mono with tabular-nums, giving stats an instrument-panel precision that contrasts the warm Fraunces headlines.",
+    "Grain-textured social-proof + newsletter bands on grad-paper-sheen / grad-ember-radial, with pull-quotes set in Fraunces italic optical — the site reads like a printed spread, not a web page."
+  ],
+  "iconStyle": "Two coordinated icon layers. (1) UI icons: Lucide (react) at 1.75px stroke, rounded caps/joins, 24px grid — clean, neutral, currentColor so they inherit ink/muted; never filled except for active/toggle states. (2) Brand glyph layer: a committed set of local hand-built SVG marks — per-cuisine and per-technique CategoryGlyphs, the chili-pepper SpiceMeter unit, PassportStamp seals, the ember-drop BrandMark, and generative hero art — drawn as flat single-weight forms (no gloss, no multi-stop) that can fill with grad-ember or duotone. Glyphs use rounded 14px-radius geometry echoing the wordmark, sit on a 32px art grid, and always ship locally so they render with zero network dependency. Achievement badges are filled glyph medallions with a thin ember or celadon ring.",
+  "spacingScale": [
+    "0",
+    "2px",
+    "4px",
+    "8px",
+    "12px",
+    "16px",
+    "20px",
+    "24px",
+    "32px",
+    "40px",
+    "48px",
+    "64px",
+    "80px",
+    "96px",
+    "128px",
+    "160px",
+    "200px"
+  ],
+  "textures": [
+    "Local tiled SVG film grain (feTurbulence baseFrequency 0.9, 2 octaves) as a fixed overlay: opacity 0.04 on bone light surfaces, 0.06 on charcoal dark — kills flat digital emptiness, adds print richness. Set mix-blend-mode: overlay.",
+    "Charcoal+ember duotone filter (SVG feColorMatrix → gradientMap #161210→#E8542E) applied to secondary/thumbnail imagery to unify mismatched stock into one system; full-color reserved for hero + primary dish shots.",
+    "Bottom-anchored grad-duotone-ink scrim on every full-bleed image guaranteeing AA text contrast over unpredictable photography.",
+    "Subtle paper-fiber sheen (grad-paper-sheen radial) on light-mode section backgrounds for warm depth without pattern noise.",
+    "Inner vignette (shadow-inset-dark) on hero and duotone image frames to focus the eye and seat the image into the charcoal ground.",
+    "Faint 1px hairline borders in border token on cards/dividers — the only 'line' in the system; everything else is space, shadow or color."
+  ],
+  "componentSpecs": [
+    {
+      "component": "GlobalNav",
+      "spec": "Height 68px, translucent transparent over hero; on scroll-past-fold → bg surface at 82% + backdrop-blur(12px) + shadow-sm + 1px bottom border. Left: BrandMark (ember-drop pulses). Center/right: ≤4 nav items in eyebrow mono uppercase with hairline ember underline-wipe on hover; active item = solid ember underline. Right: one high-contrast ButtonPrimary 'Start cooking' (grad-ember, pill) + ThemeToggle. Mobile: hamburger → full-bleed charcoal sheet with staggered item reveal."
+    },
+    {
+      "component": "Hero",
+      "spec": "100vw × 92vh. Stack: grad-fallback → GenerativeHeroArt (seeded SVG) → SmartImage (Ken-Burns 1.0→1.08 / 8s) → grad-duotone-ink scrim → grain. Content bottom-left, max-width 60ch: mono eyebrow, KineticHeadline (display-hero Fraunces, line-stagger reveal, ember on one key word), body-lg subhead, ButtonPrimary (magnetic) + ButtonGhost, thin animated scroll cue. Accent visible within first paint via CTA + wordmark."
+    },
+    {
+      "component": "DishCard",
+      "spec": "radius-card 20px, surface bg, shadow-sm. Top: 4:3 masked SmartImage with duotone-on-rest → full-color+scale 1.06 on hover; heat SpiceMeter chip top-left, wishlist heart top-right (fills crimson on tap). Body: mono eyebrow cuisine, h3 Fraunces title (2-line clamp), caption meta row 'time • difficulty • heat' in mono. Hover: lift -4px, shadow-md, metadata slides up 12px, QuickLook affordance fades in. Featured variant: 7/5 asymmetric split, title overlaps image edge."
+    },
+    {
+      "component": "ButtonPrimary / CTAButton",
+      "spec": "grad-ember fill, primaryFg text, pill radius, 14px/24px padding, mono-caps optional. Rest shadow-ember; hover → shadow-ember-lg + brightness 1.05; magnetic pull 90px on hero/primary instances. Active scale 0.97. ButtonGhost: 1px accent border, transparent, accent text, fills 8% ember tint on hover. Disabled: border token, textSubtle, no glow."
+    },
+    {
+      "component": "FilterBar / FilterChip",
+      "spec": "Sticky below page header, bg surface 90% + blur, hairline bottom border. Chips: pill, caption text; rest = surfaceAlt + border; active = grad-ember fill + primaryFg + shadow-ember. Active-filter row below with individual x-dismiss + 'Clear all' ghost link. Mobile collapses to floating filter FAB. Toggling reflows MosaicGrid via layout spring."
+    },
+    {
+      "component": "MosaicGrid",
+      "spec": "CSS columns/masonry, 12-col logic, gap 24px (16px mobile). Interspersed full-bleed collection bands (grad-plum-funk / grad-celadon-fresh) every ~8 cards break the rhythm. SkeletonShimmer placeholders (surfaceAlt → elevated sweep) during load; infinite scroll + load-more. Illustrated EmptyState with generative glyph + reset nudge for zero results."
+    },
+    {
+      "component": "QuickLookModal",
+      "spec": "Centered, max-width 720px, radius-modal 28px, elevated bg, shadow-lg, backdrop charcoal 60% + blur. Left: duotone SmartImage; right: title, SpiceMeter, stat strip (mono), 3 actions (Open / Save / Wishlist). Enter: scale 0.96→1 + fade 220ms; backdrop click + Esc close; focus-trapped."
+    },
+    {
+      "component": "SpiceMeter / Gauge",
+      "spec": "1–10 local chili-pepper glyphs on grad-ember fill, empty = border token outline, active tip carries soft ember bloom; label band in mono ('Scorching', 'Mild'). Gauge (Scoville) variant: 270° arc, shadow-inset-dark track, grad-ember progress animating 0→value 800ms with tabular-num readout + trend sparkline."
+    },
+    {
+      "component": "FlavorRadar",
+      "spec": "6-axis (heat, umami, acidity, sweetness, funk, texture) SVG hexagon on charcoal card; grid hairlines in border; plotted area = grad-ember 25% fill + 1.5px accent stroke; vertices dot on accent. Axis labels mono. Draws on whileInView (path length 0→1, 700ms)."
+    },
+    {
+      "component": "StatTile",
+      "spec": "surface bg, radius-lg, shadow-sm, 20px pad. Top: glyph in ember or celadon; big data-token mono numeral (count-up on mount); caption label muted; optional trend chip (success/danger tint). Kitchen row of 4 tiles, responsive to 2×2."
+    },
+    {
+      "component": "ProgressRing / BatchCard",
+      "spec": "BatchCard surface, radius-card, left ProgressRing (stroke 8, track shadow-inset, grad-ember arc animating to progressPct; celadon grad + subtle glow when status=ready). Right: batch name (h3), type chip, vessel + ingredient mono meta, ready-in countdown (mono), action ('Mark ready'/'Log note'). Ready state pulses celadon ring once."
+    },
+    {
+      "component": "StreakHeatmap",
+      "spec": "Contribution-calendar grid, 12px cells radius-xs, empty = surfaceAlt, filled = 4-step ember ramp by intensity, today = 1px accent ring. Weekly-goal bar + animated streak-flame glyph (grad-ember, gentle flicker) with currentStreak in mono. Cell hover tooltip: date + cook count."
+    },
+    {
+      "component": "AchievementBadge / PassportStamp",
+      "spec": "Filled glyph medallion, radius-glyph, thin ember (unlocked) or textSubtle (locked, desaturated 60%) ring; unlocked burst = grad-ember-radial flash + scale spring on unlock. PassportStamp: circular seal glyph per cuisine on a duotone map, celadon ring at mastery, mono cuisine label."
+    },
+    {
+      "component": "Marquee / Flavor Pulse Ticker",
+      "spec": "Full-width band, surfaceAlt + grain, infinite horizontal scroll (~40s linear, pauses on hover / freezes on reduced-motion). Items: mono-caps trend term + ember dot separator; occasional item in accent. Duplicated track for seamless loop."
+    },
+    {
+      "component": "SectionHeader",
+      "spec": "mono-caps eyebrow in accent + hairline lead rule, then h2 Fraunces title, optional body-lg dek. Left-aligned by default; asymmetric offset variant pushes title to 2nd column. whileInView rise+fade."
+    },
+    {
+      "component": "Footer",
+      "spec": "Charcoal (bg dark even in light mode for anchor weight) + grain. Oversized Fraunces brand statement / tagline 'Taste, turned up.', category link columns in mono, sitemap, credits, ThemeToggle, ember-drop mark. Newsletter form inline with grad-ember submit."
+    },
+    {
+      "component": "NewsletterForm / Toast",
+      "spec": "NewsletterForm on grad-paper-sheen (light) / grad-ember-radial (dark) band: single input (elevated, radius-pill, 1px border → accent on focus) + ButtonPrimary. Toast: elevated bg, shadow-lg, radius-lg, left status bar (success celadon / warning / danger), slides in top-right, auto-dismiss 4s, mono timestamp."
+    }
+  ]
+}
