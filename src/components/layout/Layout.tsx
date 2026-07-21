@@ -7,7 +7,9 @@ import { ScrollProgress } from '@/components/util/ScrollProgress'
 function ScrollToTop() {
   const { pathname } = useLocation()
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'auto' })
+    // 'instant' bypasses the global scroll-behavior: smooth — route changes
+    // should jump, not animate a full-page scroll.
+    window.scrollTo({ top: 0, behavior: 'instant' })
   }, [pathname])
   return null
 }

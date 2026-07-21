@@ -12,6 +12,7 @@ import { categories, dishes, stats, stories, testimonials, featuredDishes } from
 import { FLAVOR_PULSE, VALUE_PROPS, BRAND } from '@/data/site'
 import { categoryGradient } from '@/data/images'
 import { stagger, fadeUp, inViewOnce } from '@/lib/motion'
+import { usePageMeta } from '@/lib/usePageMeta'
 
 const VP_ICONS: Record<string, LucideIcon> = {
   compass: Compass,
@@ -21,6 +22,7 @@ const VP_ICONS: Record<string, LucideIcon> = {
 }
 
 export default function Home() {
+  usePageMeta()
   const featured = featuredDishes()
   const spotlight = featured[0]
   const featuredRest = featured.slice(1, 3)
@@ -114,7 +116,12 @@ export default function Home() {
                 className="group relative flex h-44 flex-col justify-end overflow-hidden rounded-card border border-line p-5 text-white shadow-sm transition-all duration-300 ease-edible hover:-translate-y-1 hover:shadow-md grain"
                 style={{ background: categoryGradient(cat.id) }}
               >
-                <span className="absolute right-4 top-4 text-white/85 transition-transform duration-500 ease-edible group-hover:scale-110 group-hover:text-white">
+                {/* Legibility scrim — white text fails contrast on the mid-tone gradients without it. */}
+                <span
+                  aria-hidden
+                  className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black/65 via-black/25 to-transparent"
+                />
+                <span className="absolute right-4 top-4 z-10 text-white/85 transition-transform duration-500 ease-edible group-hover:scale-110 group-hover:text-white">
                   <CategoryGlyph id={cat.id} className="h-9 w-9" />
                 </span>
                 <h3 className="relative z-10 font-display text-xl font-semibold leading-tight">
@@ -129,7 +136,7 @@ export default function Home() {
           <motion.div variants={fadeUp}>
             <Link
               to="/explore"
-              className="group flex h-44 flex-col items-center justify-center gap-2 rounded-card border border-dashed border-line bg-surface text-muted transition-colors hover:border-accent hover:text-accent"
+              className="group flex h-44 flex-col items-center justify-center gap-2 rounded-card border border-dashed border-line bg-surface text-muted transition-colors hover:border-primary hover:text-primary"
             >
               <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />
               <span className="font-accent text-eyebrow uppercase tracking-[0.16em]">See all</span>
@@ -159,13 +166,13 @@ export default function Home() {
           viewport={inViewOnce}
           className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {grid.map((dish, i) => (
-            <DishCard key={dish.id} dish={dish} index={i} />
+          {grid.map((dish) => (
+            <DishCard key={dish.id} dish={dish} />
           ))}
         </motion.div>
         <div className="mt-10 flex justify-center">
           <Link to="/explore" className="btn-primary">
-            Explore all {dishes.length} dishes <ArrowRight className="h-4 w-4" />
+            Explore the full catalog <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -276,7 +283,7 @@ export default function Home() {
               Start your Mise, track your first ferment, and build a living map of the flavors worth chasing.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Link to="/kitchen" className="btn bg-white text-ink hover:-translate-y-0.5 hover:shadow-lift">
+              <Link to="/kitchen" className="btn bg-white text-[#1A1310] hover:-translate-y-0.5 hover:shadow-lift">
                 Start cooking <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

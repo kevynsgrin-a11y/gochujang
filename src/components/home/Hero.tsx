@@ -21,7 +21,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative flex h-[100svh] max-h-[940px] min-h-[600px] w-full items-end overflow-hidden">
+    <section className="dark relative flex h-[100svh] max-h-[940px] min-h-[600px] w-full items-end overflow-hidden">
       <GenerativeHeroArt seed="home-hero" drift={!reduce} className="z-0" />
       <div className="absolute inset-0 z-[1]">
         <SmartImage

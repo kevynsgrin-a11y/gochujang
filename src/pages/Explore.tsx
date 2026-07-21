@@ -8,6 +8,7 @@ import { CategoryGlyph } from '@/components/graphics/CategoryGlyph'
 import { GenerativeHeroArt } from '@/components/decor/GenerativeHeroArt'
 import { stagger } from '@/lib/motion'
 import { cn } from '@/lib/cn'
+import { usePageMeta } from '@/lib/usePageMeta'
 
 const HEAT_FILTERS = [
   { id: 'all', label: 'Any heat', test: () => true },
@@ -73,6 +74,10 @@ export default function Explore() {
 
   const activeCat = categories.find((c) => c.id === category)
   const hasFilters = category !== 'all' || heat !== 'all'
+  usePageMeta(
+    activeCat ? `Explore ${activeCat.name}` : 'Explore dishes',
+    'Filter every dish worth chasing by craving, heat, and time — curated, never dumped.',
+  )
 
   return (
     <>
@@ -99,8 +104,9 @@ export default function Explore() {
         </div>
       </section>
 
-      {/* Filter bar */}
-      <div className="sticky top-[68px] z-30 border-b border-line glass">
+      {/* Filter bar — sticky only from md up; at phone widths the wrapped
+          chip rows would otherwise pin ~half the viewport. */}
+      <div className="z-30 border-b border-line glass md:sticky md:top-[68px]">
         <div className="container-x flex flex-wrap items-center gap-3 py-4">
           <span className="inline-flex items-center gap-2 font-accent text-eyebrow uppercase tracking-[0.16em] text-muted">
             <SlidersHorizontal className="h-4 w-4" /> Filter
@@ -136,7 +142,7 @@ export default function Explore() {
             {hasFilters && (
               <button
                 onClick={() => setParams(new URLSearchParams(), { replace: true })}
-                className="ml-3 inline-flex items-center gap-1 text-accent hover:underline"
+                className="ml-3 inline-flex items-center gap-1 text-primary hover:underline"
               >
                 <X className="h-3.5 w-3.5" /> Clear all
               </button>

@@ -180,8 +180,15 @@
     @apply h-px w-10 bg-gradient-to-r from-accent to-transparent;
   }
 
+  /*
+   * Ember gradient text, theme-aware via tokens: light resolves to
+   * crimson→ember (holds ≥3:1 large-text contrast on bone paper), dark
+   * resolves to ember→persimmon (the full molten ramp on charcoal).
+   * Always-dark hero sections scope themselves with .dark so they get the
+   * molten ramp in both themes.
+   */
   .text-gradient {
-    background: var(--grad-ember, linear-gradient(135deg, rgb(var(--primary)), rgb(var(--accent)) 45%, rgb(var(--persimmon))));
+    background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--ember)));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;

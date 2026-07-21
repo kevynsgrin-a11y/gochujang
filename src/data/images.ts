@@ -38,8 +38,35 @@ function seed(str: string): number {
   return Math.abs(h) % 100000
 }
 
+/*
+ * Curated keyword tags per slot. The CC photo service requires EVERY tag to
+ * match, so tags are capped at TWO strong, common food terms — more tags means
+ * frequent zero-match placeholders on the live site. Unmapped dishes fall back
+ * to the first two words of their unsplashQuery.
+ */
+const PHOTO_TAGS: Record<string, string[]> = {
+  'gochujang-galbi': ['korean', 'bbq'],
+  'baechu-kimchi': ['kimchi'],
+  'rose-tteokbokki': ['tteokbokki'],
+  'dolsot-bibimbap': ['bibimbap'],
+  'doenjang-jjigae': ['korean', 'stew'],
+  'yangnyeom-chicken': ['fried', 'chicken'],
+  'buldak-fire-noodles': ['spicy', 'noodles'],
+  'gochujang-bolognese': ['pasta', 'ragu'],
+  'kimchi-jjigae': ['kimchi', 'stew'],
+  'gochujang-birria-tacos': ['tacos'],
+  'gochujang-miso-black-cod': ['cod', 'fish'],
+  'gochujang-shakshuka': ['shakshuka'],
+  'ssamjang-pork-ssam': ['korean', 'pork'],
+  'gochujang-chocolate-tart': ['chocolate', 'tart'],
+  'hero-home': ['korean', 'bbq'],
+  'hero-spotlight': ['kimchi'],
+  'hero-about': ['chili', 'pepper'],
+}
+
 function keywordUrl(query: string, id: string, w = 1200, h = 900): string {
-  const kw = encodeURIComponent(query.trim().split(/\s+/).slice(0, 4).join(','))
+  const tags = PHOTO_TAGS[id] ?? query.trim().toLowerCase().split(/\s+/).slice(0, 2)
+  const kw = encodeURIComponent(tags.slice(0, 2).join(','))
   return `https://loremflickr.com/${w}/${h}/${kw}?lock=${seed(id)}`
 }
 

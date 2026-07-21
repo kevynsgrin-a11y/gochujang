@@ -45,7 +45,7 @@ export function NewsletterForm({ compact = false, className }: { compact?: boole
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@appetite.com"
-              className="min-w-0 flex-1 rounded-pill border border-line bg-elevated px-5 py-3 text-body text-ink outline-none transition-colors placeholder:text-subtle focus:border-accent"
+              className="min-w-0 flex-1 rounded-pill border border-line bg-elevated px-5 py-3 text-body text-ink transition-colors placeholder:text-subtle focus:border-accent"
             />
             <button type="submit" className="btn-primary shrink-0">
               Subscribe <ArrowRight className="h-4 w-4" />
