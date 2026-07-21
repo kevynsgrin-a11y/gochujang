@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#1a1210" />
     <title>Gochujang — Cook bold. Track what you love.</title>
@@ -10,12 +12,25 @@
       name="description"
       content="Gochujang is a premium culinary destination for bold, fire-forward cooking — discover standout dishes, master fermentation, and track every bite worth remembering."
     />
+    <link rel="canonical" href="https://gochujang.net/" />
     <meta property="og:title" content="Gochujang — Cook bold. Track what you love." />
     <meta
       property="og:description"
       content="A premium culinary destination for bold, fire-forward cooking. Discover, cook, and track."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gochujang.net/" />
+    <meta property="og:site_name" content="Gochujang" />
+    <meta property="og:image" content="https://gochujang.net/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Gochujang — Cook bold. Track what you love." />
+    <meta
+      name="twitter:description"
+      content="A premium culinary destination for bold, fire-forward cooking. Discover, cook, and track."
+    />
+    <meta name="twitter:image" content="https://gochujang.net/og.png" />
     <script>
       // Set theme before first paint to avoid a flash of the wrong palette.
       (function () {
@@ -26,6 +41,8 @@
           var root = document.documentElement
           root.classList.toggle('dark', dark)
           root.style.colorScheme = dark ? 'dark' : 'light'
+          var tc = document.querySelector('meta[name="theme-color"]')
+          if (tc) tc.setAttribute('content', dark ? '#161210' : '#F5EFE6')
         } catch (e) {}
       })()
     </script>

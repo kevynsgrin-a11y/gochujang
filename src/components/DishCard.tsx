@@ -41,7 +41,10 @@ function Duotone({ hue = '#E8542E' }: { hue?: string }) {
   )
 }
 
-export function DishCard({ dish, index = 0 }: { dish: Dish; index?: number }) {
+// index only promotes images to eager/high-priority when the card is known to
+// sit above the fold (Explore's grid); the default keeps everything lazy so
+// below-fold cards never compete with the route's LCP hero image.
+export function DishCard({ dish, index = 99 }: { dish: Dish; index?: number }) {
   return (
     <motion.article
       variants={fadeUp}

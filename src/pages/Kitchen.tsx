@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
-  Flame, Timer, Globe, Plus, FlaskConical, Zap, Award, Trophy, Star, Bell, ArrowRight,
+  Flame, Globe, Plus, FlaskConical, Zap, Award, Trophy, Star, Bell, ArrowRight,
   type LucideIcon,
 } from 'lucide-react'
 import { GenerativeHeroArt } from '@/components/decor/GenerativeHeroArt'
@@ -18,8 +18,8 @@ import {
 } from '@/data/kitchen'
 import { fadeUp, stagger, inViewOnce } from '@/lib/motion'
 import { cn } from '@/lib/cn'
+import { usePageMeta } from '@/lib/usePageMeta'
 
-const STAT_ICONS: Record<string, LucideIcon> = { flame: Flame, timer: Timer, streak: Flame, globe: Globe }
 const ACH_ICONS: Record<string, LucideIcon> = {
   jar: FlaskConical, chili: Flame, globe: Globe, flame: Flame, crock: FlaskConical, bolt: Zap,
 }
@@ -39,7 +39,7 @@ function BatchRow({ batch }: { batch: Batch }) {
           </span>
         </div>
         <p className="mt-0.5 truncate text-caption text-muted">{batch.vessel} · {batch.note}</p>
-        <p className={cn('mt-1 font-accent text-[0.72rem] font-medium tnum', ready ? 'text-celadon' : 'text-accent')}>
+        <p className={cn('mt-1 font-accent text-[0.72rem] font-medium tnum', ready ? 'text-celadon' : 'text-primary')}>
           {batch.readyLabel}
         </p>
       </div>
@@ -47,7 +47,7 @@ function BatchRow({ batch }: { batch: Batch }) {
         type="button"
         className={cn(
           'inline-flex shrink-0 items-center gap-1.5 rounded-pill px-3 py-2 text-[0.72rem] font-semibold transition-colors',
-          ready ? 'bg-celadon text-white hover:brightness-105' : 'border border-line text-muted hover:border-accent hover:text-accent',
+          ready ? 'bg-celadon text-white hover:brightness-105' : 'border border-line text-muted hover:border-primary hover:text-primary',
         )}
       >
         {ready ? <><Bell className="h-3.5 w-3.5" /> Taste</> : 'Log note'}
@@ -57,6 +57,7 @@ function BatchRow({ batch }: { batch: Batch }) {
 }
 
 export default function Kitchen() {
+  usePageMeta('Mise — your kitchen', 'Your living culinary journal: batches, streaks, spice tolerance, and the Flavor Passport.')
   return (
     <>
       {/* Header */}
@@ -96,7 +97,7 @@ export default function Kitchen() {
                 </div>
                 <div className="mt-1.5 tnum text-caption text-white/80">{profile.weeklyProgress} / {profile.weeklyGoal} cooks</div>
               </div>
-              <Link to="/explore" className="btn bg-white text-ink hover:-translate-y-0.5 hover:shadow-lift">
+              <Link to="/explore" className="btn bg-white text-[#1A1310] hover:-translate-y-0.5 hover:shadow-lift">
                 <Plus className="h-4 w-4" /> Log a cook
               </Link>
             </div>
@@ -109,7 +110,7 @@ export default function Kitchen() {
         <motion.div variants={stagger(0.07)} initial="hidden" whileInView="show" viewport={inViewOnce} className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {kitchenStats.map((s, i) => (
             <motion.div key={s.label} variants={fadeUp}>
-              <StatTile value={s.value} label={s.label} caption={s.caption} glyph={Object.keys(STAT_ICONS)[i] ?? 'flame'} tone={i === 3 ? 'celadon' : 'ember'} />
+              <StatTile value={s.value} label={s.label} caption={s.caption} glyph={s.glyph} tone={i === 3 ? 'celadon' : 'ember'} />
             </motion.div>
           ))}
         </motion.div>
@@ -124,7 +125,7 @@ export default function Kitchen() {
               <BatchRow key={b.id} batch={b} />
             ))}
           </motion.div>
-          <button type="button" className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-card border border-dashed border-line py-3 font-accent text-eyebrow uppercase tracking-[0.14em] text-muted transition-colors hover:border-accent hover:text-accent">
+          <button type="button" className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-card border border-dashed border-line py-3 font-accent text-eyebrow uppercase tracking-[0.14em] text-muted transition-colors hover:border-primary hover:text-primary">
             <Plus className="h-4 w-4" /> Start a new batch
           </button>
         </div>
@@ -170,7 +171,7 @@ export default function Kitchen() {
           eyebrow="Places on your plate"
           title="Flavor"
           titleAccent="passport."
-          dek={`Every cuisine you've cooked, stamped. ${passport.filter((s) => !s.unlocked).length} more regions to unlock the full map.`}
+          dek={`The regions you've cooked, stamped. ${passport.filter((s) => !s.unlocked).length} more in this set waiting for a first stamp.`}
           className="mb-8"
         />
         <motion.div variants={stagger(0.05)} initial="hidden" whileInView="show" viewport={inViewOnce} className="grid grid-cols-3 gap-4 sm:grid-cols-5 lg:grid-cols-10">

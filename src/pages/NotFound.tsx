@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
 import { GenerativeHeroArt } from '@/components/decor/GenerativeHeroArt'
 import { BrandGlyph } from '@/components/brand/BrandMark'
+import { usePageMeta } from '@/lib/usePageMeta'
 
 export default function NotFound() {
+  usePageMeta('Page not found')
   return (
     <section className="relative grid min-h-[80svh] place-items-center overflow-hidden pt-20">
       <GenerativeHeroArt seed="404" base={false} className="opacity-70" />

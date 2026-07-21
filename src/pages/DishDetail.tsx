@@ -9,6 +9,7 @@ import { FlavorRadar, type RadarAxis } from '@/components/graphics/FlavorRadar'
 import { DishCard } from '@/components/DishCard'
 import { SectionHeader } from '@/components/SectionHeader'
 import { fadeUp, stagger, inViewOnce } from '@/lib/motion'
+import { usePageMeta } from '@/lib/usePageMeta'
 import type { Dish } from '@/data/types'
 import NotFound from './NotFound'
 
@@ -41,6 +42,7 @@ function deriveFlavor(dish: Dish): RadarAxis[] {
 export default function DishDetail() {
   const { id } = useParams()
   const dish = id ? getDish(id) : undefined
+  usePageMeta(dish ? dish.name : 'Dish not found', dish?.shortDesc)
   if (!dish) return <NotFound />
 
   const related = relatedDishes(dish)
@@ -206,12 +208,12 @@ export default function DishDetail() {
           viewport={inViewOnce}
           className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {related.map((d, i) => (
-            <DishCard key={d.id} dish={d} index={i} />
+          {related.map((d) => (
+            <DishCard key={d.id} dish={d} />
           ))}
         </motion.div>
         <div className="mt-10">
-          <Link to="/explore" className="inline-flex items-center gap-2 font-accent text-eyebrow uppercase tracking-[0.16em] text-accent hover:underline">
+          <Link to="/explore" className="inline-flex items-center gap-2 font-accent text-eyebrow uppercase tracking-[0.16em] text-primary hover:underline">
             Back to all dishes <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </div>

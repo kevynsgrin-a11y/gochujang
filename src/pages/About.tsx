@@ -7,6 +7,7 @@ import { StatTile } from '@/components/StatTile'
 import { BRAND } from '@/data/site'
 import { stats } from '@/data/catalog'
 import { fadeUp, stagger, inViewOnce } from '@/lib/motion'
+import { usePageMeta } from '@/lib/usePageMeta'
 
 const PRINCIPLES = [
   { icon: Flame, title: 'Bold by design', body: 'Flavor with a point of view. We chase the dishes that make you sit up, not the safe ones that fade into the feed.' },
@@ -16,10 +17,11 @@ const PRINCIPLES = [
 ]
 
 export default function About() {
+  usePageMeta('About', 'Gochujang starts with a jar of fermented chili paste — the story behind the platform for cooks who eat with intent.')
   return (
     <>
       {/* Manifesto hero */}
-      <section className="relative flex min-h-[70svh] items-center overflow-hidden pt-20">
+      <section className="dark relative flex min-h-[70svh] items-center overflow-hidden pt-20">
         <GenerativeHeroArt seed="about-hero" drift className="z-0" />
         <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/50 to-transparent" aria-hidden />
         <div className="container-x relative z-10 py-20 text-white">
@@ -99,7 +101,7 @@ export default function About() {
             <h2 className="font-display text-display-xl font-semibold">Bring your appetite.</h2>
             <p className="mx-auto mt-4 max-w-lg text-body-lg text-white/90">We'll bring the heat. Start cooking and build your living map of flavor.</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Link to="/kitchen" className="btn bg-white text-ink hover:-translate-y-0.5 hover:shadow-lift">
+              <Link to="/kitchen" className="btn bg-white text-[#1A1310] hover:-translate-y-0.5 hover:shadow-lift">
                 Start cooking
               </Link>
               <Link to="/explore" className="btn border border-white/40 bg-white/10 text-white backdrop-blur hover:bg-white/20">

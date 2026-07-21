@@ -47,14 +47,16 @@ export const profile = {
   joined: 'March 2025',
   weeklyGoal: 4,
   weeklyProgress: 3,
+  // NOTE: longestStreak must stay < the Streak Keeper achievement target (21)
+  // while that achievement is locked — the Kitchen page renders both.
   currentStreak: 19,
-  longestStreak: 24,
+  longestStreak: 20,
 }
 
 export const kitchenStats = [
   { value: '86', label: 'Dishes cooked', caption: 'across 11 cuisines', glyph: 'flame' },
   { value: '3', label: 'Active batches', caption: '1 ready to taste', glyph: 'timer' },
-  { value: '19', label: 'Day streak', caption: 'longest yet: 24', glyph: 'streak' },
+  { value: '19', label: 'Day streak', caption: 'longest yet: 20', glyph: 'streak' },
   { value: '11', label: 'Cuisines mapped', caption: '7 to go for the map', glyph: 'globe' },
 ]
 
@@ -176,6 +178,9 @@ export function buildActivity(weeks = 18): { date: Date; count: number }[] {
     else if (s > 1.1) c = 1
     // A few deliberate rest days.
     if (i % 11 === 3 || i % 17 === 5) c = 0
+    // The trailing window must honor the current streak shown in the header —
+    // a "19-day streak" with empty cells today/yesterday reads as a bug.
+    if (i >= days - profile.currentStreak) c = Math.max(c, 1)
     out.push({ date: d, count: c })
   }
   return out
