@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, Compass, Bookmark, TrendingUp, Sparkles, Quote, type LucideIcon } from 'lucide-react'
+import {
+  ArrowRight, Compass, Bookmark, TrendingUp, Sparkles, NotebookPen, Camera, FlaskConical,
+  type LucideIcon,
+} from 'lucide-react'
 import { Hero } from '@/components/home/Hero'
 import { SectionHeader } from '@/components/SectionHeader'
 import { DishCard, FeaturedDishCard } from '@/components/DishCard'
@@ -8,7 +11,7 @@ import { StatTile } from '@/components/StatTile'
 import { Marquee } from '@/components/util/Marquee'
 import { CategoryGlyph } from '@/components/graphics/CategoryGlyph'
 import { SmartImage } from '@/components/SmartImage'
-import { categories, dishes, stats, stories, testimonials, featuredDishes } from '@/data/catalog'
+import { categories, dishes, stats, stories, featuredDishes } from '@/data/catalog'
 import { FLAVOR_PULSE, VALUE_PROPS, BRAND } from '@/data/site'
 import { categoryGradient } from '@/data/images'
 import { stagger, fadeUp, inViewOnce } from '@/lib/motion'
@@ -20,6 +23,26 @@ const VP_ICONS: Record<string, LucideIcon> = {
   trending: TrendingUp,
   sparkle: Sparkles,
 }
+
+// Stated plainly rather than implied. These claims must stay true —
+// update them as the site earns the right to say otherwise.
+const TRANSPARENCY = [
+  {
+    icon: NotebookPen,
+    title: 'The recipes are drafts',
+    body: 'Every dish here is an editorial draft written for this collection. They have not yet been kitchen-tested, so treat them as a starting point rather than a proven method.',
+  },
+  {
+    icon: Camera,
+    title: 'The photography is placeholder',
+    body: 'Imagery is sourced or generated while original photography is shot. Where a photo cannot load, you are seeing the palette artwork the site falls back to by design.',
+  },
+  {
+    icon: FlaskConical,
+    title: 'The Kitchen is a preview',
+    body: 'Mise — the batch timers, streaks, and Flavor Passport — runs on sample data to demonstrate the experience. Accounts and real tracking are not live yet.',
+  },
+]
 
 export default function Home() {
   usePageMeta()
@@ -244,29 +267,30 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Testimonials */}
+      {/* Transparency — what this site is, honestly stated */}
       <section className="relative overflow-hidden bg-surface-alt py-20 grain lg:py-24">
         <div className="container-x">
-          <SectionHeader eyebrow="Loved by cooks" title="The taste-obsessed" titleAccent="agree." align="center" />
+          <SectionHeader
+            eyebrow="How this site is made"
+            title="An honest"
+            titleAccent="note."
+            align="center"
+            dek="Gochujang is early. Rather than dress that up, here is exactly where it stands."
+          />
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {testimonials.map((t) => (
-              <motion.figure
-                key={t.name}
+            {TRANSPARENCY.map((item) => (
+              <motion.div
+                key={item.title}
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="show"
                 viewport={inViewOnce}
                 className="flex flex-col rounded-card border border-line bg-surface p-7 shadow-sm"
               >
-                <Quote className="h-7 w-7 text-primary/40" />
-                <blockquote className="mt-4 flex-1 font-display text-lg italic leading-relaxed text-ink">
-                  “{t.quote}”
-                </blockquote>
-                <figcaption className="mt-5 border-t border-line/70 pt-4">
-                  <p className="font-semibold text-ink">{t.name}</p>
-                  <p className="text-caption text-muted">{t.role}</p>
-                </figcaption>
-              </motion.figure>
+                <item.icon className="h-7 w-7 text-primary/60" />
+                <h3 className="mt-4 text-h3 font-semibold text-ink">{item.title}</h3>
+                <p className="mt-2 text-caption leading-relaxed text-muted">{item.body}</p>
+              </motion.div>
             ))}
           </div>
         </div>

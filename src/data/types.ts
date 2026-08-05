@@ -30,7 +30,6 @@ export interface Dish {
   servings: number
   featured?: boolean
   region: string
-  chef: string
   tags: string[]
   unsplashQuery: string
   ingredients: string[]
@@ -49,8 +48,3 @@ export interface Story {
   excerpt: string
 }
 
-export interface Testimonial {
-  name: string
-  role: string
-  quote: string
-}

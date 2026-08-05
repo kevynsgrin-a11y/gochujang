@@ -1,11 +1,10 @@
 import raw from './catalog.json'
-import type { Category, Dish, Stat, Story, Testimonial } from './types'
+import type { Category, Dish, Stat, Story } from './types'
 
 export const categories = raw.categories as Category[]
 export const dishes = raw.dishes as Dish[]
 export const stats = raw.stats as Stat[]
 export const stories = raw.stories as Story[]
-export const testimonials = raw.testimonials as Testimonial[]
 
 export const categoryById = (id: string): Category | undefined =>
   categories.find((c) => c.id === id)

@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Clock, Users, ChefHat, MapPin, FlaskConical, Check, ArrowLeft, ArrowRight } from 'lucide-react'
+import { Clock, Users, ChefHat, MapPin, FlaskConical, Check, ArrowLeft, ArrowRight, Info } from 'lucide-react'
 import { getDish, relatedDishes, categoryName } from '@/data/catalog'
 import { dishPhoto, categoryGradient } from '@/data/images'
 import { SmartImage } from '@/components/SmartImage'
@@ -133,6 +133,13 @@ export default function DishDetail() {
 
           <div className="mt-12">
             <h2 className="text-h2 font-semibold">Method</h2>
+            <p className="mt-3 flex items-start gap-2 rounded-lg border border-line bg-surface-alt px-4 py-3 text-caption text-muted">
+              <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
+              <span>
+                This recipe is an editorial draft and has not yet been kitchen-tested. Use your own
+                judgement on timing, seasoning, and food safety.
+              </span>
+            </p>
             <motion.ol
               variants={stagger(0.08)}
               initial="hidden"
@@ -179,8 +186,8 @@ export default function DishDetail() {
                 </div>
               )}
               <div className="flex items-center justify-between">
-                <span className="text-caption text-muted">By</span>
-                <span className="text-caption font-semibold text-ink">{dish.chef}</span>
+                <span className="text-caption text-muted">Origin</span>
+                <span className="text-caption font-semibold text-ink">{dish.region}</span>
               </div>
             </div>
 
