@@ -58,7 +58,6 @@
       "servings": 4,
       "featured": true,
       "region": "Seoul, South Korea",
-      "chef": "Ha-eun Sohn",
       "tags": [
         "beef",
         "grill",
@@ -99,7 +98,6 @@
       "servings": 8,
       "featured": true,
       "region": "Jeollanam-do, South Korea",
-      "chef": "Soo-a Lim",
       "tags": [
         "kimchi",
         "ferment",
@@ -142,7 +140,6 @@
       "servings": 2,
       "featured": false,
       "region": "Seoul, South Korea",
-      "chef": "June Cho",
       "tags": [
         "rice cakes",
         "street food",
@@ -184,7 +181,6 @@
       "servings": 2,
       "featured": true,
       "region": "Jeonju, South Korea",
-      "chef": "Min-jae Ro",
       "tags": [
         "rice bowl",
         "vegetables",
@@ -226,7 +222,6 @@
       "servings": 3,
       "featured": false,
       "region": "Gyeonggi, South Korea",
-      "chef": "Tae-yang Oh",
       "tags": [
         "stew",
         "soybean",
@@ -266,7 +261,6 @@
       "servings": 4,
       "featured": true,
       "region": "Daegu, South Korea",
-      "chef": "Jae Park",
       "tags": [
         "fried chicken",
         "crispy",
@@ -308,7 +302,6 @@
       "servings": 2,
       "featured": false,
       "region": "Seoul, South Korea",
-      "chef": "Nari Kwon",
       "tags": [
         "noodles",
         "extra spicy",
@@ -348,7 +341,6 @@
       "servings": 6,
       "featured": false,
       "region": "Bologna × Seoul",
-      "chef": "Marco Fenn",
       "tags": [
         "pasta",
         "ragu",
@@ -390,7 +382,6 @@
       "servings": 3,
       "featured": false,
       "region": "Busan, South Korea",
-      "chef": "Soo-a Lim",
       "tags": [
         "stew",
         "kimchi",
@@ -430,7 +421,6 @@
       "servings": 4,
       "featured": false,
       "region": "Jalisco × Seoul",
-      "chef": "Isabela Moreno",
       "tags": [
         "tacos",
         "birria",
@@ -471,7 +461,6 @@
       "servings": 2,
       "featured": true,
       "region": "Kyoto × Seoul",
-      "chef": "Ren Takeda",
       "tags": [
         "fish",
         "miso",
@@ -510,7 +499,6 @@
       "servings": 3,
       "featured": false,
       "region": "Tel Aviv × Seoul",
-      "chef": "Yael Adler",
       "tags": [
         "eggs",
         "brunch",
@@ -552,7 +540,6 @@
       "servings": 4,
       "featured": false,
       "region": "Korea, nationwide",
-      "chef": "Nari Kwon",
       "tags": [
         "pork",
         "lettuce wraps",
@@ -591,7 +578,6 @@
       "servings": 8,
       "featured": false,
       "region": "Paris × Seoul",
-      "chef": "Camille Roux",
       "tags": [
         "dessert",
         "chocolate",
@@ -620,24 +606,24 @@
   ],
   "stats": [
     {
-      "value": "240+",
-      "label": "Dishes curated",
-      "caption": "Hand-tested, never dumped"
+      "value": "14",
+      "label": "Dishes in the collection",
+      "caption": "Curated, not dumped"
     },
     {
-      "value": "18",
-      "label": "Global cuisines",
+      "value": "7",
+      "label": "Flavor categories",
+      "caption": "Fermented to sweet heat"
+    },
+    {
+      "value": "12",
+      "label": "Regions represented",
       "caption": "Korean-forward, world-wide"
     },
     {
-      "value": "32",
-      "label": "Fermentation techniques",
-      "caption": "From kimchi to koji"
-    },
-    {
-      "value": "12.4k",
-      "label": "Batches tracked",
-      "caption": "Ferments ticking down in Mise"
+      "value": "3",
+      "label": "Dishes that need time",
+      "caption": "Two days to two weeks"
     }
   ],
   "stories": [
@@ -655,23 +641,6 @@
       "title": "The Case for Funk: Learning to Love Doenjang",
       "category": "Technique",
       "excerpt": "It smells like a dare and tastes like the ocean floor in the best way. A field guide to fermented soybean paste—how it's made, why it reads as savory, and the three dishes that will convert you for good."
-    }
-  ],
-  "testimonials": [
-    {
-      "name": "Priya Menon",
-      "role": "Home cook, London",
-      "quote": "Gochujang turned my scattered kitchen notes into something I actually want to open. My first kimchi batch is on day four and I keep checking the timer like it's a group chat."
-    },
-    {
-      "name": "Daniel Okafor",
-      "role": "Line cook, Brooklyn",
-      "quote": "I've used every recipe app. This is the first that respects that I can taste. The flavor maps and the heat tracker are stupidly addictive."
-    },
-    {
-      "name": "Sofia Duarte",
-      "role": "Food writer",
-      "quote": "It reads like a magazine and works like a tool. The dish pages are gorgeous enough to screenshot and precise enough to actually cook from."
     }
   ]
 }

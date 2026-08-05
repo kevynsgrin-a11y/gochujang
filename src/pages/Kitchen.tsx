@@ -61,7 +61,9 @@ export default function Kitchen() {
   return (
     <>
       {/* Header */}
-      <section className="relative overflow-hidden pt-20 text-white">
+      {/* `dark` scopes tokens to the dark palette so headings/rings resolve
+          correctly against this always-charcoal hero in BOTH themes. */}
+      <section className="dark relative overflow-hidden pt-20 text-white">
         <GenerativeHeroArt seed="kitchen-hero" drift className="z-0" />
         <div className="container-x relative z-10 py-14">
           <div className="flex flex-wrap items-center justify-between gap-8">
@@ -73,11 +75,20 @@ export default function Kitchen() {
                 </div>
               </ProgressRing>
               <div>
-                <p className="font-accent text-eyebrow uppercase tracking-[0.2em] text-white/70">Welcome back</p>
+                <p className="flex flex-wrap items-center gap-2 font-accent text-eyebrow uppercase tracking-[0.2em] text-white/70">
+                  <span className="rounded-pill border border-white/40 bg-white/15 px-2 py-0.5 text-white">
+                    Preview · sample data
+                  </span>
+                  Welcome back
+                </p>
                 <h1 className="font-display text-display-xl font-semibold leading-none [text-shadow:0_2px_18px_rgba(0,0,0,0.4)]">
                   {profile.name}
                 </h1>
                 <p className="mt-1 text-white/80">{profile.kitchenTitle} · since {profile.joined}</p>
+                <p className="mt-2 max-w-md text-caption text-white/70">
+                  Mise is a preview. Everything below is illustrative sample data — accounts and
+                  real tracking aren't live yet.
+                </p>
               </div>
             </div>
 
