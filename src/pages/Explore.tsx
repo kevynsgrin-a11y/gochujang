@@ -74,10 +74,7 @@ export default function Explore() {
 
   const activeCat = categories.find((c) => c.id === category)
   const hasFilters = category !== 'all' || heat !== 'all'
-  usePageMeta(
-    activeCat ? `Explore ${activeCat.name}` : 'Explore dishes',
-    'Filter every dish worth chasing by craving, heat, and time — curated, never dumped.',
-  )
+  usePageMeta()
 
   return (
     <>
@@ -107,11 +104,12 @@ export default function Explore() {
       {/* Filter bar — sticky only from md up; at phone widths the wrapped
           chip rows would otherwise pin ~half the viewport. */}
       <div className="z-30 border-b border-line glass md:sticky md:top-[68px]">
-        <div className="container-x flex flex-wrap items-center gap-3 py-4">
+        <fieldset className="container-x flex flex-wrap items-center gap-3 border-0 py-4">
+          <legend className="sr-only">Filter dishes</legend>
           <span className="inline-flex items-center gap-2 font-accent text-eyebrow uppercase tracking-[0.16em] text-muted">
             <SlidersHorizontal className="h-4 w-4" /> Filter
           </span>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Category">
             <Chip active={category === 'all'} onClick={() => setParam('category', 'all')}>
               All
             </Chip>
@@ -122,21 +120,21 @@ export default function Explore() {
               </Chip>
             ))}
           </div>
-          <div className="ml-auto flex flex-wrap items-center gap-2">
+          <div className="ml-auto flex flex-wrap items-center gap-2" role="group" aria-label="Heat level">
             {HEAT_FILTERS.map((h) => (
               <Chip key={h.id} active={heat === h.id} onClick={() => setParam('heat', h.id)}>
                 {h.label}
               </Chip>
             ))}
           </div>
-        </div>
+        </fieldset>
       </div>
 
       {/* Results */}
       <section className="container-x py-12" aria-label="Dishes">
         <h2 className="sr-only">Dishes</h2>
         <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
-          <p className="text-caption text-muted">
+          <p className="text-caption text-muted" aria-live="polite">
             <span className="tnum font-semibold text-ink">{results.length}</span>{' '}
             {results.length === 1 ? 'dish' : 'dishes'}
             {hasFilters && (
@@ -148,7 +146,7 @@ export default function Explore() {
               </button>
             )}
           </p>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2" role="group" aria-label="Sort dishes">
             <span className="font-accent text-eyebrow uppercase tracking-[0.16em] text-muted">Sort</span>
             {SORTS.map((s) => (
               <Chip key={s.id} active={sort === s.id} onClick={() => setParam('sort', s.id)}>

@@ -28,7 +28,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
             {Object.entries(FOOTER_LINKS).map(([group, links]) => (
               <div key={group}>
                 <h3 className="font-accent text-eyebrow font-medium uppercase tracking-[0.18em] text-subtle">

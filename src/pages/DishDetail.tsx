@@ -8,6 +8,7 @@ import { SpiceMeter } from '@/components/graphics/SpiceMeter'
 import { FlavorRadar, type RadarAxis } from '@/components/graphics/FlavorRadar'
 import { DishCard } from '@/components/DishCard'
 import { SectionHeader } from '@/components/SectionHeader'
+import { DraftBadge, FermentationSafetyNote } from '@/components/RecipeNotices'
 import { fadeUp, stagger, inViewOnce } from '@/lib/motion'
 import { usePageMeta } from '@/lib/usePageMeta'
 import type { Dish } from '@/data/types'
@@ -42,7 +43,7 @@ function deriveFlavor(dish: Dish): RadarAxis[] {
 export default function DishDetail() {
   const { id } = useParams()
   const dish = id ? getDish(id) : undefined
-  usePageMeta(dish ? dish.name : 'Dish not found', dish?.shortDesc)
+  usePageMeta()
   if (!dish) return <NotFound />
 
   const related = relatedDishes(dish)
@@ -81,8 +82,9 @@ export default function DishDetail() {
             </ol>
           </nav>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <SpiceMeter level={dish.spiceLevel} size="sm" className="text-white [&_.text-muted]:text-white/80" />
+              <DraftBadge />
             </div>
             <h1 className="mt-3 max-w-3xl font-display text-display-xl font-semibold text-white [text-shadow:0_2px_20px_rgba(0,0,0,0.45)]">
               {dish.name}
@@ -140,6 +142,7 @@ export default function DishDetail() {
                 judgement on timing, seasoning, and food safety.
               </span>
             </p>
+            {dish.fermentDays > 0 && <FermentationSafetyNote fermentDays={dish.fermentDays} />}
             <motion.ol
               variants={stagger(0.08)}
               initial="hidden"

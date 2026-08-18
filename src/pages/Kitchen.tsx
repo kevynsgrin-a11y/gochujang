@@ -28,7 +28,7 @@ function BatchRow({ batch }: { batch: Batch }) {
   const ready = batch.status === 'ready'
   return (
     <motion.div variants={fadeUp} className="flex items-center gap-4 rounded-card border border-line bg-surface p-4 shadow-sm">
-      <ProgressRing pct={batch.progressPct} ready={ready} size={62} label={`${batch.name}: ${batch.readyLabel}`}>
+      <ProgressRing pct={batch.progressPct} ready={ready} size={62} name={`${batch.name} batch progress`} label={`${batch.name}: ${batch.readyLabel}`}>
         <span className="tnum text-[0.7rem] font-semibold text-ink">{batch.progressPct}%</span>
       </ProgressRing>
       <div className="min-w-0 flex-1">
@@ -57,7 +57,7 @@ function BatchRow({ batch }: { batch: Batch }) {
 }
 
 export default function Kitchen() {
-  usePageMeta('Mise — your kitchen', 'Your living culinary journal: batches, streaks, spice tolerance, and the Flavor Passport.')
+  usePageMeta()
   return (
     <>
       {/* Header */}
@@ -68,7 +68,7 @@ export default function Kitchen() {
         <div className="container-x relative z-10 py-14">
           <div className="flex flex-wrap items-center justify-between gap-8">
             <div className="flex items-center gap-5">
-              <ProgressRing pct={profile.levelProgress} size={80} stroke={6} label={`Kitchen level ${profile.level}, ${profile.levelProgress}% to next`}>
+              <ProgressRing pct={profile.levelProgress} size={80} stroke={6} name="Kitchen level progress" label={`Kitchen level ${profile.level}, ${profile.levelProgress}% to next`}>
                 <div className="text-center">
                   <div className="font-accent text-[0.55rem] uppercase tracking-wider text-white/70">Lvl</div>
                   <div className="tnum text-2xl font-semibold leading-none">{profile.level}</div>
@@ -241,9 +241,9 @@ export default function Kitchen() {
                   <Link to={`/dish/${c.dishId}`} className="link-wipe font-semibold text-ink">{c.dishName}</Link>
                   <p className="text-caption text-muted">{c.when}</p>
                 </div>
-                <div className="flex shrink-0 items-center gap-0.5" aria-label={`Rated ${c.rating} of 5`}>
+                <div className="flex shrink-0 items-center gap-0.5" role="img" aria-label={`Rated ${c.rating} of 5`}>
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className={cn('h-4 w-4', i < c.rating ? 'fill-primary text-primary' : 'text-line')} />
+                    <Star key={i} aria-hidden className={cn('h-4 w-4', i < c.rating ? 'fill-primary text-primary' : 'text-line')} />
                   ))}
                 </div>
               </li>

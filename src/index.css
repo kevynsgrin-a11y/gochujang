@@ -252,6 +252,14 @@
   }
 }
 
+/* Links inside long-form policy copy sit mid-paragraph, so color alone is not
+   a sufficient affordance — underline them always (WCAG 1.4.1). */
+.policy-prose a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

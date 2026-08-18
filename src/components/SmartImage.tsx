@@ -15,6 +15,13 @@ export interface SmartImageProps {
   priority?: boolean
   sizes?: string
   opts?: ImgOpts
+  /**
+   * Intrinsic pixel dimensions for the <img>. These do not size the element —
+   * the wrapper's aspect/CSS does — they give the browser the width/height
+   * ratio before bytes arrive so the box cannot reflow on load.
+   */
+  width?: number
+  height?: number
   /** Optional dark scrim for text legibility over the image. */
   scrim?: 'none' | 'bottom' | 'full' | 'top'
   children?: React.ReactNode
@@ -42,6 +49,8 @@ export function SmartImage({
   priority = false,
   sizes = '100vw',
   opts,
+  width = 1200,
+  height = 900,
   scrim = 'none',
   children,
 }: SmartImageProps) {
@@ -64,6 +73,7 @@ export function SmartImage({
     <div
       className={cn('relative overflow-hidden bg-surface-alt grain isolate', aspect, className)}
       style={{ background: gradient }}
+      data-image-status={!photo ? 'none' : failed ? 'error' : loaded ? 'loaded' : 'loading'}
     >
       {showImg && (
         <img
@@ -71,6 +81,8 @@ export function SmartImage({
           srcSet={srcSet}
           sizes={sizes}
           alt={alt}
+          width={width}
+          height={height}
           loading={priority ? 'eager' : 'lazy'}
           decoding="async"
           fetchPriority={priority ? 'high' : 'auto'}

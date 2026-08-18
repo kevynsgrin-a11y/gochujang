@@ -87,7 +87,7 @@ export function DishCard({ dish, index = 99 }: { dish: Dish; index?: number }) {
             <ChefHat className="h-3.5 w-3.5" /> {dish.difficulty}
           </span>
           {dish.fermentDays > 0 && (
-            <span className="ml-auto inline-flex items-center gap-1 rounded-pill bg-plum/15 px-2 py-0.5 text-plum">
+            <span className="ml-auto inline-flex items-center gap-1 rounded-pill bg-plum/15 px-2 py-0.5 text-plum dark:bg-plum/25 dark:text-persimmon">
               <span className="tnum">{dish.fermentDays}</span>d ferment
             </span>
           )}
