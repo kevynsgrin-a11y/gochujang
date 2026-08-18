@@ -28,6 +28,14 @@ export const CONTACT = {
   corrections: 'hello@gochujang.net',
 }
 
+/**
+ * Host serving placeholder dish photography. Routes that render dish imagery
+ * preconnect to it — the audit measured a redirect plus ~1s for a single hero
+ * fetch. Remove this (and the img-src entry in public/_headers) once
+ * photography is self-hosted.
+ */
+export const REMOTE_IMAGE_ORIGIN = 'https://loremflickr.com'
+
 /** Policy version — bump when the substance of a policy page changes. */
 export const POLICY_VERSION = '2026-08-18'
 
@@ -55,6 +63,7 @@ export function buildRoutes(catalog) {
       changefreq: 'weekly',
       priority: '1.0',
       heading: 'Bold flavor, worth chasing.',
+      remoteImages: true,
       shell: [
         'The culinary discovery platform for cooks who eat with intent — find the dishes that change you, track the ones that stick, and watch your palate get braver.',
       ],
@@ -70,6 +79,7 @@ export function buildRoutes(catalog) {
       changefreq: 'weekly',
       priority: '0.9',
       heading: 'Every dish worth chasing.',
+      remoteImages: true,
       shell: [
         'Filter by craving, heat, and time. Curated, never dumped.',
         `${dishes.length} dishes across ${(catalog.categories ?? []).length} flavor categories.`,
@@ -184,6 +194,7 @@ function dishRoute(dish, catalog) {
     changefreq: 'monthly',
     priority: '0.8',
     heading: dish.name,
+    remoteImages: true,
     shell: [
       dish.longDesc,
       `Region: ${dish.region}. Serves ${dish.servings}. About ${dish.timeMinutes} minutes. Difficulty: ${dish.difficulty}.`,

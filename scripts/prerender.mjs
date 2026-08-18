@@ -14,7 +14,14 @@
 import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { buildRoutes, titleFor, canonicalFor, DEFAULT_OG_IMAGE, SITE_NAME, ORIGIN } from '../src/data/seo.js'
+import {
+  buildRoutes,
+  titleFor,
+  canonicalFor,
+  DEFAULT_OG_IMAGE,
+  SITE_NAME,
+  REMOTE_IMAGE_ORIGIN,
+} from '../src/data/seo.js'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const dist = join(root, 'dist')
@@ -62,6 +69,12 @@ function headFor(route) {
   parts.push(`<meta name="description" content="${esc(desc)}" />`)
   parts.push(`<link rel="canonical" href="${esc(canonical)}" />`)
   parts.push(`<link rel="manifest" href="/manifest.webmanifest" />`)
+
+  // Only routes that actually render dish photography pay for the handshake.
+  if (route.remoteImages) {
+    parts.push(`<link rel="preconnect" href="${REMOTE_IMAGE_ORIGIN}" crossorigin />`)
+    parts.push(`<link rel="dns-prefetch" href="${REMOTE_IMAGE_ORIGIN}" />`)
+  }
 
   for (const f of criticalFonts) {
     parts.push(
