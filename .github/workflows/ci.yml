@@ -9,6 +9,7 @@ jobs:
   build:
     name: Typecheck, build, verify
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -29,6 +30,7 @@ jobs:
     name: Accessibility (axe + keyboard)
     runs-on: ubuntu-latest
     needs: build
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -40,5 +42,8 @@ jobs:
       # Installed here rather than as devDependencies so the Cloudflare Pages
       # production build never has to download a browser.
       - run: npm install --no-save playwright @axe-core/playwright
-      - run: npx playwright install --with-deps chromium
+      # Browser binary only. `--with-deps` shells out to apt, which can block on
+      # the runner's package lock for far longer than the test itself takes; the
+      # ubuntu-latest image already carries the libraries Chromium needs.
+      - run: npx playwright install chromium
       - run: node scripts/a11y.mjs
