@@ -1,1 +1,9 @@
-/*    /index.html   200
+# Canonical host: www -> apex, so a page is never indexable at two URLs.
+https://www.gochujang.net/*  https://gochujang.net/:splat  301!
+
+# NOTE: there is deliberately no `/* /index.html 200` SPA catch-all here.
+#
+# Every real route is prerendered to its own index.html by scripts/prerender.mjs,
+# so Cloudflare Pages serves each one directly — with its own title, canonical,
+# and JSON-LD — and returns a genuine HTTP 404 (via dist/404.html) for anything
+# that does not exist, instead of a 200 soft-404 carrying the homepage's tags.

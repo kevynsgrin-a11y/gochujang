@@ -223,9 +223,9 @@ export default function Home() {
       <section className="container-x py-20 lg:py-28">
         <SectionHeader
           eyebrow="The Journal"
-          title="Read before you"
-          titleAccent="cook."
-          dek="Field notes on fermentation, travel, and the techniques behind the heat."
+          title="What we're"
+          titleAccent="writing."
+          dek="Field notes on fermentation, travel, and the techniques behind the heat. These pieces are commissioned but not yet published — there is nothing to click through to yet, and we would rather say so."
         />
         <motion.div
           variants={stagger(0.09)}
@@ -238,7 +238,7 @@ export default function Home() {
             <motion.article
               key={story.title}
               variants={fadeUp}
-              className="group relative flex flex-col overflow-hidden rounded-card border border-line bg-surface shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+              className="relative flex flex-col overflow-hidden rounded-card border border-line bg-surface shadow-sm"
             >
               <SmartImage
                 photo={undefined}
@@ -252,14 +252,10 @@ export default function Home() {
                 </span>
               </SmartImage>
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-h3 font-semibold text-ink">
-                  <Link to="/about" className="after:absolute after:inset-0 after:content-['']">
-                    {story.title}
-                  </Link>
-                </h3>
+                <h3 className="text-h3 font-semibold text-ink">{story.title}</h3>
                 <p className="mt-2 line-clamp-3 text-caption text-muted">{story.excerpt}</p>
-                <span className="mt-4 inline-flex items-center gap-1.5 font-accent text-eyebrow uppercase tracking-[0.16em] text-primary">
-                  Read story <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                <span className="mt-4 inline-flex w-fit items-center gap-1.5 rounded-pill border border-line px-3 py-1 font-accent text-eyebrow uppercase tracking-[0.16em] text-subtle">
+                  In development
                 </span>
               </div>
             </motion.article>

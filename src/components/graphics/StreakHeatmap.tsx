@@ -20,7 +20,7 @@ export function StreakHeatmap({ className }: { className?: string }) {
             <span className="tnum font-semibold text-ink">{totalCooks}</span> cooks logged
           </p>
         </div>
-        <div className="hidden items-center gap-1.5 text-[0.65rem] text-subtle sm:flex">
+        <div className="hidden items-center gap-1.5 text-[0.65rem] text-muted sm:flex">
           <span>Less</span>
           {LEVELS.map((l, i) => (
             <span key={i} className={cn('h-2.5 w-2.5 rounded-[3px]', l)} />

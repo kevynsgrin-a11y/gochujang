@@ -74,7 +74,11 @@ export const FOOTER_LINKS = {
   ],
   Company: [
     { label: 'About', route: '/about' },
-    { label: 'The Journal', route: '/about' },
-    { label: 'Contact', route: '/about' },
+    { label: 'Editorial policy', route: '/editorial-policy' },
+    { label: 'Contact', route: '/contact' },
+  ],
+  Legal: [
+    { label: 'Privacy', route: '/privacy' },
+    { label: 'Terms', route: '/terms' },
   ],
 } as const

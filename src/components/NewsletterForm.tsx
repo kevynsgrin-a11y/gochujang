@@ -1,12 +1,17 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowRight, Check } from 'lucide-react'
+import { ArrowRight, Info } from 'lucide-react'
 import { cn } from '@/lib/cn'
 
 export function NewsletterForm({ compact = false, className }: { compact?: boolean; className?: string }) {
   const [email, setEmail] = useState('')
   const [done, setDone] = useState(false)
 
+  /*
+   * There is no mail provider, API route, or network call behind this form —
+   * and until there is, the UI must not imply that an address was captured.
+   * The submit handler only flips local state, and the copy says exactly that.
+   */
   const submit = (e: React.FormEvent) => {
     e.preventDefault()
     if (!email.trim()) return
@@ -21,13 +26,15 @@ export function NewsletterForm({ compact = false, className }: { compact?: boole
             key="done"
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="flex items-center gap-3 rounded-pill border border-celadon/50 bg-celadon/10 px-5 py-3"
+            className="flex items-center gap-3 rounded-pill border border-line bg-surface-alt px-5 py-3"
             role="status"
           >
-            <span className="grid h-6 w-6 place-items-center rounded-full bg-celadon text-white">
-              <Check className="h-4 w-4" />
+            <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-subtle/30 text-ink">
+              <Info className="h-4 w-4" />
             </span>
-            <p className="text-caption text-ink">You're in. Watch for the next drop.</p>
+            <p className="text-caption text-ink">
+              Newsletter preview — no email is sent, and nothing was stored.
+            </p>
           </motion.div>
         ) : (
           <motion.div
@@ -50,6 +57,9 @@ export function NewsletterForm({ compact = false, className }: { compact?: boole
             <button type="submit" className="btn-primary shrink-0">
               Subscribe <ArrowRight className="h-4 w-4" />
             </button>
+            <p className="basis-full text-eyebrow text-subtle sm:mt-2">
+              Newsletter preview — no email is sent.
+            </p>
           </motion.div>
         )}
       </AnimatePresence>

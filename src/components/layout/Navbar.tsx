@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
@@ -16,6 +16,9 @@ function isDarkHeroRoute(pathname: string): boolean {
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
+  const triggerRef = useRef<HTMLButtonElement>(null)
+  const wasOpen = useRef(false)
   const { pathname } = useLocation()
   const overHero = !scrolled && isDarkHeroRoute(pathname)
 
@@ -28,11 +31,36 @@ export function Navbar() {
 
   useEffect(() => setOpen(false), [pathname])
 
+  /*
+   * Focus contract for the mobile menu: Escape closes it, opening moves focus
+   * to the first item inside it, and closing returns focus to the trigger —
+   * so a keyboard or screen-reader user is never stranded behind a panel they
+   * cannot see or dismiss.
+   */
   useEffect(() => {
     if (!open) return
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false)
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
+  }, [open])
+
+  useEffect(() => {
+    if (open) {
+      // Wait for the panel to mount before reaching into it.
+      const id = window.setTimeout(() => {
+        menuRef.current?.querySelector<HTMLElement>('a, button')?.focus()
+      }, 0)
+      return () => window.clearTimeout(id)
+    }
+    // Only pull focus back if it is still inside the panel we just closed.
+    if (wasOpen.current && menuRef.current?.contains(document.activeElement)) {
+      triggerRef.current?.focus()
+    }
+    return undefined
+  }, [open])
+
+  useEffect(() => {
+    wasOpen.current = open
   }, [open])
 
   return (
@@ -81,6 +109,7 @@ export function Navbar() {
             Start cooking
           </Link>
           <button
+            ref={triggerRef}
             type="button"
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? 'Close menu' : 'Open menu'}
@@ -99,6 +128,7 @@ export function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
+            ref={menuRef}
             id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}

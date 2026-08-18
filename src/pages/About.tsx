@@ -17,7 +17,7 @@ const PRINCIPLES = [
 ]
 
 export default function About() {
-  usePageMeta('About', 'Gochujang starts with a jar of fermented chili paste — the story behind the platform for cooks who eat with intent.')
+  usePageMeta()
   return (
     <>
       {/* Manifesto hero */}

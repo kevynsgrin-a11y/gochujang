@@ -12,6 +12,7 @@ export function ProgressRing({
   stroke = 7,
   ready = false,
   label,
+  name = 'Progress',
   children,
   className,
 }: {
@@ -19,7 +20,10 @@ export function ProgressRing({
   size?: number
   stroke?: number
   ready?: boolean
+  /** Spoken value, e.g. "Kimchi: ready in 2 days". */
   label?: string
+  /** Accessible NAME for the progressbar — required alongside its value. */
+  name?: string
   children?: React.ReactNode
   className?: string
 }) {
@@ -38,6 +42,7 @@ export function ProgressRing({
       className={cn('relative grid place-items-center', className)}
       style={{ width: size, height: size }}
       role="progressbar"
+      aria-label={name}
       aria-valuenow={Math.round(clamped)}
       aria-valuemin={0}
       aria-valuemax={100}

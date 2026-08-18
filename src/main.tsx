@@ -19,3 +19,7 @@ createRoot(document.getElementById('root')!).render(
     </BrowserRouter>
   </StrictMode>,
 )
+
+// React has replaced the prerendered content shell, so its scoped styles are
+// now dead weight in the document. Drop them.
+document.getElementById('pr-shell-css')?.remove()
