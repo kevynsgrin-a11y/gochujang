@@ -87,7 +87,7 @@ export function Navbar() {
               end={item.route === '/'}
               className={({ isActive }) =>
                 cn(
-                  'link-wipe font-accent text-[0.8rem] font-medium uppercase tracking-[0.16em] transition-colors',
+                  'link-wipe inline-flex min-h-11 items-center font-accent text-[0.8rem] font-medium uppercase tracking-[0.16em] transition-colors',
                   overHero
                     ? isActive
                       ? 'text-white [background-size:100%_1.5px]'
@@ -148,7 +148,7 @@ export function Navbar() {
                     to={item.route}
                     end={item.route === '/'}
                     className={({ isActive }) =>
-                      cn('block rounded-lg px-3 py-3 font-display text-2xl', isActive ? 'text-primary' : 'text-ink')
+                      cn('flex min-h-11 items-center rounded-lg px-3 py-3 font-display text-2xl', isActive ? 'text-primary' : 'text-ink')
                     }
                   >
                     {item.label}

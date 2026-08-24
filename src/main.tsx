@@ -1,25 +1,62 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import { MotionConfig } from 'framer-motion'
-// Self-hosted variable fonts (no external network dependency).
-import '@fontsource-variable/fraunces/opsz.css'
-import '@fontsource-variable/fraunces/opsz-italic.css'
-import '@fontsource-variable/geist/wght.css'
-import '@fontsource-variable/geist-mono/wght.css'
-import App from './App.tsx'
-import './index.css'
+let interactiveStart: Promise<void> | undefined
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <BrowserRouter>
-      <MotionConfig reducedMotion="user">
-        <App />
-      </MotionConfig>
-    </BrowserRouter>
-  </StrictMode>,
-)
+/**
+ * The prerendered shell is complete enough to read and navigate before React
+ * loads. Start the richer client application as soon as the browser is idle,
+ * or immediately when a visitor signals intent. The idempotent promise avoids
+ * duplicate boots when both signals happen close together.
+ */
+function startInteractiveApp() {
+  if (!interactiveStart) {
+    interactiveStart = import('./bootstrap.tsx').then(({ startInteractiveApp }) => {
+      startInteractiveApp()
+    })
+  }
+  return interactiveStart
+}
 
-// React has replaced the prerendered content shell, so its scoped styles are
-// now dead weight in the document. Drop them.
-document.getElementById('pr-shell-css')?.remove()
+function scheduleInteractiveApp() {
+  const activate = () => {
+    void startInteractiveApp()
+  }
+
+  window.addEventListener('pointerdown', activate, { once: true, passive: true })
+  window.addEventListener('keydown', activate, { once: true })
+
+  const requestIdleCallback = (
+    window as Window & {
+      requestIdleCallback?: (callback: () => void, options?: { timeout?: number }) => number
+    }
+  ).requestIdleCallback
+
+  if (typeof requestIdleCallback === 'function') {
+    requestIdleCallback(activate, { timeout: 1200 })
+  } else {
+    window.setTimeout(activate, 300)
+  }
+}
+
+scheduleInteractiveApp()
+
+// PWA support is strictly progressive. Register after the first load so it
+// cannot delay the preview's initial render or input readiness. The worker
+// itself uses a network-first document strategy and never stores recipe pages.
+function registerOfflineSupport() {
+  // Keep local development free from persistent CacheStorage state. Production
+  // and Cloudflare preview deployments are HTTPS, so this needs no bundler-only
+  // environment type and remains safe in a plain TypeScript DOM build.
+  const isLocalHost = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+  if (!window.isSecureContext || isLocalHost || !('serviceWorker' in navigator)) return
+
+  const register = () => {
+    void navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(() => {
+      // Offline support is optional; the current preview remains fully usable
+      // online if a browser declines or cannot install the worker.
+    })
+  }
+
+  if (document.readyState === 'complete') register()
+  else window.addEventListener('load', register, { once: true })
+}
+
+registerOfflineSupport()

@@ -33,6 +33,8 @@ export function Hero() {
           className="h-full w-full"
           imgClassName={reduce ? '' : 'animate-ken-burns'}
           sizes="100vw"
+          width={1800}
+          height={1200}
         />
       </div>
       {/* Legibility scrim + edge seat into the charcoal ground */}

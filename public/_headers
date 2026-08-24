@@ -24,6 +24,18 @@
   Cache-Control: public, max-age=3600
   Content-Type: application/manifest+json; charset=utf-8
 
+# The browser checks this script on every navigation, while the worker itself
+# caches only versioned build assets and the explicitly non-content offline
+# fallback. This prevents a stale cached document from overriding a current
+# preview or its safety notice.
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+  Content-Type: application/javascript; charset=utf-8
+  Service-Worker-Allowed: /
+
+/offline.html
+  Cache-Control: no-store
+
 # Keep crawler-control files short-lived while the preview remains noindex.
 /robots.txt
   Cache-Control: public, max-age=3600

@@ -3,14 +3,15 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Gochujang \u2014 a premium culinary discovery & tracking platform",
+  "description": "Gochujang - a controlled, no-collection culinary preview",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build && node scripts/prerender.mjs && node scripts/verify-build.mjs && node security/validate-headers.mjs --require-app-ready",
+    "build": "tsc --noEmit && vite build && node scripts/prerender.mjs && node scripts/verify-build.mjs && node scripts/p1p2-verify-platform.mjs && node security/validate-headers.mjs --require-app-ready",
     "preview": "vite preview",
     "lint": "tsc --noEmit",
     "prerender": "node scripts/prerender.mjs",
     "verify": "node scripts/verify-build.mjs",
+    "verify:platform": "node scripts/p1p2-verify-platform.mjs",
     "verify:headers": "node security/validate-headers.mjs --require-app-ready"
   },
   "dependencies": {

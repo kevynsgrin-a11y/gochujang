@@ -1,7 +1,9 @@
 {
   "name": "Gochujang",
   "short_name": "Gochujang",
-  "description": "A premium culinary destination for bold, fire-forward cooking.",
+  "description": "A controlled culinary preview for bold, fire-forward cooking.",
+  "id": "/",
+  "lang": "en",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

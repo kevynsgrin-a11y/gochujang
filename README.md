@@ -1,10 +1,10 @@
-# Gochujang — _Taste, turned up._
+# Gochujang — controlled culinary preview
 
-A premium culinary discovery **and** tracking platform. Gochujang reframes the
-"boring food tracker" as **"Fermented Editorial"** — an award-winning-restaurant
-hero, a food-magazine grid, and a single loud gochujang-crimson ember on warm
-charcoal. Discover dishes worth chasing, cook them, and collect them in **Mise**,
-a living kitchen dashboard that makes tracking feel like collecting.
+Gochujang is a privacy-first, no-collection preview of a future culinary utility.
+Its design system, discovery routes, and Kitchen prototype are available for review;
+the dishes are editorial drafts, procedures are withheld, personal tracking is not
+live, and every route remains intentionally non-indexable until the release evidence
+documented in [`docs/content-and-index-release-gate.md`](./docs/content-and-index-release-gate.md) is complete.
 
 > Built as a full front-end overhaul, designed top-to-bottom by a multi-agent
 > design fleet (market research → brand → information architecture → content →
@@ -13,11 +13,12 @@ a living kitchen dashboard that makes tracking feel like collecting.
 
 ## ✨ Highlights
 
-- **Five product routes**: cinematic Home, filterable Explore mosaic, immersive
-  Dish detail, the **Mise** tracker dashboard (`/kitchen`), and an About
-  manifesto — plus governance pages (privacy, terms, contact, editorial policy).
-- **Prerendered, crawlable HTML** — every route ships its own title, canonical,
-  social card, JSON-LD, and a real `<h1>` *before* JavaScript runs.
+- **Preview routes**: cinematic Home, filterable Explore mosaic, dish-draft
+  detail, the illustrative **Mise** Kitchen (`/kitchen`), About, and factual
+  preview governance pages (privacy, terms, contact, editorial policy).
+- **Prerendered, controlled HTML** — every route ships its own title, canonical,
+  social card, generic page-level JSON-LD, one `<h1>`, and `noindex` before
+  JavaScript runs. Recipes and procedures are not published in this release.
 - **"Fermented Editorial" design system** — warm-charcoal + bone palette, one
   crimson→persimmon ember accent used _by scarcity_, Fraunces display serif +
   Geist / Geist Mono, fluid type scale, signature gradients, film grain, and
@@ -30,8 +31,8 @@ a living kitchen dashboard that makes tracking feel like collecting.
 - **Motion that enriches, never gates** — Ken-Burns hero, kinetic headline,
   scroll reveals, magnetic-feeling CTAs, animated data — all gated by
   `prefers-reduced-motion`.
-- **Accessibility-first** — AA-tuned contrast in both themes, one `<h1>` per
-  route, skip link, visible focus, and text equivalents on every data-viz.
+- **Accessibility-first** — one `<h1>` per route, skip link, visible focus,
+  named controls, reduced-motion handling, and axe/keyboard regression checks in CI.
 
 ## 🧑‍🍳 Tech stack
 
@@ -57,21 +58,23 @@ art. Photo wiring lives in a single file: **[`src/data/images.ts`](./src/data/im
 
 | Mode         | Behavior                                                                 |
 | ------------ | ------------------------------------------------------------------------ |
-| `'keyword'`  | _(default)_ Real, license-free food photos resolved by keyword per dish. |
-| `'unsplash'` | Use curated Unsplash photo ids / URLs from the `PHOTO` map.              |
-| `'off'`      | Gradient-only editorial art (the guaranteed baseline).                    |
+| `'local'` | Rights-cleared, root-relative assets explicitly listed in `PHOTO`. |
+| `'off'`   | Gradient-only editorial art (the current controlled-preview baseline). |
 
-**To use your own licensed photography:** set `IMAGE_MODE = 'unsplash'`, drop
-files in `/public` (e.g. `/photos/galbi.jpg`), and map them in `PHOTO`:
+**To use rights-cleared photography after release approval:** set `IMAGE_MODE = 'local'`,
+drop responsive assets in `/public` (for example `/photos/galbi-1200.webp` and
+`/photos/galbi-1600.webp`), retain the license/credit record outside the bundle,
+and map the root-relative path in `PHOTO`:
 
 ```ts
 export const PHOTO: Record<string, string> = {
-  'gochujang-galbi': '/photos/galbi.jpg',
-  home: '/photos/hero.jpg',
+  'gochujang-galbi': '/photos/galbi-1200.webp',
+  home: '/photos/hero-1600.webp',
 }
 ```
 
-That's the only file you touch — every slot already has a beautiful fallback.
+Every slot has a deterministic local fallback. Do not introduce a third-party
+image host or preload a hero file until the rights-cleared asset exists.
 
 ## 📁 Structure
 
@@ -82,7 +85,7 @@ src/
                 Privacy, Terms, Contact, EditorialPolicy
   data/         catalog (dishes/categories), site config, Mise data,
                 image manifest, seo.js (route metadata — single source of truth)
-  lib/          theme, motion presets, class + unsplash helpers
+  lib/          theme, motion presets, release gates, and compatibility helpers
   index.css     design tokens (CSS variables, light + dark)
 scripts/        prerender.mjs, verify-build.mjs, a11y.mjs
 tailwind.config.js   type scale, gradients, radii, shadows, keyframes
@@ -105,6 +108,9 @@ build` runs three steps after the type-check:
    wrong title or canonical, duplicates a title, is missing its `<h1>` or
    JSON-LD, loses its `noindex`, re-introduces the SPA catch-all rewrite, or
    drifts out of sync with the sitemap.
+4. **`scripts/p1p2-verify-platform.mjs`** — validates the manifest and icon
+   dimensions, mobile/PWA declarations, noindex boundary, service-worker cache
+   policy, absence of third-party origins, and built platform files.
 
 Route metadata has exactly one home: **[`src/data/seo.js`](./src/data/seo.js)**.
 The prerenderer and the client's `usePageMeta` hook both read it, so the
@@ -113,17 +119,17 @@ disagree. Adding a route means adding it there.
 
 ### Deliberate decisions
 
-- **Recipe JSON-LD contains only fields the catalog actually holds.** No
-  invented author persona, publication date, rating, or prep/cook split — the
-  catalog stores one total time, so only `totalTime` is emitted.
-- **`/kitchen` is `noindex` and excluded from the sitemap** while it runs on
-  sample data.
-- **One shared `og.png` across routes, intentionally.** Per-dish social images
-  would have to be generated from placeholder photography we do not own; each
-  route instead carries a route-specific `og:image:alt`. Revisit once original
-  photography lands.
-- **CSP ships report-only.** Enforcing it requires dropping the external
-  placeholder image host and Tailwind's inline styles first.
+- **Every route is `noindex`, including the Kitchen.** The sitemap is
+  deliberately empty while the release is a controlled preview.
+- **Only generic `WebSite`, `WebPage`, and breadcrumb JSON-LD are emitted.**
+  Recipe/Article schema, authorship, publication dates, ratings, and procedures
+  remain disabled until an approved record holds genuine values.
+- **One shared `og.png` is intentional.** Per-route social imagery requires
+  owned media; do not manufacture route-level assets from placeholder content.
+- **CSP is enforced and self-only.** No analytics beacon, third-party image
+  service, external font, or wildcard CORS header is allowed in the preview.
+- **Promotion is gated.** See the content/index release gate, the future API
+  contract, and the reusable portfolio checklist in [`docs/`](./docs/).
 
 ## ♿ Accessibility gate
 
@@ -148,7 +154,7 @@ build never downloads a browser. CI runs it on every push and pull request.
 Ships as static assets to **Cloudflare Pages** (project `gochujang`, production
 branch `main`), which builds with `npm run build` and publishes `/dist`.
 
-- **`public/_headers`** — HSTS, CSP (report-only), COOP/CORP, scoped CORS,
+- **`public/_headers`** — HSTS, enforced self-only CSP, COOP/CORP, no default CORS,
   `nosniff`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`, and
   immutable caching for hashed assets.
 - **`public/_redirects`** — canonicalises `www` → apex. It deliberately has

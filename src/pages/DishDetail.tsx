@@ -64,6 +64,8 @@ export default function DishDetail() {
             aspect=""
             className="h-full w-full"
             sizes="100vw"
+            width={1800}
+            height={1200}
           />
         </div>
         <div className="absolute inset-0 scrim-ink" aria-hidden />

@@ -44,5 +44,24 @@ export default defineConfig({
   build: {
     target: 'es2020',
     cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        /**
+         * Keep the deferred interactive bootstrap below the P1 raw-JS budget
+         * without making a route navigation re-download framework code. These
+         * stable vendor groups are requested only after the static preview
+         * shell is interactive, then remain cacheable across client routes.
+         */
+        manualChunks(id) {
+          const moduleId = id.replace(/\\/g, '/')
+          if (moduleId.includes('/node_modules/react-dom/')) return 'react-dom'
+          if (moduleId.includes('/node_modules/react-router')) return 'router'
+          if (moduleId.includes('/node_modules/framer-motion/')) return 'motion'
+          if (moduleId.includes('/node_modules/lucide-react/')) return 'icons'
+          if (moduleId.includes('/node_modules/react/')) return 'react'
+          return undefined
+        },
+      },
+    },
   },
 })

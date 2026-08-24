@@ -60,7 +60,7 @@ export function DishCard({ dish, index = 99 }: { dish: Dish; index?: number }) {
       </SmartImage>
 
       <div className="flex flex-1 flex-col p-5">
-        <p className="font-accent text-eyebrow font-medium uppercase tracking-[0.16em] text-muted">
+        <p className="font-accent text-eyebrow font-medium uppercase tracking-[0.16em] text-ink">
           {categoryName(dish.category)}
         </p>
         <h3 className="mt-2 line-clamp-2 text-h3 font-semibold text-ink">
@@ -68,9 +68,9 @@ export function DishCard({ dish, index = 99 }: { dish: Dish; index?: number }) {
             {dish.name}
           </Link>
         </h3>
-        <p className="mt-2 line-clamp-2 text-caption text-muted">{dish.shortDesc}</p>
+        <p className="mt-2 line-clamp-2 text-caption text-ink">{dish.shortDesc}</p>
 
-        <div className="mt-4 flex items-center gap-4 border-t border-line/70 pt-3 font-accent text-[0.72rem] text-muted">
+        <div className="mt-4 flex items-center gap-4 border-t border-line/70 pt-3 font-accent text-[0.72rem] text-ink">
           <span className="inline-flex items-center gap-1.5">
             <Clock className="h-3.5 w-3.5" /> <span className="tnum">{dish.timeMinutes}</span>m
           </span>
@@ -78,7 +78,7 @@ export function DishCard({ dish, index = 99 }: { dish: Dish; index?: number }) {
             <ChefHat className="h-3.5 w-3.5" /> {dish.difficulty}
           </span>
           {dish.fermentDays > 0 && (
-            <span className="ml-auto inline-flex items-center gap-1 rounded-pill bg-plum/15 px-2 py-0.5 text-plum dark:bg-plum/25 dark:text-persimmon">
+            <span className="ml-auto inline-flex items-center gap-1 rounded-pill bg-plum/20 px-2 py-0.5 text-ink dark:bg-plum/35">
               <span className="tnum">{dish.fermentDays}</span>d ferment
             </span>
           )}
@@ -102,6 +102,8 @@ export function FeaturedDishCard({ dish, reverse = false }: { dish: Dish; revers
           alt={dish.name}
           aspect="aspect-[16/11]"
           sizes="(max-width: 768px) 100vw, 58vw"
+          width={1400}
+          height={1000}
           scrim="bottom"
           imgClassName="transition-transform duration-[700ms] ease-edible group-hover:scale-[1.05]"
           className="rounded-card md:rounded-none"

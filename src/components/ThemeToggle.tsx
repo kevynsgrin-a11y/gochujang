@@ -1,17 +1,19 @@
 import { Moon, Sun } from 'lucide-react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { useTheme } from '@/lib/useTheme'
 import { cn } from '@/lib/cn'
 
 export function ThemeToggle({ className, onDark = false }: { className?: string; onDark?: boolean }) {
   const { theme, toggle } = useTheme()
   const isDark = theme === 'dark'
+  const reduce = useReducedMotion()
 
   return (
     <button
       type="button"
       onClick={toggle}
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      aria-pressed={isDark}
       className={cn(
         'relative grid h-11 w-11 place-items-center rounded-full border backdrop-blur transition-colors',
         onDark
@@ -23,13 +25,13 @@ export function ThemeToggle({ className, onDark = false }: { className?: string;
       <AnimatePresence mode="wait" initial={false}>
         <motion.span
           key={theme}
-          initial={{ opacity: 0, rotate: -40, scale: 0.6 }}
+          initial={{ opacity: 0, rotate: reduce ? 0 : -40, scale: reduce ? 1 : 0.6 }}
           animate={{ opacity: 1, rotate: 0, scale: 1 }}
-          exit={{ opacity: 0, rotate: 40, scale: 0.6 }}
-          transition={{ duration: 0.25 }}
+          exit={{ opacity: 0, rotate: reduce ? 0 : 40, scale: reduce ? 1 : 0.6 }}
+          transition={{ duration: reduce ? 0 : 0.25 }}
           className="grid place-items-center"
         >
-          {isDark ? <Sun className="h-[18px] w-[18px]" /> : <Moon className="h-[18px] w-[18px]" />}
+          {isDark ? <Sun aria-hidden className="h-[18px] w-[18px]" /> : <Moon aria-hidden className="h-[18px] w-[18px]" />}
         </motion.span>
       </AnimatePresence>
     </button>

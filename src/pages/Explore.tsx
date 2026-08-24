@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { SlidersHorizontal, X } from 'lucide-react'
 import { categories, dishes } from '@/data/catalog'
 import { DishCard } from '@/components/DishCard'
@@ -37,7 +37,7 @@ function Chip({
       onClick={onClick}
       aria-pressed={active}
       className={cn(
-        'inline-flex items-center gap-1.5 rounded-pill border px-3.5 py-1.5 font-accent text-[0.72rem] font-medium uppercase tracking-[0.12em] transition-all',
+        'inline-flex min-h-11 items-center gap-1.5 rounded-pill border px-3.5 py-1.5 font-accent text-[0.72rem] font-medium uppercase tracking-[0.12em] transition-all',
         active
           ? 'border-primary/50 bg-grad-ember text-primary-fg shadow-ember'
           : 'border-line bg-surface-alt text-muted hover:border-accent/50 hover:text-ink',
@@ -49,6 +49,7 @@ function Chip({
 }
 
 export default function Explore() {
+  const reduceMotion = useReducedMotion()
   const [params, setParams] = useSearchParams()
   const category = params.get('category') ?? 'all'
   const heat = params.get('heat') ?? 'all'
@@ -73,7 +74,11 @@ export default function Explore() {
   }, [category, heat, sort])
 
   const activeCat = categories.find((c) => c.id === category)
-  const hasFilters = category !== 'all' || heat !== 'all'
+  const activeHeat = HEAT_FILTERS.find((h) => h.id === heat) ?? HEAT_FILTERS[0]
+  const activeSort = SORTS.find((s) => s.id === sort) ?? SORTS[0]
+  const categoryLabel = category === 'all' ? 'All categories' : activeCat?.name ?? 'Unknown category'
+  const hasFilters = category !== 'all' || heat !== 'all' || sort !== 'featured'
+  const resultSummary = `Showing ${results.length} ${results.length === 1 ? 'dish' : 'dishes'}. Category: ${categoryLabel}. Heat: ${activeHeat.label}. Sort: ${activeSort.label}.`
   usePageMeta()
 
   return (
@@ -109,7 +114,7 @@ export default function Explore() {
           <span className="inline-flex items-center gap-2 font-accent text-eyebrow uppercase tracking-[0.16em] text-muted">
             <SlidersHorizontal className="h-4 w-4" /> Filter
           </span>
-          <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Category">
+          <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Category filter">
             <Chip active={category === 'all'} onClick={() => setParam('category', 'all')}>
               All
             </Chip>
@@ -120,7 +125,7 @@ export default function Explore() {
               </Chip>
             ))}
           </div>
-          <div className="ml-auto flex flex-wrap items-center gap-2" role="group" aria-label="Heat level">
+          <div className="ml-auto flex flex-wrap items-center gap-2" role="group" aria-label="Heat level filter">
             {HEAT_FILTERS.map((h) => (
               <Chip key={h.id} active={heat === h.id} onClick={() => setParam('heat', h.id)}>
                 {h.label}
@@ -134,19 +139,24 @@ export default function Explore() {
       <section className="container-x py-12" aria-label="Dishes">
         <h2 className="sr-only">Dishes</h2>
         <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
-          <p className="text-caption text-muted" aria-live="polite">
-            <span className="tnum font-semibold text-ink">{results.length}</span>{' '}
-            {results.length === 1 ? 'dish' : 'dishes'}
+          <div className="flex flex-wrap items-center gap-2">
+            <p id="filter-results-summary" className="text-caption text-muted" role="status" aria-live="polite" aria-atomic="true">
+              <span className="tnum font-semibold text-ink">{results.length}</span>{' '}
+              {results.length === 1 ? 'dish' : 'dishes'}
+              <span className="sr-only">. {resultSummary}</span>
+            </p>
             {hasFilters && (
               <button
+                type="button"
                 onClick={() => setParams(new URLSearchParams(), { replace: true })}
-                className="ml-3 inline-flex items-center gap-1 text-primary hover:underline"
+                className="inline-flex min-h-11 items-center gap-1 text-primary hover:underline"
+                aria-label="Clear all filters and restore featured sort"
               >
-                <X className="h-3.5 w-3.5" /> Clear all
+                <X className="h-3.5 w-3.5" aria-hidden /> Clear all
               </button>
             )}
-          </p>
-          <div className="flex items-center gap-2" role="group" aria-label="Sort dishes">
+          </div>
+          <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Sort dishes">
             <span className="font-accent text-eyebrow uppercase tracking-[0.16em] text-muted">Sort</span>
             {SORTS.map((s) => (
               <Chip key={s.id} active={sort === s.id} onClick={() => setParam('sort', s.id)}>
@@ -160,7 +170,7 @@ export default function Explore() {
           <motion.div
             key={`${category}-${heat}-${sort}`}
             variants={stagger(0.05)}
-            initial="hidden"
+            initial={reduceMotion ? false : 'hidden'}
             animate="show"
             className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
           >
@@ -178,6 +188,7 @@ export default function Explore() {
               No dishes match these filters. Loosen the heat or pick another craving.
             </p>
             <button
+              type="button"
               onClick={() => setParams(new URLSearchParams(), { replace: true })}
               className="btn-primary mt-6"
             >

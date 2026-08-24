@@ -83,7 +83,7 @@ export function SmartImage({
           onLoad={() => setLoaded(true)}
           onError={() => setFailed(true)}
           className={cn(
-            'absolute inset-0 h-full w-full object-cover transition-[opacity,transform,filter] duration-[900ms] ease-smooth',
+            'absolute inset-0 h-full w-full object-cover transition-[opacity,transform,filter] duration-[900ms] ease-smooth motion-reduce:transform-none motion-reduce:transition-none',
             loaded ? 'opacity-100 blur-0 scale-100' : 'opacity-0 blur-md scale-105',
             imgClassName,
           )}
