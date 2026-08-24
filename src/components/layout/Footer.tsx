@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { BrandGlyph } from '@/components/brand/BrandMark'
 import { NewsletterForm } from '@/components/NewsletterForm'
-import { FOOTER_LINKS, BRAND } from '@/data/site'
+import { FOOTER_LINKS, BRAND, PREVIEW_STATUS } from '@/data/site'
 
 export function Footer() {
   return (
@@ -20,8 +20,8 @@ export function Footer() {
               {BRAND.tagline}
             </p>
             <p className="mt-4 max-w-sm text-body text-muted">
-              A premium culinary destination for cooks who eat with intent. Discover, cook, and
-              collect the dishes worth chasing.
+              {PREVIEW_STATUS.description} Recipes remain untested editorial drafts, and the
+              Kitchen uses illustrative sample data.
             </p>
             <div className="mt-8 max-w-sm">
               <NewsletterForm compact />

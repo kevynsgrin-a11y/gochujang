@@ -12,8 +12,8 @@ import { usePageMeta } from '@/lib/usePageMeta'
 const PRINCIPLES = [
   { icon: Flame, title: 'Bold by design', body: 'Flavor with a point of view. We chase the dishes that make you sit up, not the safe ones that fade into the feed.' },
   { icon: Globe, title: 'Global by instinct', body: 'Korean-forward, world-wide. Fermentation is our throughline, but the map has no borders.' },
-  { icon: Sprout, title: 'Patience is a flavor', body: "Real gochujang takes a year. We honor slow food — ferments, cures, and the techniques worth the wait." },
-  { icon: Heart, title: 'Respect the cook', body: 'Clear guidance that trusts your palate and your time. No 2,000-word preambles, no ad walls.' },
+  { icon: Sprout, title: 'Patience is a standard', body: 'Fermentation and recipe procedures require documented testing and food-safety review before they can be released.' },
+  { icon: Heart, title: 'Respect the cook', body: 'A draft is labelled as a draft. We withhold instructions rather than imply that incomplete work is ready to follow.' },
 ]
 
 export default function About() {
@@ -99,13 +99,13 @@ export default function About() {
         <div className="relative overflow-hidden rounded-2xl border border-line bg-grad-ember-radial p-10 text-center text-white shadow-lg grain sm:p-16">
           <div className="relative z-10 mx-auto max-w-2xl">
             <h2 className="font-display text-display-xl font-semibold">Bring your appetite.</h2>
-            <p className="mx-auto mt-4 max-w-lg text-body-lg text-white/90">We'll bring the heat. Start cooking and build your living map of flavor.</p>
+            <p className="mx-auto mt-4 max-w-lg text-body-lg text-white/90">Explore the controlled draft collection and read the release standards behind it.</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Link to="/kitchen" className="btn bg-white text-[#1A1310] hover:-translate-y-0.5 hover:shadow-lift">
-                Start cooking
+              <Link to="/explore" className="btn bg-white text-[#1A1310] hover:-translate-y-0.5 hover:shadow-lift">
+                Browse drafts
               </Link>
-              <Link to="/explore" className="btn border border-white/40 bg-white/10 text-white backdrop-blur hover:bg-white/20">
-                Explore dishes
+              <Link to="/editorial-policy" className="btn border border-white/40 bg-white/10 text-white backdrop-blur hover:bg-white/20">
+                Read release standards
               </Link>
             </div>
           </div>

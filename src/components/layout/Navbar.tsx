@@ -105,8 +105,8 @@ export function Navbar() {
 
         <div className="flex items-center gap-2.5">
           <ThemeToggle onDark={overHero} />
-          <Link to="/kitchen" className="btn-primary hidden text-[0.8rem] sm:inline-flex">
-            Start cooking
+          <Link to="/explore" className="btn-primary hidden text-[0.8rem] sm:inline-flex">
+            Browse drafts
           </Link>
           <button
             ref={triggerRef}
@@ -155,8 +155,8 @@ export function Navbar() {
                   </NavLink>
                 </motion.div>
               ))}
-              <Link to="/kitchen" className="btn-primary mt-3 justify-center">
-                Start cooking
+              <Link to="/explore" className="btn-primary mt-3 justify-center">
+                Browse drafts
               </Link>
             </div>
           </motion.div>

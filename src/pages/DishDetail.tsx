@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Clock, Users, ChefHat, MapPin, FlaskConical, Check, ArrowLeft, ArrowRight, Info } from 'lucide-react'
+import { Clock, Users, ChefHat, MapPin, ArrowLeft, ArrowRight } from 'lucide-react'
 import { getDish, relatedDishes, categoryName } from '@/data/catalog'
 import { dishPhoto, categoryGradient } from '@/data/images'
 import { SmartImage } from '@/components/SmartImage'
@@ -9,8 +9,9 @@ import { FlavorRadar, type RadarAxis } from '@/components/graphics/FlavorRadar'
 import { DishCard } from '@/components/DishCard'
 import { SectionHeader } from '@/components/SectionHeader'
 import { DraftBadge, FermentationSafetyNote } from '@/components/RecipeNotices'
-import { fadeUp, stagger, inViewOnce } from '@/lib/motion'
+import { stagger, inViewOnce } from '@/lib/motion'
 import { usePageMeta } from '@/lib/usePageMeta'
+import { isRecipeReleaseReady } from '@/lib/recipeRelease'
 import type { Dish } from '@/data/types'
 import NotFound from './NotFound'
 
@@ -48,6 +49,7 @@ export default function DishDetail() {
 
   const related = relatedDishes(dish)
   const radar = deriveFlavor(dish)
+  const releaseReady = isRecipeReleaseReady(dish)
 
   return (
     <>
@@ -121,44 +123,20 @@ export default function DishDetail() {
         <div>
           <p className="max-w-prose text-body-lg text-muted">{dish.longDesc}</p>
 
-          <div className="mt-10">
-            <h2 className="text-h2 font-semibold">Ingredients</h2>
-            <ul className="mt-5 grid gap-2 sm:grid-cols-2">
-              {dish.ingredients.map((ing) => (
-                <li key={ing} className="flex items-start gap-3 rounded-lg border border-line bg-surface px-4 py-3 text-body">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-celadon" />
-                  <span>{ing}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           <div className="mt-12">
-            <h2 className="text-h2 font-semibold">Method</h2>
-            <p className="mt-3 flex items-start gap-2 rounded-lg border border-line bg-surface-alt px-4 py-3 text-caption text-muted">
-              <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
-              <span>
-                This recipe is an editorial draft and has not yet been kitchen-tested. Use your own
-                judgement on timing, seasoning, and food safety.
-              </span>
-            </p>
+            <h2 className="text-h2 font-semibold">Recipe procedure</h2>
+            <div className="mt-3 rounded-card border border-warning/40 bg-warning/[0.07] p-5" role="status">
+              <p className="font-semibold text-ink">Procedure unavailable during controlled preview.</p>
+              <p className="mt-2 max-w-prose text-caption text-muted">
+                {releaseReady
+                  ? 'Approval evidence is registered, but publication of ingredients, quantities, and method steps remains disabled until this controlled preview is formally released.'
+                  : 'Ingredients, quantities, and method steps are withheld until documented test-kitchen, food-safety, cultural, and editorial review is complete.'}
+              </p>
+              <p className="mt-2 text-caption text-muted">
+                This page is not a cooking procedure and must not be used as food-safety guidance.
+              </p>
+            </div>
             {dish.fermentDays > 0 && <FermentationSafetyNote fermentDays={dish.fermentDays} />}
-            <motion.ol
-              variants={stagger(0.08)}
-              initial="hidden"
-              whileInView="show"
-              viewport={inViewOnce}
-              className="mt-6 space-y-5"
-            >
-              {dish.method.map((step, i) => (
-                <motion.li key={i} variants={fadeUp} className="flex gap-4">
-                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-grad-ember font-display text-lg font-semibold text-primary-fg shadow-ember">
-                    {i + 1}
-                  </span>
-                  <p className="max-w-prose pt-1 text-body text-ink">{step}</p>
-                </motion.li>
-              ))}
-            </motion.ol>
           </div>
 
           <div className="mt-10 flex flex-wrap gap-2">
@@ -194,15 +172,8 @@ export default function DishDetail() {
               </div>
             </div>
 
-            <div className="mt-6 space-y-2">
-              <Link to="/kitchen" className="btn-primary w-full">
-                I made this
-              </Link>
-              {dish.fermentDays > 0 && (
-                <Link to="/kitchen" className="btn-ghost w-full">
-                  <FlaskConical className="h-4 w-4" /> Start a batch
-                </Link>
-              )}
+            <div className="mt-6 rounded-card border border-line bg-surface-alt p-4 text-caption text-muted" role="status">
+              Tracking, saving, and batch creation are unavailable in this no-collection preview.
             </div>
           </div>
         </aside>

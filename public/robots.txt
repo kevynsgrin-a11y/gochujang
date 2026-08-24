@@ -1,4 +1,4 @@
+# Controlled preview: keep crawling allowed so search engines can receive the
+# page-level noindex directive, but do not advertise a sitemap for draft URLs.
 User-agent: *
 Allow: /
-
-Sitemap: https://gochujang.net/sitemap.xml

@@ -5,20 +5,33 @@ export const NAV = [
   { label: 'About', route: '/about' },
 ] as const
 
+/**
+ * This is deliberately a narrow, factual description of the current release.
+ * It is not a privacy policy or a claim about the host's edge configuration.
+ */
+export const PREVIEW_STATUS = {
+  label: 'No-collection preview',
+  description:
+    'This preview does not offer accounts, a contact form, or newsletter signup. The application is not asking visitors to submit personal information.',
+} as const
+
+/** The only public contact channel approved for this preview. */
+export const PUBLIC_CONTACT = 'hello@gochujang.net'
+
 export const BRAND = {
   name: 'Gochujang',
   tagline: 'Taste, turned up.',
   hero: {
-    eyebrow: 'A culinary destination, not a database',
+    eyebrow: 'Controlled culinary preview',
     headline: 'Bold flavor,',
     headlineAccent: 'worth chasing.',
     subhead:
-      'The culinary discovery platform for cooks who eat with intent — find the dishes that change you, track the ones that stick, and watch your palate get braver.',
-    primaryCTA: 'Start cooking',
-    secondaryCTA: 'Explore dishes',
+      'Explore editorial dish drafts in a controlled preview. Recipe procedures, accounts, and personal tracking are unavailable until documented release review is complete.',
+    primaryCTA: 'Browse draft dishes',
+    secondaryCTA: 'Preview status',
   },
   story:
-    "Gochujang starts with a jar of fermented chili paste — proof that patience, heat, and a point of view turn the ordinary into the unforgettable. We built Gochujang for the cook who reads menus like novels and remembers meals like milestones. This isn't a shelf of recipes; it's a place to chase flavor with intent — to discover the dish you didn't know you needed, track the ones that changed you, and watch your taste sharpen over time. Global by instinct, bold by design. Bring your appetite. We'll bring the heat.",
+    'Gochujang starts with a jar of fermented chili paste — proof that patience, heat, and a point of view can transform the ordinary. This controlled preview is evaluating a privacy-first culinary utility: a focused way to explore dish ideas and establish the evidence required before any recipe procedure is released. The current collection is editorial draft material, not a finished recipe service. Global by instinct, bold by design — and explicit about what is not ready.',
 } as const
 
 export const VALUE_PROPS = [
@@ -28,13 +41,13 @@ export const VALUE_PROPS = [
     glyph: 'compass',
   },
   {
-    title: 'Track your evolving taste',
-    body: 'Save, rate, and organize the meals that matter into a living collection you actually want to revisit.',
+    title: 'Tracking, under review',
+    body: 'Saving, rating, and personal collections are not available in this no-collection preview.',
     glyph: 'bookmark',
   },
   {
-    title: 'Watch your palate grow',
-    body: 'Every dish you log sharpens a personal flavor map that surfaces smarter, bolder suggestions over time.',
+    title: 'Sample data, clearly marked',
+    body: 'The Kitchen demonstrates a possible future interface with illustrative data only; it does not store visitor activity.',
     glyph: 'trending',
   },
   {
@@ -68,9 +81,9 @@ export const FOOTER_LINKS = {
     { label: 'Sweet Heat', route: '/explore?category=sweet-heat' },
   ],
   Kitchen: [
-    { label: 'Your Mise', route: '/kitchen' },
-    { label: 'Batches', route: '/kitchen' },
-    { label: 'Flavor Passport', route: '/kitchen' },
+    { label: 'Kitchen preview', route: '/kitchen' },
+    { label: 'Sample batches', route: '/kitchen' },
+    { label: 'Sample passport', route: '/kitchen' },
   ],
   Company: [
     { label: 'About', route: '/about' },

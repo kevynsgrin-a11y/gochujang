@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Heart, Clock, ChefHat } from 'lucide-react'
 import { motion } from 'framer-motion'
@@ -10,23 +9,15 @@ import { SpiceMeter } from '@/components/graphics/SpiceMeter'
 import { fadeUp } from '@/lib/motion'
 import { cn } from '@/lib/cn'
 
-function Heart2() {
-  const [saved, setSaved] = useState(false)
+function PreviewSaveControl() {
   return (
-    <button
-      type="button"
-      onClick={() => setSaved((v) => !v)}
-      aria-pressed={saved}
-      aria-label={saved ? 'Remove from wishlist' : 'Save to wishlist'}
-      className={cn(
-        'relative z-20 grid h-9 w-9 place-items-center rounded-full border backdrop-blur transition-all',
-        saved
-          ? 'border-primary/50 bg-primary text-primary-fg'
-          : 'border-white/25 bg-black/30 text-white hover:bg-black/50',
-      )}
+    <span
+      className="relative z-20 grid h-9 w-9 place-items-center rounded-full border border-white/25 bg-black/30 text-white backdrop-blur"
+      role="img"
+      aria-label="Saving is unavailable in this no-collection preview"
     >
-      <Heart className={cn('h-4 w-4 transition-transform', saved && 'fill-current scale-110')} />
-    </button>
+      <Heart className="h-4 w-4" aria-hidden />
+    </span>
   )
 }
 
@@ -64,7 +55,7 @@ export function DishCard({ dish, index = 99 }: { dish: Dish; index?: number }) {
           <span className="rounded-pill bg-black/45 px-2.5 py-1 backdrop-blur">
             <SpiceMeter level={dish.spiceLevel} size="xs" showLabel={false} className="text-white" />
           </span>
-          <Heart2 />
+          <PreviewSaveControl />
         </div>
       </SmartImage>
 

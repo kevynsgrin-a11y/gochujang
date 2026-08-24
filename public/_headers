@@ -1,45 +1,30 @@
-# Cloudflare Pages headers.
+# Cloudflare Pages security headers for the controlled public preview.
 #
-# Ordering note: Pages applies EVERY matching rule, most-specific last, so the
-# /* block below is the site-wide baseline and the narrower blocks refine it.
+# The application is intentionally self-contained: it permits no third-party
+# scripts, connections, fonts, images, analytics beacon, or CORS allowance.
 
-# Hashed build assets are immutable — cache aggressively.
-/assets/*
-  Cache-Control: public, max-age=31536000, immutable
-  # Fonts and scripts are fetched cross-origin by our own pages only.
-  Access-Control-Allow-Origin: https://gochujang.net
-  Cross-Origin-Resource-Policy: same-site
-
-# Sensible security defaults for the whole site.
 /*
+  ! Access-Control-Allow-Origin
+  Content-Security-Policy: default-src 'self'; base-uri 'none'; block-all-mixed-content; connect-src 'self'; font-src 'self'; form-action 'self'; frame-ancestors 'none'; frame-src 'none'; img-src 'self' data:; manifest-src 'self'; media-src 'self'; object-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests; worker-src 'self'
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  Permissions-Policy: accelerometer=(), autoplay=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), picture-in-picture=(), usb=(), web-share=()
+  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
-  Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  X-Robots-Tag: noindex, nofollow, noarchive
 
-  # Every gochujang.net host (apex + www) is HTTPS-only behind Cloudflare.
-  # NOTE: `preload` declares intent; actually submitting the domain to the
-  # browser preload list is a separate, deliberate, hard-to-reverse step.
-  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-
-  # Cross-origin posture, stated rather than left implicit. COEP is deliberately
-  # NOT set: the placeholder image host does not send compatible CORP headers.
-  Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Resource-Policy: same-site
-
-  # Report-only while the external image host and Tailwind's inline styles are
-  # still in the page. Tighten to an enforcing policy once dish photography is
-  # self-hosted — at which point loremflickr.com drops out of img-src.
-  #
-  # cloudflareinsights.com is required because Cloudflare Web Analytics is
-  # enabled at the zone edge and injects its beacon into the served HTML.
-  Content-Security-Policy-Report-Only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com https://*.cloudflareinsights.com; img-src 'self' data: https://loremflickr.com https://*.staticflickr.com https://images.unsplash.com; font-src 'self'; style-src 'self' 'unsafe-inline'; form-action 'self'; frame-src 'none'; upgrade-insecure-requests
+# Vite fingerprints production JavaScript, CSS, and fonts. A changed asset
+# always receives a new URL, so the cache can be immutable.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
 
 /manifest.webmanifest
-  Content-Type: application/manifest+json
   Cache-Control: public, max-age=3600
+  Content-Type: application/manifest+json; charset=utf-8
 
-# Crawler-facing files must never be stale.
+# Keep crawler-control files short-lived while the preview remains noindex.
 /robots.txt
   Cache-Control: public, max-age=3600
 /sitemap.xml

@@ -1,42 +1,38 @@
 import { Link } from 'react-router-dom'
 import { PolicyPage, PolicySection } from '@/components/policy/PolicyPage'
-import { CONTACT } from '@/data/seo.js'
+import { PREVIEW_STATUS, PUBLIC_CONTACT } from '@/data/site'
 
 export default function Terms() {
   return (
     <PolicyPage
       eyebrow="Governance"
-      title="Terms of"
-      titleAccent="use."
-      intro="The ground rules for using Gochujang — including what the recipes are, and what they are not."
+      title="Preview"
+      titleAccent="terms."
+      intro="A status notice for using the current no-collection preview; final terms of use have not yet been published."
     >
-      <PolicySection heading="What this site is">
+      <PolicySection heading="Preview only">
         <p>
-          Gochujang is an editorial publication about Korean-forward, fire-forward cooking. Using
-          the site means accepting these terms. If you do not accept them, please do not use the
-          site.
+          {PREVIEW_STATUS.description} The preview is provided for evaluation and should not be
+          treated as a finished consumer service or a record of cooking activity.
         </p>
       </PolicySection>
 
-      <PolicySection heading="Recipes are editorial drafts">
+      <PolicySection heading="No recipe procedure is published">
         <p>
-          Every recipe currently published here is an editorial draft. It has not been
-          kitchen-tested, and it is offered as a starting point rather than a proven method. Times,
-          temperatures, quantities, and yields are estimates. You are responsible for the food you
-          cook and serve.
+          Every dish is an editorial draft. Ingredient quantities and method steps are withheld
+          until documented test-kitchen, food-safety, cultural, and editorial review is complete.
+          A dish page is not a cooking procedure or food-safety instruction.
         </p>
         <p>
-          Cook to safe internal temperatures, handle raw meat, seafood, eggs, and dairy according to
-          the food-safety guidance that applies where you live, and treat any fermentation project
-          with particular care. See our{' '}
+          Do not use this preview to begin, manage, or assess a ferment. See the{' '}
           <Link className="text-primary hover:underline" to="/editorial-policy">
             editorial policy
           </Link>{' '}
-          for how recipes move from draft to tested.
+          for the evidence required before a procedure can be released.
         </p>
       </PolicySection>
 
-      <PolicySection heading="No professional advice">
+      <PolicySection heading="No professional or safety advice">
         <p>
           Nothing here is medical, nutritional, or allergen advice. Ingredient lists may be
           incomplete and do not identify every allergen or cross-contamination risk. If you cook for
@@ -45,41 +41,40 @@ export default function Terms() {
         </p>
       </PolicySection>
 
-      <PolicySection heading="The Kitchen is a preview">
+      <PolicySection heading="Preview interactions">
         <p>
           Mise — batches, streaks, and the Flavor Passport — is a demonstration running on sample
           data. It is not an account, it does not persist your activity, and it should not be relied
           on as a record of anything.
         </p>
+        <p>Newsletter signup is unavailable; no email address is requested by the application.</p>
       </PolicySection>
 
-      <PolicySection heading="Content and acceptable use">
+      <PolicySection heading="Content status">
         <p>
-          The text, design, brand marks, and code of this site belong to Gochujang. You are welcome
-          to cook from the recipes, print them for your own kitchen, and quote short passages with a
-          link. Republishing pages wholesale, or scraping the site to train or populate another
-          product, is not permitted.
-        </p>
-        <p>
-          Photography is presently supplied by a third-party placeholder image service and is not
-          ours to license onward.
+          Do not republish, market, or present any draft as kitchen-tested. Licensing, ownership,
+          media rights, and commercial-use terms have not been published for this preview.
         </p>
       </PolicySection>
 
-      <PolicySection heading="Availability and liability">
+      <PolicySection heading="What must be published before launch">
         <p>
-          The site is provided as-is, without warranty, and may change or go offline without notice.
-          To the fullest extent the law allows, Gochujang is not liable for loss arising from use of
-          the site or the recipes on it.
+          Final terms require an approved legal operator, contact and mailing details, governing
+          jurisdiction, effective date, rights and licence terms, and any applicable limits or
+          dispute process. None of those facts is represented as established on this preview page.
         </p>
       </PolicySection>
 
       <PolicySection heading="Contact">
         <p>
-          Questions about these terms go to{' '}
-          <a className="text-primary hover:underline" href={`mailto:${CONTACT.general}`}>
-            {CONTACT.general}
+          Questions about this preview status go to{' '}
+          <a className="text-primary hover:underline" href={`mailto:${PUBLIC_CONTACT}`}>
+            {PUBLIC_CONTACT}
           </a>
+          . For the public contact route, visit{' '}
+          <Link className="text-primary hover:underline" to="/contact">
+            /contact
+          </Link>
           .
         </p>
       </PolicySection>

@@ -6,11 +6,12 @@
   "description": "Gochujang \u2014 a premium culinary discovery & tracking platform",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build && node scripts/prerender.mjs && node scripts/verify-build.mjs",
+    "build": "tsc --noEmit && vite build && node scripts/prerender.mjs && node scripts/verify-build.mjs && node security/validate-headers.mjs --require-app-ready",
     "preview": "vite preview",
     "lint": "tsc --noEmit",
     "prerender": "node scripts/prerender.mjs",
-    "verify": "node scripts/verify-build.mjs"
+    "verify": "node scripts/verify-build.mjs",
+    "verify:headers": "node security/validate-headers.mjs --require-app-ready"
   },
   "dependencies": {
     "@fontsource-variable/fraunces": "^5.3.0",

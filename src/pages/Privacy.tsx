@@ -1,117 +1,68 @@
+import { Link } from 'react-router-dom'
 import { PolicyPage, PolicySection } from '@/components/policy/PolicyPage'
-import { CONTACT } from '@/data/seo.js'
+import { PREVIEW_STATUS, PUBLIC_CONTACT } from '@/data/site'
 
 export default function Privacy() {
   return (
     <PolicyPage
       eyebrow="Governance"
       title="Privacy"
-      titleAccent="notice."
-      intro="What Gochujang collects, what it does not, and how to reach a human about it."
+      titleAccent="preview."
+      intro="A transparent status notice for the current no-collection preview, not a substitute for a final privacy policy."
     >
-      <PolicySection heading="The short version">
+      <PolicySection heading="Current preview status">
         <p>
-          Gochujang collects only the information needed to operate an explicitly requested
-          feature. Theme preference is stored locally in your browser. If analytics or newsletter
-          services are enabled, this notice will identify the provider, purpose, data collected,
-          retention period, international transfer basis, and how to opt out, access, correct, or
-          delete your information.
+          {PREVIEW_STATUS.description} Newsletter signup is disabled. The Kitchen is an illustrative
+          interface, not an account or record-keeping service.
+        </p>
+        <p>
+          This preview is not a request for personal information. Please do not enter sensitive
+          information into a preview feature or send it by email.
         </p>
       </PolicySection>
 
-      <PolicySection heading="Who operates this site">
+      <PolicySection heading="Browser settings">
         <p>
-          Gochujang is an independently operated editorial site published at gochujang.net. It is
-          the data controller for anything described on this page. Reach the operator at{' '}
-          <a className="text-primary hover:underline" href={`mailto:${CONTACT.general}`}>
-            {CONTACT.general}
+          If you choose a color theme, the application may store that preference in your browser
+          under <code className="font-accent text-ink">gochujang-theme</code>. You can remove it
+          through your browser’s site-data controls. This page does not make an unverified claim
+          about platform-level cookies, headers, or browser features outside the application.
+        </p>
+      </PolicySection>
+
+      <PolicySection heading="Hosting, measurement, and third parties">
+        <p>
+          A final register of hosting providers, edge services, analytics, third-party assets,
+          cookies, retention periods, and international transfers has not been approved for
+          publication. This preview should not be understood as consent to future measurement,
+          advertising, newsletter, or account operations.
+        </p>
+        <p>
+          Before any personal information is collected or optional measurement is enabled, the
+          published privacy policy must identify the operator, purpose, lawful basis where
+          applicable, recipients, retention, choices, and a rights-request process.
+        </p>
+      </PolicySection>
+
+      <PolicySection heading="What is not published yet">
+        <p>
+          The legal operator or controller, postal address, governing jurisdiction, formal
+          effective date, retention schedule, and privacy-rights workflow have not been supplied
+          for publication. Those facts are required before this can become a final privacy policy.
+        </p>
+      </PolicySection>
+
+      <PolicySection heading="Contact">
+        <p>
+          For preview feedback or a question about this status notice, email{' '}
+          <a className="text-primary hover:underline" href={`mailto:${PUBLIC_CONTACT}`}>
+            {PUBLIC_CONTACT}
           </a>
-          . Security reports go to{' '}
-          <a className="text-primary hover:underline" href={`mailto:${CONTACT.security}`}>
-            {CONTACT.security}
-          </a>
+          . The route for this contact channel is available at{' '}
+          <Link className="text-primary hover:underline" to="/contact">
+            /contact
+          </Link>
           .
-        </p>
-      </PolicySection>
-
-      <PolicySection heading="What is stored in your browser">
-        <p>
-          One key, <code className="font-accent text-ink">gochujang-theme</code>, records whether
-          you chose the light or dark palette. It stays in your browser's local storage, is never
-          transmitted to us, and can be cleared at any time through your browser settings. We set
-          no cookies.
-        </p>
-      </PolicySection>
-
-      <PolicySection heading="Measurement">
-        <p>
-          We use Cloudflare Web Analytics to measure page performance and traffic patterns. We do
-          not use it for advertising profiles.
-        </p>
-        <p>
-          Cloudflare Web Analytics is cookieless and does not fingerprint or track individual
-          visitors across sites. It records aggregate page-level signals — such as page path,
-          referrer, country, browser family, and loading performance — and is served from
-          Cloudflare's global network, which processes data in the United States and other regions
-          in which it operates. It is enabled at the network edge for gochujang.net, which means
-          the measurement script is added to pages as they are served rather than by the site's own
-          code.
-        </p>
-        <p>
-          If you would rather not be measured at all, standard browser tracking protection, an ad
-          or script blocker, or a request to{' '}
-          <a className="text-primary hover:underline" href={`mailto:${CONTACT.general}`}>
-            {CONTACT.general}
-          </a>{' '}
-          will do it.
-        </p>
-      </PolicySection>
-
-      <PolicySection heading="Third parties in the page">
-        <p>
-          Dish photography is currently loaded from an external placeholder image service
-          (loremflickr.com) while original photography is commissioned. Your browser contacts that
-          service directly to fetch an image, which necessarily discloses your IP address and user
-          agent to it. No identifier of ours travels with that request. Fonts are self-hosted; there
-          is no third-party font, tag manager, ad network, or social pixel on this site.
-        </p>
-      </PolicySection>
-
-      <PolicySection heading="The newsletter">
-        <p>
-          The newsletter field on this site is a design preview. It does not send your address
-          anywhere, and nothing you type into it is stored or transmitted. Before it becomes a real
-          signup we will publish the provider, the double opt-in flow, the retention schedule, and
-          the unsubscribe path here.
-        </p>
-      </PolicySection>
-
-      <PolicySection heading="The Kitchen">
-        <p>
-          Mise — the batch timers, streaks, and Flavor Passport — runs entirely on illustrative
-          sample data. There are no accounts, no profiles, and no server-side record of anything you
-          do on this site. If accounts are introduced, export and deletion will ship with them, and
-          this notice will be updated before any real data is collected.
-        </p>
-      </PolicySection>
-
-      <PolicySection heading="Your rights">
-        <p>
-          Because we hold no personal data about you, there is normally nothing to access, correct,
-          export, or erase. If you believe we hold something about you, write to{' '}
-          <a className="text-primary hover:underline" href={`mailto:${CONTACT.general}`}>
-            {CONTACT.general}
-          </a>{' '}
-          and we will respond within 30 days. Depending on where you live, you may also have the
-          right to complain to your local data-protection authority.
-        </p>
-      </PolicySection>
-
-      <PolicySection heading="Changes">
-        <p>
-          This notice is versioned by date at the top of the page. Material changes — a new
-          processor, a new category of data, a new purpose — will be reflected there before the
-          change takes effect.
         </p>
       </PolicySection>
     </PolicyPage>

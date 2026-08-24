@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
 import { cn } from '@/lib/cn'
-import { unsplashSrcSet, unsplashUrl, type ImgOpts } from '@/lib/unsplash'
 
 export interface SmartImageProps {
-  /** Unsplash photo id / slug, a full URL, or a local /path. Empty = gradient only. */
+  /** Rights-cleared, self-hosted /path. Empty = gradient-only artwork. */
   photo?: string
   alt: string
   /** CSS gradient used as blur-up placeholder AND error/empty fallback. */
@@ -14,7 +13,6 @@ export interface SmartImageProps {
   aspect?: string
   priority?: boolean
   sizes?: string
-  opts?: ImgOpts
   /**
    * Intrinsic pixel dimensions for the <img>. These do not size the element —
    * the wrapper's aspect/CSS does — they give the browser the width/height
@@ -48,7 +46,6 @@ export function SmartImage({
   aspect,
   priority = false,
   sizes = '100vw',
-  opts,
   width = 1200,
   height = 900,
   scrim = 'none',
@@ -57,10 +54,8 @@ export function SmartImage({
   const [loaded, setLoaded] = useState(false)
   const [failed, setFailed] = useState(false)
 
-  const isLocal = photo?.startsWith('/') || photo?.startsWith('http')
-  const src = photo ? (isLocal ? photo : unsplashUrl(photo, opts)) : undefined
-  const srcSet = photo && !isLocal ? unsplashSrcSet(photo, opts) : undefined
-  const showImg = Boolean(photo) && !failed
+  const src = photo?.startsWith('/') ? photo : undefined
+  const showImg = Boolean(src) && !failed
 
   // Reset load/error state when the source changes (e.g. the reused dish-detail
   // hero across navigations) so a new photo always gets a fresh attempt + fade.
@@ -73,12 +68,11 @@ export function SmartImage({
     <div
       className={cn('relative overflow-hidden bg-surface-alt grain isolate', aspect, className)}
       style={{ background: gradient }}
-      data-image-status={!photo ? 'none' : failed ? 'error' : loaded ? 'loaded' : 'loading'}
+      data-image-status={!src ? 'none' : failed ? 'error' : loaded ? 'loaded' : 'loading'}
     >
       {showImg && (
         <img
           src={src}
-          srcSet={srcSet}
           sizes={sizes}
           alt={alt}
           width={width}

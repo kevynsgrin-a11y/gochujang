@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
-  Flame, Globe, Plus, FlaskConical, Zap, Award, Trophy, Star, Bell, ArrowRight,
+  Flame, Globe, Plus, FlaskConical, Zap, Award, Trophy, Star, ArrowRight,
   type LucideIcon,
 } from 'lucide-react'
 import { GenerativeHeroArt } from '@/components/decor/GenerativeHeroArt'
@@ -43,15 +43,12 @@ function BatchRow({ batch }: { batch: Batch }) {
           {batch.readyLabel}
         </p>
       </div>
-      <button
-        type="button"
-        className={cn(
-          'inline-flex shrink-0 items-center gap-1.5 rounded-pill px-3 py-2 text-[0.72rem] font-semibold transition-colors',
-          ready ? 'bg-celadon text-white hover:brightness-105' : 'border border-line text-muted hover:border-primary hover:text-primary',
-        )}
+      <span
+        className="inline-flex shrink-0 rounded-pill border border-line bg-surface-alt px-3 py-2 text-[0.72rem] font-semibold text-muted"
+        aria-label="Preview only; batch actions are unavailable"
       >
-        {ready ? <><Bell className="h-3.5 w-3.5" /> Taste</> : 'Log note'}
-      </button>
+        Preview only
+      </span>
     </motion.div>
   )
 }
@@ -79,12 +76,12 @@ export default function Kitchen() {
                   <span className="rounded-pill border border-white/40 bg-white/15 px-2 py-0.5 text-white">
                     Preview · sample data
                   </span>
-                  Welcome back
+                  Reference interface
                 </p>
                 <h1 className="font-display text-display-xl font-semibold leading-none [text-shadow:0_2px_18px_rgba(0,0,0,0.4)]">
-                  {profile.name}
+                  Sample kitchen
                 </h1>
-                <p className="mt-1 text-white/80">{profile.kitchenTitle} · since {profile.joined}</p>
+                <p className="mt-1 text-white/80">Illustrative profile · not an account</p>
                 <p className="mt-2 max-w-md text-caption text-white/70">
                   Mise is a preview. Everything below is illustrative sample data — accounts and
                   real tracking aren't live yet.
@@ -108,9 +105,9 @@ export default function Kitchen() {
                 </div>
                 <div className="mt-1.5 tnum text-caption text-white/80">{profile.weeklyProgress} / {profile.weeklyGoal} cooks</div>
               </div>
-              <Link to="/explore" className="btn bg-white text-[#1A1310] hover:-translate-y-0.5 hover:shadow-lift">
-                <Plus className="h-4 w-4" /> Log a cook
-              </Link>
+              <span className="btn cursor-not-allowed bg-white/70 text-[#1A1310]/70" aria-disabled="true">
+                Tracking unavailable
+              </span>
             </div>
           </div>
         </div>
@@ -136,8 +133,8 @@ export default function Kitchen() {
               <BatchRow key={b.id} batch={b} />
             ))}
           </motion.div>
-          <button type="button" className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-card border border-dashed border-line py-3 font-accent text-eyebrow uppercase tracking-[0.14em] text-muted transition-colors hover:border-primary hover:text-primary">
-            <Plus className="h-4 w-4" /> Start a new batch
+          <button disabled type="button" className="mt-4 inline-flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-card border border-dashed border-line py-3 font-accent text-eyebrow uppercase tracking-[0.14em] text-muted opacity-70">
+            <Plus className="h-4 w-4" /> Batch creation unavailable
           </button>
         </div>
 
@@ -145,14 +142,14 @@ export default function Kitchen() {
           <SectionHeader eyebrow="Palate check" title="Spice" titleAccent="tolerance." className="mb-4 self-start" />
           <ScovilleGauge value={spiceTolerance.currentLevel} max={spiceTolerance.max} band={spiceTolerance.band} scoville={spiceTolerance.scoville} size={210} />
           <p className="mt-4 text-center text-caption text-muted">
-            <span className="tnum font-semibold text-ink">{spiceTolerance.heatDishesLogged}</span> hot dishes logged. Next tier:{' '}
+            <span className="tnum font-semibold text-ink">{spiceTolerance.heatDishesLogged}</span> illustrative hot dishes. Sample next tier:{' '}
             <span className="font-semibold text-primary">{spiceTolerance.nextTier}</span>.
           </p>
           {/* trend sparkline */}
           <div
             className="mt-4 flex h-10 w-full items-end gap-1"
             role="img"
-            aria-label={`Spice-tolerance trend rising from ${spiceTolerance.trend[0]} to ${spiceTolerance.trend[spiceTolerance.trend.length - 1]} of ${spiceTolerance.max} over your recent hot cooks`}
+            aria-label={`Illustrative spice-tolerance trend rising from ${spiceTolerance.trend[0]} to ${spiceTolerance.trend[spiceTolerance.trend.length - 1]} of ${spiceTolerance.max}`}
           >
             {spiceTolerance.trend.map((t, i) => (
               <div key={i} className="flex-1 rounded-t bg-grad-ember" style={{ height: `${(t / spiceTolerance.max) * 100}%`, opacity: 0.35 + (i / spiceTolerance.trend.length) * 0.65 }} aria-hidden />
@@ -164,25 +161,25 @@ export default function Kitchen() {
       {/* Streak + Flavor radar */}
       <section className="container-x grid gap-6 py-6 lg:grid-cols-[1.5fr_1fr]">
         <div className="card p-6">
-          <SectionHeader eyebrow="Consistency" title="Cooking" titleAccent="streak." className="mb-2" />
+          <SectionHeader eyebrow="Illustrative data" title="Cooking" titleAccent="streak." className="mb-2" />
           <StreakHeatmap className="mt-4" />
         </div>
         <div className="card grain flex flex-col p-6">
-          <SectionHeader eyebrow="Your signature" title="Flavor" titleAccent="fingerprint." className="mb-2 self-start" />
+          <SectionHeader eyebrow="Illustrative data" title="Flavor" titleAccent="fingerprint." className="mb-2 self-start" />
           <div className="grid flex-1 place-items-center">
             <FlavorRadar axes={flavorRadar.axes} size={230} />
           </div>
-          <p className="text-center text-caption text-muted">Averaged across your logged {flavorRadar.dish} cooks.</p>
+          <p className="text-center text-caption text-muted">Illustrative profile based on sample {flavorRadar.dish} cooks.</p>
         </div>
       </section>
 
       {/* Passport */}
       <section className="container-x py-10">
         <SectionHeader
-          eyebrow="Places on your plate"
+          eyebrow="Illustrative data"
           title="Flavor"
           titleAccent="passport."
-          dek={`The regions you've cooked, stamped. ${passport.filter((s) => !s.unlocked).length} more in this set waiting for a first stamp.`}
+          dek={`A sample set of regions. ${passport.filter((s) => !s.unlocked).length} entries remain illustrative and locked.`}
           className="mb-8"
         />
         <motion.div variants={stagger(0.05)} initial="hidden" whileInView="show" viewport={inViewOnce} className="grid grid-cols-3 gap-4 sm:grid-cols-5 lg:grid-cols-10">
@@ -196,7 +193,7 @@ export default function Kitchen() {
 
       {/* Achievements */}
       <section className="container-x py-10">
-        <SectionHeader eyebrow="Unlocked" title="Kitchen" titleAccent="achievements." className="mb-8" />
+          <SectionHeader eyebrow="Illustrative data" title="Kitchen" titleAccent="achievements." className="mb-8" />
         <motion.div variants={stagger(0.06)} initial="hidden" whileInView="show" viewport={inViewOnce} className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {achievements.map((a) => {
             const Icon = ACH_ICONS[a.glyph] ?? Trophy
@@ -233,7 +230,7 @@ export default function Kitchen() {
       {/* Recent + insights */}
       <section className="container-x grid gap-6 py-10 lg:grid-cols-[1.5fr_1fr]">
         <div className="card p-6">
-          <SectionHeader eyebrow="Lately" title="Recent" titleAccent="cooks." className="mb-6" />
+          <SectionHeader eyebrow="Illustrative data" title="Recent" titleAccent="cooks." className="mb-6" />
           <ul className="divide-y divide-line/70">
             {recentCooks.map((c) => (
               <li key={c.dishId + c.when} className="flex items-center justify-between gap-4 py-3.5">
@@ -261,7 +258,7 @@ export default function Kitchen() {
             </div>
           ))}
           <Link to="/explore" className="btn-primary justify-center">
-            Find your next cook <ArrowRight className="h-4 w-4" />
+            Browse draft dishes <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>

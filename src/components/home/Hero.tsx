@@ -75,11 +75,11 @@ export function Hero() {
           </motion.p>
 
           <motion.div variants={word} className="mt-9 flex flex-wrap items-center gap-3">
-            <Link to="/kitchen" className="btn-primary text-base">
+            <Link to="/explore" className="btn-primary text-base">
               {BRAND.hero.primaryCTA} <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              to="/explore"
+              to="/editorial-policy"
               className="btn border border-white/30 bg-white/10 text-white backdrop-blur hover:border-white/60 hover:bg-white/20"
             >
               {BRAND.hero.secondaryCTA}

@@ -8,6 +8,7 @@ import {
   DEFAULT_OG_IMAGE,
   DEFAULT_TITLE,
   DEFAULT_DESCRIPTION,
+  normalizePath,
   ORIGIN,
   SITE_NAME,
 } from '@/data/seo.js'
@@ -27,7 +28,7 @@ interface RouteMeta {
  * fetches and the document a browser ends up with always agree.
  */
 const ROUTES: Map<string, RouteMeta> = new Map(
-  (buildRoutes(catalog) as RouteMeta[]).map((r) => [r.path, r]),
+  (buildRoutes(catalog) as RouteMeta[]).map((r) => [normalizePath(r.path), r]),
 )
 
 const NOT_FOUND: RouteMeta = {
@@ -63,10 +64,11 @@ export function usePageMeta() {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    const route = ROUTES.get(pathname) ?? NOT_FOUND
+    const normalizedPathname = normalizePath(pathname)
+    const route = ROUTES.get(normalizedPathname) ?? NOT_FOUND
     const title = route === NOT_FOUND ? `${NOT_FOUND.title} · ${SITE_NAME}` : titleFor(route)
     const desc = route.description || DEFAULT_DESCRIPTION
-    const url = route === NOT_FOUND ? ORIGIN + pathname : canonicalFor(route)
+    const url = route === NOT_FOUND ? ORIGIN + normalizedPathname : canonicalFor(route)
 
     document.title = title || DEFAULT_TITLE
     setMeta('meta[name="description"]', desc)

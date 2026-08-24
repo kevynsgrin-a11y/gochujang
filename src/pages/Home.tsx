@@ -30,12 +30,12 @@ const TRANSPARENCY = [
   {
     icon: NotebookPen,
     title: 'The recipes are drafts',
-    body: 'Every dish here is an editorial draft written for this collection. They have not yet been kitchen-tested, so treat them as a starting point rather than a proven method.',
+    body: 'Every dish here is an editorial draft written for this collection. Ingredient quantities and method steps are withheld until the draft has completed documented review.',
   },
   {
     icon: Camera,
-    title: 'The photography is placeholder',
-    body: 'Imagery is sourced or generated while original photography is shot. Where a photo cannot load, you are seeing the palette artwork the site falls back to by design.',
+    title: 'The imagery is editorial artwork',
+    body: 'This preview uses self-hosted gradient artwork. It does not load third-party photography while media rights and release assets are under review.',
   },
   {
     icon: FlaskConical,
@@ -300,17 +300,17 @@ export default function Home() {
               {BRAND.tagline}
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-body-lg text-white/90">
-              Start your Mise, track your first ferment, and build a living map of the flavors worth chasing.
+              Browse the editorial draft collection. Personal tracking, batch creation, and recipe procedures are unavailable during this controlled preview.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Link to="/kitchen" className="btn bg-white text-[#1A1310] hover:-translate-y-0.5 hover:shadow-lift">
-                Start cooking <ArrowRight className="h-4 w-4" />
+              <Link to="/explore" className="btn bg-white text-[#1A1310] hover:-translate-y-0.5 hover:shadow-lift">
+                Browse draft dishes <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                to="/explore"
+                to="/editorial-policy"
                 className="btn border border-white/40 bg-white/10 text-white backdrop-blur hover:bg-white/20"
               >
-                Browse dishes
+                Read release standards
               </Link>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PolicyPage, PolicySection } from '@/components/policy/PolicyPage'
-import { CONTACT } from '@/data/seo.js'
+import { PUBLIC_CONTACT } from '@/data/site'
 
 const TEST_CHECKLIST = [
   'Tested by, and the date tested',
@@ -18,36 +18,25 @@ export default function EditorialPolicy() {
     <PolicyPage
       eyebrow="Governance"
       title="Editorial"
-      titleAccent="policy."
-      intro="How a recipe gets from draft to tested, who is accountable for it, and how we fix what we get wrong."
+      titleAccent="preview."
+      intro="The release standard for recipes and editorial claims. It is not a claim that the current drafts have completed that work."
     >
-      <PolicySection heading="Our standard">
+      <PolicySection heading="Current status">
         <p>
-          Every recipe is reviewed for ingredient accuracy, food safety, cultural context, and
-          reproducibility before it is marked tested. We identify the tester and test date, link to
-          primary or authoritative sources where claims are made, and correct errors with a visible
-          revision note.
-        </p>
-      </PolicySection>
-
-      <PolicySection heading="Where we are right now">
-        <p>
-          We are not there yet, and we would rather say so than imply otherwise. Every recipe
-          currently on this site is an editorial draft that has not been kitchen-tested. Each one
-          carries that disclosure on its own page. No recipe here should be read as a proven
-          method.
+          Every recipe currently on this site is an editorial draft that has not been
+          kitchen-tested. It must not be read as a proven method, used as food-safety guidance, or
+          represented as an approved recipe.
         </p>
         <p>
-          Photography is placeholder imagery from a third-party service while original photography
-          is commissioned, and{' '}
+          The Kitchen is a sample-data preview, and{' '}
           <Link className="text-primary hover:underline" to="/kitchen">
-            the Kitchen
+            its output
           </Link>{' '}
-          is a preview running on sample data.
+          is not evidence that a visitor has prepared or tested a dish.
         </p>
       </PolicySection>
 
-      <PolicySection heading="What a tested recipe must carry">
+      <PolicySection heading="Release standard for a tested recipe">
         <p>Before a recipe loses its draft badge, it has to record all of the following:</p>
         <ul className="ml-5 list-disc space-y-2">
           {TEST_CHECKLIST.map((item) => (
@@ -60,41 +49,43 @@ export default function EditorialPolicy() {
         </p>
       </PolicySection>
 
-      <PolicySection heading="Sourcing">
+      <PolicySection heading="Evidence and review">
         <p>
-          Where a recipe makes a factual, historical, or cultural claim, it cites a primary or
-          authoritative source. Food-safety guidance is anchored to current public-health guidance
-          rather than to our own judgement, and we date it so you can tell how fresh it is.
+          A tested release must identify the author, test cook, editorial reviewer, and relevant
+          food-safety and Korean-language or cultural reviewers. Factual, historical, and cultural
+          claims require sources; food-safety guidance requires current authoritative references.
+          None of these fields should be inferred from a polished page or generated to fill a gap.
         </p>
       </PolicySection>
 
-      <PolicySection heading="Corrections">
+      <PolicySection heading="Corrections and safety concerns">
         <p>
-          If something here is wrong — a quantity, a temperature, a technique, a cultural framing —
-          write to{' '}
-          <a className="text-primary hover:underline" href={`mailto:${CONTACT.corrections}`}>
-            {CONTACT.corrections}
+          If you spot a potentially unsafe step, inaccurate quantity, unsupported claim, or
+          cultural mischaracterisation, email{' '}
+          <a className="text-primary hover:underline" href={`mailto:${PUBLIC_CONTACT}`}>
+            {PUBLIC_CONTACT}
           </a>
-          . Safety errors are acted on as soon as we can verify them. Corrections appear on the page
-          itself as a dated revision note; we do not quietly edit and move on.
+          . Include the page address and the specific concern. The preview has not published a
+          correction-service-level commitment; no accuracy or response promise is implied.
         </p>
       </PolicySection>
 
-      <PolicySection heading="Independence">
+      <PolicySection heading="Commercial and disclosure standard">
         <p>
-          There are currently no ads, affiliate links, sponsored placements, or paid rankings on
-          this site. If that changes, any commercial relationship will be disclosed in plain
-          language directly above the module it applies to, paid links will be marked as sponsored,
-          and recommendations will remain editorial rather than purchased.
+          This preview must not represent paid placement, affiliate recommendations, sponsorship,
+          or endorsements as editorial testing. Any future commercial relationship needs a clear,
+          adjacent disclosure before publication.
         </p>
       </PolicySection>
 
-      <PolicySection heading="Who is accountable">
+      <PolicySection heading="Accountability before launch">
         <p>
-          The Gochujang editorial desk owns this policy and every recipe published under it. It is
-          reachable at{' '}
-          <a className="text-primary hover:underline" href={`mailto:${CONTACT.general}`}>
-            {CONTACT.general}
+          The named publisher, legal operator, editorial owner, reviewer profiles, and formal
+          publication process have not yet been supplied for publication. Those details are
+          required before a draft is promoted to a tested public recipe. Preview feedback can be
+          sent to{' '}
+          <a className="text-primary hover:underline" href={`mailto:${PUBLIC_CONTACT}`}>
+            {PUBLIC_CONTACT}
           </a>
           .
         </p>

@@ -1,73 +1,17 @@
 import type { Dish } from './types'
 
-/*
- * IMAGERY STRATEGY ("Fermented Editorial")
- * ----------------------------------------
- * Every image slot ALWAYS renders a rich, category-tinted gradient + grain
- * behind the photo (see <SmartImage>), so a slot is never broken and the
- * "highly graphic" identity holds even offline.
- *
- * Real photography is layered on top via IMAGE_MODE:
- *   - 'keyword'  → real, license-free food photos resolved by keyword
- *                  (Flickr Creative Commons via loremflickr), stable per dish.
- *                  Loads in the visitor's browser; unified by the site's
- *                  duotone + warm grade + grain so mixed sources read as one shoot.
- *   - 'unsplash' → use a curated Unsplash photo id from PHOTO[] when present.
- *   - 'off'      → gradient-only editorial art (the guaranteed-render baseline).
- *
- * ⭐ To use your OWN licensed photography: set IMAGE_MODE = 'unsplash', drop a
- * file in /public (e.g. /photos/gochujang-galbi.jpg) and map it in PHOTO below,
- * or point PHOTO[id] at any full https URL. That's the only file you touch.
+/**
+ * The preview uses the built-in gradient artwork by default. It never requests
+ * third-party imagery at runtime. Future photography must be rights-cleared,
+ * self-hosted under /public, and represented here with a root-relative path.
  */
-export const IMAGE_MODE: 'keyword' | 'unsplash' | 'off' = 'keyword'
+export type ImageMode = 'off' | 'local'
+export type LocalImagePath = `/${string}`
 
-// Optional curated overrides: dish id (or hero slot) → Unsplash photo id OR a
-// full URL (e.g. '/photos/your-photo.jpg'). Used when IMAGE_MODE === 'unsplash',
-// and always takes precedence for hero slots when present.
-export const PHOTO: Record<string, string> = {
-  // 'gochujang-galbi': 'photo-1529193591184-b1d58069ecdd',
-}
+export const IMAGE_MODE: ImageMode = 'off'
 
-// Deterministic seed from a string (no Math.random → stable per dish/build).
-function seed(str: string): number {
-  let h = 2166136261
-  for (let i = 0; i < str.length; i++) {
-    h ^= str.charCodeAt(i)
-    h = Math.imul(h, 16777619)
-  }
-  return Math.abs(h) % 100000
-}
-
-/*
- * Curated keyword tags per slot. The CC photo service requires EVERY tag to
- * match, so tags are capped at TWO strong, common food terms — more tags means
- * frequent zero-match placeholders on the live site. Unmapped dishes fall back
- * to the first two words of their unsplashQuery.
- */
-const PHOTO_TAGS: Record<string, string[]> = {
-  'gochujang-galbi': ['korean', 'bbq'],
-  'baechu-kimchi': ['kimchi'],
-  'rose-tteokbokki': ['tteokbokki'],
-  'dolsot-bibimbap': ['bibimbap'],
-  'doenjang-jjigae': ['korean', 'stew'],
-  'yangnyeom-chicken': ['fried', 'chicken'],
-  'buldak-fire-noodles': ['spicy', 'noodles'],
-  'gochujang-bolognese': ['pasta', 'ragu'],
-  'kimchi-jjigae': ['kimchi', 'stew'],
-  'gochujang-birria-tacos': ['tacos'],
-  'gochujang-miso-black-cod': ['cod', 'fish'],
-  'gochujang-shakshuka': ['shakshuka'],
-  'ssamjang-pork-ssam': ['korean', 'pork'],
-  'gochujang-chocolate-tart': ['chocolate', 'tart'],
-  'hero-home': ['korean', 'bbq'],
-  'hero-spotlight': ['kimchi'],
-  'hero-about': ['chili', 'pepper'],
-}
-
-function keywordUrl(query: string, id: string, w = 1200, h = 900): string {
-  const tags = PHOTO_TAGS[id] ?? query.trim().toLowerCase().split(/\s+/).slice(0, 2)
-  const kw = encodeURIComponent(tags.slice(0, 2).join(','))
-  return `https://loremflickr.com/${w}/${h}/${kw}?lock=${seed(id)}`
+export const PHOTO: Partial<Record<string, LocalImagePath>> = {
+  // 'gochujang-galbi': '/photos/gochujang-galbi.jpg',
 }
 
 /** Rich, category-tinted fallback gradients — the editorial art under every photo. */
@@ -87,12 +31,9 @@ export function categoryGradient(categoryId: string): string {
   return CATEGORY_GRADIENT[categoryId] ?? DEFAULT_GRADIENT
 }
 
-/** Resolve a dish's photo URL (or undefined → gradient only). */
-export function dishPhoto(dish: Dish, w = 1200, h = 900): string | undefined {
-  const override = PHOTO[dish.id]
-  if (IMAGE_MODE === 'unsplash') return override
-  if (IMAGE_MODE === 'keyword') return override ?? keywordUrl(dish.unsplashQuery, dish.id, w, h)
-  return override
+/** Resolve a dish's local photo URL (or undefined → gradient-only artwork). */
+export function dishPhoto(dish: Dish, _w = 1200, _h = 900): string | undefined {
+  return IMAGE_MODE === 'local' ? PHOTO[dish.id] : undefined
 }
 
 export interface HeroSlot {
@@ -127,11 +68,9 @@ export const HERO: Record<string, HeroSlot> = {
   },
 }
 
-/** Resolve a hero slot's photo URL, honoring mode + overrides. */
-export function heroPhoto(slot: keyof typeof HERO, w = 1800, h = 1200): string | undefined {
+/** Resolve a hero slot's local photo URL, honoring the preview release mode. */
+export function heroPhoto(slot: keyof typeof HERO, _w = 1800, _h = 1200): string | undefined {
   const s = HERO[slot]
   if (!s) return undefined
-  if (s.photo) return s.photo
-  if (IMAGE_MODE === 'keyword' && s.query) return keywordUrl(s.query, `hero-${slot}`, w, h)
-  return undefined
+  return IMAGE_MODE === 'local' ? s.photo : undefined
 }

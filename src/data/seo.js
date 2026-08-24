@@ -1,219 +1,175 @@
 /**
- * SINGLE SOURCE OF TRUTH for route metadata.
+ * Single source of truth for route metadata.
  *
- * Both the client (usePageMeta) and the build-time prerenderer
- * (scripts/prerender.mjs) derive titles, descriptions, canonicals, social
- * tags, JSON-LD, and the sitemap from this one module — so the raw HTML a
- * crawler sees and the hydrated document a browser sees can never drift.
- *
- * Plain ESM (not TS) so Node can import it directly at build time without a
- * transpile step. The catalog is passed in rather than imported so the same
- * module works under Vite (JSON import) and Node (fs.readFileSync).
+ * The current release is a controlled preview. It deliberately has no
+ * indexable URLs and emits only generic page-level structured data. Recipe
+ * rich-result markup is prohibited until each recipe has documented testing,
+ * food-safety review, media rights, and editorial approval.
  */
 
 export const ORIGIN = 'https://gochujang.net'
 export const SITE_NAME = 'Gochujang'
+export const RELEASE_MODE = 'controlled-preview'
+export const PREVIEW_ROBOTS = 'noindex, nofollow, noarchive'
 
-export const DEFAULT_TITLE = 'Gochujang — Cook bold. Track what you love.'
+export const DEFAULT_TITLE = 'Gochujang — Controlled preview'
 export const DEFAULT_DESCRIPTION =
-  'Gochujang is a premium culinary destination for bold, fire-forward cooking — discover standout dishes, master fermentation, and track every bite worth remembering.'
+  'A controlled, no-collection culinary preview. Recipe drafts are not kitchen-tested and are not food-safety guidance.'
 
-/** Shared social card. Documented as an intentional site-wide asset until owned per-dish photography exists. */
+/** Shared social card until rights-cleared, release-approved media exists. */
 export const DEFAULT_OG_IMAGE = `${ORIGIN}/og.png`
 
-/** Contact addresses verified against the domain's live Cloudflare Email Routing rules. */
+/** The only public contact channel verified for the current preview. */
 export const CONTACT = {
   general: 'hello@gochujang.net',
-  security: 'security@gochujang.net',
+  security: 'hello@gochujang.net',
   corrections: 'hello@gochujang.net',
 }
 
-/**
- * Host serving placeholder dish photography. Routes that render dish imagery
- * preconnect to it — the audit measured a redirect plus ~1s for a single hero
- * fetch. Remove this (and the img-src entry in public/_headers) once
- * photography is self-hosted.
- */
-export const REMOTE_IMAGE_ORIGIN = 'https://loremflickr.com'
+/** Bump when the preview notice materially changes. */
+export const POLICY_VERSION = '2026-08-24'
 
-/** Policy version — bump when the substance of a policy page changes. */
-export const POLICY_VERSION = '2026-08-18'
+/**
+ * Cloudflare Pages serves directory routes with a trailing slash. Keep route
+ * registry keys slash-free and normalize browser pathnames before lookups.
+ */
+export function normalizePath(path) {
+  const raw = String(path || '/')
+  const boundary = raw.search(/[?#]/)
+  const pathname = boundary === -1 ? raw : raw.slice(0, boundary)
+  const suffix = boundary === -1 ? '' : raw.slice(boundary)
+  const normalizedPathname = pathname.replace(/\/+$/, '') || '/'
+  return normalizedPathname + suffix
+}
 
 function absolute(path) {
-  return ORIGIN + (path === '/' ? '/' : path)
+  const normalized = normalizePath(path)
+  const boundary = normalized.search(/[?#]/)
+  const pathname = boundary === -1 ? normalized : normalized.slice(0, boundary)
+  const suffix = boundary === -1 ? '' : normalized.slice(boundary)
+  return ORIGIN + (pathname === '/' ? '/' : `${pathname}/`) + suffix
 }
 
 /**
- * Build the full route table.
  * @param {{dishes: Array<any>, categories: Array<any>}} catalog
  */
 export function buildRoutes(catalog) {
   const dishes = catalog.dishes ?? []
-
-  /** @type {Array<any>} */
   const routes = [
     {
       path: '/',
       title: DEFAULT_TITLE,
-      // The home route is the one page whose <title> is the brand line itself.
       rawTitle: true,
       description: DEFAULT_DESCRIPTION,
       ogType: 'website',
-      indexable: true,
-      changefreq: 'weekly',
-      priority: '1.0',
-      heading: 'Bold flavor, worth chasing.',
-      remoteImages: true,
+      indexable: false,
+      heading: 'Bold flavor, under review.',
       shell: [
-        'The culinary discovery platform for cooks who eat with intent — find the dishes that change you, track the ones that stick, and watch your palate get braver.',
+        'This controlled preview is intentionally not indexed. Its dish pages are editorial drafts, not kitchen-tested recipes or food-safety guidance.',
       ],
-      jsonLd: () => [websiteSchema(), organizationSchema()],
     },
     {
       path: '/explore',
-      title: 'Explore dishes',
+      title: 'Explore draft dishes',
       description:
-        'Filter every dish worth chasing by craving, heat, and time — curated, never dumped.',
+        'Browse Gochujang editorial recipe drafts in a controlled, non-indexable preview. They are not kitchen-tested guidance.',
       ogType: 'website',
-      indexable: true,
-      changefreq: 'weekly',
-      priority: '0.9',
-      heading: 'Every dish worth chasing.',
-      remoteImages: true,
+      indexable: false,
+      heading: 'Explore draft dishes.',
       shell: [
-        'Filter by craving, heat, and time. Curated, never dumped.',
-        `${dishes.length} dishes across ${(catalog.categories ?? []).length} flavor categories.`,
+        `${dishes.length} editorial drafts are shown for review only. Do not rely on a draft as tested cooking or fermentation guidance.`,
       ],
-      jsonLd: () => [collectionSchema(dishes), breadcrumbSchema([{ name: 'Explore', path: '/explore' }])],
     },
     {
       path: '/kitchen',
-      title: 'The Kitchen',
+      title: 'The Kitchen preview',
       description:
-        'Mise — batch timers, cooking streaks, and the Flavor Passport. A preview running on sample data; accounts and real tracking are not live yet.',
+        'Mise is a no-collection preview with illustrative sample data. Accounts, tracking, and record keeping are not live.',
       ogType: 'website',
-      // Explicitly a sample-data preview. Kept reachable for visitors, kept out
-      // of the index and the sitemap until it holds real, non-preview content.
       indexable: false,
-      heading: 'Your Mise.',
+      heading: 'The Kitchen preview.',
       shell: [
-        'Mise is a preview. Everything shown is illustrative sample data — accounts and real tracking are not live yet.',
+        'Everything shown is illustrative sample data. Accounts, tracking, timers, and record keeping are unavailable in this release.',
       ],
-      jsonLd: () => [],
     },
     {
       path: '/about',
-      title: 'About',
+      title: 'About this preview',
       description:
-        'Why Gochujang exists: an editorial culinary destination built for cooks who read menus like novels and remember meals like milestones.',
+        'About Gochujang’s controlled culinary preview and the release conditions required before public indexing.',
       ogType: 'website',
-      indexable: true,
-      changefreq: 'monthly',
-      priority: '0.6',
-      heading: 'Taste, turned up.',
+      indexable: false,
+      heading: 'A culinary preview, under review.',
       shell: [
-        'Gochujang starts with a jar of fermented chili paste — proof that patience, heat, and a point of view turn the ordinary into the unforgettable.',
+        'Gochujang is being evaluated as a privacy-first culinary utility. This release is controlled and intentionally non-indexable.',
       ],
-      jsonLd: () => [breadcrumbSchema([{ name: 'About', path: '/about' }]), organizationSchema()],
     },
     {
       path: '/editorial-policy',
-      title: 'Editorial policy',
+      title: 'Editorial preview policy',
       description:
-        'How Gochujang reviews recipes for ingredient accuracy, food safety, cultural context, and reproducibility — and how we correct errors.',
+        'The release standard for Gochujang recipe and editorial claims. Current drafts have not completed that review.',
       ogType: 'website',
-      indexable: true,
-      changefreq: 'yearly',
-      priority: '0.4',
-      heading: 'Editorial policy',
+      indexable: false,
+      heading: 'Editorial preview policy.',
       shell: [
-        'Every recipe is reviewed for ingredient accuracy, food safety, cultural context, and reproducibility before it is marked tested.',
+        'This page describes the standard required before a draft can be represented as an approved recipe. It does not claim that the current drafts have completed it.',
       ],
-      jsonLd: () => [breadcrumbSchema([{ name: 'Editorial policy', path: '/editorial-policy' }])],
     },
     {
       path: '/privacy',
-      title: 'Privacy',
+      title: 'Privacy preview notice',
       description:
-        'What Gochujang collects, what it does not, and how to reach us. Theme preference stays in your browser; site measurement is aggregate and cookieless.',
+        'A status notice for Gochujang’s current no-collection preview. It is not a final privacy policy.',
       ogType: 'website',
-      indexable: true,
-      changefreq: 'yearly',
-      priority: '0.4',
-      heading: 'Privacy',
+      indexable: false,
+      heading: 'Privacy preview notice.',
       shell: [
-        'Gochujang collects only the information needed to operate an explicitly requested feature.',
+        'This is a no-collection preview. It does not offer accounts, a contact form, or newsletter signup, and it is not a final privacy policy.',
       ],
-      jsonLd: () => [breadcrumbSchema([{ name: 'Privacy', path: '/privacy' }])],
     },
     {
       path: '/terms',
-      title: 'Terms',
+      title: 'Preview terms notice',
       description:
-        'The terms that govern use of Gochujang, including recipe disclaimers, food-safety responsibility, and acceptable use.',
+        'A status notice for use of the current no-collection Gochujang preview; final terms have not been published.',
       ogType: 'website',
-      indexable: true,
-      changefreq: 'yearly',
-      priority: '0.4',
-      heading: 'Terms',
-      shell: ['The terms that govern your use of Gochujang.'],
-      jsonLd: () => [breadcrumbSchema([{ name: 'Terms', path: '/terms' }])],
+      indexable: false,
+      heading: 'Preview terms notice.',
+      shell: ['Final terms of use have not been published for this controlled preview.'],
     },
     {
       path: '/contact',
-      title: 'Contact',
+      title: 'Contact the preview',
       description:
-        'Reach Gochujang: general enquiries, recipe corrections, and security reports.',
+        'Contact Gochujang’s controlled preview for feedback, factual corrections, food-safety concerns, or trust questions.',
       ogType: 'website',
-      indexable: true,
-      changefreq: 'yearly',
-      priority: '0.4',
-      heading: 'Contact',
-      shell: [`General enquiries and corrections: ${CONTACT.general}.`],
-      jsonLd: () => [breadcrumbSchema([{ name: 'Contact', path: '/contact' }])],
+      indexable: false,
+      heading: 'Contact the preview.',
+      shell: [`For preview feedback or a factual concern, email ${CONTACT.general}.`],
     },
   ]
 
-  for (const dish of dishes) {
-    routes.push(dishRoute(dish, catalog))
-  }
-
+  for (const dish of dishes) routes.push(dishRoute(dish))
   return routes
 }
 
-function dishRoute(dish, catalog) {
-  const category = (catalog.categories ?? []).find((c) => c.id === dish.category)
+function dishRoute(dish) {
   const path = `/dish/${dish.id}`
   return {
     path,
-    title: dish.name,
-    description: dish.shortDesc,
-    // Dish pages are editorial articles, not collection pages.
+    title: `${dish.name} draft`,
+    description: `${dish.name} is an editorial recipe draft in a controlled preview. It is not kitchen-tested or food-safety guidance.`,
     ogType: 'article',
-    indexable: true,
-    changefreq: 'monthly',
-    priority: '0.8',
-    heading: dish.name,
-    remoteImages: true,
+    indexable: false,
+    heading: `${dish.name} — draft`,
     shell: [
-      dish.longDesc,
-      `Region: ${dish.region}. Serves ${dish.servings}. About ${dish.timeMinutes} minutes. Difficulty: ${dish.difficulty}.`,
-      `Ingredients: ${dish.ingredients.join('; ')}.`,
-    ],
-    // Method steps get real list markup in the prerendered shell.
-    steps: dish.method,
-    jsonLd: () => [
-      recipeSchema(dish, category),
-      breadcrumbSchema([
-        { name: 'Explore', path: '/explore' },
-        ...(category ? [{ name: category.name, path: `/explore?category=${category.id}` }] : []),
-        { name: dish.name, path },
-      ]),
+      'This dish is an editorial draft shown for review. It is not kitchen-tested, and it must not be used as a validated cooking or food-safety procedure.',
     ],
   }
 }
 
-/* ---------------------------------------------------------------- schema -- */
+/* -------------------------------------------------------------- schema -- */
 
 function websiteSchema() {
   return {
@@ -225,92 +181,45 @@ function websiteSchema() {
   }
 }
 
-function organizationSchema() {
+function webPageSchema(route) {
+  const url = canonicalFor(route)
   return {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: SITE_NAME,
-    url: `${ORIGIN}/`,
-    logo: `${ORIGIN}/favicon-32.png`,
-    email: CONTACT.general,
-  }
-}
-
-function collectionSchema(dishes) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: 'Explore dishes',
-    url: `${ORIGIN}/explore`,
-    isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: `${ORIGIN}/` },
-    mainEntity: {
-      '@type': 'ItemList',
-      numberOfItems: dishes.length,
-      itemListElement: dishes.map((d, i) => ({
-        '@type': 'ListItem',
-        position: i + 1,
-        url: `${ORIGIN}/dish/${d.id}`,
-        name: d.name,
-      })),
+    '@type': 'WebPage',
+    '@id': `${url}#webpage`,
+    url,
+    name: titleFor(route),
+    description: route.description,
+    isPartOf: {
+      '@type': 'WebSite',
+      name: SITE_NAME,
+      url: `${ORIGIN}/`,
     },
   }
 }
 
-function breadcrumbSchema(trail) {
+function breadcrumbSchema(route) {
+  if (route.path === '/') return null
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: `${ORIGIN}/` },
-      ...trail.map((t, i) => ({
-        '@type': 'ListItem',
-        position: i + 2,
-        name: t.name,
-        item: absolute(t.path),
-      })),
+      { '@type': 'ListItem', position: 2, name: route.title, item: canonicalFor(route) },
     ],
   }
 }
 
-/**
- * Recipe schema built ONLY from fields the catalog actually holds.
- *
- * Deliberately omitted, because inventing them would be a trust defect the
- * audit called out by name: author-as-a-person, datePublished/dateModified,
- * aggregateRating, review, nutrition, and a prep/cook split (the catalog
- * stores one total time, so only totalTime is emitted).
- */
-function recipeSchema(dish, category) {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'Recipe',
-    name: dish.name,
-    description: dish.shortDesc,
-    url: `${ORIGIN}/dish/${dish.id}`,
-    // The publisher is the site itself — an accurate attribution, not a persona.
-    author: { '@type': 'Organization', name: SITE_NAME },
-    publisher: { '@type': 'Organization', name: SITE_NAME },
-    recipeCuisine: 'Korean',
-    recipeYield: `${dish.servings} servings`,
-    totalTime: `PT${dish.timeMinutes}M`,
-    recipeIngredient: dish.ingredients,
-    recipeInstructions: dish.method.map((text, i) => ({
-      '@type': 'HowToStep',
-      position: i + 1,
-      text,
-    })),
-    keywords: dish.tags.join(', '),
-    inLanguage: 'en',
-    isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: `${ORIGIN}/` },
-  }
-  if (category) schema.recipeCategory = category.name
-  if (dish.koreanName) schema.alternateName = dish.koreanName
-  return schema
+/** Generic preview metadata only. Recipe, Organization, review, and rating markup are not allowed. */
+export function structuredDataFor(route) {
+  const schemas = [webPageSchema(route)]
+  if (route.path === '/') schemas.unshift(websiteSchema())
+  const breadcrumb = breadcrumbSchema(route)
+  if (breadcrumb) schemas.push(breadcrumb)
+  return schemas
 }
 
-/* ----------------------------------------------------------- derivations -- */
-
-/** The exact <title> string for a route (client and prerender must agree). */
+/** The exact <title> string for a route. */
 export function titleFor(route) {
   return route.rawTitle ? route.title : `${route.title} · ${SITE_NAME}`
 }

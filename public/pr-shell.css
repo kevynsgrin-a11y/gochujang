@@ -1,0 +1,190 @@
+:root {
+  color-scheme: light;
+  --pr-bg: #f5efe6;
+  --pr-surface: #fffaf4;
+  --pr-text: #1a1310;
+  --pr-muted: #5c5148;
+  --pr-line: #d8c9b9;
+  --pr-accent: #b7371f;
+  --pr-focus: #075985;
+}
+
+html.dark {
+  color-scheme: dark;
+  --pr-bg: #161210;
+  --pr-surface: #211914;
+  --pr-text: #f8eee5;
+  --pr-muted: #cdbdaf;
+  --pr-line: #55443a;
+  --pr-accent: #ff815d;
+  --pr-focus: #7dd3fc;
+}
+
+.pr-shell {
+  min-height: 100svh;
+  background: var(--pr-bg);
+  color: var(--pr-text);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.pr-inner {
+  box-sizing: border-box;
+  width: min(100%, 72rem);
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 3rem;
+}
+
+.pr-skip {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 1;
+  transform: translateY(-200%);
+  padding: 0.75rem 1rem;
+  color: var(--pr-bg);
+  background: var(--pr-text);
+  border-radius: 0.375rem;
+}
+
+.pr-skip:focus {
+  transform: translateY(0);
+}
+
+.pr-header,
+.pr-footer,
+.pr-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pr-header,
+.pr-footer {
+  justify-content: space-between;
+  border-color: var(--pr-line);
+}
+
+.pr-header {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--pr-line);
+}
+
+.pr-footer {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-top: 1rem;
+  border-top: 1px solid var(--pr-line);
+}
+
+.pr-brand {
+  color: inherit;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+.pr-nav {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.pr-nav a,
+.pr-footer a,
+.pr-content a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+.pr-nav a[aria-current="page"] {
+  color: var(--pr-accent);
+  font-weight: 700;
+}
+
+.pr-content {
+  align-self: center;
+  max-width: 48rem;
+}
+
+.pr-kicker {
+  margin: 0 0 0.75rem;
+  color: var(--pr-accent);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pr-h1,
+.pr-h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.pr-h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  line-height: 0.98;
+}
+
+.pr-h2 {
+  margin-top: 2.5rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.pr-p,
+.pr-list,
+.pr-status {
+  max-width: 44rem;
+  color: var(--pr-muted);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+.pr-p {
+  margin: 1.25rem 0 0;
+}
+
+.pr-status {
+  margin: 1.5rem 0 0;
+  padding: 1rem;
+  color: var(--pr-text);
+  background: var(--pr-surface);
+  border-left: 0.25rem solid var(--pr-accent);
+}
+
+.pr-list {
+  margin: 1rem 0 0;
+  padding-left: 1.4rem;
+}
+
+.pr-list li + li {
+  margin-top: 0.625rem;
+}
+
+.pr-shell a:focus-visible {
+  outline: 3px solid var(--pr-focus);
+  outline-offset: 3px;
+}
+
+@media (max-width: 36rem) {
+  .pr-inner {
+    padding: 1.125rem;
+    gap: 2.25rem;
+  }
+
+  .pr-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pr-nav {
+    justify-content: flex-start;
+  }
+}

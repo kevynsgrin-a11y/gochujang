@@ -5,18 +5,21 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#1a1210" />
-    <title>Gochujang — Cook bold. Track what you love.</title>
+    <!-- The preview is intentionally non-indexable until recipes have release evidence. -->
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <title>Gochujang preview — Cook bold.</title>
     <meta
       name="description"
-      content="Gochujang is a premium culinary destination for bold, fire-forward cooking — discover standout dishes, master fermentation, and track every bite worth remembering."
+      content="Gochujang is a controlled culinary preview. Recipe drafts are not kitchen-tested or approved for search indexing."
     />
     <link rel="canonical" href="https://gochujang.net/" />
-    <meta property="og:title" content="Gochujang — Cook bold. Track what you love." />
+    <meta property="og:title" content="Gochujang preview — Cook bold." />
     <meta
       property="og:description"
-      content="A premium culinary destination for bold, fire-forward cooking. Discover, cook, and track."
+      content="A controlled culinary preview. Recipe drafts are not kitchen-tested or approved for search indexing."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gochujang.net/" />
@@ -24,31 +27,50 @@
     <meta property="og:image" content="https://gochujang.net/og.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Gochujang" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Gochujang — Cook bold. Track what you love." />
+    <meta name="twitter:title" content="Gochujang preview — Cook bold." />
     <meta
       name="twitter:description"
-      content="A premium culinary destination for bold, fire-forward cooking. Discover, cook, and track."
+      content="A controlled culinary preview. Recipe drafts are not kitchen-tested or approved for search indexing."
     />
     <meta name="twitter:image" content="https://gochujang.net/og.png" />
-    <script>
-      // Set theme before first paint to avoid a flash of the wrong palette.
-      (function () {
-        try {
-          var k = 'gochujang-theme'
-          var s = localStorage.getItem(k)
-          var dark = s ? s === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches
-          var root = document.documentElement
-          root.classList.toggle('dark', dark)
-          root.style.colorScheme = dark ? 'dark' : 'light'
-          var tc = document.querySelector('meta[name="theme-color"]')
-          if (tc) tc.setAttribute('content', dark ? '#161210' : '#F5EFE6')
-        } catch (e) {}
-      })()
-    </script>
+    <meta name="twitter:image:alt" content="Gochujang" />
+    <!-- External, parser-blocking theme setup keeps CSP strict without a FOUC. -->
+    <script src="/theme-init.js"></script>
+    <link rel="stylesheet" href="/pr-shell.css" />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!--prerender-shell:start-->
+      <main class="pr-shell" id="pr-main" tabindex="-1">
+        <a class="pr-skip" href="#pr-content">Skip to content</a>
+        <div class="pr-inner">
+          <header class="pr-header">
+            <a class="pr-brand" href="/" aria-label="Gochujang home">Gochujang</a>
+            <nav class="pr-nav" aria-label="Primary navigation">
+              <a href="/explore">Explore</a>
+              <a href="/about">About</a>
+              <a href="/contact">Contact</a>
+            </nav>
+          </header>
+          <section class="pr-content" id="pr-content" aria-labelledby="pr-title">
+            <p class="pr-kicker">Controlled preview</p>
+            <h1 class="pr-h1" id="pr-title">Bold flavor, worth chasing.</h1>
+            <p class="pr-p">
+              This preview is intentionally not indexed. Dish pages are editorial drafts and are not
+              kitchen-tested food-safety guidance.
+            </p>
+          </section>
+          <footer class="pr-footer">
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+            <a href="/editorial-policy">Editorial policy</a>
+          </footer>
+        </div>
+      </main>
+      <!--prerender-shell:end-->
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
