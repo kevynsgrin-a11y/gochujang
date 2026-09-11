@@ -10,6 +10,7 @@ import { DishCard } from '@/components/DishCard'
 import { SectionHeader } from '@/components/SectionHeader'
 import { fadeUp, stagger, inViewOnce } from '@/lib/motion'
 import { usePageMeta } from '@/lib/usePageMeta'
+import { FDC_ATTRIBUTION, formatPer100g, nutritionForLine } from '@/data/nutrition'
 import type { Dish } from '@/data/types'
 import NotFound from './NotFound'
 
@@ -122,13 +123,41 @@ export default function DishDetail() {
           <div className="mt-10">
             <h2 className="text-h2 font-semibold">Ingredients</h2>
             <ul className="mt-5 grid gap-2 sm:grid-cols-2">
-              {dish.ingredients.map((ing) => (
-                <li key={ing} className="flex items-start gap-3 rounded-lg border border-line bg-surface px-4 py-3 text-body">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-celadon" />
-                  <span>{ing}</span>
-                </li>
-              ))}
+              {dish.ingredients.map((ing) => {
+                const nutrition = nutritionForLine(ing)
+                const values = nutrition ? formatPer100g(nutrition) : ''
+                return (
+                  <li key={ing} className="flex items-start gap-3 rounded-lg border border-line bg-surface px-4 py-3 text-body">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-celadon" />
+                    <span className="min-w-0">
+                      <span>{ing}</span>
+                      {values && (
+                        <span className="mt-1 block text-caption tnum text-muted">
+                          {values}
+                          {nutrition?.dataType && (
+                            <span className="text-muted/80"> · FDC {nutrition.fdcId} ({nutrition.dataType})</span>
+                          )}
+                        </span>
+                      )}
+                    </span>
+                  </li>
+                )
+              })}
             </ul>
+            <p className="mt-4 text-caption text-muted">
+              Per-100 g reference values for the raw ingredient, matched to USDA FoodData Central — not a
+              per-serving analysis of this dish.{' '}
+              <a
+                href={FDC_ATTRIBUTION.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-line underline-offset-2 hover:text-ink"
+              >
+                {FDC_ATTRIBUTION.text}
+              </a>
+              . Ingredients without values are not yet verified against FoodData Central, so no numbers
+              are shown rather than estimates.
+            </p>
           </div>
 
           <div className="mt-12">
