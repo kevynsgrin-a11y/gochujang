@@ -2,7 +2,7 @@
   "version": 1,
   "generatedBy": "scripts/build-ingredient-nutrition.mjs",
   "dictionarySource": "USDA FoodData Central (foods/search)",
-  "dictionaryFetchedAt": "2026-09-11T09:55:34.372Z",
+  "dictionaryFetchedAt": "2026-09-11T12:01:00.639Z",
   "fdcAttribution": {
     "text": "Nutrition data: USDA FoodData Central",
     "url": "https://fdc.nal.usda.gov"
@@ -11,21 +11,53 @@
   "counts": {
     "ingredientNames": 74,
     "sourceLines": 97,
-    "resolved": 35,
-    "unresolved": 39
+    "resolved": 60,
+    "unresolved": 14
   },
   "ingredients": {
     "Korean pear": {
       "sourceLines": [
         "1 Korean pear, grated"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2708950,
+      "fdcName": "Bibimbap, Korean",
+      "dataType": "Survey (FNDDS)",
+      "confidence": 0.5,
+      "per100g": {
+        "protein_g": 5.5,
+        "fat_g": 2.44,
+        "carbs_g": 8.11,
+        "kcal": 76,
+        "sugar_g": 1.52,
+        "fiber_g": 1.1,
+        "calcium_mg": 25,
+        "iron_mg": 0.93,
+        "potassium_mg": 244,
+        "sodium_mg": 435
+      }
     },
     "Korean radish": {
       "sourceLines": [
         "1 Korean radish, julienned"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2709803,
+      "fdcName": "Radish",
+      "dataType": "Survey (FNDDS)",
+      "confidence": 0.5,
+      "per100g": {
+        "protein_g": 0.68,
+        "fat_g": 0.1,
+        "carbs_g": 3.4,
+        "kcal": 16,
+        "sugar_g": 1.86,
+        "fiber_g": 1.6,
+        "calcium_mg": 25,
+        "iron_mg": 0.34,
+        "potassium_mg": 233,
+        "sodium_mg": 39
+      }
     },
     "Oaxaca cheese": {
       "sourceLines": [
@@ -53,7 +85,20 @@
       "sourceLines": [
         "2 cups aged kimchi, chopped"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2148339,
+      "fdcName": "KIMCHI KETCHUP, KIMCHI",
+      "dataType": "Branded",
+      "confidence": 0.71,
+      "per100g": {
+        "protein_g": 0,
+        "fat_g": 0,
+        "carbs_g": 18.8,
+        "kcal": 94,
+        "sugar_g": 12.5,
+        "calcium_mg": 188,
+        "sodium_mg": 719
+      }
     },
     "anchovy-kelp stock": {
       "sourceLines": [
@@ -86,7 +131,23 @@
       "sourceLines": [
         "3 lb beef chuck"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2705825,
+      "fdcName": "Beef, steak, chuck",
+      "dataType": "Survey (FNDDS)",
+      "confidence": 0.5,
+      "per100g": {
+        "protein_g": 25.97,
+        "fat_g": 13.43,
+        "carbs_g": 0.21,
+        "kcal": 225,
+        "sugar_g": 0,
+        "fiber_g": 0,
+        "calcium_mg": 13,
+        "iron_mg": 3.23,
+        "potassium_mg": 308,
+        "sodium_mg": 380
+      }
     },
     "beef stock": {
       "sourceLines": [
@@ -159,13 +220,44 @@
       "sourceLines": [
         "2 carrots, diced"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2413282,
+      "fdcName": "CARROTS",
+      "dataType": "Branded",
+      "confidence": 1.05,
+      "per100g": {
+        "protein_g": 1.28,
+        "fat_g": 0,
+        "carbs_g": 8.97,
+        "kcal": 38,
+        "sugar_g": 6.41,
+        "fiber_g": 2.6,
+        "calcium_mg": 26,
+        "iron_mg": 0.51,
+        "potassium_mg": 321,
+        "sodium_mg": 77
+      }
     },
     "cayenne": {
       "sourceLines": [
         "2 tsp cayenne"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 451476,
+      "fdcName": "CAYENNE",
+      "dataType": "Branded",
+      "confidence": 1.05,
+      "per100g": {
+        "fat_g": 0,
+        "carbs_g": 0,
+        "fiber_g": 0,
+        "calcium_mg": 0,
+        "iron_mg": 0,
+        "sodium_mg": 0,
+        "protein_g": 0,
+        "kcal": 0,
+        "sugar_g": 0
+      }
     },
     "chicken wings": {
       "sourceLines": [
@@ -189,13 +281,40 @@
       "sourceLines": [
         "1 chocolate tart shell, baked"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2710365,
+      "fdcName": "Chocolate candy, candy shell",
+      "dataType": "Survey (FNDDS)",
+      "confidence": 0.6,
+      "per100g": {
+        "protein_g": 4.33,
+        "fat_g": 21.13,
+        "carbs_g": 71.19,
+        "kcal": 492,
+        "sugar_g": 63.68,
+        "fiber_g": 2.8,
+        "calcium_mg": 105,
+        "iron_mg": 1.11,
+        "potassium_mg": 261,
+        "sodium_mg": 61
+      }
     },
     "cilantro": {
       "sourceLines": [
         "cilantro"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 399147,
+      "fdcName": "CILANTRO",
+      "dataType": "Branded",
+      "confidence": 1.05,
+      "per100g": {
+        "fat_g": 0,
+        "carbs_g": 0,
+        "sodium_mg": 0,
+        "protein_g": 0,
+        "kcal": 0
+      }
     },
     "coarse sea salt": {
       "sourceLines": [
@@ -218,7 +337,22 @@
       "sourceLines": [
         "corn tortillas"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 1850647,
+      "fdcName": "CORN TORTILLAS",
+      "dataType": "Branded",
+      "confidence": 1.05,
+      "per100g": {
+        "protein_g": 3.12,
+        "fat_g": 1.56,
+        "carbs_g": 40.6,
+        "kcal": 188,
+        "sugar_g": 0,
+        "fiber_g": 6.2,
+        "calcium_mg": 250,
+        "iron_mg": 1.12,
+        "sodium_mg": 78
+      }
     },
     "crushed tomatoes": {
       "sourceLines": [
@@ -246,19 +380,67 @@
         "1 tsp cumin",
         "2 tsp cumin"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 170923,
+      "fdcName": "Spices, cumin seed",
+      "dataType": "SR Legacy",
+      "confidence": 0.9,
+      "per100g": {
+        "protein_g": 17.8,
+        "fiber_g": 10.5,
+        "iron_mg": 66.4,
+        "sodium_mg": 168,
+        "fat_g": 22.3,
+        "carbs_g": 44.2,
+        "kcal": 375,
+        "calcium_mg": 931,
+        "potassium_mg": 1790,
+        "sugar_g": 2.25
+      }
     },
     "cylinder rice cakes": {
       "sourceLines": [
         "1 lb cylinder rice cakes (tteok)"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 168107,
+      "fdcName": "Rice cake, cracker (include hain mini rice cakes)",
+      "dataType": "SR Legacy",
+      "confidence": 0.59,
+      "per100g": {
+        "carbs_g": 81.1,
+        "kcal": 392,
+        "sugar_g": 0.88,
+        "calcium_mg": 11,
+        "potassium_mg": 428,
+        "fat_g": 4.3,
+        "fiber_g": 4.2,
+        "iron_mg": 1.49,
+        "sodium_mg": 71,
+        "protein_g": 7.1
+      }
     },
     "dark chocolate": {
       "sourceLines": [
         "8 oz dark chocolate (70%)"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2460230,
+      "fdcName": "DARK CHOCOLATE",
+      "dataType": "Branded",
+      "confidence": 1.05,
+      "per100g": {
+        "protein_g": 13.2,
+        "fat_g": 42.1,
+        "carbs_g": 39.5,
+        "kcal": 526,
+        "sugar_g": 21,
+        "fiber_g": 10.5,
+        "calcium_mg": 139,
+        "iron_mg": 7.89,
+        "potassium_mg": 571,
+        "sodium_mg": 26
+      }
     },
     "doenjang": {
       "sourceLines": [
@@ -325,7 +507,22 @@
       "sourceLines": [
         "1 block firm tofu"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2440185,
+      "fdcName": "FIRM TOFU",
+      "dataType": "Branded",
+      "confidence": 1.05,
+      "per100g": {
+        "protein_g": 8.86,
+        "fat_g": 3.8,
+        "carbs_g": 2.53,
+        "kcal": 89,
+        "sugar_g": 0,
+        "fiber_g": 1.3,
+        "calcium_mg": 127,
+        "iron_mg": 1.37,
+        "sodium_mg": 0
+      }
     },
     "fish sauce": {
       "sourceLines": [
@@ -353,7 +550,23 @@
       "sourceLines": [
         "flaky salt"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 173605,
+      "fdcName": "Margarine, industrial, non-dairy, cottonseed, soy oil (partially hydrogenated ), for flaky pastries",
+      "dataType": "SR Legacy",
+      "confidence": 0.5,
+      "per100g": {
+        "fat_g": 80.2,
+        "carbs_g": 0,
+        "kcal": 714,
+        "sugar_g": 0,
+        "calcium_mg": 66,
+        "potassium_mg": 94,
+        "protein_g": 1.9,
+        "fiber_g": 0,
+        "iron_mg": 0,
+        "sodium_mg": 879
+      }
     },
     "flanken-cut beef short ribs": {
       "sourceLines": [
@@ -411,7 +624,19 @@
       "sourceLines": [
         "1 thumb ginger"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2127806,
+      "fdcName": "GINGER",
+      "dataType": "Branded",
+      "confidence": 1.05,
+      "per100g": {
+        "protein_g": 0,
+        "fat_g": 0,
+        "carbs_g": 0,
+        "kcal": 0,
+        "sugar_g": 0,
+        "sodium_mg": 0
+      }
     },
     "glutinous rice flour": {
       "sourceLines": [
@@ -486,7 +711,23 @@
       "sourceLines": [
         "2 tbsp grated Parmesan"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 171247,
+      "fdcName": "Cheese, parmesan, grated",
+      "dataType": "SR Legacy",
+      "confidence": 0.5,
+      "per100g": {
+        "fat_g": 27.8,
+        "carbs_g": 13.9,
+        "kcal": 420,
+        "sugar_g": 0.07,
+        "calcium_mg": 853,
+        "potassium_mg": 180,
+        "protein_g": 28.4,
+        "iron_mg": 0.49,
+        "sodium_mg": 1800,
+        "fiber_g": 0
+      }
     },
     "green chili": {
       "sourceLines": [
@@ -578,7 +819,23 @@
       "sourceLines": [
         "microgreens"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2463379,
+      "fdcName": "MICROGREENS SUNFLOWER",
+      "dataType": "Branded",
+      "confidence": 0.87,
+      "per100g": {
+        "protein_g": 3.12,
+        "fat_g": 0,
+        "carbs_g": 6.25,
+        "kcal": 39,
+        "sugar_g": 0,
+        "fiber_g": 3.1,
+        "calcium_mg": 125,
+        "iron_mg": 22.5,
+        "potassium_mg": 422,
+        "sodium_mg": 16
+      }
     },
     "milk": {
       "sourceLines": [
@@ -691,25 +948,88 @@
       "sourceLines": [
         "1 potato, cubed"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2709510,
+      "fdcName": "Potato patty",
+      "dataType": "Survey (FNDDS)",
+      "confidence": 1.05,
+      "per100g": {
+        "protein_g": 3.89,
+        "fat_g": 11.32,
+        "carbs_g": 13.49,
+        "kcal": 171,
+        "sugar_g": 1.48,
+        "fiber_g": 1.5,
+        "calcium_mg": 33,
+        "iron_mg": 0.75,
+        "potassium_mg": 219,
+        "sodium_mg": 219
+      }
     },
     "potato starch": {
       "sourceLines": [
         "1 cup potato starch"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2671914,
+      "fdcName": "POTATO STARCH",
+      "dataType": "Branded",
+      "confidence": 1.05,
+      "per100g": {
+        "protein_g": 0,
+        "fat_g": 0,
+        "carbs_g": 83.3,
+        "kcal": 333,
+        "sugar_g": 0,
+        "fiber_g": 0,
+        "calcium_mg": 17,
+        "iron_mg": 0,
+        "potassium_mg": 58,
+        "sodium_mg": 0
+      }
     },
     "red pepper": {
       "sourceLines": [
         "1 red pepper, diced"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2636388,
+      "fdcName": "RED PEPPER",
+      "dataType": "Branded",
+      "confidence": 1.05,
+      "per100g": {
+        "protein_g": 3.57,
+        "fat_g": 32.1,
+        "carbs_g": 5.36,
+        "kcal": 321,
+        "sugar_g": 3.57,
+        "fiber_g": 1.8,
+        "calcium_mg": 179,
+        "iron_mg": 0.64,
+        "sodium_mg": 625
+      }
     },
     "red wine": {
       "sourceLines": [
         "1/2 cup red wine"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 172240,
+      "fdcName": "Vinegar, red wine",
+      "dataType": "SR Legacy",
+      "confidence": 0.89,
+      "per100g": {
+        "fat_g": 0,
+        "carbs_g": 0.27,
+        "kcal": 19,
+        "sugar_g": 0,
+        "calcium_mg": 6,
+        "potassium_mg": 39,
+        "protein_g": 0.04,
+        "fiber_g": 0,
+        "iron_mg": 0.45,
+        "sodium_mg": 8
+      }
     },
     "rice vinegar": {
       "sourceLines": [
@@ -853,7 +1173,23 @@
         "1 tbsp soy sauce",
         "2 tbsp soy sauce"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2707442,
+      "fdcName": "Soy sauce",
+      "dataType": "Survey (FNDDS)",
+      "confidence": 1.2,
+      "per100g": {
+        "protein_g": 8.14,
+        "fat_g": 0.57,
+        "carbs_g": 4.93,
+        "kcal": 53,
+        "sugar_g": 0.4,
+        "fiber_g": 0.8,
+        "calcium_mg": 33,
+        "iron_mg": 1.45,
+        "potassium_mg": 435,
+        "sodium_mg": 5493
+      }
     },
     "soybean sprouts": {
       "sourceLines": [
@@ -964,20 +1300,68 @@
       "sourceLines": [
         "2 tbsp white miso"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2554841,
+      "fdcName": "WHITE MISO SOUP, WHITE MISO",
+      "dataType": "Branded",
+      "confidence": 0.86,
+      "per100g": {
+        "protein_g": 17.7,
+        "fat_g": 8.85,
+        "carbs_g": 53.1,
+        "kcal": 354,
+        "sugar_g": 26.6,
+        "fiber_g": 8.8,
+        "calcium_mg": 0,
+        "iron_mg": 3.19,
+        "potassium_mg": 832,
+        "sodium_mg": 3800
+      }
     },
     "whole milk": {
       "sourceLines": [
         "1 cup whole milk"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2620729,
+      "fdcName": "WHOLE MILK",
+      "dataType": "Branded",
+      "confidence": 1.05,
+      "per100g": {
+        "protein_g": 3.33,
+        "fat_g": 3.33,
+        "carbs_g": 5,
+        "kcal": 62,
+        "sugar_g": 5,
+        "fiber_g": 0,
+        "calcium_mg": 104,
+        "iron_mg": 0,
+        "potassium_mg": 88,
+        "sodium_mg": 52
+      }
     },
     "zucchini": {
       "sourceLines": [
         "1 zucchini, diced",
         "1 zucchini, sliced"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2428955,
+      "fdcName": "ZUCCHINI",
+      "dataType": "Branded",
+      "confidence": 1.05,
+      "per100g": {
+        "protein_g": 1.05,
+        "fat_g": 0,
+        "carbs_g": 4.21,
+        "kcal": 21,
+        "sugar_g": 3.16,
+        "fiber_g": 1.1,
+        "calcium_mg": 21,
+        "iron_mg": 0.44,
+        "potassium_mg": 222,
+        "sodium_mg": 0
+      }
     }
   }
 }
