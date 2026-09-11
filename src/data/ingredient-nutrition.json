@@ -2,7 +2,7 @@
   "version": 1,
   "generatedBy": "scripts/build-ingredient-nutrition.mjs",
   "dictionarySource": "USDA FoodData Central (foods/search)",
-  "dictionaryFetchedAt": "2026-09-11T12:01:00.639Z",
+  "dictionaryFetchedAt": "2026-09-11T17:23:19.789Z",
   "fdcAttribution": {
     "text": "Nutrition data: USDA FoodData Central",
     "url": "https://fdc.nal.usda.gov"
@@ -11,8 +11,8 @@
   "counts": {
     "ingredientNames": 74,
     "sourceLines": 97,
-    "resolved": 60,
-    "unresolved": 14
+    "resolved": 66,
+    "unresolved": 8
   },
   "ingredients": {
     "Korean pear": {
@@ -468,7 +468,18 @@
       "sourceLines": [
         "4 dried guajillo chilies"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2673985,
+      "fdcName": "GUAJILLO DRIED CHILE, GUAJILLO",
+      "dataType": "Branded",
+      "confidence": 0.74,
+      "per100g": {
+        "protein_g": 20,
+        "fat_g": 10,
+        "carbs_g": 60,
+        "kcal": 400,
+        "sodium_mg": 0
+      }
     },
     "eggs": {
       "sourceLines": [
@@ -578,7 +589,22 @@
       "sourceLines": [
         "fresh mozzarella (optional)"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 1858859,
+      "fdcName": "FRESH MOZZARELLA",
+      "dataType": "Branded",
+      "confidence": 1.05,
+      "per100g": {
+        "protein_g": 21.4,
+        "fat_g": 21.4,
+        "carbs_g": 0,
+        "kcal": 286,
+        "sugar_g": 0,
+        "fiber_g": 0,
+        "calcium_mg": 357,
+        "iron_mg": 0,
+        "sodium_mg": 125
+      }
     },
     "frying oil": {
       "sourceLines": [
@@ -739,7 +765,23 @@
       "sourceLines": [
         "1 lb ground beef and pork"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2706586,
+      "fdcName": "Stewed, seasoned, ground beef and pork with potatoes, Mexican style",
+      "dataType": "Survey (FNDDS)",
+      "confidence": 0.86,
+      "per100g": {
+        "protein_g": 12.84,
+        "fat_g": 8.02,
+        "carbs_g": 4.16,
+        "kcal": 143,
+        "sugar_g": 0.49,
+        "fiber_g": 0.6,
+        "calcium_mg": 16,
+        "iron_mg": 1.15,
+        "potassium_mg": 305,
+        "sodium_mg": 193
+      }
     },
     "heavy cream": {
       "sourceLines": [
@@ -1265,19 +1307,66 @@
       "sourceLines": [
         "1 lb tagliatelle"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 467607,
+      "fdcName": "TAGLIATELLE",
+      "dataType": "Branded",
+      "confidence": 1.05,
+      "per100g": {
+        "calcium_mg": 0,
+        "iron_mg": 0,
+        "protein_g": 11,
+        "fat_g": 1.5,
+        "carbs_g": 76.6,
+        "kcal": 363,
+        "sugar_g": 2.3,
+        "fiber_g": 3.5,
+        "sodium_mg": 7
+      }
     },
     "thick wheat noodles": {
       "sourceLines": [
         "2 portions thick wheat noodles"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2708688,
+      "fdcName": "Pizza, cheese, whole wheat thick crust",
+      "dataType": "Survey (FNDDS)",
+      "confidence": 0.6,
+      "per100g": {
+        "protein_g": 11.4,
+        "fat_g": 10.4,
+        "carbs_g": 32.96,
+        "kcal": 265,
+        "sugar_g": 3.75,
+        "fiber_g": 3.9,
+        "calcium_mg": 212,
+        "iron_mg": 2.73,
+        "potassium_mg": 203,
+        "sodium_mg": 548
+      }
     },
     "toasted sesame and seaweed": {
       "sourceLines": [
         "toasted sesame and seaweed"
       ],
-      "resolved": false
+      "resolved": true,
+      "fdcId": 2159266,
+      "fdcName": "TOASTED SESAME ORGANIC SEAWEED POPCORN, TOASTED SESAME",
+      "dataType": "Branded",
+      "confidence": 0.8,
+      "per100g": {
+        "protein_g": 10.7,
+        "fat_g": 17.9,
+        "carbs_g": 60.7,
+        "kcal": 429,
+        "sugar_g": 0,
+        "fiber_g": 14.3,
+        "calcium_mg": 36,
+        "iron_mg": 2.14,
+        "potassium_mg": 357,
+        "sodium_mg": 1320
+      }
     },
     "toasted sesame oil": {
       "sourceLines": [
