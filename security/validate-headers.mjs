@@ -12,7 +12,7 @@ import { dirname, extname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
-const csp = "default-src 'self'; base-uri 'none'; block-all-mixed-content; connect-src 'self'; font-src 'self'; form-action 'self'; frame-ancestors 'none'; frame-src 'none'; img-src 'self' data:; manifest-src 'self'; media-src 'self'; object-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests; worker-src 'self'"
+const csp = "default-src 'self'; base-uri 'none'; block-all-mixed-content; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; font-src 'self'; form-action 'self'; frame-ancestors 'none'; frame-src 'none'; img-src 'self' data: https://www.google-analytics.com https://*.google-analytics.com; manifest-src 'self'; media-src 'self'; object-src 'none'; script-src 'self' https://googletagmanager.com https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests; worker-src 'self'"
 
 const expectedSiteHeaders = {
   'Content-Security-Policy': csp,
@@ -130,8 +130,10 @@ const scriptDirective = csp
   .split(';')
   .map((directive) => directive.trim())
   .find((directive) => directive.startsWith('script-src '))
-expect(scriptDirective === "script-src 'self'", 'script-src must allow self only.')
-expect(!/unsafe-inline|cloudflareinsights|https?:/i.test(scriptDirective ?? ''), 'script-src permits inline or third-party code.')
+expect(scriptDirective === "script-src 'self' https://googletagmanager.com https://www.googletagmanager.com", 'script-src must allow self plus the GA4 gtag loader only.')
+const scriptOrigins = [...scriptDirective.matchAll(/https:\/\/[^ ]+/g)].map((m) => m[0])
+expect(!/unsafe-inline|cloudflareinsights/i.test(scriptDirective ?? ''), 'script-src permits inline scripts or retired origins.')
+expect(scriptOrigins.every((origin) => origin === 'https://googletagmanager.com' || origin === 'https://www.googletagmanager.com'), 'script-src permits an origin beyond the GA4 gtag loader.')
 expect(!/(?:cloudflareinsights|loremflickr|staticflickr|images\.unsplash)\.com/i.test(csp), 'CSP permits a retired third-party origin.')
 
 if (process.argv.includes('--require-app-ready')) validateApplicationReadiness()
