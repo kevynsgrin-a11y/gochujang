@@ -12,7 +12,7 @@ import { dirname, extname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
-const csp = "default-src 'self'; base-uri 'none'; block-all-mixed-content; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; font-src 'self'; form-action 'self'; frame-ancestors 'none'; frame-src 'none'; img-src 'self' data: https://www.google-analytics.com https://*.google-analytics.com; manifest-src 'self'; media-src 'self'; object-src 'none'; script-src 'self' https://googletagmanager.com https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests; worker-src 'self'"
+const csp = "default-src 'self'; base-uri 'none'; block-all-mixed-content; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.googletagmanager.com https://cloudflareinsights.com; font-src 'self'; form-action 'self'; frame-ancestors 'none'; frame-src 'none'; img-src 'self' data: https://www.google-analytics.com https://*.google-analytics.com https://*.googletagmanager.com; manifest-src 'self'; media-src 'self'; object-src 'none'; script-src 'self' https://googletagmanager.com https://www.googletagmanager.com https://static.cloudflareinsights.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests; worker-src 'self'"
 
 const expectedSiteHeaders = {
   'Content-Security-Policy': csp,
@@ -130,11 +130,17 @@ const scriptDirective = csp
   .split(';')
   .map((directive) => directive.trim())
   .find((directive) => directive.startsWith('script-src '))
-expect(scriptDirective === "script-src 'self' https://googletagmanager.com https://www.googletagmanager.com", 'script-src must allow self plus the GA4 gtag loader only.')
+expect(scriptDirective === "script-src 'self' https://googletagmanager.com https://www.googletagmanager.com https://static.cloudflareinsights.com", 'script-src must allow self plus the GA4 gtag loader and the Cloudflare Web Analytics beacon only.')
 const scriptOrigins = [...scriptDirective.matchAll(/https:\/\/[^ ]+/g)].map((m) => m[0])
-expect(!/unsafe-inline|cloudflareinsights/i.test(scriptDirective ?? ''), 'script-src permits inline scripts or retired origins.')
-expect(scriptOrigins.every((origin) => origin === 'https://googletagmanager.com' || origin === 'https://www.googletagmanager.com'), 'script-src permits an origin beyond the GA4 gtag loader.')
-expect(!/(?:cloudflareinsights|loremflickr|staticflickr|images\.unsplash)\.com/i.test(csp), 'CSP permits a retired third-party origin.')
+expect(!/unsafe-inline|unsafe-eval/i.test(scriptDirective ?? ''), 'script-src permits inline scripts or eval.')
+const allowedScriptOrigins = ['https://googletagmanager.com', 'https://www.googletagmanager.com', 'https://static.cloudflareinsights.com']
+expect(scriptOrigins.every((origin) => allowedScriptOrigins.includes(origin)), 'script-src permits an origin beyond the GA4 gtag loader and the Cloudflare beacon.')
+expect(!/(?:loremflickr|staticflickr|images\.unsplash)\.com/i.test(csp), 'CSP permits a retired third-party origin.')
+
+// The Cloudflare Web Analytics beacon is injected at the edge, not by the
+// application, so only these two exact beacon origins may appear in the CSP.
+const cfOrigins = [...csp.matchAll(/https:\/\/[^ ;]*cloudflareinsights\.com/g)].map((m) => m[0])
+expect(cfOrigins.every((origin) => origin === 'https://static.cloudflareinsights.com' || origin === 'https://cloudflareinsights.com'), 'CSP permits an unexpected cloudflareinsights origin.')
 
 if (process.argv.includes('--require-app-ready')) validateApplicationReadiness()
 

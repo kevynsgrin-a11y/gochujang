@@ -102,6 +102,16 @@ for (const route of routes) {
   if (/(?:loremflickr|staticflickr|images\.unsplash|cloudflareinsights)/i.test(html)) {
     fail(where, 'third-party runtime origin leaked into emitted HTML')
   }
+  // GA4 must be in-page on every route: exactly one loader for the per-site ID
+  // plus the same-origin bootstrap. The loader must sit in the first 5,000
+  // characters, which is all the fleet's edge ga4-inject Worker scans before
+  // deciding to inject a second, inline (CSP-refused) copy.
+  const ga4Loader = 'https://www.googletagmanager.com/gtag/js?id=G-L29VWHQXDF'
+  if ((html.match(/googletagmanager\.com\/gtag\/js/g) ?? []).length !== 1) fail(where, 'expected exactly 1 gtag.js loader')
+  const ga4At = html.indexOf(ga4Loader)
+  if (ga4At === -1) fail(where, 'GA4 loader for G-L29VWHQXDF is missing')
+  else if (ga4At + ga4Loader.length > 5000) fail(where, 'GA4 loader is past the first 5,000 characters')
+  if (!html.includes('<script src="/ga4.js" defer></script>')) fail(where, 'same-origin GA4 bootstrap /ga4.js is missing')
 
   const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
   const expectedSchemas = structuredDataFor(route)
@@ -125,6 +135,7 @@ if (!existsSync(notFoundFile)) {
 } else {
   const html = readFileSync(notFoundFile, 'utf8')
   if (!html.includes(`content="${PREVIEW_ROBOTS}"`)) fail('/404', 'missing controlled-preview robots')
+  if ((html.match(/googletagmanager\.com\/gtag\/js\?id=G-L29VWHQXDF/g) ?? []).length !== 1) fail('/404', 'expected exactly 1 GA4 loader')
 }
 
 const redirects = join(dist, '_redirects')
