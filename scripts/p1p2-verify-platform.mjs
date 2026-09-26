@@ -85,7 +85,17 @@ assert(/<link rel="manifest" href="\/manifest\.webmanifest"\s*\/>/.test(index), 
 assert(/name="mobile-web-app-capable" content="yes"/.test(index), 'index.html is missing mobile web app capability')
 assert(/name="apple-mobile-web-app-capable" content="yes"/.test(index), 'index.html is missing Apple web app capability')
 assert(/name="robots" content="noindex, nofollow, noarchive"/.test(index), 'index.html must preserve controlled-preview robots')
-assert(!hasThirdPartyOrigin(index), 'index.html must not add a third-party origin')
+// GA4 is the one approved third-party origin: exactly one gtag.js loader for
+// the per-site ID, bootstrapped by the same-origin /ga4.js (no inline script).
+const GA4_ID = 'G-L29VWHQXDF'
+const GA4_LOADER = `<script async src="https://www.googletagmanager.com/gtag/js?id=${GA4_ID}"></script>`
+assert(index.split(GA4_LOADER).length === 2, `index.html must carry exactly one GA4 loader for ${GA4_ID}`)
+assert((index.match(/googletagmanager\.com\/gtag\/js/g) ?? []).length === 1, 'index.html must not carry a second gtag.js loader')
+assert(/<script src="\/ga4\.js" defer><\/script>/.test(index), 'index.html is missing the same-origin GA4 bootstrap')
+assert(!hasThirdPartyOrigin(index.replace(GA4_LOADER, '')), 'index.html must not add a third-party origin beyond the GA4 loader')
+const ga4 = text('public/ga4.js')
+assert(ga4.includes(`gtag('config', '${GA4_ID}')`), 'ga4.js must configure the per-site GA4 ID')
+assert(!hasThirdPartyOrigin(ga4), 'ga4.js must not reference a third-party origin')
 
 const main = text('src/main.tsx')
 assert(main.includes("navigator.serviceWorker.register('/sw.js', { scope: '/' })"), 'main.tsx is missing service-worker registration')

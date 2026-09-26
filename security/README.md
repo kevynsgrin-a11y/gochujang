@@ -1,7 +1,8 @@
 # Cloudflare Pages security release gate
 
 The production project is Git-integrated Cloudflare Pages. The site-wide
-`public/_headers` rule enforces a self-only CSP, HSTS, anti-framing,
+`public/_headers` rule enforces a self-only CSP (plus the GA4 and Cloudflare
+Web Analytics origins), HSTS, anti-framing,
 MIME-sniffing, COOP/CORP, Permissions-Policy, Referrer-Policy, no CORS
 allowance, and `X-Robots-Tag: noindex, nofollow, noarchive`.
 

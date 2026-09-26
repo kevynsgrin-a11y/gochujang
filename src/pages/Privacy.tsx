@@ -8,7 +8,7 @@ export default function Privacy() {
       eyebrow="Governance"
       title="Privacy"
       titleAccent="preview."
-      intro="A transparent status notice for the current no-collection preview, not a substitute for a final privacy policy."
+      intro="A transparent status notice for the current preview, not a substitute for a final privacy policy."
     >
       <PolicySection heading="Current preview status">
         <p>
@@ -27,6 +27,25 @@ export default function Privacy() {
           under <code className="font-accent text-ink">gochujang-theme</code>. You can remove it
           through your browser’s site-data controls. This page does not make an unverified claim
           about platform-level cookies, headers, or browser features outside the application.
+        </p>
+      </PolicySection>
+
+      <PolicySection heading="Measurement">
+        <p>
+          This preview uses Google Analytics 4 to measure aggregate traffic — pages viewed,
+          approximate location, and device type. Google sets cookies (
+          <code className="font-accent text-ink">_ga</code>,{' '}
+          <code className="font-accent text-ink">_ga_*</code>) in your browser to do this.
+          Google’s handling of this data is described in the{' '}
+          <a className="text-primary hover:underline" href="https://policies.google.com/privacy">
+            Google Privacy Policy
+          </a>
+          , and you can opt out with Google’s{' '}
+          <a className="text-primary hover:underline" href="https://tools.google.com/dlpage/gaoptout">
+            Google Analytics opt-out browser add-on
+          </a>
+          . The site also uses Cloudflare Web Analytics, which is cookieless and reports
+          aggregate traffic only.
         </p>
       </PolicySection>
 
