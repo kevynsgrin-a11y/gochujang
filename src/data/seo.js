@@ -120,12 +120,13 @@ export function buildRoutes(catalog) {
       path: '/privacy',
       title: 'Privacy preview notice',
       description:
-        'A status notice for Gochujang’s current no-collection preview. It is not a final privacy policy.',
+        'A status notice for Gochujang’s current preview. It is not a final privacy policy.',
       ogType: 'website',
       indexable: false,
       heading: 'Privacy preview notice.',
       shell: [
-        'This is a no-collection preview. It does not offer accounts, a contact form, or newsletter signup, and it is not a final privacy policy.',
+        'This preview does not offer accounts, a contact form, or newsletter signup, and it is not a final privacy policy.',
+        'It uses Google Analytics 4 to measure aggregate traffic (pages viewed, approximate location, device type); Google sets _ga and _ga_* cookies to do so. It also uses Cloudflare Web Analytics, which is cookieless.',
       ],
     },
     {

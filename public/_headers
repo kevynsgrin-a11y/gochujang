@@ -1,11 +1,14 @@
 # Cloudflare Pages security headers for the controlled public preview.
 #
-# The application is intentionally self-contained: it permits no third-party
-# scripts, connections, fonts, images, analytics beacon, or CORS allowance.
+# The application is otherwise self-contained. The only third-party origins
+# allowed are GA4 (gtag.js loader from www.googletagmanager.com, hits to
+# *.google-analytics.com / *.analytics.google.com / *.googletagmanager.com) and
+# the Cloudflare Web Analytics beacon (static.cloudflareinsights.com, reporting
+# to cloudflareinsights.com). No third-party fonts, frames, or CORS allowance.
 
 /*
   ! Access-Control-Allow-Origin
-  Content-Security-Policy: default-src 'self'; base-uri 'none'; block-all-mixed-content; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; font-src 'self'; form-action 'self'; frame-ancestors 'none'; frame-src 'none'; img-src 'self' data: https://www.google-analytics.com https://*.google-analytics.com; manifest-src 'self'; media-src 'self'; object-src 'none'; script-src 'self' https://googletagmanager.com https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests; worker-src 'self'
+  Content-Security-Policy: default-src 'self'; base-uri 'none'; block-all-mixed-content; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.googletagmanager.com https://cloudflareinsights.com; font-src 'self'; form-action 'self'; frame-ancestors 'none'; frame-src 'none'; img-src 'self' data: https://www.google-analytics.com https://*.google-analytics.com https://*.googletagmanager.com; manifest-src 'self'; media-src 'self'; object-src 'none'; script-src 'self' https://googletagmanager.com https://www.googletagmanager.com https://static.cloudflareinsights.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests; worker-src 'self'
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-origin
   Permissions-Policy: accelerometer=(), autoplay=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), picture-in-picture=(), usb=(), web-share=()

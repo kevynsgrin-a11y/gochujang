@@ -131,9 +131,16 @@ for (const theme of THEMES) {
   const trigger = page.locator('button[aria-controls="mobile-menu"]')
   await trigger.click()
   await page.waitForSelector('#mobile-menu')
-  const inMenu = await page.evaluate(
-    () => !!document.getElementById('mobile-menu')?.contains(document.activeElement),
-  )
+  // Navbar moves focus in a setTimeout after the panel mounts, so wait for it
+  // (bounded) instead of sampling once: a busy main thread -- e.g. gtag.js
+  // parsing on first load -- can delay that task past a single check.
+  const inMenu = await page
+    .waitForFunction(
+      () => !!document.getElementById('mobile-menu')?.contains(document.activeElement),
+      null,
+      { timeout: 2000 },
+    )
+    .then(() => true, () => false)
   if (!inMenu) failures.push('keyboard — opening the mobile menu did not move focus into it')
 
   await page.keyboard.press('Escape')
