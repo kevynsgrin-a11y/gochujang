@@ -42,7 +42,7 @@ function photo(slug, cls = '', eager = false, sizes = '(max-width: 700px) 100vw,
 }
 function atmosphere(slug, eager = false) {
   const i = atmospheres[slug];
-  const sizes = slug === 'seoul-table-atmosphere' ? '100vw' : '(max-width:760px) calc(100vw - 40px), (max-width:1440px) 44vw, 600px';
+  const sizes = slug === 'seoul-table-atmosphere' ? '(max-width:760px) 1085px, (max-width:1100px) 1156px, max(100vw, 1351px)' : '(max-width:760px) calc(100vw - 40px), (max-width:1440px) 44vw, 600px';
   return `<img src="${esc(i.src)}" srcset="${esc(i.srcset)}" sizes="${sizes}" data-display-sizes="${sizes}" width="${i.width}" height="${i.height}" alt="${esc(i.alt)}" loading="${eager ? 'eager' : 'lazy'}" decoding="async" ${eager ? 'fetchpriority="high"' : ''}>`;
 }
 const laneCount = lane => recipes.filter(r => r.lane === lane).length;
