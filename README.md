@@ -34,3 +34,17 @@ Saved recipes and checked ingredients stay in the visitor's browser, without an 
 ## Publishing
 
 The existing Vercel project and Gochujang domain are retained. Review the preview deployment and run preservation verification before promoting changes. The original deployed output remains recoverable from Git commit `8a60cacd0d5e538e6a12d155744636d89e203be5`.
+
+
+## Search and performance maintenance
+
+The build adds Recipe step links, breadcrumbs, WebSite/Organization identity, collection ItemLists, complete social previews, descriptive page titles, large-image preview permission, and an image sitemap. Search and saved-list query URLs carry an HTTP noindex header. Recipe content, original source archives, approved image selection, typography, and layouts stay intact.
+
+Responsive AVIF files are resized directly from the approved masters, with no retouching or crop change. Original WebP fallbacks and social JPEGs remain available. Hashed images and real WOFF2 fonts use immutable caching; HTML revalidates normally. Responsive image preloads match the displayed picture source to avoid duplicate downloads.
+
+- `pnpm build` uses checked-in optimized assets.
+- `pnpm test` verifies original recipe hashes/text, recipe metadata, internal links, schema, sitemap, AVIF dimensions/provenance, and font containers.
+- `pnpm optimize:media` regenerates AVIF files after approved image changes.
+- `python scripts/optimize-fonts.py` regenerates fonts after character-set changes (requires `fonttools[woff]==4.66.1`). Font outlines, metrics, and shaping features are retained; licenses and original fonts remain archived.
+
+Measured asset savings are recorded in `source/media-optimization.json` and `src/content/optimized-fonts.json`. Search markup makes pages eligible for enhanced results; appearance and ranking remain search-engine decisions. No ratings, nutrition figures, testing claims, or publication dates are invented.

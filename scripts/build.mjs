@@ -1,3 +1,4 @@
+import { optimizeStyles, enhanceSite } from './seo.mjs';
 import { readFile, writeFile, mkdir, cp, rm } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -15,8 +16,8 @@ if (path.relative(root, out) !== 'dist') throw new Error('Unexpected output path
 await rm(out, { recursive: true, force: true });
 await mkdir(out, { recursive: true });
 await cp(path.join(root, 'public'), out, { recursive: true, filter: source => !/-master\.(png|jpe?g)$/.test(source) });
-const css = await read('src/styles/site.css');
-const js = await read('src/scripts/site.js');
+const css = await optimizeStyles(root, await read('src/styles/site.css'));
+const js = (await read('src/scripts/site.js')).replace(/\r\n/g,'\n');
 const version = createHash('sha256').update(css + js).digest('hex').slice(0, 10);
 await mkdir(path.join(out, 'assets'), { recursive: true });
 await writeFile(path.join(out, `assets/site-${version}.css`), css);
@@ -77,3 +78,5 @@ await writeFile(path.join(out,'robots.txt'),'User-agent: *\nAllow: /\nSitemap: h
 await writeFile(path.join(out,'search.json'),json(recipes.map(r=>({slug:r.slug,title:r.title,lane:r.lane}))));
 console.log(`Built ${routes.length} pages, ${recipes.length} intact recipes, ${Object.keys(images).length} recipe images${draft?' (draft)':''}.`);
 async function page(route, html) {const target=path.join(out,route.replace(/^\//,''),'index.html');await mkdir(path.dirname(target),{recursive:true});await writeFile(target,html);}
+
+await enhanceSite({root,recipes,images,editorial,domain:"https://gochujang.net",brand:"Gochujang"});

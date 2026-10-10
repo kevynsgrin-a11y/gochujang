@@ -1,0 +1,29 @@
+[
+  {
+    "original": "/fonts/dm-sans.woff2",
+    "optimized": "/fonts/optimized/dm-sans-f1cfb7278c4e.woff2",
+    "beforeBytes": 48280,
+    "afterBytes": 15744,
+    "preservedUnicodeCount": 344,
+    "format": "WOFF2",
+    "glyphMetricsVerified": true
+  },
+  {
+    "original": "/fonts/newsreader-italic.woff2",
+    "optimized": "/fonts/optimized/newsreader-italic-db850ae740b9.woff2",
+    "beforeBytes": 119892,
+    "afterBytes": 34928,
+    "preservedUnicodeCount": 414,
+    "format": "WOFF2",
+    "glyphMetricsVerified": true
+  },
+  {
+    "original": "/fonts/newsreader.woff2",
+    "optimized": "/fonts/optimized/newsreader-36d801485c4b.woff2",
+    "beforeBytes": 109472,
+    "afterBytes": 32064,
+    "preservedUnicodeCount": 414,
+    "format": "WOFF2",
+    "glyphMetricsVerified": true
+  }
+]

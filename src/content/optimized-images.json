@@ -1,0 +1,618 @@
+{
+  "baechu-kimchi": {
+    "srcset": "/images/optimized/baechu-kimchi-0928c7129a4e-320.avif 320w, /images/optimized/baechu-kimchi-0928c7129a4e-480.avif 480w, /images/optimized/baechu-kimchi-0928c7129a4e-640.avif 640w, /images/optimized/baechu-kimchi-0928c7129a4e-960.avif 960w, /images/optimized/baechu-kimchi-0928c7129a4e-1200.avif 1200w, /images/optimized/baechu-kimchi-0928c7129a4e-1536.avif 1536w",
+    "src": "/images/optimized/baechu-kimchi-0928c7129a4e-1536.avif",
+    "variants": [
+      {
+        "src": "/images/optimized/baechu-kimchi-0928c7129a4e-320.avif",
+        "width": 320,
+        "height": 213,
+        "bytes": 13543
+      },
+      {
+        "src": "/images/optimized/baechu-kimchi-0928c7129a4e-480.avif",
+        "width": 480,
+        "height": 320,
+        "bytes": 27458
+      },
+      {
+        "src": "/images/optimized/baechu-kimchi-0928c7129a4e-640.avif",
+        "width": 640,
+        "height": 427,
+        "bytes": 45728
+      },
+      {
+        "src": "/images/optimized/baechu-kimchi-0928c7129a4e-960.avif",
+        "width": 960,
+        "height": 640,
+        "bytes": 86647
+      },
+      {
+        "src": "/images/optimized/baechu-kimchi-0928c7129a4e-1200.avif",
+        "width": 1200,
+        "height": 800,
+        "bytes": 119871
+      },
+      {
+        "src": "/images/optimized/baechu-kimchi-0928c7129a4e-1536.avif",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 167521
+      }
+    ],
+    "sourceMaster": "baechu-kimchi-master.png",
+    "sourceSha256": "5b329bda58a1b7dcc0b662c3e31704794ff0b2f8cd9095093790fdb74ef352fe"
+  },
+  "buldak-fire-noodles": {
+    "srcset": "/images/optimized/buldak-fire-noodles-09a5889a41c5-320.avif 320w, /images/optimized/buldak-fire-noodles-09a5889a41c5-480.avif 480w, /images/optimized/buldak-fire-noodles-09a5889a41c5-640.avif 640w, /images/optimized/buldak-fire-noodles-09a5889a41c5-960.avif 960w, /images/optimized/buldak-fire-noodles-09a5889a41c5-1200.avif 1200w, /images/optimized/buldak-fire-noodles-09a5889a41c5-1536.avif 1536w",
+    "src": "/images/optimized/buldak-fire-noodles-09a5889a41c5-1536.avif",
+    "variants": [
+      {
+        "src": "/images/optimized/buldak-fire-noodles-09a5889a41c5-320.avif",
+        "width": 320,
+        "height": 213,
+        "bytes": 12806
+      },
+      {
+        "src": "/images/optimized/buldak-fire-noodles-09a5889a41c5-480.avif",
+        "width": 480,
+        "height": 320,
+        "bytes": 25651
+      },
+      {
+        "src": "/images/optimized/buldak-fire-noodles-09a5889a41c5-640.avif",
+        "width": 640,
+        "height": 427,
+        "bytes": 43361
+      },
+      {
+        "src": "/images/optimized/buldak-fire-noodles-09a5889a41c5-960.avif",
+        "width": 960,
+        "height": 640,
+        "bytes": 86827
+      },
+      {
+        "src": "/images/optimized/buldak-fire-noodles-09a5889a41c5-1200.avif",
+        "width": 1200,
+        "height": 800,
+        "bytes": 121443
+      },
+      {
+        "src": "/images/optimized/buldak-fire-noodles-09a5889a41c5-1536.avif",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 172605
+      }
+    ],
+    "sourceMaster": "buldak-fire-noodles-master.png",
+    "sourceSha256": "fe09e83a3c637ee3e852e92c71a7e189a9165a240ddd2ee33c2fd7070d03fe1f"
+  },
+  "doenjang-jjigae": {
+    "srcset": "/images/optimized/doenjang-jjigae-1c9c88e10d46-320.avif 320w, /images/optimized/doenjang-jjigae-1c9c88e10d46-480.avif 480w, /images/optimized/doenjang-jjigae-1c9c88e10d46-640.avif 640w, /images/optimized/doenjang-jjigae-1c9c88e10d46-960.avif 960w, /images/optimized/doenjang-jjigae-1c9c88e10d46-1200.avif 1200w, /images/optimized/doenjang-jjigae-1c9c88e10d46-1536.avif 1536w",
+    "src": "/images/optimized/doenjang-jjigae-1c9c88e10d46-1536.avif",
+    "variants": [
+      {
+        "src": "/images/optimized/doenjang-jjigae-1c9c88e10d46-320.avif",
+        "width": 320,
+        "height": 213,
+        "bytes": 11074
+      },
+      {
+        "src": "/images/optimized/doenjang-jjigae-1c9c88e10d46-480.avif",
+        "width": 480,
+        "height": 320,
+        "bytes": 22136
+      },
+      {
+        "src": "/images/optimized/doenjang-jjigae-1c9c88e10d46-640.avif",
+        "width": 640,
+        "height": 427,
+        "bytes": 37024
+      },
+      {
+        "src": "/images/optimized/doenjang-jjigae-1c9c88e10d46-960.avif",
+        "width": 960,
+        "height": 640,
+        "bytes": 73308
+      },
+      {
+        "src": "/images/optimized/doenjang-jjigae-1c9c88e10d46-1200.avif",
+        "width": 1200,
+        "height": 800,
+        "bytes": 104402
+      },
+      {
+        "src": "/images/optimized/doenjang-jjigae-1c9c88e10d46-1536.avif",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 148913
+      }
+    ],
+    "sourceMaster": "doenjang-jjigae-master.png",
+    "sourceSha256": "160d2f06ddb8ca3401bdedcbb0ec408b4d884f5985d52d2482bd179fe4e24cea"
+  },
+  "dolsot-bibimbap": {
+    "srcset": "/images/optimized/dolsot-bibimbap-d9228e8ad1b6-320.avif 320w, /images/optimized/dolsot-bibimbap-d9228e8ad1b6-480.avif 480w, /images/optimized/dolsot-bibimbap-d9228e8ad1b6-640.avif 640w, /images/optimized/dolsot-bibimbap-d9228e8ad1b6-960.avif 960w, /images/optimized/dolsot-bibimbap-d9228e8ad1b6-1200.avif 1200w, /images/optimized/dolsot-bibimbap-d9228e8ad1b6-1536.avif 1536w",
+    "src": "/images/optimized/dolsot-bibimbap-d9228e8ad1b6-1536.avif",
+    "variants": [
+      {
+        "src": "/images/optimized/dolsot-bibimbap-d9228e8ad1b6-320.avif",
+        "width": 320,
+        "height": 213,
+        "bytes": 12294
+      },
+      {
+        "src": "/images/optimized/dolsot-bibimbap-d9228e8ad1b6-480.avif",
+        "width": 480,
+        "height": 320,
+        "bytes": 25222
+      },
+      {
+        "src": "/images/optimized/dolsot-bibimbap-d9228e8ad1b6-640.avif",
+        "width": 640,
+        "height": 427,
+        "bytes": 41635
+      },
+      {
+        "src": "/images/optimized/dolsot-bibimbap-d9228e8ad1b6-960.avif",
+        "width": 960,
+        "height": 640,
+        "bytes": 79660
+      },
+      {
+        "src": "/images/optimized/dolsot-bibimbap-d9228e8ad1b6-1200.avif",
+        "width": 1200,
+        "height": 800,
+        "bytes": 110150
+      },
+      {
+        "src": "/images/optimized/dolsot-bibimbap-d9228e8ad1b6-1536.avif",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 154736
+      }
+    ],
+    "sourceMaster": "dolsot-bibimbap-master.png",
+    "sourceSha256": "facad31e778ce6e785c5c320d22a79b19bad277d2258f4a238bf0077c3d34014"
+  },
+  "gochujang-birria-tacos": {
+    "srcset": "/images/optimized/gochujang-birria-tacos-caf0c391fd34-320.avif 320w, /images/optimized/gochujang-birria-tacos-caf0c391fd34-480.avif 480w, /images/optimized/gochujang-birria-tacos-caf0c391fd34-640.avif 640w, /images/optimized/gochujang-birria-tacos-caf0c391fd34-960.avif 960w, /images/optimized/gochujang-birria-tacos-caf0c391fd34-1200.avif 1200w, /images/optimized/gochujang-birria-tacos-caf0c391fd34-1536.avif 1536w",
+    "src": "/images/optimized/gochujang-birria-tacos-caf0c391fd34-1536.avif",
+    "variants": [
+      {
+        "src": "/images/optimized/gochujang-birria-tacos-caf0c391fd34-320.avif",
+        "width": 320,
+        "height": 213,
+        "bytes": 12902
+      },
+      {
+        "src": "/images/optimized/gochujang-birria-tacos-caf0c391fd34-480.avif",
+        "width": 480,
+        "height": 320,
+        "bytes": 27322
+      },
+      {
+        "src": "/images/optimized/gochujang-birria-tacos-caf0c391fd34-640.avif",
+        "width": 640,
+        "height": 427,
+        "bytes": 45285
+      },
+      {
+        "src": "/images/optimized/gochujang-birria-tacos-caf0c391fd34-960.avif",
+        "width": 960,
+        "height": 640,
+        "bytes": 91117
+      },
+      {
+        "src": "/images/optimized/gochujang-birria-tacos-caf0c391fd34-1200.avif",
+        "width": 1200,
+        "height": 800,
+        "bytes": 127243
+      },
+      {
+        "src": "/images/optimized/gochujang-birria-tacos-caf0c391fd34-1536.avif",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 180260
+      }
+    ],
+    "sourceMaster": "gochujang-birria-tacos-master.png",
+    "sourceSha256": "54aaaa088e68b16ccd7e2db572bda853175a6118bff074c74c1e91616614589b"
+  },
+  "gochujang-bolognese": {
+    "srcset": "/images/optimized/gochujang-bolognese-4b6a0a96afde-320.avif 320w, /images/optimized/gochujang-bolognese-4b6a0a96afde-480.avif 480w, /images/optimized/gochujang-bolognese-4b6a0a96afde-640.avif 640w, /images/optimized/gochujang-bolognese-4b6a0a96afde-960.avif 960w, /images/optimized/gochujang-bolognese-4b6a0a96afde-1200.avif 1200w, /images/optimized/gochujang-bolognese-4b6a0a96afde-1536.avif 1536w",
+    "src": "/images/optimized/gochujang-bolognese-4b6a0a96afde-1536.avif",
+    "variants": [
+      {
+        "src": "/images/optimized/gochujang-bolognese-4b6a0a96afde-320.avif",
+        "width": 320,
+        "height": 213,
+        "bytes": 13271
+      },
+      {
+        "src": "/images/optimized/gochujang-bolognese-4b6a0a96afde-480.avif",
+        "width": 480,
+        "height": 320,
+        "bytes": 27613
+      },
+      {
+        "src": "/images/optimized/gochujang-bolognese-4b6a0a96afde-640.avif",
+        "width": 640,
+        "height": 427,
+        "bytes": 47395
+      },
+      {
+        "src": "/images/optimized/gochujang-bolognese-4b6a0a96afde-960.avif",
+        "width": 960,
+        "height": 640,
+        "bytes": 93104
+      },
+      {
+        "src": "/images/optimized/gochujang-bolognese-4b6a0a96afde-1200.avif",
+        "width": 1200,
+        "height": 800,
+        "bytes": 130369
+      },
+      {
+        "src": "/images/optimized/gochujang-bolognese-4b6a0a96afde-1536.avif",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 186766
+      }
+    ],
+    "sourceMaster": "gochujang-bolognese-master.png",
+    "sourceSha256": "04b71d9d09f028651368ea6dbab787879c31cacec3f2a4d0e4df04a0aece8c60"
+  },
+  "gochujang-dark-chocolate-tart": {
+    "srcset": "/images/optimized/gochujang-dark-chocolate-tart-296f8a4134aa-320.avif 320w, /images/optimized/gochujang-dark-chocolate-tart-296f8a4134aa-480.avif 480w, /images/optimized/gochujang-dark-chocolate-tart-296f8a4134aa-640.avif 640w, /images/optimized/gochujang-dark-chocolate-tart-296f8a4134aa-960.avif 960w, /images/optimized/gochujang-dark-chocolate-tart-296f8a4134aa-1200.avif 1200w, /images/optimized/gochujang-dark-chocolate-tart-296f8a4134aa-1536.avif 1536w",
+    "src": "/images/optimized/gochujang-dark-chocolate-tart-296f8a4134aa-1536.avif",
+    "variants": [
+      {
+        "src": "/images/optimized/gochujang-dark-chocolate-tart-296f8a4134aa-320.avif",
+        "width": 320,
+        "height": 213,
+        "bytes": 13007
+      },
+      {
+        "src": "/images/optimized/gochujang-dark-chocolate-tart-296f8a4134aa-480.avif",
+        "width": 480,
+        "height": 320,
+        "bytes": 29188
+      },
+      {
+        "src": "/images/optimized/gochujang-dark-chocolate-tart-296f8a4134aa-640.avif",
+        "width": 640,
+        "height": 427,
+        "bytes": 49802
+      },
+      {
+        "src": "/images/optimized/gochujang-dark-chocolate-tart-296f8a4134aa-960.avif",
+        "width": 960,
+        "height": 640,
+        "bytes": 100166
+      },
+      {
+        "src": "/images/optimized/gochujang-dark-chocolate-tart-296f8a4134aa-1200.avif",
+        "width": 1200,
+        "height": 800,
+        "bytes": 141721
+      },
+      {
+        "src": "/images/optimized/gochujang-dark-chocolate-tart-296f8a4134aa-1536.avif",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 200473
+      }
+    ],
+    "sourceMaster": "gochujang-dark-chocolate-tart-master.png",
+    "sourceSha256": "d4435882a07f718e302317bf2819ab50f7b02e3dfad1335f98383d5c082d967a"
+  },
+  "gochujang-glazed-galbi-short-ribs": {
+    "srcset": "/images/optimized/gochujang-glazed-galbi-short-ribs-6534923891f1-320.avif 320w, /images/optimized/gochujang-glazed-galbi-short-ribs-6534923891f1-480.avif 480w, /images/optimized/gochujang-glazed-galbi-short-ribs-6534923891f1-640.avif 640w, /images/optimized/gochujang-glazed-galbi-short-ribs-6534923891f1-960.avif 960w, /images/optimized/gochujang-glazed-galbi-short-ribs-6534923891f1-1200.avif 1200w, /images/optimized/gochujang-glazed-galbi-short-ribs-6534923891f1-1536.avif 1536w",
+    "src": "/images/optimized/gochujang-glazed-galbi-short-ribs-6534923891f1-1536.avif",
+    "variants": [
+      {
+        "src": "/images/optimized/gochujang-glazed-galbi-short-ribs-6534923891f1-320.avif",
+        "width": 320,
+        "height": 213,
+        "bytes": 14106
+      },
+      {
+        "src": "/images/optimized/gochujang-glazed-galbi-short-ribs-6534923891f1-480.avif",
+        "width": 480,
+        "height": 320,
+        "bytes": 28798
+      },
+      {
+        "src": "/images/optimized/gochujang-glazed-galbi-short-ribs-6534923891f1-640.avif",
+        "width": 640,
+        "height": 427,
+        "bytes": 47671
+      },
+      {
+        "src": "/images/optimized/gochujang-glazed-galbi-short-ribs-6534923891f1-960.avif",
+        "width": 960,
+        "height": 640,
+        "bytes": 91136
+      },
+      {
+        "src": "/images/optimized/gochujang-glazed-galbi-short-ribs-6534923891f1-1200.avif",
+        "width": 1200,
+        "height": 800,
+        "bytes": 125441
+      },
+      {
+        "src": "/images/optimized/gochujang-glazed-galbi-short-ribs-6534923891f1-1536.avif",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 174192
+      }
+    ],
+    "sourceMaster": "gochujang-glazed-galbi-short-ribs-master.png",
+    "sourceSha256": "8fa616c2ba3e108accbcf350a861428a6ae44782c73b3081cc7a1882d0ca3f33"
+  },
+  "gochujang-miso-black-cod": {
+    "srcset": "/images/optimized/gochujang-miso-black-cod-6306b72654c3-320.avif 320w, /images/optimized/gochujang-miso-black-cod-6306b72654c3-480.avif 480w, /images/optimized/gochujang-miso-black-cod-6306b72654c3-640.avif 640w, /images/optimized/gochujang-miso-black-cod-6306b72654c3-960.avif 960w, /images/optimized/gochujang-miso-black-cod-6306b72654c3-1200.avif 1200w, /images/optimized/gochujang-miso-black-cod-6306b72654c3-1536.avif 1536w",
+    "src": "/images/optimized/gochujang-miso-black-cod-6306b72654c3-1536.avif",
+    "variants": [
+      {
+        "src": "/images/optimized/gochujang-miso-black-cod-6306b72654c3-320.avif",
+        "width": 320,
+        "height": 213,
+        "bytes": 12302
+      },
+      {
+        "src": "/images/optimized/gochujang-miso-black-cod-6306b72654c3-480.avif",
+        "width": 480,
+        "height": 320,
+        "bytes": 25758
+      },
+      {
+        "src": "/images/optimized/gochujang-miso-black-cod-6306b72654c3-640.avif",
+        "width": 640,
+        "height": 427,
+        "bytes": 43099
+      },
+      {
+        "src": "/images/optimized/gochujang-miso-black-cod-6306b72654c3-960.avif",
+        "width": 960,
+        "height": 640,
+        "bytes": 83933
+      },
+      {
+        "src": "/images/optimized/gochujang-miso-black-cod-6306b72654c3-1200.avif",
+        "width": 1200,
+        "height": 800,
+        "bytes": 116273
+      },
+      {
+        "src": "/images/optimized/gochujang-miso-black-cod-6306b72654c3-1536.avif",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 164778
+      }
+    ],
+    "sourceMaster": "gochujang-miso-black-cod-master.png",
+    "sourceSha256": "e8d82a67639797215beffd96dda41ba522b7031bdfc2b5a6c5465d51d39f6e4b"
+  },
+  "gochujang-shakshuka": {
+    "srcset": "/images/optimized/gochujang-shakshuka-bc69c3653b2d-320.avif 320w, /images/optimized/gochujang-shakshuka-bc69c3653b2d-480.avif 480w, /images/optimized/gochujang-shakshuka-bc69c3653b2d-640.avif 640w, /images/optimized/gochujang-shakshuka-bc69c3653b2d-960.avif 960w, /images/optimized/gochujang-shakshuka-bc69c3653b2d-1200.avif 1200w, /images/optimized/gochujang-shakshuka-bc69c3653b2d-1536.avif 1536w",
+    "src": "/images/optimized/gochujang-shakshuka-bc69c3653b2d-1536.avif",
+    "variants": [
+      {
+        "src": "/images/optimized/gochujang-shakshuka-bc69c3653b2d-320.avif",
+        "width": 320,
+        "height": 213,
+        "bytes": 14746
+      },
+      {
+        "src": "/images/optimized/gochujang-shakshuka-bc69c3653b2d-480.avif",
+        "width": 480,
+        "height": 320,
+        "bytes": 30424
+      },
+      {
+        "src": "/images/optimized/gochujang-shakshuka-bc69c3653b2d-640.avif",
+        "width": 640,
+        "height": 427,
+        "bytes": 51564
+      },
+      {
+        "src": "/images/optimized/gochujang-shakshuka-bc69c3653b2d-960.avif",
+        "width": 960,
+        "height": 640,
+        "bytes": 105327
+      },
+      {
+        "src": "/images/optimized/gochujang-shakshuka-bc69c3653b2d-1200.avif",
+        "width": 1200,
+        "height": 800,
+        "bytes": 150565
+      },
+      {
+        "src": "/images/optimized/gochujang-shakshuka-bc69c3653b2d-1536.avif",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 218147
+      }
+    ],
+    "sourceMaster": "gochujang-shakshuka-master.png",
+    "sourceSha256": "c697f08896e8a20738ae8dbe76bc50197f88da884cc59ad6dce9dd970344ad13"
+  },
+  "kimchi-jjigae": {
+    "srcset": "/images/optimized/kimchi-jjigae-e2a3301077c7-320.avif 320w, /images/optimized/kimchi-jjigae-e2a3301077c7-480.avif 480w, /images/optimized/kimchi-jjigae-e2a3301077c7-640.avif 640w, /images/optimized/kimchi-jjigae-e2a3301077c7-960.avif 960w, /images/optimized/kimchi-jjigae-e2a3301077c7-1200.avif 1200w, /images/optimized/kimchi-jjigae-e2a3301077c7-1536.avif 1536w",
+    "src": "/images/optimized/kimchi-jjigae-e2a3301077c7-1536.avif",
+    "variants": [
+      {
+        "src": "/images/optimized/kimchi-jjigae-e2a3301077c7-320.avif",
+        "width": 320,
+        "height": 213,
+        "bytes": 12917
+      },
+      {
+        "src": "/images/optimized/kimchi-jjigae-e2a3301077c7-480.avif",
+        "width": 480,
+        "height": 320,
+        "bytes": 26653
+      },
+      {
+        "src": "/images/optimized/kimchi-jjigae-e2a3301077c7-640.avif",
+        "width": 640,
+        "height": 427,
+        "bytes": 44283
+      },
+      {
+        "src": "/images/optimized/kimchi-jjigae-e2a3301077c7-960.avif",
+        "width": 960,
+        "height": 640,
+        "bytes": 83296
+      },
+      {
+        "src": "/images/optimized/kimchi-jjigae-e2a3301077c7-1200.avif",
+        "width": 1200,
+        "height": 800,
+        "bytes": 115275
+      },
+      {
+        "src": "/images/optimized/kimchi-jjigae-e2a3301077c7-1536.avif",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 160483
+      }
+    ],
+    "sourceMaster": "kimchi-jjigae-master.png",
+    "sourceSha256": "df82b1e5d0fdda4041eb438cadb8388014342411e0a4e33c6c733781042077c1"
+  },
+  "rose-tteokbokki": {
+    "srcset": "/images/optimized/rose-tteokbokki-d795977310c3-320.avif 320w, /images/optimized/rose-tteokbokki-d795977310c3-480.avif 480w, /images/optimized/rose-tteokbokki-d795977310c3-640.avif 640w, /images/optimized/rose-tteokbokki-d795977310c3-960.avif 960w, /images/optimized/rose-tteokbokki-d795977310c3-1200.avif 1200w, /images/optimized/rose-tteokbokki-d795977310c3-1536.avif 1536w",
+    "src": "/images/optimized/rose-tteokbokki-d795977310c3-1536.avif",
+    "variants": [
+      {
+        "src": "/images/optimized/rose-tteokbokki-d795977310c3-320.avif",
+        "width": 320,
+        "height": 213,
+        "bytes": 10231
+      },
+      {
+        "src": "/images/optimized/rose-tteokbokki-d795977310c3-480.avif",
+        "width": 480,
+        "height": 320,
+        "bytes": 22175
+      },
+      {
+        "src": "/images/optimized/rose-tteokbokki-d795977310c3-640.avif",
+        "width": 640,
+        "height": 427,
+        "bytes": 39101
+      },
+      {
+        "src": "/images/optimized/rose-tteokbokki-d795977310c3-960.avif",
+        "width": 960,
+        "height": 640,
+        "bytes": 87494
+      },
+      {
+        "src": "/images/optimized/rose-tteokbokki-d795977310c3-1200.avif",
+        "width": 1200,
+        "height": 800,
+        "bytes": 128101
+      },
+      {
+        "src": "/images/optimized/rose-tteokbokki-d795977310c3-1536.avif",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 188655
+      }
+    ],
+    "sourceMaster": "rose-tteokbokki-master.png",
+    "sourceSha256": "dd2cd13dec30a375592a55bb20588b8509a256dad1748aab7b5572d6bd3446ff"
+  },
+  "ssam-with-ssamjang": {
+    "srcset": "/images/optimized/ssam-with-ssamjang-67e33f60ab2d-320.avif 320w, /images/optimized/ssam-with-ssamjang-67e33f60ab2d-480.avif 480w, /images/optimized/ssam-with-ssamjang-67e33f60ab2d-640.avif 640w, /images/optimized/ssam-with-ssamjang-67e33f60ab2d-960.avif 960w, /images/optimized/ssam-with-ssamjang-67e33f60ab2d-1200.avif 1200w, /images/optimized/ssam-with-ssamjang-67e33f60ab2d-1536.avif 1536w",
+    "src": "/images/optimized/ssam-with-ssamjang-67e33f60ab2d-1536.avif",
+    "variants": [
+      {
+        "src": "/images/optimized/ssam-with-ssamjang-67e33f60ab2d-320.avif",
+        "width": 320,
+        "height": 213,
+        "bytes": 15991
+      },
+      {
+        "src": "/images/optimized/ssam-with-ssamjang-67e33f60ab2d-480.avif",
+        "width": 480,
+        "height": 320,
+        "bytes": 32692
+      },
+      {
+        "src": "/images/optimized/ssam-with-ssamjang-67e33f60ab2d-640.avif",
+        "width": 640,
+        "height": 427,
+        "bytes": 55314
+      },
+      {
+        "src": "/images/optimized/ssam-with-ssamjang-67e33f60ab2d-960.avif",
+        "width": 960,
+        "height": 640,
+        "bytes": 112748
+      },
+      {
+        "src": "/images/optimized/ssam-with-ssamjang-67e33f60ab2d-1200.avif",
+        "width": 1200,
+        "height": 800,
+        "bytes": 160553
+      },
+      {
+        "src": "/images/optimized/ssam-with-ssamjang-67e33f60ab2d-1536.avif",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 230723
+      }
+    ],
+    "sourceMaster": "ssam-with-ssamjang-master.png",
+    "sourceSha256": "fb45db2952629b7971ad72f58cbceb460780f55d513909eb106fe3367d879eb1"
+  },
+  "yangnyeom-fried-chicken": {
+    "srcset": "/images/optimized/yangnyeom-fried-chicken-5a8d1ecf5eb7-320.avif 320w, /images/optimized/yangnyeom-fried-chicken-5a8d1ecf5eb7-480.avif 480w, /images/optimized/yangnyeom-fried-chicken-5a8d1ecf5eb7-640.avif 640w, /images/optimized/yangnyeom-fried-chicken-5a8d1ecf5eb7-960.avif 960w, /images/optimized/yangnyeom-fried-chicken-5a8d1ecf5eb7-1200.avif 1200w, /images/optimized/yangnyeom-fried-chicken-5a8d1ecf5eb7-1536.avif 1536w",
+    "src": "/images/optimized/yangnyeom-fried-chicken-5a8d1ecf5eb7-1536.avif",
+    "variants": [
+      {
+        "src": "/images/optimized/yangnyeom-fried-chicken-5a8d1ecf5eb7-320.avif",
+        "width": 320,
+        "height": 213,
+        "bytes": 13682
+      },
+      {
+        "src": "/images/optimized/yangnyeom-fried-chicken-5a8d1ecf5eb7-480.avif",
+        "width": 480,
+        "height": 320,
+        "bytes": 29661
+      },
+      {
+        "src": "/images/optimized/yangnyeom-fried-chicken-5a8d1ecf5eb7-640.avif",
+        "width": 640,
+        "height": 427,
+        "bytes": 50884
+      },
+      {
+        "src": "/images/optimized/yangnyeom-fried-chicken-5a8d1ecf5eb7-960.avif",
+        "width": 960,
+        "height": 640,
+        "bytes": 98266
+      },
+      {
+        "src": "/images/optimized/yangnyeom-fried-chicken-5a8d1ecf5eb7-1200.avif",
+        "width": 1200,
+        "height": 800,
+        "bytes": 137739
+      },
+      {
+        "src": "/images/optimized/yangnyeom-fried-chicken-5a8d1ecf5eb7-1536.avif",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 193317
+      }
+    ],
+    "sourceMaster": "yangnyeom-fried-chicken-master.png",
+    "sourceSha256": "4a8d29e1b5cb2f0d66524d94ab6d4153a891232a2b2b578f9503255e5525656c"
+  }
+}

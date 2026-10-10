@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=24" },
+  "engines": {
+    "node": ">=24"
+  },
   "packageManager": "pnpm@11.25.0",
   "scripts": {
     "import:recipes": "node scripts/import-recipes.mjs",
     "build": "node scripts/build.mjs",
     "dev": "node scripts/serve.mjs",
-    "test": "node scripts/verify.mjs"
+    "test": "node scripts/verify.mjs && node scripts/verify-seo.mjs",
+    "optimize:media": "node scripts/optimize-media.mjs"
   },
   "devDependencies": {
     "cheerio": "1.2.0",

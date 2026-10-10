@@ -1,0 +1,93 @@
+{
+  "encoder": "sharp 0.35.5 / AVIF quality 62, 4:4:4, effort 4",
+  "operation": "Resize and encode only; no crop, retouch, replacement, or upscaling. Original masters and WebP/JPEG fallback files are unchanged.",
+  "images": 14,
+  "beforeBytes": 4740266,
+  "afterBytes": 2541569,
+  "report": [
+    {
+      "slug": "baechu-kimchi",
+      "beforeBytes": 331734,
+      "afterBytes": 167521,
+      "width": 1536
+    },
+    {
+      "slug": "gochujang-glazed-galbi-short-ribs",
+      "beforeBytes": 333418,
+      "afterBytes": 174192,
+      "width": 1536
+    },
+    {
+      "slug": "dolsot-bibimbap",
+      "beforeBytes": 300404,
+      "afterBytes": 154736,
+      "width": 1536
+    },
+    {
+      "slug": "yangnyeom-fried-chicken",
+      "beforeBytes": 385064,
+      "afterBytes": 193317,
+      "width": 1536
+    },
+    {
+      "slug": "gochujang-birria-tacos",
+      "beforeBytes": 339554,
+      "afterBytes": 180260,
+      "width": 1536
+    },
+    {
+      "slug": "gochujang-bolognese",
+      "beforeBytes": 371974,
+      "afterBytes": 186766,
+      "width": 1536
+    },
+    {
+      "slug": "gochujang-dark-chocolate-tart",
+      "beforeBytes": 380228,
+      "afterBytes": 200473,
+      "width": 1536
+    },
+    {
+      "slug": "gochujang-shakshuka",
+      "beforeBytes": 397032,
+      "afterBytes": 218147,
+      "width": 1536
+    },
+    {
+      "slug": "gochujang-miso-black-cod",
+      "beforeBytes": 310280,
+      "afterBytes": 164778,
+      "width": 1536
+    },
+    {
+      "slug": "buldak-fire-noodles",
+      "beforeBytes": 297508,
+      "afterBytes": 172605,
+      "width": 1536
+    },
+    {
+      "slug": "doenjang-jjigae",
+      "beforeBytes": 260992,
+      "afterBytes": 148913,
+      "width": 1536
+    },
+    {
+      "slug": "kimchi-jjigae",
+      "beforeBytes": 274560,
+      "afterBytes": 160483,
+      "width": 1536
+    },
+    {
+      "slug": "rose-tteokbokki",
+      "beforeBytes": 331166,
+      "afterBytes": 188655,
+      "width": 1536
+    },
+    {
+      "slug": "ssam-with-ssamjang",
+      "beforeBytes": 426352,
+      "afterBytes": 230723,
+      "width": 1536
+    }
+  ]
+}
