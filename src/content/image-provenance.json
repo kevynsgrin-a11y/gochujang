@@ -1,0 +1,457 @@
+{
+  "generatedOn": "2026-10-10",
+  "authorization": "User approved needed image generation for selected Seoul Table design.",
+  "mode": "built-in image_gen",
+  "recipeSource": "src/content/recipes.json",
+  "notes": "All images are newly generated recipe illustrations, not recovered originals or evidence of recipe testing. No image was upscaled.",
+  "records": [
+    {
+      "slug": "baechu-kimchi",
+      "kind": "AI-generated illustrative recipe photograph",
+      "generator": "built-in image_gen",
+      "generatedOn": "2026-10-10",
+      "prompt": "Use case: photorealistic-natural. Asset: Gochujang.net Seoul Table recipe photo. Create one extraordinarily appetizing editorial cookbook photograph, landscape 3:2, high resolution ideally 2400x1600. Exact subject: modern Baechu Kimchi made of napa cabbage CUT INTO SMALL BITE-SIZE SQUARES, not whole quartered leaves; coated in deeply brick-red gochugaru and gochujang fermenting paste with thin Korean radish matchsticks and cut scallion greens. A modest heaped serving in a low handmade warm ivory Korean ceramic bowl, with crisp pale cabbage ribs and folded green-yellow leaf squares clearly distinguishable under textured red paste. Small portion of red brine at the bottom, natural fermented lustre, no oily wet gloss. A clean simple unbranded glass fermentation jar with the same chopped kimchi is softly out of focus at the far back, no writing on it. Warm natural window sidelight from left, ivory linen on pale warm wood, calm cream shadows and handmade ceramic texture. Fine food detail, truthful irregular cabbage shapes. Slightly overhead three-quarter food-editorial camera angle, bowl fully contained near image center with breathing room and main subject suitable for 4:5 central crop. The Seoul Table contemporary Korean cookbook aesthetic: tactile, elegant, restrained, warm. No sesame garnish (not in this recipe), no chili slices, no lemon, no whole leaf roll, no people/hands, no text, no labels, no logos, no Korean writing, no flags, no collage. Newly generated illustrative recipe image, not a documentary photograph.",
+      "originalOutputPath": "C:\\Users\\User\\.codex\\generated_images\\01a12697-b8da-7c52-abae-507abf95be62\\exec-b9ec9194-1fce-4fa3-a789-2dde198f9640.png",
+      "master": "public/images/recipes/baechu-kimchi-master.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "5b329bda58a1b7dcc0b662c3e31704794ff0b2f8cd9095093790fdb74ef352fe",
+      "inspection": "Visually inspected: recipe-specific food form, ingredients, natural editorial lighting, no labels or text.",
+      "derivatives": [
+        {
+          "path": "/images/recipes/baechu-kimchi-1536.webp",
+          "bytes": 331734
+        },
+        {
+          "path": "/images/recipes/baechu-kimchi-1536.jpg",
+          "bytes": 383952
+        },
+        {
+          "path": "/images/recipes/baechu-kimchi-640.webp",
+          "bytes": 82040
+        },
+        {
+          "path": "/images/recipes/baechu-kimchi-960.webp",
+          "bytes": 161502
+        }
+      ],
+      "recoveredOriginal": false
+    },
+    {
+      "slug": "buldak-fire-noodles",
+      "kind": "AI-generated illustrative recipe photograph",
+      "generator": "built-in image_gen",
+      "generatedOn": "2026-10-10",
+      "prompt": "Use case: photorealistic-natural. Asset: Gochujang recipe cookbook photograph, The Seoul Table visual identity. Create an exceptionally polished true-to-recipe food photograph of Buldak Fire Noodles. Landscape 3:2, request 2400x1600 high resolution. A shallow handmade ivory Korean ceramic bowl contains thick chewy udon wheat noodles and bite-size browned chicken thigh cubes, generously lacquered in glossy deep rust-red gochujang, gochugaru, honey, soy, garlic and ginger sauce. The noodles are pan-tossed and clinging with sauce, NOT soupy. A modest layer of melted mozzarella partially covers the noodles and chicken, crowned with exactly one naturally shaped fried egg with set white and golden yolk. Leave much of the red noodles and seared chicken visible. A small simple ceramic side dish of cucumber sticks and a small white rice bowl can sit near the outer frame, while the main bowl is centered and safe to crop to 4:5. The side dishes are secondary. Warm natural sidelight from a window, ivory linen surface and warm paper tones, muted chili red and earthy palette, restrained editorial Korean cookbook composition. Camera elevated three-quarter angle, focus the entire main bowl, realistic irregular food texture, appetizing gentle steam, expensive editorial food photography without plastic gloss. No sesame seed or scallion garnish, herbs, carrots, peppers, mushrooms or other ingredients not in this recipe. No people, hands, text, branding, logos, watermark, artificial collage, utensils lifting food. One photograph only.",
+      "originalOutputPath": "C:/Users/User/.codex/generated_images/01a1269d-8bdd-7852-9ca9-d3fcca97a6e0/exec-d0d05574-80c0-4b1b-a417-37573e28b4fd.png",
+      "master": "public/images/recipes/buldak-fire-noodles-master.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "fe09e83a3c637ee3e852e92c71a7e189a9165a240ddd2ee33c2fd7070d03fe1f",
+      "inspection": "Generated output visually inspected for dish, ingredients, color, proportions, food texture and central crop safety. Accepted.",
+      "derivatives": [
+        {
+          "path": "/images/recipes/buldak-fire-noodles-1536.webp",
+          "bytes": 297508
+        },
+        {
+          "path": "/images/recipes/buldak-fire-noodles-1536.jpg",
+          "bytes": 372621
+        },
+        {
+          "path": "/images/recipes/buldak-fire-noodles-640.webp",
+          "bytes": 71632
+        },
+        {
+          "path": "/images/recipes/buldak-fire-noodles-960.webp",
+          "bytes": 143516
+        }
+      ],
+      "recoveredOriginal": false
+    },
+    {
+      "slug": "doenjang-jjigae",
+      "kind": "AI-generated illustrative recipe photograph",
+      "generator": "built-in image_gen",
+      "generatedOn": "2026-10-10",
+      "prompt": "Use case: photorealistic-natural. Asset: premium Gochujang recipe photograph, The Seoul Table Korean cookbook visual identity. Create Doenjang Jjigae exactly from this recipe: an earthy cloudy golden-brown soybean-paste stew in a small dark brown Korean earthenware ttukbaegi pot. Firm ivory tofu cubes, cooked green zucchini half-moons, thin potato and onion pieces, a modest portion of softened chopped napa kimchi, sliced shiitake mushrooms, sliced scallions and a few green-chili rings. The broth uses strained anchovy-kelp stock and dissolved doenjang with just a small pinch of red chile flakes; its color is predominantly cloudy golden-brown, NOT a red kimchi soup. No whole anchovies or seaweed visible. Tofu holds its cube shape, vegetables look tender. Pot just brought from stove with subtle steam and a few tiny bubbles. A small bowl of white short-grain steamed rice is secondary near the outer edge of composition; main pot remains centered and safe for a 4:5 crop. Warm natural window sidelight, ivory linen table covering, earthy restrained palette, Korean handmade ceramics, exceptional authentic food texture. Elevated three-quarter camera angle, crisp full main subject, elegantly restrained props, photoreal editorial cookbook style. Landscape 3:2 request 2400x1600 high resolution. No meat, clams, egg, carrots, sesame seeds, extra herbs or invented garnish. No people, hands, text, logos or watermark. One photograph only.",
+      "originalOutputPath": "C:/Users/User/.codex/generated_images/01a1269d-8bdd-7852-9ca9-d3fcca97a6e0/exec-481403b0-d839-4026-be2f-94b30bdb0e99.png",
+      "master": "public/images/recipes/doenjang-jjigae-master.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "160d2f06ddb8ca3401bdedcbb0ec408b4d884f5985d52d2482bd179fe4e24cea",
+      "inspection": "Generated output visually inspected for dish, ingredients, color, proportions, food texture and central crop safety. Accepted.",
+      "derivatives": [
+        {
+          "path": "/images/recipes/doenjang-jjigae-1536.webp",
+          "bytes": 260992
+        },
+        {
+          "path": "/images/recipes/doenjang-jjigae-1536.jpg",
+          "bytes": 334443
+        },
+        {
+          "path": "/images/recipes/doenjang-jjigae-640.webp",
+          "bytes": 61122
+        },
+        {
+          "path": "/images/recipes/doenjang-jjigae-960.webp",
+          "bytes": 122756
+        }
+      ],
+      "recoveredOriginal": false
+    },
+    {
+      "slug": "dolsot-bibimbap",
+      "kind": "AI-generated illustrative recipe photograph",
+      "generator": "built-in image_gen",
+      "generatedOn": "2026-10-10",
+      "prompt": "Use case: photorealistic-natural. Asset: Gochujang.net Seoul Table editorial recipe photograph. One high-resolution landscape 3:2 image ideally 2400x1600. Exact dish Dolsot Bibimbap before mixing: one proper deep black stone dolsot bowl on a simple wooden heatproof trivet, hot short-grain rice under tidy distinct sectors of blanched spinach, pale bean sprouts, finely julienned orange carrot, sautéed zucchini and mushrooms, brown gosari fern stems. Small central portion of sautéed ground beef, crowned by ONE sunny-side-up egg with completely opaque cooked white and a round golden yolk. A modest dollop of red gochujang sauce beside the egg, tiny sesame seeds in the sauce only. Visible rice grains around edges, a little toasted-gold rice where it meets the stone rim, delicate believable wisps of heat. Abundant food but each vegetable still separate, like a wheel of colors, not a mixed heap. No seafood, no avocado, no raw beef, no fried chicken, no lettuce. At back a tiny ivory ceramic sauce dish; understated stainless Korean spoon resting beside bowl. Warm natural window sidelight, ivory linen over pale warm wood, warm paper palette, restrained premium contemporary Korean cookbook aesthetic, rich natural textures without excessive gloss. Slightly overhead three-quarter camera angle lets the sectors read; bowl complete and centered with breathing room, central composition suitable for 4:5 crop. No people, no hands, no text/logos/labels/writing, no neon saturation, no collage, no restaurant interior. Newly generated illustrative recipe photograph.",
+      "originalOutputPath": "C:\\Users\\User\\.codex\\generated_images\\01a12697-b8da-7c52-abae-507abf95be62\\exec-59cee0b0-6f65-4e0a-ba17-dc613cd62b96.png",
+      "master": "public/images/recipes/dolsot-bibimbap-master.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "facad31e778ce6e785c5c320d22a79b19bad277d2258f4a238bf0077c3d34014",
+      "inspection": "Visually inspected: recipe-specific food form, ingredients, natural editorial lighting, no labels or text.",
+      "derivatives": [
+        {
+          "path": "/images/recipes/dolsot-bibimbap-1536.webp",
+          "bytes": 300404
+        },
+        {
+          "path": "/images/recipes/dolsot-bibimbap-1536.jpg",
+          "bytes": 356611
+        },
+        {
+          "path": "/images/recipes/dolsot-bibimbap-640.webp",
+          "bytes": 77608
+        },
+        {
+          "path": "/images/recipes/dolsot-bibimbap-960.webp",
+          "bytes": 149778
+        }
+      ],
+      "recoveredOriginal": false
+    },
+    {
+      "slug": "gochujang-birria-tacos",
+      "kind": "AI-generated illustrative recipe photograph",
+      "generator": "built-in image_gen",
+      "generatedOn": "2026-10-10",
+      "prompt": "Use case: photorealistic-natural. Asset type: premium editorial cookbook recipe photograph for Gochujang.net, The Seoul Table. Generate one beautiful realistic still photograph of Gochujang Birria Tacos matching this exact recipe: three folded corn tortilla tacos, each stained red-gold from the chile-braise fat and crisped on a comal, filled with tender shredded chile-braised beef and melted Oaxaca cheese showing modestly at edges. Garnish only with finely diced white onion and fresh cilantro, two lime wedges. A small ceramic cup of strained rich red-brown birria consommé with a red-orange surface gloss sits beside the tacos. No red cabbage, avocado, radish, sour cream, salsa or extra toppings. Arrange the three tacos on a single understated warm ivory Korean ceramic plate, central food fully within the middle of the composition with crop-safe margins so a central 4:5 crop still shows the tacos. Landscape 3:2 composition, aim for 2400x1600 high resolution. Warm natural sidelight, warm ivory linen and matte paper-tone table, muted chili-red earthy palette, soft shadows, restrained props, tiny realistic crumbs, beautiful tactile tortillas and tender meat. Close editorial 45-degree overhead camera, sharp food detail, believable shallow depth, high-end contemporary cookbook art direction. No people, hands, text, labels, logos, watermark, graphic design or collage.",
+      "originalOutputPath": "C:/Users/User/.codex/generated_images/01a1269d-6bfa-70d2-9658-642e9805d659/exec-0eaf6138-16b0-43f1-947c-ab284e37a2e9.png",
+      "master": "public/images/recipes/gochujang-birria-tacos-master.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "54aaaa088e68b16ccd7e2db572bda853175a6118bff074c74c1e91616614589b",
+      "inspection": "Inspected generated image; visible dish and garnishes match recipe and selected serving instructions.",
+      "derivatives": [
+        {
+          "path": "/images/recipes/gochujang-birria-tacos-1536.webp",
+          "bytes": 339554
+        },
+        {
+          "path": "/images/recipes/gochujang-birria-tacos-1536.jpg",
+          "bytes": 420102
+        },
+        {
+          "path": "/images/recipes/gochujang-birria-tacos-640.webp",
+          "bytes": 86026
+        },
+        {
+          "path": "/images/recipes/gochujang-birria-tacos-960.webp",
+          "bytes": 166990
+        }
+      ],
+      "recoveredOriginal": false
+    },
+    {
+      "slug": "gochujang-bolognese",
+      "kind": "AI-generated illustrative recipe photograph",
+      "generator": "built-in image_gen",
+      "generatedOn": "2026-10-10",
+      "prompt": "Use case: photorealistic-natural. Asset type: premium editorial cookbook recipe photograph for Gochujang.net, The Seoul Table. Generate one beautiful realistic still photograph of Gochujang Bolognese, recipe-exact: a generous single serving of tagliatelle coated through with rich long-braised ground beef and pancetta ragù, cooked tomato, fine soffritto fully dissolved, milk-rounded sauce darkened to brick-mahogany with small glistening beads of fat. Gochujang is a quiet underlying ingredient, so this must look like excellent classic bolognese and NOT spicy orange-red Korean noodles. Fine freshly grated parmesan and modest black pepper are the only finishing elements. No basil, parsley, scallions, sesame, chili slices, cherry tomatoes or any unlisted garnish. Warm ivory handmade Korean ceramic shallow bowl on ivory linen/paper-tone table, restrained styling, maybe one elegant fork alongside, no extra food. Main pasta centered within crop-safe middle so central 4:5 crop keeps the dish legible. Landscape 3:2 frame, aim for 2400x1600 high resolution. Warm natural sidelight, muted chili-red earthy palette, soft shadows, authentic meat crumble and silky pasta folds, editorial 45-degree overhead camera, high-end contemporary cookbook photography, believable focus and tactile detail. No people, hands, text, logos, labels, watermark, collage or graphic design.",
+      "originalOutputPath": "C:/Users/User/.codex/generated_images/01a1269d-6bfa-70d2-9658-642e9805d659/exec-c43b6eea-f2b7-4fbd-b59c-f795e342b934.png",
+      "master": "public/images/recipes/gochujang-bolognese-master.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "04b71d9d09f028651368ea6dbab787879c31cacec3f2a4d0e4df04a0aece8c60",
+      "inspection": "Inspected generated image; visible dish and garnishes match recipe and selected serving instructions.",
+      "derivatives": [
+        {
+          "path": "/images/recipes/gochujang-bolognese-1536.webp",
+          "bytes": 371974
+        },
+        {
+          "path": "/images/recipes/gochujang-bolognese-1536.jpg",
+          "bytes": 436975
+        },
+        {
+          "path": "/images/recipes/gochujang-bolognese-640.webp",
+          "bytes": 86276
+        },
+        {
+          "path": "/images/recipes/gochujang-bolognese-960.webp",
+          "bytes": 175044
+        }
+      ],
+      "recoveredOriginal": false
+    },
+    {
+      "slug": "gochujang-dark-chocolate-tart",
+      "kind": "AI-generated illustrative recipe photograph",
+      "generator": "built-in image_gen",
+      "generatedOn": "2026-10-10",
+      "prompt": "Use case: photorealistic-natural. Asset type: premium editorial cookbook recipe photograph for Gochujang.net, The Seoul Table. Generate one beautiful realistic still photograph of Gochujang Dark Chocolate Tart, exact recipe: a low 23 cm round tart with a thin crisp dark cocoa-shortbread shell and a smooth, very dark chocolate ganache filling, glossy-satin rather than a mirror glaze, cleanly set but silky. A narrow slice has been lifted slightly forward to reveal the distinct fine cocoa shell and dense smooth dark chocolate filling. Finish the top with a restrained scatter of black sesame seeds and small flakes of sea salt, with a faint gochugaru red dust over just one quadrant. No cream, berries, mint, fruit, caramel, icing, nuts, chocolate chunks or added garnish. On a flat warm ivory handmade Korean ceramic serving plate, ivory linen and matte warm paper-tone tabletop, a small simple dessert fork alongside at most. Main tart centrally framed with breathing room and safe for center 4:5 crop. Landscape 3:2, aim for high resolution 2400x1600. Warm natural side lighting, muted earthy palette, luxurious dark chocolate against warm ivory, fine real crumb texture, soft shadows, editorial 45-degree overhead camera, contemporary cookbook photography, exquisite realistic texture. No people, hands, text, logos, watermarks, graphic design or collage.",
+      "originalOutputPath": "C:/Users/User/.codex/generated_images/01a1269d-6bfa-70d2-9658-642e9805d659/exec-776587be-dfb3-45c6-aa18-c841ad477c25.png",
+      "master": "public/images/recipes/gochujang-dark-chocolate-tart-master.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "d4435882a07f718e302317bf2819ab50f7b02e3dfad1335f98383d5c082d967a",
+      "inspection": "Inspected generated image; visible dish and garnishes match recipe and selected serving instructions.",
+      "derivatives": [
+        {
+          "path": "/images/recipes/gochujang-dark-chocolate-tart-1536.webp",
+          "bytes": 380228
+        },
+        {
+          "path": "/images/recipes/gochujang-dark-chocolate-tart-1536.jpg",
+          "bytes": 449942
+        },
+        {
+          "path": "/images/recipes/gochujang-dark-chocolate-tart-640.webp",
+          "bytes": 87668
+        },
+        {
+          "path": "/images/recipes/gochujang-dark-chocolate-tart-960.webp",
+          "bytes": 178720
+        }
+      ],
+      "recoveredOriginal": false
+    },
+    {
+      "slug": "gochujang-glazed-galbi-short-ribs",
+      "kind": "AI-generated illustrative recipe photograph",
+      "generator": "built-in image_gen",
+      "generatedOn": "2026-10-10",
+      "prompt": "Use case: photorealistic-natural. Asset: Gochujang.net Seoul Table cookbook hero and recipe photograph. Create a single extraordinarily beautiful high-resolution editorial food photograph, landscape 3:2, ideally 2400 by 1600 pixels or larger. Subject is the EXACT dish Gochujang-Glazed Galbi Short Ribs: thick ENGLISH-CUT BONE-IN beef short ribs in substantial 5–7 cm blocks, slow-braised until tender, then coated with reduced gochujang-soy-honey glaze and broiled. NOT flanken slices, NOT grilled steak strips. Four thick blocks of succulent rib meat with visible single rib bones, realistic dark glossy brick-red lacquer and gently blistered corners, subtle tender grain. Served over a modest bed of short-grain steamed white rice on a broad handmade warm ivory Korean ceramic serving plate. A restrained pinch of toasted sesame seeds and fine scallion threads on the ribs. One small matching dish of quick-pickled radish and a tiny ceramic bowl of remaining red-brown glaze near the upper corner, softly out of focus. Warm natural window sidelight from upper left, tactile ivory linen, pale warm wood, soft creamy shadows, rich truthful food detail, premium contemporary Korean cookbook, calm and inviting. Close three-quarter camera angle, 50mm lens feel, main plate and ribs centered and entirely visible with comfortable breathing room, food concentrated in central region for a possible 4:5 vertical crop. Sharp hero food with gentle background falloff. Restrained palette of rice ivory, chili lacquer red, warm brown and tiny fresh green accents. No people, no hands, no text, no lettering, no logos, no labels, no flags, no restaurant signage, no unrelated ingredients, no excessive steam, no artificial glow, no oversaturated neon, no collage, no split panels. This is newly generated illustrative recipe photography, not documentation of a real restaurant.",
+      "originalOutputPath": "C:\\Users\\User\\.codex\\generated_images\\01a12697-b8da-7c52-abae-507abf95be62\\exec-79c2c1eb-7eac-4451-b5d8-3023187458cd.png",
+      "master": "public/images/recipes/gochujang-glazed-galbi-short-ribs-master.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "8fa616c2ba3e108accbcf350a861428a6ae44782c73b3081cc7a1882d0ca3f33",
+      "inspection": "Visually inspected: recipe-specific food form, ingredients, natural editorial lighting, no labels or text.",
+      "derivatives": [
+        {
+          "path": "/images/recipes/gochujang-glazed-galbi-short-ribs-1536.webp",
+          "bytes": 333418
+        },
+        {
+          "path": "/images/recipes/gochujang-glazed-galbi-short-ribs-1536.jpg",
+          "bytes": 384634
+        },
+        {
+          "path": "/images/recipes/gochujang-glazed-galbi-short-ribs-640.webp",
+          "bytes": 84106
+        },
+        {
+          "path": "/images/recipes/gochujang-glazed-galbi-short-ribs-960.webp",
+          "bytes": 163700
+        }
+      ],
+      "recoveredOriginal": false
+    },
+    {
+      "slug": "gochujang-miso-black-cod",
+      "kind": "AI-generated illustrative recipe photograph",
+      "generator": "built-in image_gen",
+      "generatedOn": "2026-10-10",
+      "prompt": "Use case: photorealistic-natural. Asset type: premium editorial cookbook recipe photograph for Gochujang.net, The Seoul Table. Generate one beautiful realistic still photograph of Gochujang-Miso Black Cod, recipe exact. One substantial sablefish fillet on a modest mound of white short-grain rice on an understated warm ivory handmade Korean ceramic plate. Fish is pan-seared with a very thin cured glaze of white miso, gochujang, mirin, honey and sesame oil: presentation face deep tea-brown caramel and glossy rust-mahogany lacquer with a few naturally darker edges but NOT blackened. At one corner white butter-silky large fish flakes separate gently, proving this is white-fleshed sablefish, not pink salmon. The ONLY garnishes are a light scatter of toasted sesame seeds and finely sliced scallion. A small neat side of pickled cucumber rounds sits beside the rice. No lemon, cilantro, parsley, microgreens, chili slices or sauce decoration. Main food centered with crop-safe margins for a central 4:5 crop. Landscape 3:2, aim for high resolution 2400x1600. Warm natural sidelight, ivory linen and matte paper-tone table, muted chili-red and earthy palette, restrained props, soft shadows. Editorial 45-degree overhead camera, sharp beautifully tactile fish flakes and delicate glossy glaze, believable depth, contemporary luxury cookbook photography. No people, hands, text, labels, logos, watermark, graphic design or collage.",
+      "originalOutputPath": "C:/Users/User/.codex/generated_images/01a1269d-6bfa-70d2-9658-642e9805d659/exec-41dfe8d3-852d-493c-b11a-2ce8347c32b5.png",
+      "master": "public/images/recipes/gochujang-miso-black-cod-master.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "e8d82a67639797215beffd96dda41ba522b7031bdfc2b5a6c5465d51d39f6e4b",
+      "inspection": "Inspected generated image; visible dish and garnishes match recipe and selected serving instructions.",
+      "derivatives": [
+        {
+          "path": "/images/recipes/gochujang-miso-black-cod-1536.webp",
+          "bytes": 310280
+        },
+        {
+          "path": "/images/recipes/gochujang-miso-black-cod-1536.jpg",
+          "bytes": 392522
+        },
+        {
+          "path": "/images/recipes/gochujang-miso-black-cod-640.webp",
+          "bytes": 76038
+        },
+        {
+          "path": "/images/recipes/gochujang-miso-black-cod-960.webp",
+          "bytes": 151462
+        }
+      ],
+      "recoveredOriginal": false
+    },
+    {
+      "slug": "gochujang-shakshuka",
+      "kind": "AI-generated illustrative recipe photograph",
+      "generator": "built-in image_gen",
+      "generatedOn": "2026-10-10",
+      "prompt": "Use case: photorealistic-natural. Asset type: premium editorial cookbook recipe photograph for Gochujang.net, The Seoul Table. Generate one beautiful realistic photograph of Gochujang Shakshuka matching this exact recipe. A small dark iron skillet at the table on a simple trivet holds thick deep red tomato sauce with fully softened red bell pepper strips and onion, exactly FIVE poached eggs in five wells with just-opaque set whites and domed golden molten yolks. Scatter modest crumbled feta, fresh cilantro, and a few fine pink pickled onion curls across the sauce, keeping eggs legible. Warm rustic bread pieces sit discreetly beside the pan on warm ivory Korean ceramic. No meat, no sausage, no chickpeas, no spinach, no avocado, no sesame, no extra eggs, no added ingredients. The skillet and five eggs are the central main food, crop-safe for central 4:5 crop. Landscape 3:2, aim for 2400x1600 high resolution. Warm natural sidelight, ivory linen/paper-tone table, muted chili-red earthy palette, restrained props, subtle red-orange oil gloss at sauce edges, real moist food texture. Editorial high three-quarter overhead camera high enough to count all five eggs, sharp dish with gentle natural depth, exquisite contemporary cookbook photography. No people, hands, text, labels, logos, watermark, graphic design or collage.",
+      "originalOutputPath": "C:/Users/User/.codex/generated_images/01a1269d-6bfa-70d2-9658-642e9805d659/exec-7b327067-1c1f-4ada-a64e-b843c99e94f9.png",
+      "master": "public/images/recipes/gochujang-shakshuka-master.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "c697f08896e8a20738ae8dbe76bc50197f88da884cc59ad6dce9dd970344ad13",
+      "inspection": "Inspected generated image; visible dish and garnishes match recipe and selected serving instructions.",
+      "derivatives": [
+        {
+          "path": "/images/recipes/gochujang-shakshuka-1536.webp",
+          "bytes": 397032
+        },
+        {
+          "path": "/images/recipes/gochujang-shakshuka-1536.jpg",
+          "bytes": 472194
+        },
+        {
+          "path": "/images/recipes/gochujang-shakshuka-640.webp",
+          "bytes": 89566
+        },
+        {
+          "path": "/images/recipes/gochujang-shakshuka-960.webp",
+          "bytes": 187228
+        }
+      ],
+      "recoveredOriginal": false
+    },
+    {
+      "slug": "kimchi-jjigae",
+      "kind": "AI-generated illustrative recipe photograph",
+      "generator": "built-in image_gen",
+      "generatedOn": "2026-10-10",
+      "prompt": "Use case: photorealistic-natural. Asset: premium Gochujang recipe cookbook photograph, The Seoul Table. Create an authentic finished Kimchi Jjigae food photograph. Center a small traditional dark brown Korean earthenware stew pot on an ivory linen table. Inside is deep red-orange gochujang and gochugaru broth with tiny pork-fat beads, plenty of softened sour napa cabbage kimchi cut in bite lengths, rendered pork belly sliced about 5 mm thick then bite-sized, translucent onion slices. Lay 4 or 5 generous thick ivory firm tofu slabs gently across part of the top, partly immersed, intact, warm red broth tinting their lower edges. Finish with sliced scallions, a few green-chili rings and a subtle sesame-oil sheen. Gentle bubbling near the rim and wisps of steam, cooked through, comforting and deeply appetizing. All food texture naturally irregular. A modest ceramic bowl of steamed white rice can sit near the outer frame, the pot centered and safe for a 4:5 portrait crop. Warm natural sidelight, handmade ceramic glaze, warm paper and linen tones, muted chili-red and earthy palette, expensive restrained editorial Korean cookbook composition, elevated three-quarter camera angle with clear view of dish, main dish in focus. Landscape 3:2, request 2400x1600 high resolution. No noodles, egg, cheese, seafood, mushrooms, carrots, sesame seed garnish, fresh cilantro, parsley, additional banchan, people, hands, text, logos or watermark. One photograph only.",
+      "originalOutputPath": "C:/Users/User/.codex/generated_images/01a1269d-8bdd-7852-9ca9-d3fcca97a6e0/exec-90c95fab-1498-4293-8a3a-e53635625b4b.png",
+      "master": "public/images/recipes/kimchi-jjigae-master.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "df82b1e5d0fdda4041eb438cadb8388014342411e0a4e33c6c733781042077c1",
+      "inspection": "Generated output visually inspected for dish, ingredients, color, proportions, food texture and central crop safety. Accepted.",
+      "derivatives": [
+        {
+          "path": "/images/recipes/kimchi-jjigae-1536.webp",
+          "bytes": 274560
+        },
+        {
+          "path": "/images/recipes/kimchi-jjigae-1536.jpg",
+          "bytes": 358284
+        },
+        {
+          "path": "/images/recipes/kimchi-jjigae-640.webp",
+          "bytes": 71900
+        },
+        {
+          "path": "/images/recipes/kimchi-jjigae-960.webp",
+          "bytes": 139456
+        }
+      ],
+      "recoveredOriginal": false
+    },
+    {
+      "slug": "rose-tteokbokki",
+      "kind": "AI-generated illustrative recipe photograph",
+      "generator": "built-in image_gen",
+      "generatedOn": "2026-10-10",
+      "prompt": "Use case: photorealistic-natural. Asset: exceptionally polished Gochujang recipe image, The Seoul Table editorial Korean cookbook. Subject: finished Rosé Tteokbokki in a shallow handmade ivory Korean ceramic bowl, centered. Plump distinct cylindrical Korean rice cakes about finger length and thick, generously coated in a glossy silky blush-coral sauce made with butter-bloomed gochujang, tomato paste, garlic, honey, soy and a modest amount of cream. Torn folded Korean fish cake sheets, translucent sliced onion and cooked green scallion batons interspersed among rice cakes. The sauce is opaque, creamy and coral, smooth not curdled, not watery; rice cakes recognizable and naturally irregular. Tiny specks of freshly ground black pepper; no cheese selected for this serving, no optional boiled eggs, noodles or cabbage. Warm natural window sidelight, ivory linen and paper tones, muted chili-red, handmade ceramic grain, restrained earthy palette, no extra food props, simple slim metal spoon resting beside bowl at frame edge. Elevated three-quarter view, dish centered with enough breathing room for a 4:5 crop, main food sharply detailed, soft background. Photoreal natural food texture, refined cookbook photography. Landscape 3:2, request 2400x1600 high resolution. No sesame seeds, herbs, mushrooms, raw pepper garnish, sausage, bacon, meat, shrimp or seafood pieces other than the specified fish cakes. No people, hands, text, logos or watermark. One photograph only.",
+      "originalOutputPath": "C:/Users/User/.codex/generated_images/01a1269d-8bdd-7852-9ca9-d3fcca97a6e0/exec-fd1cbfdb-2177-4c26-b71a-06c6bf3f2817.png",
+      "master": "public/images/recipes/rose-tteokbokki-master.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "dd2cd13dec30a375592a55bb20588b8509a256dad1748aab7b5572d6bd3446ff",
+      "inspection": "Generated output visually inspected for dish, ingredients, color, proportions, food texture and central crop safety. Accepted.",
+      "derivatives": [
+        {
+          "path": "/images/recipes/rose-tteokbokki-1536.webp",
+          "bytes": 331166
+        },
+        {
+          "path": "/images/recipes/rose-tteokbokki-1536.jpg",
+          "bytes": 390538
+        },
+        {
+          "path": "/images/recipes/rose-tteokbokki-640.webp",
+          "bytes": 64630
+        },
+        {
+          "path": "/images/recipes/rose-tteokbokki-960.webp",
+          "bytes": 142542
+        }
+      ],
+      "recoveredOriginal": false
+    },
+    {
+      "slug": "ssam-with-ssamjang",
+      "kind": "AI-generated illustrative recipe photograph",
+      "generator": "built-in image_gen",
+      "generatedOn": "2026-10-10",
+      "prompt": "Use case: photorealistic-natural. Asset: Gochujang premium cookbook recipe photograph, The Seoul Table. Create an authentic contemporary Ssam with Ssamjang spread with an elegant compact arrangement on a shallow wooden serving board over ivory linen. Centerpiece a handmade ivory ceramic platter of pork belly sliced 5 mm, pan-seared to browned edges and cut into bite-size pieces, juicy interiors, no grill grate marks required. Two small ceramic sauce bowls placed near the center: one thick grainy reddish-brown ssamjang made of doenjang, gochujang, honey, sesame oil, garlic, grated onion and a tiny sesame seed sprinkling; the second a smoother shiny deep red cho-gochujang dip with vinegar and honey. Fresh dry lettuce cups and serrated Korean perilla leaves, a modest bowl of steamed white short-grain rice, a small dish with pale sliced raw garlic coins and green chili slices arranged nearby. Include two small open lettuce-and-perilla cups in front, each filled with one bite of pork, a little rice, a swipe of ssamjang and a garlic coin, showing the recipe in use. Keep the core scene compact and centered so pork and both sauces remain recognizable in a 4:5 crop; landscape3:2 request2400x1600 high resolution. Elevated near-overhead three-quarter food photography, warm natural sidelight, ivory linen, warm paper tones, restrained muted chili-red and earthy palette, realistic food textures, no overly styled scattered ingredients. No beef, noodles, cheese, egg, mushrooms, herbs, cucumber, carrots or kimchi. No people, hands, text, branding, logos, watermark, fake lettering. One photo only.",
+      "originalOutputPath": "C:/Users/User/.codex/generated_images/01a1269d-8bdd-7852-9ca9-d3fcca97a6e0/exec-7fb9d099-c0ae-4d5e-9b5e-3aacbb02474f.png",
+      "master": "public/images/recipes/ssam-with-ssamjang-master.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "fb45db2952629b7971ad72f58cbceb460780f55d513909eb106fe3367d879eb1",
+      "inspection": "Generated output visually inspected for dish, ingredients, color, proportions, food texture and central crop safety. Accepted.",
+      "derivatives": [
+        {
+          "path": "/images/recipes/ssam-with-ssamjang-1536.webp",
+          "bytes": 426352
+        },
+        {
+          "path": "/images/recipes/ssam-with-ssamjang-1536.jpg",
+          "bytes": 486654
+        },
+        {
+          "path": "/images/recipes/ssam-with-ssamjang-640.webp",
+          "bytes": 97334
+        },
+        {
+          "path": "/images/recipes/ssam-with-ssamjang-960.webp",
+          "bytes": 194788
+        }
+      ],
+      "recoveredOriginal": false
+    },
+    {
+      "slug": "yangnyeom-fried-chicken",
+      "kind": "AI-generated illustrative recipe photograph",
+      "generator": "built-in image_gen",
+      "generatedOn": "2026-10-10",
+      "prompt": "Use case: photorealistic-natural. Asset: Gochujang.net Seoul Table premium cookbook recipe photograph. One beautiful high-resolution landscape 3:2 image, ideally2400x1600. Exact dish Yangnyeom Fried Chicken: six to eight chicken wings and drumettes double-fried in a very thin potato-starch crust, then just tossed in glossy deep red-orange gochujang-honey-soy-garlic glaze. Clearly recognizable wing flats and small drumettes, natural anatomy, beautifully craggy delicate crust visible beneath a thin lacquer. Restrained scatter of toasted sesame seeds is the ONLY garnish, no scallion, no green herbs. Served in a low broad warm-ivory handmade Korean ceramic bowl on tactile ivory linen over pale warm oak. A small ceramic dish containing a little red sauce at back edge softly blurred, no additional foods. Authentic sauce color, appetizing microtexture, clean contemporary food editorial styling. Warm natural window sidelight with soft shadows, restrained warm paper/chili/earth palette, natural specular detail, no artificial glow. Slightly elevated three-quarter view, central mound with full bowl visible and breathing room, safe for a central4:5 crop. Absolutely no people, no hands, no text, no labels, no logos, no flags, no packaging, no unnatural oversized bones, no white meat cross-sections, no excessive steam, no collage. Newly generated illustrative recipe photography in a cohesive premium Korean cookbook series.",
+      "originalOutputPath": "C:\\Users\\User\\.codex\\generated_images\\01a12697-b8da-7c52-abae-507abf95be62\\exec-8cb7ee4f-02ed-4ddb-af25-f90fc9ed1ee8.png",
+      "master": "public/images/recipes/yangnyeom-fried-chicken-master.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "4a8d29e1b5cb2f0d66524d94ab6d4153a891232a2b2b578f9503255e5525656c",
+      "inspection": "Visually inspected: recipe-specific food form, ingredients, natural editorial lighting, no labels or text.",
+      "derivatives": [
+        {
+          "path": "/images/recipes/yangnyeom-fried-chicken-1536.webp",
+          "bytes": 385064
+        },
+        {
+          "path": "/images/recipes/yangnyeom-fried-chicken-1536.jpg",
+          "bytes": 424073
+        },
+        {
+          "path": "/images/recipes/yangnyeom-fried-chicken-640.webp",
+          "bytes": 87896
+        },
+        {
+          "path": "/images/recipes/yangnyeom-fried-chicken-960.webp",
+          "bytes": 180126
+        }
+      ],
+      "recoveredOriginal": false
+    }
+  ]
+}

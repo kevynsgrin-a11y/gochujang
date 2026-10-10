@@ -1,0 +1,128 @@
+{
+  "gochujang-glazed-galbi-short-ribs": {
+    "alt": "Thick gochujang-glazed short ribs over rice with sesame, scallions, pickled radish and a bowl of glaze.",
+    "width": 1536,
+    "height": 1024,
+    "src": "/images/recipes/gochujang-glazed-galbi-short-ribs-1536.webp",
+    "srcset": "/images/recipes/gochujang-glazed-galbi-short-ribs-640.webp 640w, /images/recipes/gochujang-glazed-galbi-short-ribs-960.webp 960w, /images/recipes/gochujang-glazed-galbi-short-ribs-1536.webp 1536w",
+    "jpg": "/images/recipes/gochujang-glazed-galbi-short-ribs-1536.jpg",
+    "position": "center"
+  },
+  "baechu-kimchi": {
+    "alt": "Bite-size napa cabbage kimchi with radish matchsticks and scallions in an ivory bowl, with a fermentation jar behind.",
+    "width": 1536,
+    "height": 1024,
+    "src": "/images/recipes/baechu-kimchi-1536.webp",
+    "srcset": "/images/recipes/baechu-kimchi-640.webp 640w, /images/recipes/baechu-kimchi-960.webp 960w, /images/recipes/baechu-kimchi-1536.webp 1536w",
+    "jpg": "/images/recipes/baechu-kimchi-1536.jpg",
+    "position": "center"
+  },
+  "dolsot-bibimbap": {
+    "alt": "Stone-bowl bibimbap with separate vegetables, ground beef, a fried egg and gochujang sauce over rice.",
+    "width": 1536,
+    "height": 1024,
+    "src": "/images/recipes/dolsot-bibimbap-1536.webp",
+    "srcset": "/images/recipes/dolsot-bibimbap-640.webp 640w, /images/recipes/dolsot-bibimbap-960.webp 960w, /images/recipes/dolsot-bibimbap-1536.webp 1536w",
+    "jpg": "/images/recipes/dolsot-bibimbap-1536.jpg",
+    "position": "center"
+  },
+  "yangnyeom-fried-chicken": {
+    "alt": "Crisp glazed chicken wings and drumettes with toasted sesame seeds in a handmade ivory bowl.",
+    "width": 1536,
+    "height": 1024,
+    "src": "/images/recipes/yangnyeom-fried-chicken-1536.webp",
+    "srcset": "/images/recipes/yangnyeom-fried-chicken-640.webp 640w, /images/recipes/yangnyeom-fried-chicken-960.webp 960w, /images/recipes/yangnyeom-fried-chicken-1536.webp 1536w",
+    "jpg": "/images/recipes/yangnyeom-fried-chicken-1536.jpg",
+    "position": "center"
+  },
+  "gochujang-birria-tacos": {
+    "alt": "Three crisp gochujang birria tacos with shredded beef, melted cheese, onion and cilantro, beside consommé and lime.",
+    "width": 1536,
+    "height": 1024,
+    "src": "/images/recipes/gochujang-birria-tacos-1536.webp",
+    "srcset": "/images/recipes/gochujang-birria-tacos-640.webp 640w, /images/recipes/gochujang-birria-tacos-960.webp 960w, /images/recipes/gochujang-birria-tacos-1536.webp 1536w",
+    "jpg": "/images/recipes/gochujang-birria-tacos-1536.jpg",
+    "position": "center"
+  },
+  "gochujang-bolognese": {
+    "alt": "Tagliatelle coated in deep brick-brown gochujang beef ragù with freshly grated parmesan in an ivory ceramic bowl.",
+    "width": 1536,
+    "height": 1024,
+    "src": "/images/recipes/gochujang-bolognese-1536.webp",
+    "srcset": "/images/recipes/gochujang-bolognese-640.webp 640w, /images/recipes/gochujang-bolognese-960.webp 960w, /images/recipes/gochujang-bolognese-1536.webp 1536w",
+    "jpg": "/images/recipes/gochujang-bolognese-1536.jpg",
+    "position": "center"
+  },
+  "gochujang-dark-chocolate-tart": {
+    "alt": "Dark chocolate gochujang tart in a cocoa shell with black sesame, flaky salt and a light dusting of gochugaru.",
+    "width": 1536,
+    "height": 1024,
+    "src": "/images/recipes/gochujang-dark-chocolate-tart-1536.webp",
+    "srcset": "/images/recipes/gochujang-dark-chocolate-tart-640.webp 640w, /images/recipes/gochujang-dark-chocolate-tart-960.webp 960w, /images/recipes/gochujang-dark-chocolate-tart-1536.webp 1536w",
+    "jpg": "/images/recipes/gochujang-dark-chocolate-tart-1536.jpg",
+    "position": "center"
+  },
+  "gochujang-shakshuka": {
+    "alt": "Five eggs poached in gochujang tomato and pepper sauce with feta, cilantro and pickled onion in a skillet.",
+    "width": 1536,
+    "height": 1024,
+    "src": "/images/recipes/gochujang-shakshuka-1536.webp",
+    "srcset": "/images/recipes/gochujang-shakshuka-640.webp 640w, /images/recipes/gochujang-shakshuka-960.webp 960w, /images/recipes/gochujang-shakshuka-1536.webp 1536w",
+    "jpg": "/images/recipes/gochujang-shakshuka-1536.jpg",
+    "position": "center"
+  },
+  "gochujang-miso-black-cod": {
+    "alt": "Caramelized gochujang-miso black cod over rice with toasted sesame, scallion and pickled cucumber.",
+    "width": 1536,
+    "height": 1024,
+    "src": "/images/recipes/gochujang-miso-black-cod-1536.webp",
+    "srcset": "/images/recipes/gochujang-miso-black-cod-640.webp 640w, /images/recipes/gochujang-miso-black-cod-960.webp 960w, /images/recipes/gochujang-miso-black-cod-1536.webp 1536w",
+    "jpg": "/images/recipes/gochujang-miso-black-cod-1536.jpg",
+    "position": "center"
+  },
+  "buldak-fire-noodles": {
+    "alt": "Gochujang-lacquered chicken and thick wheat noodles with melted mozzarella and a fried egg.",
+    "width": 1536,
+    "height": 1024,
+    "src": "/images/recipes/buldak-fire-noodles-1536.webp",
+    "srcset": "/images/recipes/buldak-fire-noodles-640.webp 640w, /images/recipes/buldak-fire-noodles-960.webp 960w, /images/recipes/buldak-fire-noodles-1536.webp 1536w",
+    "jpg": "/images/recipes/buldak-fire-noodles-1536.jpg",
+    "position": "center"
+  },
+  "doenjang-jjigae": {
+    "alt": "Golden-brown soybean-paste stew with firm tofu, zucchini, potato, mushrooms and green chilies.",
+    "width": 1536,
+    "height": 1024,
+    "src": "/images/recipes/doenjang-jjigae-1536.webp",
+    "srcset": "/images/recipes/doenjang-jjigae-640.webp 640w, /images/recipes/doenjang-jjigae-960.webp 960w, /images/recipes/doenjang-jjigae-1536.webp 1536w",
+    "jpg": "/images/recipes/doenjang-jjigae-1536.jpg",
+    "position": "center"
+  },
+  "kimchi-jjigae": {
+    "alt": "Red-orange kimchi and pork stew with thick tofu slabs, scallions and green chili.",
+    "width": 1536,
+    "height": 1024,
+    "src": "/images/recipes/kimchi-jjigae-1536.webp",
+    "srcset": "/images/recipes/kimchi-jjigae-640.webp 640w, /images/recipes/kimchi-jjigae-960.webp 960w, /images/recipes/kimchi-jjigae-1536.webp 1536w",
+    "jpg": "/images/recipes/kimchi-jjigae-1536.jpg",
+    "position": "center"
+  },
+  "rose-tteokbokki": {
+    "alt": "Cylindrical rice cakes and folded fish cakes in creamy coral sauce with scallion batons.",
+    "width": 1536,
+    "height": 1024,
+    "src": "/images/recipes/rose-tteokbokki-1536.webp",
+    "srcset": "/images/recipes/rose-tteokbokki-640.webp 640w, /images/recipes/rose-tteokbokki-960.webp 960w, /images/recipes/rose-tteokbokki-1536.webp 1536w",
+    "jpg": "/images/recipes/rose-tteokbokki-1536.jpg",
+    "position": "center"
+  },
+  "ssam-with-ssamjang": {
+    "alt": "Seared pork belly with lettuce, perilla, rice, garlic, green chili and two Korean dipping sauces.",
+    "width": 1536,
+    "height": 1024,
+    "src": "/images/recipes/ssam-with-ssamjang-1536.webp",
+    "srcset": "/images/recipes/ssam-with-ssamjang-640.webp 640w, /images/recipes/ssam-with-ssamjang-960.webp 960w, /images/recipes/ssam-with-ssamjang-1536.webp 1536w",
+    "jpg": "/images/recipes/ssam-with-ssamjang-1536.jpg",
+    "position": "center"
+  }
+}
