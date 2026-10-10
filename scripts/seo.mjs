@@ -1,6 +1,7 @@
 import { readFile, writeFile, readdir, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { load } from 'cheerio';
+import { coverAwareSizes } from './responsive-sizes.mjs';
 
 const json = value => JSON.stringify(value).replace(/</g, '\\u003c');
 const escapeXML = value => String(value).replace(/[<>&"']/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&apos;'}[c]));
@@ -85,6 +86,8 @@ export async function enhanceSite({root, recipes, images, editorial, domain, bra
       description = gochujang
         ? 'Browse all 14 Korean and gochujang recipes. Find traditional dishes, modern favorites, and fusion ideas, with ingredients and step-by-step instructions.'
         : 'Browse all 80 Korean BBQ recipes by dish, ingredient, or tradition. Find grilled meats, seafood, Korean side dishes, dipping sauces, and desserts.';
+    } else if (gochujang && route === '/about/') {
+      title = 'Our Approach to Korean Cooking | The Seoul Table';
     } else if (recipe) {
       const shortTitle = editorial[recipe.slug]?.shortTitle || recipe.title;
       title = `${shortTitle}${/\brecipe\b/i.test(shortTitle) ? '' : ' Recipe'} | ${brand}`;
@@ -149,6 +152,7 @@ export async function enhanceSite({root, recipes, images, editorial, domain, bra
       else if (img.closest('.category-cover').length) sizes = `(max-width:760px) ${mobile}, 270px`;
       else if (img.closest('.sea-row').length) sizes = '(max-width:760px) 40vw, 20vw';
       else sizes = `(max-width:760px) ${mobile}, (max-width:1480px) 46vw, 640px`;
+      sizes = coverAwareSizes(sizes, { width: img.attr('width'), height: img.attr('height') }, { $, img, gochujang });
       img.attr('sizes', sizes).wrap('<picture></picture>');
       img.before($('<source>').attr({type:'image/avif',srcset:asset.srcset,sizes}));
       if (img.attr('fetchpriority') === 'high' && !$('link[rel="preload"][as="image"]').length) {
