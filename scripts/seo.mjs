@@ -24,6 +24,8 @@ export async function enhanceSite({root, recipes, images, editorial, domain, bra
   const read = file => readFile(path.join(root, file), 'utf8');
   const optimized = JSON.parse(await read('src/content/optimized-images.json'));
   const fonts = JSON.parse(await read('src/content/optimized-fonts.json'));
+  const atmospheres = JSON.parse(await read('src/content/editorial-images.json'));
+  const editorialBySrc = new Map(Object.values(atmospheres).map(i=>[i.src,{...i,srcset:i.avifSrcset}]));
   const imageBySrc = new Map(Object.entries(images).map(([slug, image]) => [image.src, slug]));
   const lanes = {
     traditional: ['Traditional Korean Recipes', 'Explore traditional Korean recipes, including dolsot bibimbap, kimchi jjigae, and doenjang jjigae. Find ingredients and step-by-step methods.'],
@@ -36,6 +38,8 @@ export async function enhanceSite({root, recipes, images, editorial, domain, bra
       const $ = load(template);
       $('[data-recipe]').each((_, el) => { if ($(el).attr('data-lane') !== lane) $(el).remove(); });
       const count = $('[data-recipe]').length;
+      $('.collection-heading-photo').html('');
+      $('.collection-header').addClass('is-lane');
       $('.collection-header h1').html(`${cap(lane)} <em>recipes.</em>`);
       $('.collection-header>p').last().text(description);
       $('[data-filter]').each((_, el) => { if ($(el).attr('data-filter') !== 'all') $(el).remove(); });
@@ -126,11 +130,14 @@ export async function enhanceSite({root, recipes, images, editorial, domain, bra
 
     // Preserve each original fallback image, its crop, dimensions, alt text, and styling.
     $('img').each((_, el) => {
-      const img = $(el), slug = imageBySrc.get(img.attr('src')), asset = optimized[slug];
+      const img = $(el), slug = imageBySrc.get(img.attr('src')), asset = optimized[slug] || editorialBySrc.get(img.attr('src'));
       if (!asset) return;
       const mobile = 'calc(100vw - 40px)';
       let sizes = img.attr('sizes') || '100vw';
-      if (img.hasClass('hero-photo')) sizes = `(max-width:760px) ${mobile}, (max-width:1480px) 47vw, 640px`;
+      if (img.attr('data-display-sizes')) sizes=img.attr('data-display-sizes');
+      else if (img.closest('.collection-heading-photo').length) sizes='(max-width:760px) 1px, (max-width:1440px) 30vw, 430px';
+      else if (img.closest('.editorial-grid').length) sizes=img.closest('.recipe-tile').is(':first-child') ? '(max-width:760px) calc(100vw - 40px), (max-width:1440px) 50vw, 700px' : '(max-width:760px) calc((100vw - 60px) / 2), (max-width:1440px) 23vw, 320px';
+      else if (img.hasClass('hero-photo')) sizes = `(max-width:760px) ${mobile}, (max-width:1480px) 47vw, 640px`;
       else if (img.closest('.recipe-hero').length) sizes = gochujang
         ? `(max-width:760px) ${mobile}, (max-width:1440px) 91vw, 1280px`
         : `(max-width:760px) ${mobile}, (max-width:1480px) 43vw, 630px`;

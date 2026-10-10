@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "asset": "seoul-table-atmosphere",
+  "createdAt": "2026-10-10",
+  "useCase": "photorealistic-natural",
+  "purpose": "Original editorial masthead atmosphere for The Seoul Table; not a named recipe image or a photograph of an actual restaurant.",
+  "generation": {
+    "tool": "Built-in image_gen",
+    "mode": "generate",
+    "prompt": "Use case: photorealistic-natural.\nAsset type: cinematic full-width homepage masthead photograph for The Seoul Table, a premium Korean recipe publication. This is original atmospheric editorial imagery, not an image of any named recipe or an actual restaurant.\nCreate one exceptionally refined, photorealistic Korean table scene in quiet late-afternoon golden light. High-resolution wide 16:9 landscape, preferably 2048 x 1152 or highest native available.\nComposition: oblique tabletop perspective with an expansive, quiet, DARK warm negative space covering the LEFT third for a later off-white headline; do not render any text. Table and luminous ceramics and food primarily CENTER-RIGHT, with natural depth and subtle shadow, composed elegantly for a luxury hospitality publication. Foods fully recognizable, restrained quantities and generous breathing room. The complete scene feels thoughtful and inviting, not a cluttered feast or an advertisement.\nSubjects: one small dark natural-glaze Korean ceramic bowl containing thick deep-red gochujang with a subtle lacquered sheen and one simple brass spoon resting beside it. Nearby an ivory handmade rice bowl with short-grain steamed rice. A tasteful small arrangement of understated banchan in beautiful humble Korean ceramics: recognizable napa cabbage kimchi, a small serving of leafy greens, and cubed radish. One natural linen place setting and authentic slim Korean metal chopsticks with a long-handled Korean spoon laid neatly parallel. Oak tabletop, organic tactile ceramic rims and linen fibers.\nLighting: directional late afternoon light grazing the food and ceramics from the right, controlled highlights, deep warm shadows, nuanced falloff, realistic lens rendering. Refined warm-paper, gochujang-red, muted olive and ink palette. Real editorial food photography with impeccable material realism, sophisticated art direction and slight human-made imperfections in ceramics; no excessive saturation, no artificial glow, no plastic food, no CGI appearance.\nConstraints: no people, no hands, no text, no logos, no watermark, no decorative flames or floating ingredients, no sushi, no cherry blossoms, no Japanese props, no oversized novelty chopsticks. Preserve cultural accuracy of the Korean table.",
+    "requestedDimensions": "2048x1152 or highest native 16:9",
+    "outputDimensions": {
+      "width": 1672,
+      "height": 941
+    },
+    "originalPath": "C:\\Users\\User\\.codex\\generated_images\\01a12756-e716-7db3-8b8c-9e3cc363d4cd\\exec-6ae5af5d-0357-40f4-a816-061cb0b27ff3.png"
+  },
+  "master": {
+    "path": "public/images/editorial/seoul-table-atmosphere-master.png",
+    "mimeType": "image/png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2316343,
+    "sha256": "cf4617209bebeb171849dc43d7784d0e08d534fda92a74f281cf2cdf7bf1f0b5"
+  },
+  "alt": "A Korean table with gochujang, rice, kimchi and banchan in handmade ceramics, warmed by afternoon light.",
+  "review": {
+    "selected": true,
+    "notes": "Inspected the generated output: warm directional light and tactile oak, linen and ceramics; negative space at upper left; gochujang, rice, napa kimchi, greens and radish recognizable; Korean metal spoon and chopsticks laid parallel. No people, text, logos or watermarks. Recipe photographs were not altered.",
+    "nativeResolutionOnly": true
+  }
+}

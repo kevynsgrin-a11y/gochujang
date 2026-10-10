@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "asset": "seoul-table-jar",
+  "createdAt": "2026-10-10",
+  "useCase": "photorealistic-natural",
+  "purpose": "Supporting original editorial still life for The Seoul Table story, A small jar. A whole world. Not a named recipe photo or an actual restaurant photograph.",
+  "generation": {
+    "tool": "Built-in image_gen",
+    "mode": "generate with one composition-only edit",
+    "prompt": "Use case: photorealistic-natural.\nAsset type: supporting editorial photograph for The Seoul Table, a premium Korean cooking publication; accompanying a story titled “A small jar. A whole world.” Do not put any text in the image. Original editorial imagery, not a photograph of a named recipe or real restaurant.\nPrimary request: a beautifully restrained close-up still life of Korean gochujang in a small traditional dark-brown onggi earthenware jar, with its simple matching lid beside it. A modest amount of thick fermented red-pepper paste on a long-handled Korean metal spoon rests on a simple ivory ceramic saucer. Natural linen and a quiet warm plaster backdrop. Entire jar, lid and spoon should be anatomically coherent, natural and visible, with gochujang texture recognizable.\nStyle: photorealistic premium cookbook photography; intimate macro-like tactile detail in fermented paste, subtly irregular onggi glaze, ceramic and linen. Sophisticated and authentic rather than shiny product CGI. Soft directional window light from the left, gentle shadows, controlled highlights. Muted gochujang red, walnut brown, cream and warm plaster.\nComposition: high-resolution landscape 4:3, preferably 2048 x 1536 or highest native output; central subject group safely composed to allow a later narrow 4:5 crop without cutting off the main jar or essential spoon. Keep the jar and saucer naturally grouped toward the lower-center, with ample quiet negative space above and on the right. Sparse, poised, editorial composition with depth and breathing room. No extra props beyond the onggi jar and lid, metal spoon, ivory saucer and modest natural linen.\nConstraints: culturally credible Korean onggi and long-handled Korean metal spoon. No packaging, labels, writing, logos, people, hands, flames, decorative ingredient scatter, floating ingredients, watermark, Japanese props, artificial glow, excessive saturation or wet plastic surfaces. No crops through essential objects.",
+    "compositionRevisionPrompt": "Use case: precise-object-edit.\nEdit the provided editorial still life while preserving its exact lighting mood, palette, tactile onggi glaze, gochujang appearance, Korean utensils, natural linen, quiet plaster backdrop, photo realism, and absence of text.\nChange only the composition/framing: pull the camera back and compact the jar, lid and spoon-on-saucer group, so ALL physical objects fit completely inside the CENTRAL 54 percent of image width, leaving generous empty linen margins at left and right. The entire jar, lid, saucer, spoon bowl and spoon handle must remain inside this narrow central safe zone and completely visible. Place the lid tucked closely against the left base of the jar rather than far left. Rotate the saucer and spoon so its handle angles back upward toward the jar, not extending toward the right edge. Preserve natural distinct objects without intersections or merged shapes. Keep the jar as the principal subject with enough detailed gochujang visible. Keep ample empty warm plaster above.\nOutput landscape 4:3, at highest native resolution. This wide master MUST also crop cleanly to a CENTERED 4:5 portrait while retaining every essential object. No writing, no logos, no watermark, no people, no hands, no extra objects.",
+    "requestedDimensions": "2048x1536 or highest native 4:3",
+    "outputDimensions": {
+      "width": 1448,
+      "height": 1086
+    },
+    "originalPath": "C:\\Users\\User\\.codex\\generated_images\\01a12756-e716-7db3-8b8c-9e3cc363d4cd\\exec-0881fb9d-0ab5-4ab7-bb87-c2d08deb7783.png",
+    "initialVariantPath": "C:\\Users\\User\\.codex\\generated_images\\01a12756-e716-7db3-8b8c-9e3cc363d4cd\\exec-7c59cce2-be93-4b84-a327-1dff9b8ec24b.png"
+  },
+  "master": {
+    "path": "public/images/editorial/seoul-table-jar-master.png",
+    "mimeType": "image/png",
+    "width": 1448,
+    "height": 1086,
+    "bytes": 2359153,
+    "sha256": "7d5ac75487587f2081beec9ba156ce646880dd53671f9503b9e9e4a7ca8c2b66"
+  },
+  "alt": "An onggi jar of gochujang beside its lid and a Korean metal spoon on an ivory saucer.",
+  "review": {
+    "selected": true,
+    "notes": "Inspected both generated variants. Selected composition revision retains the natural pottery, paste, linen and warm plaster, and groups the jar, lid, saucer and spoon within the central crop-safe area. Essential objects remain recognizable and inside a centered 4:5 crop. No text, people, hands, logos or decorative scattered ingredients. No recipe assets touched.",
+    "nativeResolutionOnly": true,
+    "centeredPortraitCrop": {
+      "aspectRatio": "4:5",
+      "approximatelySafeXRange": [
+        290,
+        1158
+      ],
+      "allEssentialObjectsInside": true
+    }
+  }
+}

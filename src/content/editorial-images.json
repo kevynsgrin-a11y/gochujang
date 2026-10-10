@@ -1,0 +1,168 @@
+{
+  "seoul-table-atmosphere": {
+    "src": "/images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-1672.webp",
+    "srcset": "/images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-480.webp 480w, /images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-768.webp 768w, /images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-1024.webp 1024w, /images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-1440.webp 1440w, /images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-1672.webp 1672w",
+    "avifSrcset": "/images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-480.avif 480w, /images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-768.avif 768w, /images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-1024.avif 1024w, /images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-1440.avif 1440w, /images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-1672.avif 1672w",
+    "width": 1672,
+    "height": 941,
+    "alt": "A Korean table with gochujang, rice, kimchi and banchan in handmade ceramics, warmed by afternoon light.",
+    "variants": [
+      {
+        "src": "/images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-480.avif",
+        "width": 480,
+        "height": 270,
+        "format": "avif",
+        "bytes": 15375
+      },
+      {
+        "src": "/images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-480.webp",
+        "width": 480,
+        "height": 270,
+        "format": "webp",
+        "bytes": 21252
+      },
+      {
+        "src": "/images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-768.avif",
+        "width": 768,
+        "height": 432,
+        "format": "avif",
+        "bytes": 32767
+      },
+      {
+        "src": "/images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-768.webp",
+        "width": 768,
+        "height": 432,
+        "format": "webp",
+        "bytes": 45598
+      },
+      {
+        "src": "/images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-1024.avif",
+        "width": 1024,
+        "height": 576,
+        "format": "avif",
+        "bytes": 52297
+      },
+      {
+        "src": "/images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-1024.webp",
+        "width": 1024,
+        "height": 576,
+        "format": "webp",
+        "bytes": 73084
+      },
+      {
+        "src": "/images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-1440.avif",
+        "width": 1440,
+        "height": 810,
+        "format": "avif",
+        "bytes": 87052
+      },
+      {
+        "src": "/images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-1440.webp",
+        "width": 1440,
+        "height": 810,
+        "format": "webp",
+        "bytes": 124228
+      },
+      {
+        "src": "/images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-1672.avif",
+        "width": 1672,
+        "height": 941,
+        "format": "avif",
+        "bytes": 106827
+      },
+      {
+        "src": "/images/optimized/editorial/seoul-table-atmosphere-0c7589a03647-1672.webp",
+        "width": 1672,
+        "height": 941,
+        "format": "webp",
+        "bytes": 155386
+      }
+    ],
+    "sourceMaster": "public/images/editorial/seoul-table-atmosphere-master.png",
+    "sourceSha256": "cf4617209bebeb171849dc43d7784d0e08d534fda92a74f281cf2cdf7bf1f0b5",
+    "provenance": "source/editorial-image-provenance.json"
+  },
+  "seoul-table-jar": {
+    "src": "/images/optimized/editorial/seoul-table-jar-5de52b757f66-1448.webp",
+    "srcset": "/images/optimized/editorial/seoul-table-jar-5de52b757f66-480.webp 480w, /images/optimized/editorial/seoul-table-jar-5de52b757f66-768.webp 768w, /images/optimized/editorial/seoul-table-jar-5de52b757f66-1024.webp 1024w, /images/optimized/editorial/seoul-table-jar-5de52b757f66-1440.webp 1440w, /images/optimized/editorial/seoul-table-jar-5de52b757f66-1448.webp 1448w",
+    "avifSrcset": "/images/optimized/editorial/seoul-table-jar-5de52b757f66-480.avif 480w, /images/optimized/editorial/seoul-table-jar-5de52b757f66-768.avif 768w, /images/optimized/editorial/seoul-table-jar-5de52b757f66-1024.avif 1024w, /images/optimized/editorial/seoul-table-jar-5de52b757f66-1440.avif 1440w, /images/optimized/editorial/seoul-table-jar-5de52b757f66-1448.avif 1448w",
+    "width": 1448,
+    "height": 1086,
+    "alt": "An onggi jar of gochujang beside its lid and a Korean metal spoon on an ivory saucer.",
+    "variants": [
+      {
+        "src": "/images/optimized/editorial/seoul-table-jar-5de52b757f66-480.avif",
+        "width": 480,
+        "height": 360,
+        "format": "avif",
+        "bytes": 15958
+      },
+      {
+        "src": "/images/optimized/editorial/seoul-table-jar-5de52b757f66-480.webp",
+        "width": 480,
+        "height": 360,
+        "format": "webp",
+        "bytes": 19852
+      },
+      {
+        "src": "/images/optimized/editorial/seoul-table-jar-5de52b757f66-768.avif",
+        "width": 768,
+        "height": 576,
+        "format": "avif",
+        "bytes": 38133
+      },
+      {
+        "src": "/images/optimized/editorial/seoul-table-jar-5de52b757f66-768.webp",
+        "width": 768,
+        "height": 576,
+        "format": "webp",
+        "bytes": 48258
+      },
+      {
+        "src": "/images/optimized/editorial/seoul-table-jar-5de52b757f66-1024.avif",
+        "width": 1024,
+        "height": 768,
+        "format": "avif",
+        "bytes": 64538
+      },
+      {
+        "src": "/images/optimized/editorial/seoul-table-jar-5de52b757f66-1024.webp",
+        "width": 1024,
+        "height": 768,
+        "format": "webp",
+        "bytes": 81030
+      },
+      {
+        "src": "/images/optimized/editorial/seoul-table-jar-5de52b757f66-1440.avif",
+        "width": 1440,
+        "height": 1080,
+        "format": "avif",
+        "bytes": 107332
+      },
+      {
+        "src": "/images/optimized/editorial/seoul-table-jar-5de52b757f66-1440.webp",
+        "width": 1440,
+        "height": 1080,
+        "format": "webp",
+        "bytes": 140310
+      },
+      {
+        "src": "/images/optimized/editorial/seoul-table-jar-5de52b757f66-1448.avif",
+        "width": 1448,
+        "height": 1086,
+        "format": "avif",
+        "bytes": 108796
+      },
+      {
+        "src": "/images/optimized/editorial/seoul-table-jar-5de52b757f66-1448.webp",
+        "width": 1448,
+        "height": 1086,
+        "format": "webp",
+        "bytes": 142790
+      }
+    ],
+    "sourceMaster": "public/images/editorial/seoul-table-jar-master.png",
+    "sourceSha256": "7d5ac75487587f2081beec9ba156ce646880dd53671f9503b9e9e4a7ca8c2b66",
+    "provenance": "source/editorial-jar-provenance.json"
+  }
+}
