@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-10",
+  "site": "https://gochujang.net/",
+  "edition": "The Seoul Table refinement",
+  "reviewedPreviewCommit": "0dbe3f4825e96cd9173c8e11c492b28e9bdeb803",
+  "reviewType": "Independent specialist subjective design review, not an external certification",
+  "baseline": 80,
+  "finalScore": 91.5,
+  "threshold": 89,
+  "criteria": {
+    "artDirection": {
+      "score": 19,
+      "weight": 20
+    },
+    "typographySpacingHierarchy": {
+      "score": 18,
+      "weight": 20
+    },
+    "imageryComposition": {
+      "score": 19,
+      "weight": 20
+    },
+    "responsiveExperience": {
+      "score": 13.5,
+      "weight": 15
+    },
+    "interactionsAccessibility": {
+      "score": 13.5,
+      "weight": 15
+    },
+    "coherencePerformance": {
+      "score": 8.5,
+      "weight": 10
+    }
+  },
+  "resolvedReviewFindings": [
+    "Aligned the two supporting mobile recipe-card images",
+    "Restored word separation at responsive line break",
+    "Matched hero responsive-image sizes and preload to the effective cover crop"
+  ],
+  "preservation": {
+    "recipes": 14,
+    "ingredients": 153,
+    "originalContentBlocks": 128,
+    "sourceHashesUnchanged": true,
+    "approvedRecipeImagesUnchanged": true
+  },
+  "browserChecks": [
+    "320,390,768 and1440px layouts",
+    "All14recipe routes without horizontal overflow at320px",
+    "Mobile menu position and Escape focus return",
+    "Recipe filtering, empty search and reset",
+    "Save recipe and copy canonical link",
+    "Ingredient checklist persistence and reset",
+    "Larger recipe text",
+    "Reduced-motion CSS and print styling"
+  ],
+  "remainingRefinement": [
+    "Some small-screen density",
+    "Further opportunities to make the editorial patterns more distinctive"
+  ],
+  "performanceNote": "Production speed measurement is a separate post-publication check; this visual score is not a Core Web Vitals certification."
+}

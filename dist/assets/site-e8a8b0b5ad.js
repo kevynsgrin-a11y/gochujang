@@ -6,17 +6,28 @@ function read(key, fallback) { try { const value=JSON.parse(localStorage.getItem
 function write(key, value) { try {localStorage.setItem(key,JSON.stringify(value));return true;} catch {toast('Your browser could not save this. You can still use the recipe.');return false;} }
 const savedKey='gochujang-saved-v1';
 function savedRecipes() {const value=read(savedKey,[]);return Array.isArray(value)?value:[];}
-function updateSaveButtons() {const saved=savedRecipes(); $$('[data-save]').forEach(button=>{const active=saved.includes(button.dataset.save);button.setAttribute('aria-pressed',String(active));$('[data-save-label]',button).textContent=active?'Recipe saved':'Save recipe';});$$('[data-saved-count]').forEach(el=>el.textContent=saved.length);}
+function updateSaveButtons() {const saved=savedRecipes(); $$('[data-save]').forEach(button=>{const active=saved.includes(button.dataset.save);button.setAttribute('aria-pressed',String(active));$('[data-save-label]',button).textContent=active?'Recipe saved':'Save recipe';});$$('[data-saved-count],[data-saved-total]').forEach(el=>el.textContent=saved.length);}
 $$('[data-save]').forEach(button=>button.addEventListener('click',()=>{const saved=savedRecipes();const slug=button.dataset.save;const active=saved.includes(slug);if(write(savedKey,active?saved.filter(s=>s!==slug):[...saved,slug])){updateSaveButtons();toast(active?'Recipe removed from your saved collection.':'Recipe saved in this browser.');}}));
 updateSaveButtons();
 const search=$('#search-dialog');
-$$('.search-open').forEach(button=>button.addEventListener('click',()=>{search.showModal();$('#global-search').focus();}));
+$$('.search-open').forEach(button=>button.addEventListener('click',()=>{closeMenu();search.showModal();$('#global-search').focus();}));
 $('.search-close').addEventListener('click',()=>search.close());
 search.addEventListener('click',event=>{if(event.target===search){const r=search.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)search.close();}});
 const menu=$('.menu-toggle'), mobile=$('#mobile-menu');
-menu.addEventListener('click',()=>{const opening=mobile.hidden;mobile.hidden=!opening;menu.setAttribute('aria-expanded',String(opening));menu.setAttribute('aria-label',opening?'Close menu':'Open menu');});
-document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!mobile.hidden){mobile.hidden=true;menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open menu');menu.focus();}});
+function closeMenu(returnFocus=false){mobile.hidden=true;menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open menu');if(returnFocus)menu.focus();}
+menu.addEventListener('click',()=>{const opening=mobile.hidden;mobile.hidden=!opening;menu.setAttribute('aria-expanded',String(opening));menu.setAttribute('aria-label',opening?'Close menu':'Open menu');if(opening)positionMenu();});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!mobile.hidden)closeMenu(true);});
+$$('a',mobile).forEach(link=>link.addEventListener('click',()=>closeMenu()));
+document.addEventListener('click',event=>{if(!mobile.hidden&&!mobile.contains(event.target)&&!menu.contains(event.target))closeMenu();});
+document.addEventListener('focusin',event=>{if(!mobile.hidden&&!mobile.contains(event.target)&&!menu.contains(event.target))closeMenu();});
+const header=$('.site-header');let scrollPending=false;
+function positionMenu(){mobile.style.setProperty('--menu-top',`${Math.max(0,header.getBoundingClientRect().bottom)}px`);}
+function updateHeader(){header.classList.toggle('is-scrolled',scrollY>12);if(!mobile.hidden)positionMenu();scrollPending=false;}
+function scheduleHeaderUpdate(){if(!scrollPending){scrollPending=true;requestAnimationFrame(updateHeader);}}
+addEventListener('scroll',scheduleHeaderUpdate,{passive:true});addEventListener('resize',scheduleHeaderUpdate);updateHeader();
 $$('[data-print]').forEach(button=>button.addEventListener('click',()=>window.print()));
+$$('[data-copy-link]').forEach(button=>button.addEventListener('click',async()=>{button.disabled=true;try{if(!navigator.clipboard?.writeText)throw new Error('Clipboard unavailable');await navigator.clipboard.writeText($('link[rel="canonical"]')?.href||location.href);toast('Recipe link copied. Ready to share.');}catch{toast('Could not copy the link. Copy this page’s address from your browser.');}finally{button.disabled=false;}}));
+addEventListener('storage',event=>{if(event.key===savedKey||event.key===null)updateSaveButtons();});
 const collection=$('[data-collection]');
 if(collection){
   const params=new URLSearchParams(location.search), query=$('#collection-query'), tiles=$$('[data-recipe]',collection);
@@ -32,9 +43,11 @@ if(collection){
   }
   $$('[data-filter]').forEach(button=>button.addEventListener('click',()=>{filter=button.dataset.filter;apply();}));query.addEventListener('input',()=>apply());
   $$('[data-clear],[data-reset]').forEach(button=>button.addEventListener('click',()=>{filter='all';query.value='';apply();query.focus();}));
-  addEventListener('storage',()=>{updateSaveButtons();apply(false);});apply(false);
+  addEventListener('storage',event=>{if(event.key===savedKey||event.key===null)apply(false);});apply(false);
 }
 const recipe=$('[data-recipe-slug]');
-if(recipe){const key=`gochujang-checklist-${recipe.dataset.recipeSlug}`;const checks=$$('[data-ingredient]');let checked=read(key,[]);if(!Array.isArray(checked))checked=[];checks.forEach(input=>{input.checked=checked.includes(input.dataset.ingredient);input.addEventListener('change',()=>write(key,checks.filter(i=>i.checked).map(i=>i.dataset.ingredient)));});$('[data-reset-ingredients]').addEventListener('click',()=>{checks.forEach(i=>i.checked=false);write(key,[]);toast('Ingredient checklist reset.');});const cook=$('[data-cook-mode]');cook.addEventListener('click',()=>{const active=recipe.classList.toggle('larger-recipe');cook.setAttribute('aria-pressed',String(active));cook.textContent=active?'Standard text −':'Larger text ＋';});}
+if(recipe){const key=`gochujang-checklist-${recipe.dataset.recipeSlug}`;const checks=$$('[data-ingredient]',recipe);const progress=$('[data-ingredient-progress]',recipe);function updateProgress(){if(progress)progress.textContent=`${checks.filter(input=>input.checked).length} of ${checks.length} ingredients checked`;}
+let checked=read(key,[]);if(!Array.isArray(checked))checked=[];checks.forEach(input=>{input.checked=checked.includes(input.dataset.ingredient);input.addEventListener('change',()=>{updateProgress();write(key,checks.filter(i=>i.checked).map(i=>i.dataset.ingredient));});});updateProgress();
+$('[data-reset-ingredients]').addEventListener('click',()=>{checks.forEach(i=>i.checked=false);updateProgress();if(write(key,[]))toast('Ingredient checklist reset.');});const cook=$('[data-cook-mode]');cook.addEventListener('click',()=>{const active=recipe.classList.toggle('larger-recipe');cook.setAttribute('aria-pressed',String(active));cook.textContent=active?'Standard text −':'Larger text ＋';});}
 addEventListener('beforeprint',()=>{$$('details').forEach(d=>{d.dataset.wasOpen=String(d.open);d.open=true;});});
 addEventListener('afterprint',()=>{$$('details').forEach(d=>{d.open=d.dataset.wasOpen==='true';delete d.dataset.wasOpen;});});
